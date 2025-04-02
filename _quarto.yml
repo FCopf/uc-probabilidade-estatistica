@@ -10,9 +10,9 @@ website:
   page-navigation: true
   title: "5290 - PROBABILIDADE E ESTATÍSTICA"
   description: "Página da UC 5290 - PE - Bict Mar - Unifesp"
-  site-url: "https://github.com/FCopf/Probabilidade_Estatistica"
+  site-url: "https://fcopf.github.io/uc-probabilidade-estatistica"
 
-  repo-url: "https://github.com/FCopf/Probabilidade_Estatistica"
+  repo-url: "https://github.com/FCopf/uc-probabilidade-estatistica"
   open-graph: true
 
   page-footer:
@@ -28,7 +28,7 @@ website:
     align: center
     tools:
       - icon: github
-        href: https://github.com/FCopf/Probabilidade_Estatistica
+        href: https://github.com/FCopf/uc-probabilidade-estatistica
         text: GitHub da UC
       - icon: book
         href: https://moodlegrad.unifesp.br/
