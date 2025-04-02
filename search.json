@@ -1,0 +1,68 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "",
+    "text": "Consulte aqui o cronograma de atividades do semestre, com a descrição dos temas, links para materiais de apoio e atividades. Quaisquer alterações serão atualizadas e registradas neste espaço.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSEMANA\nDATA\nTEMA\nOBJETIVOS\nLEITURA PRÉVIA\nSLIDES\nLAB. INFO.\nLISTAS\nAVALIAÇÃO\nPROJETO\n\n\n\n\n1\n03/04\n🔹 Apresentação da Unidade Curricular (UC).  🔹 Introdução à inferência e à modelagem probabilística.\n🔹 Apresentação do plano de ensino.  🔹 Entender modelos probabilísticos como ferramenta para lidar com incertezas na tomada de decisão.\n📚\n📽️\n💻\n\n\n\n\n\n2\n10/04\n🔹 Introdução à inferência bayesiana: distribuições a priori e a posteriori.\n🔹 Entender como o conhecimento prévio influencia as inferências por meio das distribuições a priori e a posteriori.\n📚\n📽️\n💻\n📝\n\n\n\n\n3\n17/04\n🔹 Construção de um modelo probabilístico simples: distribuição a priori dos parâmetros.\n🔹 Apresentar a Distribuição Normal.  🔹 Discutir a formulação do modelo no conhecimento prévio.  🔹 Ilustrar a interpretação dos parâmetros com o exemplo da distribuição de alturas.\n📚\n📽️\n💻\n\n\n\n\n\n4\n24/04\n🔹 Ajuste de um modelo probabilístico simples a dados empíricos.\n🔹 Discutir o processo de ajuste de um modelo Normal a dados observados.  🔹 Atualização da distribuição a priori para obter a a posteriori.\n📚\n📽️\n💻\n📝\n\n\n\n\n\n01/05\nFERIADO - Dia do Trabalho\n⛱️ 🌞 🏕️\n\n\n\n\n\n\n\n\n5\n08/05\n1ª Avaliação\n🔹 Avaliar a compreensão dos principais conceitos da inferência bayesiana, incluindo distribuições a priori e a posteriori, construção e ajuste de modelos probabilísticos simples.\n\n\n\n\n📈\n\n\n\n6\n15/05\nHipóteses científicas, estruturas de dependência e relações causais (PARTE 1)\n🔹 Discutir o papel das hipóteses científicas na construção de modelos probabilísticos.  🔹 Riqueza de Espécies em Ilhas: teoria e possíveis modelos estatísticos.\n📚\n📽️\n💻\n\n\n🧭 💡\n\n\n7\n22/05\nHipóteses científicas, estruturas de dependência e relações causais (PARTE 2)\n🔹 Explorar a interpretação, predição e comparação de modelos probabilísticos.\n📚\n📽️\n💻\n\n\n\n\n\n8\n29/05\nMulticolinearidade e relações espúrias\n🔹 Apresentar os conceitos de multicolinearidade e causalidade em modelos de regressão.  🔹 Discutir a identificação de correlações espúrias e a avaliação da multicolinearidade em modelos bayesianos.\n📚\n📽️\n💻\n📝\n\n\n\n\n9\n05/06\n2ª Avaliação\n🔹 Avaliar a compreensão sobre a formulação e o papel das hipóteses científicas em modelos probabilísticos.  🔹 Avaliar a capacidade de identificar e interpretar estruturas de dependência, como causalidade, correlações espúrias e multicolinearidade.\n\n\n\n\n📈\n\n\n\n10\n12/06\nEstruturas de dependência: dados aninhados\n🔹 Apresentar o conceito de unidade experimental e a importância da independência das observações.  🔹 Discutir delineamentos experimentais com dados aninhados.\n📚\n📽️\n💻\n\n\n\n\n\n11\n19/06\nEstruturas de dependência: dados estruturados no espaço\n🔹 Discutir como a dependência espacial influencia a análise e interpretação dos resultados.  🔹 Abordar o ajuste de modelos de regressão para dados com estrutura espacial.\n📚\n📽️\n💻\n📝\n\n\n\n\n\n26/06\nFERIADO – Corpus Christi\n☀️ 🏞️ 🧘\n\n\n\n\n\n\n\n\n12\n03/07\nEstruturas de dependência: dados estruturados no tempo\n🔹 Discutir estratégias para lidar com dependência temporal em dados.  🔹 Introduzir modelos de regressão voltados para séries temporais.\n📚\n📽️\n💻\n\n\n\n\n\n13\n10/07\nModelos binomiais\n🔹 Apresentar a formulação do modelo binomial e suas aplicações em dados de contagem e proporção.  🔹 Discutir a função de probabilidade, pressupostos e interpretação dos resultados.\n📚\n📽️\n💻\n\n\n\n\n\n14\n17/07\nModelo de Poisson\n🔹 Explorar o modelo de Poisson aplicado a dados de contagem.  🔹 Apresentar sua função de probabilidade, pressupostos e principais usos.\n📚\n📽️\n💻\n📝\n\n\n\n\n15\n24/07\nConclusão da Unidade Curricular.\n🔹 Revisar e integrar os principais conceitos abordados ao longo do curso.  🔹 Avaliar a evolução da aprendizagem e discutir possíveis aplicações e extensões dos métodos estudados.\n\n\n\n\n\n📑",
+    "crumbs": [
+      "Informações do curso",
+      "Cronograma"
+    ]
+  },
+  {
+    "objectID": "informacoes_curso/plano_ensino.html",
+    "href": "informacoes_curso/plano_ensino.html",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "",
+    "text": "Acessar versão em pdf",
+    "crumbs": [
+      "Informações do curso",
+      "Plano de ensino"
+    ]
+  },
+  {
+    "objectID": "informacoes_curso/plano_ensino.html#ementa",
+    "href": "informacoes_curso/plano_ensino.html#ementa",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "Ementa",
+    "text": "Ementa\nA Unidade Curricular (UC) explora os fundamentos da inferência estatística, com ênfase em modelos probabilísticos e suas aplicações na análise de dados e interpretação de fenômenos complexos relacionados às Ciências do Mar. A UC enfatiza a investigação de hipóteses sobre processos ambientais por meio da construção e análise de modelos probabilísticos, integrando conhecimentos prévios com evidências baseadas em dados. O curso promove uma abordagem prática, com foco na elaboração de modelos e na simulação computacional, integrando teoria e prática como suporte à tomada de decisão, de forma a oferecer uma compreensão ampla e aplicada dos conceitos teóricos e computacionais envolvidos.",
+    "crumbs": [
+      "Informações do curso",
+      "Plano de ensino"
+    ]
+  },
+  {
+    "objectID": "informacoes_curso/plano_ensino.html#conteúdo-programático",
+    "href": "informacoes_curso/plano_ensino.html#conteúdo-programático",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "Conteúdo Programático",
+    "text": "Conteúdo Programático\n\nFundamentos da Inferência Estatística e Modelagem Probabilística\n\nProbabilidade como lógica e ferramenta para lidar com incertezas.\n\nConceitos fundamentais: distribuição a priori e distribuição posteriori.\n\nAplicações Computacionais e Ferramentas Analíticas\n\nImplementação de modelos utilizando R, Python e linguagens de programação probabilística.\n\nConstrução de Modelos Probabilísticos\n\nHipóteses científicas, estruturas de dependência e relações causais.\n\nDesenvolvimento de modelos conceituais integrando conhecimento prévio.\n\nSimulação inicial para explorar predições com base no modelo.\n\nAjuste de Dados ao Modelo\n\nIncorporação de observações empíricas ao modelo conceitual.\n\nAtualização de predições.\n\nTécnicas de ajuste e calibração de modelos baseadas em dados observados.\n\nAvaliação e Refinamento de Modelos\n\nPredições e extrapolações baseadas no modelo ajustado.\n\nComparação de modelos utilizando critérios de validação.\n\nAnálise de sensibilidade a diferentes distribuições a priori.\n\nDesenhos Experimentais e Relações Causais Complexas\n\nEstruturas hierárquicas e suas aplicações.\nModelagem de dependências espaciais e temporais.\n\nModelos para classificação e contagem.",
+    "crumbs": [
+      "Informações do curso",
+      "Plano de ensino"
+    ]
+  },
+  {
+    "objectID": "informacoes_curso/plano_ensino.html#objetivos",
+    "href": "informacoes_curso/plano_ensino.html#objetivos",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "Objetivos",
+    "text": "Objetivos\nObjetivo Geral:\nCapacitar os alunos a compreender e aplicar conceitos de inferência estatística e modelagem probabilística, utilizando ferramentas computacionais para análise de dados e interpretação de fenômenos complexos nas Ciências do Mar, promovendo a integração entre teoria, prática de análise de dados e suporte à tomada de decisão.\n\nObjetivos Específicos:\n- Compreender os fundamentos da probabilidade como lógica, aplicando-os à comparação entre diferentes hipóteses científicas.\n- Implementar modelos probabilísticos em contextos ambientais utilizando linguagens de programação e ferramentas computacionais.\n- Desenvolver e explorar modelos conceituais integrando conhecimentos prévios, representações causais e simulações iniciais.\n- Incorporar dados empíricos a modelos probabilísticos, ajustando e calibrando predições com base em observações reais.\n- Comparar e refinar modelos utilizando critérios de validação e análise de sensibilidade.\n- Aplicar modelos probabilísticos para descrever relações não lineares, dependências espaciais e temporais, e processos ambientais complexos.",
+    "crumbs": [
+      "Informações do curso",
+      "Plano de ensino"
+    ]
+  },
+  {
+    "objectID": "informacoes_curso/plano_ensino.html#avaliação",
+    "href": "informacoes_curso/plano_ensino.html#avaliação",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "Avaliação",
+    "text": "Avaliação\nSerão atribuídas 5 Listas de Exercícios (peso 40%) e 3 Avaliações (peso 60%). A 3ª avaliação consistirá em um trabalho final desenvolvido ao longo do semestre e apresentado ao final do curso. A nota final do período letivo (NL) será calculada pela média ponderada das listas e avaliações. Para alunos com NL maior ou igual a 6,0, a nota final (NF) será NF = NL. O EXAME será aplicado apenas aos alunos não reprovados por falta e que finalizaram o período letivo regular com NL entre 3,0 e 5,9. Para esses alunos, a nota final (NF) será NF = (NL + NE)/2, em que NE é a nota obtida no EXAME. Caso o EXAME não seja realizado, será atribuído NE = 0.",
+    "crumbs": [
+      "Informações do curso",
+      "Plano de ensino"
+    ]
+  }
+]
