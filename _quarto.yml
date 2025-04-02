@@ -1,0 +1,94 @@
+project:
+  type: website
+  output-dir: _site
+
+publish:
+  method: gh-pages
+  repo: FCopf/uc-probabilidade-estatistica
+
+website:
+  page-navigation: true
+  title: "5290 - PROBABILIDADE E ESTATÍSTICA"
+  description: "Página da UC 5290 - PE - Bict Mar - Unifesp"
+  site-url: "https://github.com/FCopf/Probabilidade_Estatistica"
+
+  repo-url: "https://github.com/FCopf/Probabilidade_Estatistica"
+  open-graph: true
+
+  page-footer:
+    right: "BACHARELADO INTERDISCIPLINAR EM CIÊNCIA E TECNOLOGIA DO MAR - Bict Mar - Unifesp"
+    left: Fabio Cop Ferreira
+    background: "#296354"
+
+  sidebar: 
+    background: "#3b8170"
+    logo: "imagens/logo.png"
+    style: "docked"
+    search: true
+    align: center
+    tools:
+      - icon: github
+        href: https://github.com/FCopf/Probabilidade_Estatistica
+        text: GitHub da UC
+      - icon: book
+        href: https://moodlegrad.unifesp.br/
+        text: Moodle Graduação
+      - icon: terminal
+        href: https://colab.research.google.com/drive/
+        text: Google Colab
+    
+    collapse-level: 1
+    contents:
+      - section: "Informações do curso"
+        contents:
+          - href: informacoes_curso/plano_ensino.qmd
+            text: Plano de ensino
+          - href: index.qmd
+            text: Cronograma
+          - href: informacoes_curso/links_uteis.qmd
+            text: Links úteis e Bibliografia
+      - section: Material de apoio
+        contents: 
+          # - href: https://fcopf.github.io/MEAD/conteudo/inferencia_estatistica/distr_norm.html
+          #   text: O modelo de distribuição normal
+          # - href: https://fcopf.github.io/MEAD/conteudo/regressao_linear/regressao_linear_simples.html
+          #   text: Regressão Linear Simples
+      - section: Slides
+        contents: 
+          - href: /slides/Introdução_inferencia_modelagem_probabilistica.pdf
+            text: Aula 1
+          # - href: https://fcopf.github.io/MEAD/conteudo/inferencia_estatistica/distr_norm.html
+          #   text: Slide 2
+      - section: "Práticas Lab. Info."
+        contents:
+          # - href: lab_informatica/semana_01.qmd
+          #   text: "Semana 1"
+          # - href: lab_informatica/semana_02.qmd
+          #   text: "Semana 2"
+          # - href: lab_informatica/semana_03.qmd
+          #   text: "Semana 3"
+      - section: "Avaliações"
+        contents:
+          # - href: avaliacao/avaliacao_01.qmd
+          #   text: "Avaliação 1"
+          # - href: avaliacao/avaliacao_02.qmd
+          #   text: "Avaliação 2"
+          # - href: avaliacao/avaliacao_03_projeto
+          #   text: "Projeto"
+
+# Global format configuration
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [cosmo, theme-dark.scss]
+    toc: true
+    number-sections: true
+    code-copy: true
+    code-overflow: wrap
+
+# Configura projeto para ser executado apenas localmente
+execute:
+  freeze: auto
+
+bibliography: references.bib

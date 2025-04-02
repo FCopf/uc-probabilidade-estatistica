@@ -1,0 +1,69 @@
+---
+format: 
+  html:
+   number-sections: false
+title: 5290 - PROBABILIDADE E ESTATÍSTICA
+subtitle: 1º Semestre de 2025
+---
+
+Acessar versão em <a href="/informacoes_curso/2025 - PROBABILIDADE E ESTATÍSTICA.pdf" target=”_blank”>pdf</a>
+
+## Ementa
+
+A Unidade Curricular (UC) explora os fundamentos da inferência estatística, com ênfase em modelos probabilísticos e suas aplicações na análise de dados e interpretação de fenômenos complexos relacionados às Ciências do Mar. A UC enfatiza a investigação de hipóteses sobre processos ambientais por meio da construção e análise de modelos probabilísticos, integrando conhecimentos prévios com evidências baseadas em dados. O curso promove uma abordagem prática, com foco na elaboração de modelos e na simulação computacional, integrando teoria e prática como suporte à tomada de decisão, de forma a oferecer uma compreensão ampla e aplicada dos conceitos teóricos e computacionais envolvidos.
+
+---
+
+## Conteúdo Programático
+
+1. **Fundamentos da Inferência Estatística e Modelagem Probabilística**  
+   - Probabilidade como lógica e ferramenta para lidar com incertezas.  
+   - Conceitos fundamentais: distribuição a *priori* e distribuição *posteriori*.
+
+2. **Aplicações Computacionais e Ferramentas Analíticas**  
+   - Implementação de modelos utilizando R, Python e linguagens de programação probabilística.  
+   
+3. **Construção de Modelos Probabilísticos**  
+   - Hipóteses científicas, estruturas de dependência e relações causais.  
+   - Desenvolvimento de modelos conceituais integrando conhecimento prévio.  
+   - Simulação inicial para explorar predições com base no modelo.  
+
+4. **Ajuste de Dados ao Modelo**  
+   - Incorporação de observações empíricas ao modelo conceitual.  
+   - Atualização de predições.  
+   - Técnicas de ajuste e calibração de modelos baseadas em dados observados.  
+
+5. **Avaliação e Refinamento de Modelos**  
+   - Predições e extrapolações baseadas no modelo ajustado.  
+   - Comparação de modelos utilizando critérios de validação.  
+   - Análise de sensibilidade a diferentes distribuições a *priori*.     
+
+6. **Desenhos Experimentais e Relações Causais Complexas**  
+   - Estruturas hierárquicas e suas aplicações.
+   - Modelagem de dependências espaciais e temporais.  
+   - Modelos para classificação e contagem.  
+   
+   
+
+---
+
+## Objetivos
+
+**Objetivo Geral:**  
+Capacitar os alunos a compreender e aplicar conceitos de inferência estatística e modelagem probabilística, utilizando ferramentas computacionais para análise de dados e interpretação de fenômenos complexos nas Ciências do Mar, promovendo a integração entre teoria, prática de análise de dados e suporte à tomada de decisão.
+
+---
+
+**Objetivos Específicos:**  
+- Compreender os fundamentos da probabilidade como lógica, aplicando-os à comparação entre diferentes hipóteses científicas.  
+- Implementar modelos probabilísticos em contextos ambientais utilizando linguagens de programação e ferramentas computacionais.  
+- Desenvolver e explorar modelos conceituais integrando conhecimentos prévios, representações causais e simulações iniciais.  
+- Incorporar dados empíricos a modelos probabilísticos, ajustando e calibrando predições com base em observações reais.  
+- Comparar e refinar modelos utilizando critérios de validação e análise de sensibilidade.  
+- Aplicar modelos probabilísticos para descrever relações não lineares, dependências espaciais e temporais, e processos ambientais complexos. 
+
+---
+
+## Avaliação
+
+Serão atribuídas 5 Listas de Exercícios (peso 40%) e 3 Avaliações (peso 60%). A 3ª avaliação consistirá em um trabalho final desenvolvido ao longo do semestre e apresentado ao final do curso. A nota final do período letivo (NL) será calculada pela média ponderada das listas e avaliações. Para alunos com NL maior ou igual a 6,0, a nota final (NF) será NF = NL. O EXAME será aplicado apenas aos alunos não reprovados por falta e que finalizaram o período letivo regular com NL entre 3,0 e 5,9. Para esses alunos, a nota final (NF) será NF = (NL + NE)/2, em que NE é a nota obtida no EXAME. Caso o EXAME não seja realizado, será atribuído NE = 0.
