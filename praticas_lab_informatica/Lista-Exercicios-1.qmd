@@ -1,9 +1,6 @@
 ---
 title: "Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana"
 # description: 
-format:
-  html: default
-  pdf: default
 ---
 
 ---
@@ -16,8 +13,6 @@ Nesta atividade, você deverá criar um código em Python para exercitar o conte
 Ao finalizar o exercício, teste seu código e faça o download do arquivo em formato `.py` (caso esteja usando Google Colab ou outra ferramenta semelhante). Em seguida, **envie** o arquivo `.py` para o Moodle antes da data de entrega.
 
 *Entrega 10/04/2025, 23:59 via Moodle*
-
-- Acessar versão da lista em [PDF](Lista-Exercicios-1.pdf){target="_blank"}
 
 ---
 
