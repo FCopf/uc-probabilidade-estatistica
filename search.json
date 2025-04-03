@@ -1,10 +1,87 @@
 [
   {
+    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#lista-de-exercícios-1---instruções",
+    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#lista-de-exercícios-1---instruções",
+    "title": "Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana",
+    "section": "1 Lista de Exercícios 1 - INSTRUÇÕES",
+    "text": "1 Lista de Exercícios 1 - INSTRUÇÕES\nNesta atividade, você deverá criar um código em Python para exercitar o conteúdo apresentado no material teórico “Introdução à Inferência Bayesiana”.\nAo finalizar o exercício, teste seu código e faça o download do arquivo em formato .py (caso esteja usando Google Colab ou outra ferramenta semelhante). Em seguida, envie o arquivo .py para o Moodle antes da data de entrega.\nEntrega 10/04/2025, 23:59 via Moodle",
+    "crumbs": [
+      "Práticas Lab. Info.",
+      "Lista de Exercícios 1"
+    ]
+  },
+  {
+    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#definir-as-hipóteses",
+    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#definir-as-hipóteses",
+    "title": "Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana",
+    "section": "2 Definir as hipóteses",
+    "text": "2 Definir as hipóteses\n\nMonte, em Python, uma lista que contenha as cinco hipóteses possíveis para o número de bolas azuis em um saco de 5 bolas, ou seja, de 0 a 4 bolas azuis.\nCrie uma lista atribuindo uma plausibilidade inicial (prior) igual para cada uma dessas hipóteses.",
+    "crumbs": [
+      "Práticas Lab. Info.",
+      "Lista de Exercícios 1"
+    ]
+  },
+  {
+    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#definir-as-observações",
+    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#definir-as-observações",
+    "title": "Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana",
+    "section": "3 Definir as observações",
+    "text": "3 Definir as observações\n\nCrie uma lista contendo a cor azul ou branca para a 1ª bola observada. Essa lista irá representar as observações obtidas ao retirar uma bolinha por vez (sempre devolvendo-a depois de cada retirada).",
+    "crumbs": [
+      "Práticas Lab. Info.",
+      "Lista de Exercícios 1"
+    ]
+  },
+  {
+    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#contar-as-maneiras-de-produzir-a-sequência-em-cada-hipótese",
+    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#contar-as-maneiras-de-produzir-a-sequência-em-cada-hipótese",
+    "title": "Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana",
+    "section": "4 Contar as maneiras de produzir a sequência em cada hipótese",
+    "text": "4 Contar as maneiras de produzir a sequência em cada hipótese\n\nApós a observação (por exemplo, ['azul']), calcule quantas maneiras existem de obter a sequência observada em cada hipótese.\nArmazene esse valor de contagem (ou o produto das probabilidades) em uma variável para cada hipótese.",
+    "crumbs": [
+      "Práticas Lab. Info.",
+      "Lista de Exercícios 1"
+    ]
+  },
+  {
+    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#atualizar-as-plausibilidades-priors-posteriors",
+    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#atualizar-as-plausibilidades-priors-posteriors",
+    "title": "Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana",
+    "section": "5 Atualizar as plausibilidades (priors → posteriors)",
+    "text": "5 Atualizar as plausibilidades (priors → posteriors)\n\nMultiplique a contagem de cada hipótese pela sua plausibilidade anterior (que, no início, é a prior uniforme).\nSome os produtos de todas as hipóteses para obter um fator de normalização.\nNormalize cada resultado, dividindo cada produto pela soma total, para obter a posterior (probabilidade atualizada) de cada hipótese.\n\n\nObservação: Esse passo garante que as probabilidades resultantes somem 1.\n\n\nMonte um histograma com a distribuição prior e outro com a distribuição posterior.",
+    "crumbs": [
+      "Práticas Lab. Info.",
+      "Lista de Exercícios 1"
+    ]
+  },
+  {
+    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#aplicar-nova-observação",
+    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#aplicar-nova-observação",
+    "title": "Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana",
+    "section": "6 Aplicar nova observação",
+    "text": "6 Aplicar nova observação\n\nSimule uma nova cor observada (por exemplo, azul). Adicione essa cor à lista de observações criada no item 2. Em seguida, repita os passos de contagem e atualização (itens 3 e 4) com essa nova evidência.\n\nTrate as posteriors calculadas anteriormente como as novas priors.\n\nCalcule novamente quantas maneiras (ou probabilidade) cada hipótese tem de produzir a nova cor observada.\n\nMultiplique pelos valores de prior atual (agora a posterior anterior).\n\nNormalize outra vez.\n\nObserve como, a cada nova observação, as hipóteses vão sendo ajustadas de acordo com as evidências, de forma cumulativa.",
+    "crumbs": [
+      "Práticas Lab. Info.",
+      "Lista de Exercícios 1"
+    ]
+  },
+  {
+    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#observação-final",
+    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#observação-final",
+    "title": "Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana",
+    "section": "7 Observação Final",
+    "text": "7 Observação Final\nNão imprima ou apresente resultados na sua lista de instruções aqui. Apenas implemente o passo a passo no código Python, teste localmente e entregue seu arquivo .py no Moodle até a data estipulada.",
+    "crumbs": [
+      "Práticas Lab. Info.",
+      "Lista de Exercícios 1"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
     "section": "",
-    "text": "Consulte aqui o cronograma de atividades do semestre, com a descrição dos temas, links para materiais de apoio e atividades. Quaisquer alterações serão atualizadas e registradas neste espaço.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSEMANA\nDATA\nTEMA\nOBJETIVOS\nLEITURA PRÉVIA\nSLIDES\nLAB. INFO.\nLISTAS\nAVALIAÇÃO\nPROJETO\n\n\n\n\n1\n03/04\n🔹 Apresentação da Unidade Curricular (UC).  🔹 Introdução à inferência e à modelagem probabilística.\n🔹 Apresentação do plano de ensino.  🔹 Entender modelos probabilísticos como ferramenta para lidar com incertezas na tomada de decisão.\n📚\n📽️\n💻\n\n\n\n\n\n2\n10/04\n🔹 Introdução à inferência bayesiana: distribuições a priori e a posteriori.\n🔹 Entender como o conhecimento prévio influencia as inferências por meio das distribuições a priori e a posteriori.\n📚\n📽️\n💻\n📝\n\n\n\n\n3\n17/04\n🔹 Construção de um modelo probabilístico simples: distribuição a priori dos parâmetros.\n🔹 Apresentar a Distribuição Normal.  🔹 Discutir a formulação do modelo no conhecimento prévio.  🔹 Ilustrar a interpretação dos parâmetros com o exemplo da distribuição de alturas.\n📚\n📽️\n💻\n\n\n\n\n\n4\n24/04\n🔹 Ajuste de um modelo probabilístico simples a dados empíricos.\n🔹 Discutir o processo de ajuste de um modelo Normal a dados observados.  🔹 Atualização da distribuição a priori para obter a a posteriori.\n📚\n📽️\n💻\n📝\n\n\n\n\n\n01/05\nFERIADO - Dia do Trabalho\n⛱️ 🌞 🏕️\n\n\n\n\n\n\n\n\n5\n08/05\n1ª Avaliação\n🔹 Avaliar a compreensão dos principais conceitos da inferência bayesiana, incluindo distribuições a priori e a posteriori, construção e ajuste de modelos probabilísticos simples.\n\n\n\n\n📈\n\n\n\n6\n15/05\nHipóteses científicas, estruturas de dependência e relações causais (PARTE 1)\n🔹 Discutir o papel das hipóteses científicas na construção de modelos probabilísticos.  🔹 Riqueza de Espécies em Ilhas: teoria e possíveis modelos estatísticos.\n📚\n📽️\n💻\n\n\n🧭 💡\n\n\n7\n22/05\nHipóteses científicas, estruturas de dependência e relações causais (PARTE 2)\n🔹 Explorar a interpretação, predição e comparação de modelos probabilísticos.\n📚\n📽️\n💻\n\n\n\n\n\n8\n29/05\nMulticolinearidade e relações espúrias\n🔹 Apresentar os conceitos de multicolinearidade e causalidade em modelos de regressão.  🔹 Discutir a identificação de correlações espúrias e a avaliação da multicolinearidade em modelos bayesianos.\n📚\n📽️\n💻\n📝\n\n\n\n\n9\n05/06\n2ª Avaliação\n🔹 Avaliar a compreensão sobre a formulação e o papel das hipóteses científicas em modelos probabilísticos.  🔹 Avaliar a capacidade de identificar e interpretar estruturas de dependência, como causalidade, correlações espúrias e multicolinearidade.\n\n\n\n\n📈\n\n\n\n10\n12/06\nEstruturas de dependência: dados aninhados\n🔹 Apresentar o conceito de unidade experimental e a importância da independência das observações.  🔹 Discutir delineamentos experimentais com dados aninhados.\n📚\n📽️\n💻\n\n\n\n\n\n11\n19/06\nEstruturas de dependência: dados estruturados no espaço\n🔹 Discutir como a dependência espacial influencia a análise e interpretação dos resultados.  🔹 Abordar o ajuste de modelos de regressão para dados com estrutura espacial.\n📚\n📽️\n💻\n📝\n\n\n\n\n\n26/06\nFERIADO – Corpus Christi\n☀️ 🏞️ 🧘\n\n\n\n\n\n\n\n\n12\n03/07\nEstruturas de dependência: dados estruturados no tempo\n🔹 Discutir estratégias para lidar com dependência temporal em dados.  🔹 Introduzir modelos de regressão voltados para séries temporais.\n📚\n📽️\n💻\n\n\n\n\n\n13\n10/07\nModelos binomiais\n🔹 Apresentar a formulação do modelo binomial e suas aplicações em dados de contagem e proporção.  🔹 Discutir a função de probabilidade, pressupostos e interpretação dos resultados.\n📚\n📽️\n💻\n\n\n\n\n\n14\n17/07\nModelo de Poisson\n🔹 Explorar o modelo de Poisson aplicado a dados de contagem.  🔹 Apresentar sua função de probabilidade, pressupostos e principais usos.\n📚\n📽️\n💻\n📝\n\n\n\n\n15\n24/07\nConclusão da Unidade Curricular.\n🔹 Revisar e integrar os principais conceitos abordados ao longo do curso.  🔹 Avaliar a evolução da aprendizagem e discutir possíveis aplicações e extensões dos métodos estudados.\n\n\n\n\n\n📑",
+    "text": "Consulte aqui o cronograma de atividades do semestre, com a descrição dos temas, links para materiais de apoio e atividades. Quaisquer alterações serão atualizadas e registradas neste espaço.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSEMANA\nDATA\nTEMA\nOBJETIVOS\nLEITURA OBRIGATÓRIA\nLEITURA COMPLEMENTAR\nSLIDES\nLAB. INFO.\nLISTAS\nAVALIAÇÃO\nPROJETO\n\n\n\n\n1\n03/04\n🔹 Apresentação da Unidade Curricular (UC).  🔹 Introdução à inferência e à modelagem probabilística.\n🔹 Apresentação do plano de ensino.  🔹 Entender modelos probabilísticos como ferramenta para lidar com incertezas na tomada de decisão.\n📖\n📚\n📽️\n\n📝\n\n\n\n\n2\n10/04\n🔹 Introdução à inferência bayesiana: distribuições a priori e a posteriori.\n🔹 Entender como o conhecimento prévio influencia as inferências por meio das distribuições a priori e a posteriori.\n📖\n📚\n📽️\n💻\n\n\n\n\n\n3\n17/04\n🔹 Construção de um modelo probabilístico simples: distribuição a priori dos parâmetros.\n🔹 Apresentar a Distribuição Normal.  🔹 Discutir a formulação do modelo no conhecimento prévio.  🔹 Ilustrar a interpretação dos parâmetros com o exemplo da distribuição de alturas.\n📖\n📚\n📽️\n💻\n\n\n\n\n\n4\n24/04\n🔹 Ajuste de um modelo probabilístico simples a dados empíricos.\n🔹 Discutir o processo de ajuste de um modelo Normal a dados observados.  🔹 Atualização da distribuição a priori para obter a a posteriori.\n📖\n📚\n📽️\n💻\n📝\n\n\n\n\n\n01/05\nFERIADO - Dia do Trabalho\n⛱️ 🌞 🏕️\n\n\n\n\n\n\n\n\n\n5\n08/05\n1ª Avaliação\n🔹 Avaliar a compreensão dos principais conceitos da inferência bayesiana, incluindo distribuições a priori e a posteriori, construção e ajuste de modelos probabilísticos simples.\n\n\n\n\n\n📈\n\n\n\n6\n15/05\nHipóteses científicas, estruturas de dependência e relações causais (PARTE 1)\n🔹 Discutir o papel das hipóteses científicas na construção de modelos probabilísticos.  🔹 Riqueza de Espécies em Ilhas: teoria e possíveis modelos estatísticos.\n📖\n\n📽️\n💻\n\n\n🧭 💡\n\n\n7\n22/05\nHipóteses científicas, estruturas de dependência e relações causais (PARTE 2)\n🔹 Explorar a interpretação, predição e comparação de modelos probabilísticos.\n📖\n📚\n📽️\n💻\n\n\n\n\n\n8\n29/05\nMulticolinearidade e relações espúrias\n🔹 Apresentar os conceitos de multicolinearidade e causalidade em modelos de regressão.  🔹 Discutir a identificação de correlações espúrias e a avaliação da multicolinearidade em modelos bayesianos.\n📖\n📚\n📽️\n💻\n📝\n\n\n\n\n9\n05/06\n2ª Avaliação\n🔹 Avaliar a compreensão sobre a formulação e o papel das hipóteses científicas em modelos probabilísticos.  🔹 Avaliar a capacidade de identificar e interpretar estruturas de dependência, como causalidade, correlações espúrias e multicolinearidade.\n\n\n\n\n📈\n\n\n\n\n10\n12/06\nEstruturas de dependência: dados aninhados\n🔹 Apresentar o conceito de unidade experimental e a importância da independência das observações.  🔹 Discutir delineamentos experimentais com dados aninhados.\n📖\n📚\n📽️\n💻\n\n\n\n\n\n11\n19/06\nEstruturas de dependência: dados estruturados no espaço\n🔹 Discutir como a dependência espacial influencia a análise e interpretação dos resultados.  🔹 Abordar o ajuste de modelos de regressão para dados com estrutura espacial.\n📖\n📚\n📽️\n💻\n📝\n\n\n\n\n\n26/06\nFERIADO – Corpus Christi\n☀️ 🏞️ 🧘\n\n\n\n\n\n\n\n\n\n12\n03/07\nEstruturas de dependência: dados estruturados no tempo\n🔹 Discutir estratégias para lidar com dependência temporal em dados.  🔹 Introduzir modelos de regressão voltados para séries temporais.\n📖\n📚\n📽️\n💻\n\n\n\n\n\n13\n10/07\nModelos binomiais\n🔹 Apresentar a formulação do modelo binomial e suas aplicações em dados de contagem e proporção.  🔹 Discutir a função de probabilidade, pressupostos e interpretação dos resultados.\n📖\n📚\n📽️\n💻\n\n\n\n\n\n14\n17/07\nModelo de Poisson\n🔹 Explorar o modelo de Poisson aplicado a dados de contagem.  🔹 Apresentar sua função de probabilidade, pressupostos e principais usos.\n📖\n\n📽️\n💻\n📝\n\n\n\n\n15\n24/07\nConclusão da Unidade Curricular.\n🔹 Revisar e integrar os principais conceitos abordados ao longo do curso.  🔹 Avaliar a evolução da aprendizagem e discutir possíveis aplicações e extensões dos métodos estudados.\n\n\n\n\n\n\n📑",
     "crumbs": [
       "Informações do curso",
       "Cronograma"

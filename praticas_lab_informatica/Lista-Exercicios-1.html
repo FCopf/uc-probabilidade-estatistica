@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.42">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>semana_02 – 5290 - PROBABILIDADE E ESTATÍSTICA</title>
+<title>Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana – 5290 - PROBABILIDADE E ESTATÍSTICA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../slides/Introdução_inferencia_modelagem_probabilistica.pdf" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -55,22 +56,23 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
   }
 }</script>
 
 
-<meta property="og:title" content="5290 - PROBABILIDADE E ESTATÍSTICA">
+<meta property="og:title" content="Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana – 5290 - PROBABILIDADE E ESTATÍSTICA">
+<meta property="og:description" content="Página da UC 5290 - PE - Bict Mar - Unifesp">
 <meta property="og:site_name" content="5290 - PROBABILIDADE E ESTATÍSTICA">
 </head>
 
@@ -80,13 +82,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../praticas_lab_informatica/Lista-Exercicios-1.html">Práticas Lab. Info.</a></li><li class="breadcrumb-item"><a href="../praticas_lab_informatica/Lista-Exercicios-1.html">Lista de Exercícios 1</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -104,12 +106,12 @@ ul.task-list li input[type="checkbox"] {
     <a href="https://github.com/FCopf/uc-probabilidade-estatistica" title="GitHub da UC" class="quarto-navigation-tool px-1" aria-label="GitHub da UC"><i class="bi bi-github"></i></a>
     <a href="https://moodlegrad.unifesp.br/" title="Moodle Graduação" class="quarto-navigation-tool px-1" aria-label="Moodle Graduação"><i class="bi bi-book"></i></a>
     <a href="https://colab.research.google.com/drive/" title="Google Colab" class="quarto-navigation-tool px-1" aria-label="Google Colab"><i class="bi bi-terminal"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo escuro"><i class="bi"></i></a>
 </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Procurar"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -118,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Informações do curso</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -151,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">Slides</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -165,8 +167,21 @@ ul.task-list li input[type="checkbox"] {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Práticas Lab. Info.</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Práticas Lab. Info.</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../praticas_lab_informatica/Lista-Exercicios-1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lista de Exercícios 1</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -177,17 +192,112 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Nesta página</h2>
+   
+  <ul>
+  <li><a href="#lista-de-exercícios-1---instruções" id="toc-lista-de-exercícios-1---instruções" class="nav-link active" data-scroll-target="#lista-de-exercícios-1---instruções"><span class="header-section-number">1</span> Lista de Exercícios 1 - INSTRUÇÕES</a></li>
+  <li><a href="#definir-as-hipóteses" id="toc-definir-as-hipóteses" class="nav-link" data-scroll-target="#definir-as-hipóteses"><span class="header-section-number">2</span> Definir as hipóteses</a></li>
+  <li><a href="#definir-as-observações" id="toc-definir-as-observações" class="nav-link" data-scroll-target="#definir-as-observações"><span class="header-section-number">3</span> Definir as observações</a></li>
+  <li><a href="#contar-as-maneiras-de-produzir-a-sequência-em-cada-hipótese" id="toc-contar-as-maneiras-de-produzir-a-sequência-em-cada-hipótese" class="nav-link" data-scroll-target="#contar-as-maneiras-de-produzir-a-sequência-em-cada-hipótese"><span class="header-section-number">4</span> Contar as maneiras de produzir a sequência em cada hipótese</a></li>
+  <li><a href="#atualizar-as-plausibilidades-priors-posteriors" id="toc-atualizar-as-plausibilidades-priors-posteriors" class="nav-link" data-scroll-target="#atualizar-as-plausibilidades-priors-posteriors"><span class="header-section-number">5</span> Atualizar as plausibilidades (priors → posteriors)</a></li>
+  <li><a href="#aplicar-nova-observação" id="toc-aplicar-nova-observação" class="nav-link" data-scroll-target="#aplicar-nova-observação"><span class="header-section-number">6</span> Aplicar nova observação</a></li>
+  <li><a href="#observação-final" id="toc-observação-final" class="nav-link" data-scroll-target="#observação-final"><span class="header-section-number">7</span> Observação Final</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../praticas_lab_informatica/Lista-Exercicios-1.html">Práticas Lab. Info.</a></li><li class="breadcrumb-item"><a href="../praticas_lab_informatica/Lista-Exercicios-1.html">Lista de Exercícios 1</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<hr>
+<section id="lista-de-exercícios-1---instruções" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="lista-de-exercícios-1---instruções"><span class="header-section-number">1</span> Lista de Exercícios 1 - INSTRUÇÕES</h2>
+<p>Nesta atividade, você deverá criar um código em Python para exercitar o conteúdo apresentado no material teórico <a href="https://fcopf.github.io/MEAD/conteudo/probabilidade_inferencia/intro-bayes.html" target="_blank"><em>“Introdução à Inferência Bayesiana”</em></a>.</p>
+<p>Ao finalizar o exercício, teste seu código e faça o download do arquivo em formato <code>.py</code> (caso esteja usando Google Colab ou outra ferramenta semelhante). Em seguida, <strong>envie</strong> o arquivo <code>.py</code> para o Moodle antes da data de entrega.</p>
+<p><em>Entrega 10/04/2025, 23:59 via Moodle</em></p>
+<hr>
+</section>
+<section id="definir-as-hipóteses" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="definir-as-hipóteses"><span class="header-section-number">2</span> Definir as hipóteses</h2>
+<ul>
+<li><p>Monte, em Python, uma lista que contenha as <strong>cinco hipóteses</strong> possíveis para o número de bolas azuis em um saco de 5 bolas, ou seja, de <strong>0 a 4</strong> bolas azuis.</p></li>
+<li><p>Crie uma lista atribuindo uma plausibilidade inicial (prior) <strong>igual</strong> para cada uma dessas hipóteses.</p></li>
+</ul>
+<hr>
+</section>
+<section id="definir-as-observações" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="definir-as-observações"><span class="header-section-number">3</span> Definir as observações</h2>
+<ul>
+<li>Crie uma lista contendo a cor <code>azul</code> ou <code>branca</code> para a <strong>1ª bola observada</strong>. Essa lista irá representar as observações obtidas ao retirar uma bolinha por vez (sempre <strong>devolvendo-a</strong> depois de cada retirada).</li>
+</ul>
+<hr>
+</section>
+<section id="contar-as-maneiras-de-produzir-a-sequência-em-cada-hipótese" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="contar-as-maneiras-de-produzir-a-sequência-em-cada-hipótese"><span class="header-section-number">4</span> Contar as maneiras de produzir a sequência em cada hipótese</h2>
+<ul>
+<li><p>Após a observação (por exemplo, <code>['azul']</code>), calcule quantas maneiras existem de obter a sequência observada em cada hipótese.</p></li>
+<li><p>Armazene esse valor de contagem (ou o produto das probabilidades) em uma variável para cada hipótese.</p></li>
+</ul>
+<hr>
+</section>
+<section id="atualizar-as-plausibilidades-priors-posteriors" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="atualizar-as-plausibilidades-priors-posteriors"><span class="header-section-number">5</span> Atualizar as plausibilidades (priors → posteriors)</h2>
+<ul>
+<li><p><strong>Multiplique</strong> a contagem de cada hipótese pela sua <strong>plausibilidade anterior</strong> (que, no início, é a prior uniforme).</p></li>
+<li><p><strong>Some</strong> os produtos de todas as hipóteses para obter um <strong>fator de normalização</strong>.</p></li>
+<li><p><strong>Normalize</strong> cada resultado, dividindo cada produto pela soma total, para obter a <strong>posterior</strong> (probabilidade atualizada) de cada hipótese.</p></li>
+</ul>
+<blockquote class="blockquote">
+<p><em>Observação:</em> Esse passo garante que as probabilidades resultantes somem 1.</p>
+</blockquote>
+<ul>
+<li>Monte um <strong>histograma</strong> com a distribuição <em>prior</em> e outro com a distribuição <em>posterior</em>.</li>
+</ul>
+<hr>
+</section>
+<section id="aplicar-nova-observação" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="aplicar-nova-observação"><span class="header-section-number">6</span> Aplicar nova observação</h2>
+<ul>
+<li><p>Simule uma <strong>nova cor</strong> observada (por exemplo, <code>azul</code>). Adicione essa cor à lista de observações criada no item 2. Em seguida, <strong>repita</strong> os passos de contagem e atualização (itens 3 e 4) com essa nova evidência.</p>
+<ul>
+<li>Trate as <strong>posteriors</strong> calculadas anteriormente como as novas <strong>priors</strong>.<br>
+</li>
+<li>Calcule novamente quantas maneiras (ou probabilidade) cada hipótese tem de produzir a nova cor observada.<br>
+</li>
+<li><strong>Multiplique</strong> pelos valores de prior atual (agora a posterior anterior).<br>
+</li>
+<li><strong>Normalize</strong> outra vez.</li>
+</ul></li>
+<li><p>Observe como, a cada <strong>nova observação</strong>, as hipóteses vão sendo ajustadas de acordo com as evidências, de forma <strong>cumulativa</strong>.</p></li>
+</ul>
+<hr>
+</section>
+<section id="observação-final" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="observação-final"><span class="header-section-number">7</span> Observação Final</h2>
+<p>Não imprima ou apresente resultados na sua lista de instruções aqui. Apenas implemente o <strong>passo a passo</strong> no código Python, teste localmente e entregue seu arquivo <code>.py</code> no Moodle até a data estipulada.</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -377,12 +487,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiada");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiada");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -751,6 +861,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../slides/Introdução_inferencia_modelagem_probabilistica.pdf" class="pagination-link" aria-label="Aula 1">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Aula 1</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
