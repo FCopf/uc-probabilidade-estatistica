@@ -1,0 +1,75 @@
+---
+title: "Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana"
+# description: 
+format:
+  html: default
+  pdf: default
+---
+
+---
+
+## Lista de Exercícios 1 - INSTRUÇÕES
+
+Nesta atividade, você deverá criar um código em Python para exercitar o conteúdo apresentado no material teórico [*"Introdução à Inferência Bayesiana"*](https://fcopf.github.io/MEAD/conteudo/probabilidade_inferencia/intro-bayes.html){target="_blank"}.
+
+
+Ao finalizar o exercício, teste seu código e faça o download do arquivo em formato `.py` (caso esteja usando Google Colab ou outra ferramenta semelhante). Em seguida, **envie** o arquivo `.py` para o Moodle antes da data de entrega.
+
+*Entrega 10/04/2025, 23:59 via Moodle*
+
+- Acessar versão da lista em [PDF](Lista-Exercicios-1.pdf){target="_blank"}
+
+---
+
+## Definir as hipóteses
+
+- Monte, em Python, uma lista que contenha as **cinco hipóteses** possíveis para o número de bolas azuis em um saco de 5 bolas, ou seja, de **0 a 4** bolas azuis.
+
+- Crie uma lista atribuindo uma plausibilidade inicial (prior) **igual** para cada uma dessas hipóteses.
+
+---
+
+## Definir as observações
+
+- Crie uma lista contendo a cor `azul` ou `branca` para a **1ª bola observada**. Essa lista irá representar as observações obtidas ao retirar uma bolinha por vez (sempre **devolvendo-a** depois de cada retirada).
+
+---
+
+## Contar as maneiras de produzir a sequência em cada hipótese
+
+- Após a observação (por exemplo, `['azul']`), calcule quantas maneiras existem de obter a sequência observada em cada hipótese.
+
+- Armazene esse valor de contagem (ou o produto das probabilidades) em uma variável para cada hipótese.
+
+---
+
+## Atualizar as plausibilidades (priors → posteriors)
+
+- **Multiplique** a contagem de cada hipótese pela sua **plausibilidade anterior** (que, no início, é a prior uniforme).
+
+- **Some** os produtos de todas as hipóteses para obter um **fator de normalização**.
+
+- **Normalize** cada resultado, dividindo cada produto pela soma total, para obter a **posterior** (probabilidade atualizada) de cada hipótese.
+
+> *Observação:* Esse passo garante que as probabilidades resultantes somem 1.
+
+- Monte um **histograma** com a distribuição *prior* e outro com a distribuição *posterior*.
+
+---
+
+## Aplicar nova observação
+
+- Simule uma **nova cor** observada (por exemplo, `azul`). Adicione essa cor à lista de observações criada no item 2. Em seguida, **repita** os passos de contagem e atualização (itens 3 e 4) com essa nova evidência.
+
+   - Trate as **posteriors** calculadas anteriormente como as novas **priors**.  
+   - Calcule novamente quantas maneiras (ou probabilidade) cada hipótese tem de produzir a nova cor observada.  
+   - **Multiplique** pelos valores de prior atual (agora a posterior anterior).  
+   - **Normalize** outra vez.
+
+- Observe como, a cada **nova observação**, as hipóteses vão sendo ajustadas de acordo com as evidências, de forma **cumulativa**.
+
+---
+
+## Observação Final
+
+Não imprima ou apresente resultados na sua lista de instruções aqui. Apenas implemente o **passo a passo** no código Python, teste localmente e entregue seu arquivo `.py` no Moodle até a data estipulada.

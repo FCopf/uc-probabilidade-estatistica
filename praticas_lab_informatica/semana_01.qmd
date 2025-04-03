@@ -1,4 +1,0 @@
----
-title: "Amostrando possibilidades"
-subtutle: Probabilidade e Estatística
----

@@ -2,6 +2,8 @@ project:
   type: website
   output-dir: _site
 
+lang: pt
+
 publish:
   method: gh-pages
   repo: FCopf/uc-probabilidade-estatistica
@@ -61,19 +63,24 @@ website:
           #   text: Slide 2
       - section: "Práticas Lab. Info."
         contents:
-          # - href: lab_informatica/semana_01.qmd
-          #   text: "Semana 1"
-          # - href: lab_informatica/semana_02.qmd
-          #   text: "Semana 2"
-          # - href: lab_informatica/semana_03.qmd
-          #   text: "Semana 3"
+          - href: praticas_lab_informatica/Lista-Exercicios-1.qmd
+            text: "Lista de Exercícios 1"
+          # - href: praticas_lab_informatica/Lista-Exercicios-2.qmd
+          #   text: "Lista de Exercícios 2"
+          # - href: praticas_lab_informatica/Lista-Exercicios-3.qmd
+          #   text: "Lista de Exercícios 3"
+          # - href: praticas_lab_informatica/Lista-Exercicios-4.qmd
+          #   text: "Lista de Exercícios 4"
+          # - href: praticas_lab_informatica/Lista-Exercicios-5.qmd
+          #   text: "Lista de Exercícios 5"
+          
       - section: "Avaliações"
         contents:
-          # - href: avaliacao/avaliacao_01.qmd
+          # - href: avaliacao/avaliacao-1.qmd
           #   text: "Avaliação 1"
-          # - href: avaliacao/avaliacao_02.qmd
+          # - href: avaliacao/avaliacao-2.qmd
           #   text: "Avaliação 2"
-          # - href: avaliacao/avaliacao_03_projeto
+          # - href: avaliacao/avaliacao-3-projeto
           #   text: "Projeto"
 
 # Global format configuration
