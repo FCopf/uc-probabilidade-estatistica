@@ -1,76 +1,43 @@
 [
   {
-    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#lista-de-exercícios-1---instruções",
-    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#lista-de-exercícios-1---instruções",
-    "title": "Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana",
-    "section": "1 Lista de Exercícios 1 - INSTRUÇÕES",
-    "text": "1 Lista de Exercícios 1 - INSTRUÇÕES\nNesta atividade, você deverá criar um código em Python para exercitar o conteúdo apresentado no material teórico “Introdução à Inferência Bayesiana”.\nAo finalizar o exercício, teste seu código e faça o download do arquivo em formato .py (caso esteja usando Google Colab ou outra ferramenta semelhante). Em seguida, envie o arquivo .py para o Moodle antes da data de entrega.\nEntrega 10/04/2025, 23:59 via Moodle",
+    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html",
+    "href": "praticas_lab_informatica/Lista-Exercicios-1.html",
+    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
+    "section": "",
+    "text": "Antes de iniciar, leia atentamente a Leitura Obrigatória da Semana 1: “Introdução à Inferência Bayesiana”.\nAo concluir o exercício, teste seu código e faça o download do arquivo em formato .py (caso esteja usando Google Colab ou ferramenta similar). Em seguida, envie o arquivo .py para o Moodle antes da data de entrega.\n💡 DICA IMPORTANTE: comente cada etapa do seu código para que você ou outra pessoa possa entendê-lo futuramente.\n\nENTREGA: 10/04/2025, 23:59, via Moodle",
     "crumbs": [
       "Práticas Lab. Info.",
       "Lista de Exercícios 1"
     ]
   },
   {
-    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#definir-as-hipóteses",
-    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#definir-as-hipóteses",
-    "title": "Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana",
-    "section": "2 Definir as hipóteses",
-    "text": "2 Definir as hipóteses\n\nMonte, em Python, uma lista que contenha as cinco hipóteses possíveis para o número de bolas azuis em um saco de 5 bolas, ou seja, de 0 a 4 bolas azuis.\nCrie uma lista atribuindo uma plausibilidade inicial (prior) igual para cada uma dessas hipóteses.",
+    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#instruções",
+    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#instruções",
+    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
+    "section": "",
+    "text": "Antes de iniciar, leia atentamente a Leitura Obrigatória da Semana 1: “Introdução à Inferência Bayesiana”.\nAo concluir o exercício, teste seu código e faça o download do arquivo em formato .py (caso esteja usando Google Colab ou ferramenta similar). Em seguida, envie o arquivo .py para o Moodle antes da data de entrega.\n💡 DICA IMPORTANTE: comente cada etapa do seu código para que você ou outra pessoa possa entendê-lo futuramente.\n\nENTREGA: 10/04/2025, 23:59, via Moodle",
     "crumbs": [
       "Práticas Lab. Info.",
       "Lista de Exercícios 1"
     ]
   },
   {
-    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#definir-as-observações",
-    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#definir-as-observações",
-    "title": "Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana",
-    "section": "3 Definir as observações",
-    "text": "3 Definir as observações\n\nCrie uma lista contendo a cor azul ou branca para a 1ª bola observada. Essa lista irá representar as observações obtidas ao retirar uma bolinha por vez (sempre devolvendo-a depois de cada retirada).",
+    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#descrição-da-atividade",
+    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#descrição-da-atividade",
+    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
+    "section": "2 Descrição da Atividade",
+    "text": "2 Descrição da Atividade\nNesta atividade, você deverá gerar um código em Python para representar virtualmente a seguinte situação: existe uma caixa com cinco bolas de gude, distribuídas entre as cores azul e preta (sendo possível que todas sejam pretas ou todas sejam azuis).\nObjetivo: Descobrir quantas bolas pretas existem na caixa.\nMetodologia:\n\nA estratégia consiste em amostrar uma bola por vez.\nAo observar a bola retirada, devolvemos a mesma para a caixa, o que caracteriza uma amostragem com reposição.\nInicialmente, não sabemos quantas bolas pretas estão presentes e só podemos inferir isso após observar as amostras sucessivas.\n\nResultados Esperados:\n\nCompreender como utilizar um ambiente de programação para simular virtualmente as condições de um experimento aleatório.\nEntender a natureza das respostas obtidas e como avaliar seus resultados para garantir uma conclusão adequada.\nReconhecer a simulação computacional como uma forma de antecipar condições e pressupostos usados na construção de experimentos e modelos estatísticos.",
     "crumbs": [
       "Práticas Lab. Info.",
       "Lista de Exercícios 1"
     ]
   },
   {
-    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#contar-as-maneiras-de-produzir-a-sequência-em-cada-hipótese",
-    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#contar-as-maneiras-de-produzir-a-sequência-em-cada-hipótese",
-    "title": "Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana",
-    "section": "4 Contar as maneiras de produzir a sequência em cada hipótese",
-    "text": "4 Contar as maneiras de produzir a sequência em cada hipótese\n\nApós a observação (por exemplo, ['azul']), calcule quantas maneiras existem de obter a sequência observada em cada hipótese.\nArmazene esse valor de contagem (ou o produto das probabilidades) em uma variável para cada hipótese.",
-    "crumbs": [
-      "Práticas Lab. Info.",
-      "Lista de Exercícios 1"
-    ]
-  },
-  {
-    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#atualizar-as-plausibilidades-priors-posteriors",
-    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#atualizar-as-plausibilidades-priors-posteriors",
-    "title": "Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana",
-    "section": "5 Atualizar as plausibilidades (priors → posteriors)",
-    "text": "5 Atualizar as plausibilidades (priors → posteriors)\n\nMultiplique a contagem de cada hipótese pela sua plausibilidade anterior (que, no início, é a prior uniforme).\nSome os produtos de todas as hipóteses para obter um fator de normalização.\nNormalize cada resultado, dividindo cada produto pela soma total, para obter a posterior (probabilidade atualizada) de cada hipótese.\n\n\nObservação: Esse passo garante que as probabilidades resultantes somem 1.\n\n\nMonte um histograma com a distribuição prior e outro com a distribuição posterior.",
-    "crumbs": [
-      "Práticas Lab. Info.",
-      "Lista de Exercícios 1"
-    ]
-  },
-  {
-    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#aplicar-nova-observação",
-    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#aplicar-nova-observação",
-    "title": "Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana",
-    "section": "6 Aplicar nova observação",
-    "text": "6 Aplicar nova observação\n\nSimule uma nova cor observada (por exemplo, azul). Adicione essa cor à lista de observações criada no item 2. Em seguida, repita os passos de contagem e atualização (itens 3 e 4) com essa nova evidência.\n\nTrate as posteriors calculadas anteriormente como as novas priors.\n\nCalcule novamente quantas maneiras (ou probabilidade) cada hipótese tem de produzir a nova cor observada.\n\nMultiplique pelos valores de prior atual (agora a posterior anterior).\n\nNormalize outra vez.\n\nObserve como, a cada nova observação, as hipóteses vão sendo ajustadas de acordo com as evidências, de forma cumulativa.",
-    "crumbs": [
-      "Práticas Lab. Info.",
-      "Lista de Exercícios 1"
-    ]
-  },
-  {
-    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#observação-final",
-    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#observação-final",
-    "title": "Roteiro de Atividades em Python — Contagem de Possibilidades e Atualização Bayesiana",
-    "section": "7 Observação Final",
-    "text": "7 Observação Final\nNão imprima ou apresente resultados na sua lista de instruções aqui. Apenas implemente o passo a passo no código Python, teste localmente e entregue seu arquivo .py no Moodle até a data estipulada.",
+    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#etapas-do-processo",
+    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#etapas-do-processo",
+    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
+    "section": "3 Etapas do Processo",
+    "text": "3 Etapas do Processo\nA seguir, são sugeridas etapas para ajudá-lo(a) a cumprir os objetivos propostos:\n\nRepresentação da caixa\nCrie um objeto em Python que represente a caixa contendo as 5 bolas de gude. Defina quantas bolas de cada cor (preta e azul) estarão presentes.\nDistribuição a priori\nDefina os resultados possíveis (quantidade de bolas pretas) e atribua uma distribuição a priori a cada resultado.\nPrimeira observação\nExtraia aleatoriamente uma bola da caixa e observe sua cor.\nAtualização a posteriori\nCom base na cor observada, atualize a distribuição de probabilidade — ou seja, calcule a nova distribuição a posteriori para cada valor possível de bolas pretas na caixa.\nVisualização e decisão\nPlote um gráfico comparando a distribuição a priori com a distribuição a posteriori. Use esse gráfico para embasar sua decisão sobre quantas bolas pretas a caixa contém.\nAmostragem sequencial\nRepita os passos 3 a 5 por n vezes. A cada nova extração, utilize a última distribuição a posteriori obtida como a nova distribuição a priori, de modo que seu conhecimento sobre a composição da caixa seja constantemente atualizado.\nCritério de parada\nInterrompa as repetições quando julgar que o número de observações é suficiente para tomar uma decisão confiável. Pense em qual seria o número mínimo de extrações para alcançar essa confiança.\nAmpliação do problema\n\nAumente o total de bolas na caixa para 50. Varie o número de bolas pretas em três cenários: i) relativamente poucas bolas pretas, ii) quantidades iguais de bolas pretas e azuis, iii) maioria de bolas pretas.\n\nResponda: Qual o efeito de aumentar a quantidade total de bolas sobre o número de repetições (n) necessário para tomar uma decisão confiável?\n\nDiante desse aumento, como a variação na proporção de bolas pretas influencia a quantidade de repetições necessárias para uma decisão acertada?",
     "crumbs": [
       "Práticas Lab. Info.",
       "Lista de Exercícios 1"
