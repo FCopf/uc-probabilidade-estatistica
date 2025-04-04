@@ -51,16 +51,12 @@ website:
             text: Links úteis e Bibliografia
       - section: Material de apoio
         contents: 
-          # - href: https://fcopf.github.io/MEAD/conteudo/inferencia_estatistica/distr_norm.html
-          #   text: O modelo de distribuição normal
-          # - href: https://fcopf.github.io/MEAD/conteudo/regressao_linear/regressao_linear_simples.html
-          #   text: Regressão Linear Simples
+          # - href: material_apoio/ideias_projeto.qmd
+          #   text: "Ideias para o projeto final"
       - section: Slides
         contents: 
           - href: /slides/Introdução_inferencia_modelagem_probabilistica.pdf
             text: Aula 1
-          # - href: https://fcopf.github.io/MEAD/conteudo/inferencia_estatistica/distr_norm.html
-          #   text: Slide 2
       - section: "Práticas Lab. Info."
         contents:
           - href: praticas_lab_informatica/Lista-Exercicios-1.qmd
