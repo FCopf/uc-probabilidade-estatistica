@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <meta property="og:title" content="5290 - PROBABILIDADE E ESTATÍSTICA">
 <meta property="og:description" content="Agenda de Atividades">
@@ -162,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./slides/Introdução_inferencia_modelagem_probabilistica.pdf" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Aula 1</span></a>
+ <span class="menu-text">Semana 1</span></a>
   </div>
 </li>
       </ul>
@@ -170,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Práticas Lab. Info.</span></a>
+ <span class="menu-text">Listas de Exercícios</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -178,8 +207,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./praticas_lab_informatica/Lista-Exercicios-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lista de Exercícios 1</span></a>
+  <a href="./listas_exercicios/instrucoes-listas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instruções</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./listas_exercicios/lista-exercicios-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lista 1</span></a>
   </div>
 </li>
       </ul>
@@ -224,11 +259,10 @@ ul.task-list li input[type="checkbox"] {
 <table class="caption-top table">
 <colgroup>
 <col style="width: 2%">
-<col style="width: 5%">
+<col style="width: 2%">
 <col style="width: 5%">
 <col style="width: 10%">
-<col style="width: 3%">
-<col style="width: 3%">
+<col style="width: 2%">
 <col style="width: 2%">
 <col style="width: 2%">
 <col style="width: 2%">
@@ -241,10 +275,9 @@ ul.task-list li input[type="checkbox"] {
 <th style="text-align: center;">DATA</th>
 <th style="text-align: left;">TEMA</th>
 <th style="text-align: left;">OBJETIVOS</th>
-<th style="text-align: center;">LEITURA OBRIGATÓRIA</th>
-<th style="text-align: center;">LEITURA COMPLEMENTAR</th>
+<th style="text-align: center;">LEITURA<br>OBRIGATÓRIA</th>
+<th style="text-align: center;">LEITURA<br>COMPLEMENTAR</th>
 <th style="text-align: center;">SLIDES</th>
-<th style="text-align: center;">LAB. INFO.</th>
 <th style="text-align: center;">LISTAS</th>
 <th style="text-align: center;">AVALIAÇÃO</th>
 <th style="text-align: center;">PROJETO</th>
@@ -259,8 +292,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;"><a href="https://fcopf.github.io/MEAD/conteudo/probabilidade_inferencia/intro-bayes.html" target="_blank" title="Introdução à Inferência Bayesiana">📖</a></td>
 <td style="text-align: center;"><a href="https://fcopf.github.io/MEAD/fundamentos_probabilidade.html" target="_blank" title="Fundamentos de probabilidades">📚</a></td>
 <td style="text-align: center;"><a href="slides/Introdução_inferencia_modelagem_probabilistica.pdf" target="_blank" title="Introdução à inferência e à modelagem probabilística">📽️</a></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="praticas_lab_informatica/Lista-Exercicios-1.html" target="_blank" title="Lista de Exercícios 1">📝</a></td>
+<td style="text-align: center;"><a href="listas_exercicios/lista-exercicios-1.html" target="_blank" title="Lista 1">📝</a></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -269,10 +301,9 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">10/04</td>
 <td style="text-align: left;">🔹 Introdução à inferência bayesiana: distribuições <em>a priori</em> e <em>a posteriori</em>.</td>
 <td style="text-align: left;">🔹 Entender como o conhecimento prévio influencia as inferências por meio das distribuições <em>a priori</em> e <em>a posteriori</em>.</td>
-<td style="text-align: center;">📖</td>
-<td style="text-align: center;">📚</td>
-<td style="text-align: center;">📽️</td>
-<td style="text-align: center;">💻</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -280,12 +311,11 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">17/04</td>
-<td style="text-align: left;">🔹 Construção de um modelo probabilístico simples: distribuição a priori dos parâmetros.</td>
-<td style="text-align: left;">🔹 Apresentar a Distribuição Normal. <br> 🔹 Discutir a formulação do modelo no conhecimento prévio. <br> 🔹 Ilustrar a interpretação dos parâmetros com o exemplo da distribuição de alturas.</td>
+<td style="text-align: left;">🔹 Inferência sobre o parâmetro de uma distribuição de probabilidades.</td>
+<td style="text-align: left;">🔹 Apresentar a distribuição binomial. <br> 🔹 Estimar seu parâmetro via aproximação por <em>grid</em>. <br> 🔹 Introduzir o uso do módulo <a href="https://www.pymc.io/projects/examples/en/latest/gallery.html" target="_blank">PyMC</a> para estimação de parâmetros em modelos probabilísticos.</td>
 <td style="text-align: center;">📖</td>
 <td style="text-align: center;">📚</td>
 <td style="text-align: center;">📽️</td>
-<td style="text-align: center;">💻</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -293,13 +323,12 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">24/04</td>
-<td style="text-align: left;">🔹 Ajuste de um modelo probabilístico simples a dados empíricos.</td>
-<td style="text-align: left;">🔹 Discutir o processo de ajuste de um modelo Normal a dados observados. <br> 🔹 Atualização da distribuição <em>a priori</em> para obter a <em>a posteriori</em>.</td>
+<td style="text-align: left;">🔹 Distribuição Normal e Simulação <em>a Priori</em> para Alturas de adultos</td>
+<td style="text-align: left;">🔹 Apresentar a Distribuição Normal como modelo para alturas de adultos. <br> 🔹 Simular a distribuição <em>a priori</em> preditiva de alturas com base em conhecimento subjetivo. <br> 🔹 Utilizar o <a href="https://www.pymc.io/projects/examples/en/latest/gallery.html" target="_blank">PyMC</a> para estimar parâmetros do modelo Normal.</td>
 <td style="text-align: center;">📖</td>
 <td style="text-align: center;">📚</td>
 <td style="text-align: center;">📽️</td>
-<td style="text-align: center;">💻</td>
-<td style="text-align: center;">📝</td>
+<td style="text-align: center;"><a href="listas_exercicios/lista-exercicios-2.html" target="_blank" title="Lista 2">📝</a></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -308,7 +337,6 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">01/05</td>
 <td style="text-align: left;"><strong>FERIADO</strong> - <em>Dia do Trabalho</em></td>
 <td style="text-align: left;">⛱️ 🌞 🏕️</td>
-<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -325,35 +353,32 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
 <td style="text-align: center;">📈</td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">15/05</td>
-<td style="text-align: left;">Hipóteses científicas, estruturas de dependência e relações causais (PARTE 1)</td>
-<td style="text-align: left;">🔹 Discutir o papel das hipóteses científicas na construção de modelos probabilísticos. <br> 🔹 <em>Riqueza de Espécies em Ilhas</em>: teoria e possíveis modelos estatísticos.</td>
+<td style="text-align: left;">🔹 Modelo Linear</td>
+<td style="text-align: left;">🔹 Ajuste Bayesiano do modelo linear. <br> 🔹 Distribuição <em>a priori</em> e distribuição <em>a posteriori</em> de <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> e <span class="math inline">\(\sigma\)</span> usando PyMC.</td>
 <td style="text-align: center;">📖</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">📚</td>
 <td style="text-align: center;">📽️</td>
-<td style="text-align: center;">💻</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;">🧭 <br>💡</td>
+<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">7</td>
 <td style="text-align: center;">22/05</td>
-<td style="text-align: left;">Hipóteses científicas, estruturas de dependência e relações causais (PARTE 2)</td>
-<td style="text-align: left;">🔹 Explorar a interpretação, predição e comparação de modelos probabilísticos.</td>
+<td style="text-align: left;">Hipóteses científicas, estruturas de dependência e relações causais</td>
+<td style="text-align: left;">🔹 Discutir o papel das hipóteses científicas na construção de modelos probabilísticos. <br> 🔹 <em>Riqueza de Espécies em Ilhas</em>: teoria e possíveis modelos estatísticos. <br> 🔹 Interpretação, predição e comparação de modelos probabilísticos.</td>
 <td style="text-align: center;">📖</td>
-<td style="text-align: center;">📚</td>
+<td style="text-align: center;"></td>
 <td style="text-align: center;">📽️</td>
-<td style="text-align: center;">💻</td>
+<td style="text-align: center;"><a href="listas_exercicios/lista-exercicios-3.html" target="_blank" title="Lista 3">📝</a></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">🧭 <br>💡</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">8</td>
@@ -363,8 +388,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">📖</td>
 <td style="text-align: center;">📚</td>
 <td style="text-align: center;">📽️</td>
-<td style="text-align: center;">💻</td>
-<td style="text-align: center;">📝</td>
+<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -379,7 +403,6 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;"></td>
 <td style="text-align: center;">📈</td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">10</td>
@@ -389,8 +412,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">📖</td>
 <td style="text-align: center;">📚</td>
 <td style="text-align: center;">📽️</td>
-<td style="text-align: center;">💻</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="listas_exercicios/lista-exercicios-4.html" target="_blank" title="Lista 4">📝</a></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -402,8 +424,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">📖</td>
 <td style="text-align: center;">📚</td>
 <td style="text-align: center;">📽️</td>
-<td style="text-align: center;">💻</td>
-<td style="text-align: center;">📝</td>
+<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -412,7 +433,6 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">26/06</td>
 <td style="text-align: left;"><strong>FERIADO</strong> – <em>Corpus Christi</em></td>
 <td style="text-align: left;">☀️ 🏞️ 🧘</td>
-<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -428,7 +448,6 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">📖</td>
 <td style="text-align: center;">📚</td>
 <td style="text-align: center;">📽️</td>
-<td style="text-align: center;">💻</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -441,8 +460,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">📖</td>
 <td style="text-align: center;">📚</td>
 <td style="text-align: center;">📽️</td>
-<td style="text-align: center;">💻</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="listas_exercicios/lista-exercicios-5.html" target="_blank" title="Lista 5">📝</a></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -454,8 +472,7 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">📖</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;">📽️</td>
-<td style="text-align: center;">💻</td>
-<td style="text-align: center;">📝</td>
+<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -464,7 +481,6 @@ ul.task-list li input[type="checkbox"] {
 <td style="text-align: center;">24/07</td>
 <td style="text-align: left;">Conclusão da Unidade Curricular.</td>
 <td style="text-align: left;">🔹 Revisar e integrar os principais conceitos abordados ao longo do curso. <br> 🔹 Avaliar a evolução da aprendizagem e discutir possíveis aplicações e extensões dos métodos estudados.</td>
-<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>

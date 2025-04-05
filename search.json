@@ -1,46 +1,46 @@
 [
   {
-    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html",
-    "href": "praticas_lab_informatica/Lista-Exercicios-1.html",
+    "objectID": "listas_exercicios/lista-exercicios-1.html",
+    "href": "listas_exercicios/lista-exercicios-1.html",
     "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
     "section": "",
-    "text": "Antes de iniciar, leia atentamente a Leitura Obrigatória da Semana 1: “Introdução à Inferência Bayesiana”.\nAo concluir o exercício, teste seu código e faça o download do arquivo em formato .py (caso esteja usando Google Colab ou ferramenta similar). Em seguida, envie o arquivo .py para o Moodle antes da data de entrega.\n💡 DICA IMPORTANTE: comente cada etapa do seu código para que você ou outra pessoa possa entendê-lo futuramente.\n\nENTREGA: 10/04/2025, 23:59, via Moodle",
+    "text": "ENTREGA: até 17/04/2025 às 23:59, via Moodle",
     "crumbs": [
-      "Práticas Lab. Info.",
-      "Lista de Exercícios 1"
+      "Listas de Exercícios",
+      "Lista 1"
     ]
   },
   {
-    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#instruções",
-    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#instruções",
+    "objectID": "listas_exercicios/lista-exercicios-1.html#instruções",
+    "href": "listas_exercicios/lista-exercicios-1.html#instruções",
     "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
-    "section": "",
-    "text": "Antes de iniciar, leia atentamente a Leitura Obrigatória da Semana 1: “Introdução à Inferência Bayesiana”.\nAo concluir o exercício, teste seu código e faça o download do arquivo em formato .py (caso esteja usando Google Colab ou ferramenta similar). Em seguida, envie o arquivo .py para o Moodle antes da data de entrega.\n💡 DICA IMPORTANTE: comente cada etapa do seu código para que você ou outra pessoa possa entendê-lo futuramente.\n\nENTREGA: 10/04/2025, 23:59, via Moodle",
+    "section": "1 Instruções",
+    "text": "1 Instruções\n\nAntes de iniciar, leia atentamente a Leitura Obrigatória da Semana 1: “Introdução à Inferência Bayesiana”.\nAo concluir o exercício, teste seu código e faça o download do arquivo em formato .py (caso esteja usando Google Colab ou ferramenta similar). Em seguida, envie o arquivo .py para o Moodle antes da data de entrega.\n💡 DICA IMPORTANTE: comente cada etapa do seu código para que você ou outra pessoa possa entendê-lo futuramente.",
     "crumbs": [
-      "Práticas Lab. Info.",
-      "Lista de Exercícios 1"
+      "Listas de Exercícios",
+      "Lista 1"
     ]
   },
   {
-    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#descrição-da-atividade",
-    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#descrição-da-atividade",
+    "objectID": "listas_exercicios/lista-exercicios-1.html#descrição-da-atividade",
+    "href": "listas_exercicios/lista-exercicios-1.html#descrição-da-atividade",
     "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
     "section": "2 Descrição da Atividade",
     "text": "2 Descrição da Atividade\nNesta atividade, você deverá gerar um código em Python para representar virtualmente a seguinte situação: existe uma caixa com cinco bolas de gude, distribuídas entre as cores azul e preta (sendo possível que todas sejam pretas ou todas sejam azuis).\nObjetivo: Descobrir quantas bolas pretas existem na caixa.\nMetodologia:\n\nA estratégia consiste em amostrar uma bola por vez.\nAo observar a bola retirada, devolvemos a mesma para a caixa, o que caracteriza uma amostragem com reposição.\nInicialmente, não sabemos quantas bolas pretas estão presentes e só podemos inferir isso após observar as amostras sucessivas.\n\nResultados Esperados:\n\nCompreender como utilizar um ambiente de programação para simular virtualmente as condições de um experimento aleatório.\nEntender a natureza das respostas obtidas e como avaliar seus resultados para garantir uma conclusão adequada.\nReconhecer a simulação computacional como uma forma de antecipar condições e pressupostos usados na construção de experimentos e modelos estatísticos.",
     "crumbs": [
-      "Práticas Lab. Info.",
-      "Lista de Exercícios 1"
+      "Listas de Exercícios",
+      "Lista 1"
     ]
   },
   {
-    "objectID": "praticas_lab_informatica/Lista-Exercicios-1.html#etapas-do-processo",
-    "href": "praticas_lab_informatica/Lista-Exercicios-1.html#etapas-do-processo",
+    "objectID": "listas_exercicios/lista-exercicios-1.html#etapas-do-processo",
+    "href": "listas_exercicios/lista-exercicios-1.html#etapas-do-processo",
     "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
     "section": "3 Etapas do Processo",
     "text": "3 Etapas do Processo\nA seguir, são sugeridas etapas para ajudá-lo(a) a cumprir os objetivos propostos:\n\nRepresentação da caixa\nCrie um objeto em Python que represente a caixa contendo as 5 bolas de gude. Defina quantas bolas de cada cor (preta e azul) estarão presentes.\nDistribuição a priori\nDefina os resultados possíveis (quantidade de bolas pretas) e atribua uma distribuição a priori a cada resultado.\nPrimeira observação\nExtraia aleatoriamente uma bola da caixa e observe sua cor.\nAtualização a posteriori\nCom base na cor observada, atualize a distribuição de probabilidade — ou seja, calcule a nova distribuição a posteriori para cada valor possível de bolas pretas na caixa.\nVisualização e decisão\nPlote um gráfico comparando a distribuição a priori com a distribuição a posteriori. Use esse gráfico para embasar sua decisão sobre quantas bolas pretas a caixa contém.\nAmostragem sequencial\nRepita os passos 3 a 5 por n vezes. A cada nova extração, utilize a última distribuição a posteriori obtida como a nova distribuição a priori, de modo que seu conhecimento sobre a composição da caixa seja constantemente atualizado.\nCritério de parada\nInterrompa as repetições quando julgar que o número de observações é suficiente para tomar uma decisão confiável. Pense em qual seria o número mínimo de extrações para alcançar essa confiança.\nAmpliação do problema\n\nAumente o total de bolas na caixa para 50. Varie o número de bolas pretas em três cenários: i) relativamente poucas bolas pretas, ii) quantidades iguais de bolas pretas e azuis, iii) maioria de bolas pretas.\n\nResponda: Qual o efeito de aumentar a quantidade total de bolas sobre o número de repetições (n) necessário para tomar uma decisão confiável?\n\nDiante desse aumento, como a variação na proporção de bolas pretas influencia a quantidade de repetições necessárias para uma decisão acertada?",
     "crumbs": [
-      "Práticas Lab. Info.",
-      "Lista de Exercícios 1"
+      "Listas de Exercícios",
+      "Lista 1"
     ]
   },
   {
@@ -48,7 +48,7 @@
     "href": "index.html",
     "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
     "section": "",
-    "text": "Consulte aqui o cronograma de atividades do semestre, com a descrição dos temas, links para materiais de apoio e atividades. Quaisquer alterações serão atualizadas e registradas neste espaço.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSEMANA\nDATA\nTEMA\nOBJETIVOS\nLEITURA OBRIGATÓRIA\nLEITURA COMPLEMENTAR\nSLIDES\nLAB. INFO.\nLISTAS\nAVALIAÇÃO\nPROJETO\n\n\n\n\n1\n03/04\n🔹 Apresentação da Unidade Curricular (UC).  🔹 Introdução à inferência e à modelagem probabilística.\n🔹 Apresentação do plano de ensino.  🔹 Entender modelos probabilísticos como ferramenta para lidar com incertezas na tomada de decisão.\n📖\n📚\n📽️\n\n📝\n\n\n\n\n2\n10/04\n🔹 Introdução à inferência bayesiana: distribuições a priori e a posteriori.\n🔹 Entender como o conhecimento prévio influencia as inferências por meio das distribuições a priori e a posteriori.\n📖\n📚\n📽️\n💻\n\n\n\n\n\n3\n17/04\n🔹 Construção de um modelo probabilístico simples: distribuição a priori dos parâmetros.\n🔹 Apresentar a Distribuição Normal.  🔹 Discutir a formulação do modelo no conhecimento prévio.  🔹 Ilustrar a interpretação dos parâmetros com o exemplo da distribuição de alturas.\n📖\n📚\n📽️\n💻\n\n\n\n\n\n4\n24/04\n🔹 Ajuste de um modelo probabilístico simples a dados empíricos.\n🔹 Discutir o processo de ajuste de um modelo Normal a dados observados.  🔹 Atualização da distribuição a priori para obter a a posteriori.\n📖\n📚\n📽️\n💻\n📝\n\n\n\n\n\n01/05\nFERIADO - Dia do Trabalho\n⛱️ 🌞 🏕️\n\n\n\n\n\n\n\n\n\n5\n08/05\n1ª Avaliação\n🔹 Avaliar a compreensão dos principais conceitos da inferência bayesiana, incluindo distribuições a priori e a posteriori, construção e ajuste de modelos probabilísticos simples.\n\n\n\n\n\n📈\n\n\n\n6\n15/05\nHipóteses científicas, estruturas de dependência e relações causais (PARTE 1)\n🔹 Discutir o papel das hipóteses científicas na construção de modelos probabilísticos.  🔹 Riqueza de Espécies em Ilhas: teoria e possíveis modelos estatísticos.\n📖\n\n📽️\n💻\n\n\n🧭 💡\n\n\n7\n22/05\nHipóteses científicas, estruturas de dependência e relações causais (PARTE 2)\n🔹 Explorar a interpretação, predição e comparação de modelos probabilísticos.\n📖\n📚\n📽️\n💻\n\n\n\n\n\n8\n29/05\nMulticolinearidade e relações espúrias\n🔹 Apresentar os conceitos de multicolinearidade e causalidade em modelos de regressão.  🔹 Discutir a identificação de correlações espúrias e a avaliação da multicolinearidade em modelos bayesianos.\n📖\n📚\n📽️\n💻\n📝\n\n\n\n\n9\n05/06\n2ª Avaliação\n🔹 Avaliar a compreensão sobre a formulação e o papel das hipóteses científicas em modelos probabilísticos.  🔹 Avaliar a capacidade de identificar e interpretar estruturas de dependência, como causalidade, correlações espúrias e multicolinearidade.\n\n\n\n\n📈\n\n\n\n\n10\n12/06\nEstruturas de dependência: dados aninhados\n🔹 Apresentar o conceito de unidade experimental e a importância da independência das observações.  🔹 Discutir delineamentos experimentais com dados aninhados.\n📖\n📚\n📽️\n💻\n\n\n\n\n\n11\n19/06\nEstruturas de dependência: dados estruturados no espaço\n🔹 Discutir como a dependência espacial influencia a análise e interpretação dos resultados.  🔹 Abordar o ajuste de modelos de regressão para dados com estrutura espacial.\n📖\n📚\n📽️\n💻\n📝\n\n\n\n\n\n26/06\nFERIADO – Corpus Christi\n☀️ 🏞️ 🧘\n\n\n\n\n\n\n\n\n\n12\n03/07\nEstruturas de dependência: dados estruturados no tempo\n🔹 Discutir estratégias para lidar com dependência temporal em dados.  🔹 Introduzir modelos de regressão voltados para séries temporais.\n📖\n📚\n📽️\n💻\n\n\n\n\n\n13\n10/07\nModelos binomiais\n🔹 Apresentar a formulação do modelo binomial e suas aplicações em dados de contagem e proporção.  🔹 Discutir a função de probabilidade, pressupostos e interpretação dos resultados.\n📖\n📚\n📽️\n💻\n\n\n\n\n\n14\n17/07\nModelo de Poisson\n🔹 Explorar o modelo de Poisson aplicado a dados de contagem.  🔹 Apresentar sua função de probabilidade, pressupostos e principais usos.\n📖\n\n📽️\n💻\n📝\n\n\n\n\n15\n24/07\nConclusão da Unidade Curricular.\n🔹 Revisar e integrar os principais conceitos abordados ao longo do curso.  🔹 Avaliar a evolução da aprendizagem e discutir possíveis aplicações e extensões dos métodos estudados.\n\n\n\n\n\n\n📑",
+    "text": "Consulte aqui o cronograma de atividades do semestre, com a descrição dos temas, links para materiais de apoio e atividades. Quaisquer alterações serão atualizadas e registradas neste espaço.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSEMANA\nDATA\nTEMA\nOBJETIVOS\nLEITURAOBRIGATÓRIA\nLEITURACOMPLEMENTAR\nSLIDES\nLISTAS\nAVALIAÇÃO\nPROJETO\n\n\n\n\n1\n03/04\n🔹 Apresentação da Unidade Curricular (UC).  🔹 Introdução à inferência e à modelagem probabilística.\n🔹 Apresentação do plano de ensino.  🔹 Entender modelos probabilísticos como ferramenta para lidar com incertezas na tomada de decisão.\n📖\n📚\n📽️\n📝\n\n\n\n\n2\n10/04\n🔹 Introdução à inferência bayesiana: distribuições a priori e a posteriori.\n🔹 Entender como o conhecimento prévio influencia as inferências por meio das distribuições a priori e a posteriori.\n\n\n\n\n\n\n\n\n3\n17/04\n🔹 Inferência sobre o parâmetro de uma distribuição de probabilidades.\n🔹 Apresentar a distribuição binomial.  🔹 Estimar seu parâmetro via aproximação por grid.  🔹 Introduzir o uso do módulo PyMC para estimação de parâmetros em modelos probabilísticos.\n📖\n📚\n📽️\n\n\n\n\n\n4\n24/04\n🔹 Distribuição Normal e Simulação a Priori para Alturas de adultos\n🔹 Apresentar a Distribuição Normal como modelo para alturas de adultos.  🔹 Simular a distribuição a priori preditiva de alturas com base em conhecimento subjetivo.  🔹 Utilizar o PyMC para estimar parâmetros do modelo Normal.\n📖\n📚\n📽️\n📝\n\n\n\n\n\n01/05\nFERIADO - Dia do Trabalho\n⛱️ 🌞 🏕️\n\n\n\n\n\n\n\n\n5\n08/05\n1ª Avaliação\n🔹 Avaliar a compreensão dos principais conceitos da inferência bayesiana, incluindo distribuições a priori e a posteriori, construção e ajuste de modelos probabilísticos simples.\n\n\n\n\n📈\n\n\n\n6\n15/05\n🔹 Modelo Linear\n🔹 Ajuste Bayesiano do modelo linear.  🔹 Distribuição a priori e distribuição a posteriori de \\(\\beta_0\\), \\(\\beta_1\\) e \\(\\sigma\\) usando PyMC.\n📖\n📚\n📽️\n\n\n\n\n\n7\n22/05\nHipóteses científicas, estruturas de dependência e relações causais\n🔹 Discutir o papel das hipóteses científicas na construção de modelos probabilísticos.  🔹 Riqueza de Espécies em Ilhas: teoria e possíveis modelos estatísticos.  🔹 Interpretação, predição e comparação de modelos probabilísticos.\n📖\n\n📽️\n📝\n\n🧭 💡\n\n\n8\n29/05\nMulticolinearidade e relações espúrias\n🔹 Apresentar os conceitos de multicolinearidade e causalidade em modelos de regressão.  🔹 Discutir a identificação de correlações espúrias e a avaliação da multicolinearidade em modelos bayesianos.\n📖\n📚\n📽️\n\n\n\n\n\n9\n05/06\n2ª Avaliação\n🔹 Avaliar a compreensão sobre a formulação e o papel das hipóteses científicas em modelos probabilísticos.  🔹 Avaliar a capacidade de identificar e interpretar estruturas de dependência, como causalidade, correlações espúrias e multicolinearidade.\n\n\n\n\n📈\n\n\n\n10\n12/06\nEstruturas de dependência: dados aninhados\n🔹 Apresentar o conceito de unidade experimental e a importância da independência das observações.  🔹 Discutir delineamentos experimentais com dados aninhados.\n📖\n📚\n📽️\n📝\n\n\n\n\n11\n19/06\nEstruturas de dependência: dados estruturados no espaço\n🔹 Discutir como a dependência espacial influencia a análise e interpretação dos resultados.  🔹 Abordar o ajuste de modelos de regressão para dados com estrutura espacial.\n📖\n📚\n📽️\n\n\n\n\n\n\n26/06\nFERIADO – Corpus Christi\n☀️ 🏞️ 🧘\n\n\n\n\n\n\n\n\n12\n03/07\nEstruturas de dependência: dados estruturados no tempo\n🔹 Discutir estratégias para lidar com dependência temporal em dados.  🔹 Introduzir modelos de regressão voltados para séries temporais.\n📖\n📚\n📽️\n\n\n\n\n\n13\n10/07\nModelos binomiais\n🔹 Apresentar a formulação do modelo binomial e suas aplicações em dados de contagem e proporção.  🔹 Discutir a função de probabilidade, pressupostos e interpretação dos resultados.\n📖\n📚\n📽️\n📝\n\n\n\n\n14\n17/07\nModelo de Poisson\n🔹 Explorar o modelo de Poisson aplicado a dados de contagem.  🔹 Apresentar sua função de probabilidade, pressupostos e principais usos.\n📖\n\n📽️\n\n\n\n\n\n15\n24/07\nConclusão da Unidade Curricular.\n🔹 Revisar e integrar os principais conceitos abordados ao longo do curso.  🔹 Avaliar a evolução da aprendizagem e discutir possíveis aplicações e extensões dos métodos estudados.\n\n\n\n\n\n📑",
     "crumbs": [
       "Informações do curso",
       "Cronograma"
@@ -107,6 +107,72 @@
     "crumbs": [
       "Informações do curso",
       "Plano de ensino"
+    ]
+  },
+  {
+    "objectID": "listas_exercicios/instrucoes-listas.html",
+    "href": "listas_exercicios/instrucoes-listas.html",
+    "title": "Instruções para Utilizar o Google Colab",
+    "section": "",
+    "text": "Objetivo: iniciar a Lista de Exercícios 1",
+    "crumbs": [
+      "Listas de Exercícios",
+      "Instruções"
+    ]
+  },
+  {
+    "objectID": "listas_exercicios/instrucoes-listas.html#criar-uma-pasta-no-google-drive",
+    "href": "listas_exercicios/instrucoes-listas.html#criar-uma-pasta-no-google-drive",
+    "title": "Instruções para Utilizar o Google Colab",
+    "section": "1 Criar uma Pasta no Google Drive",
+    "text": "1 Criar uma Pasta no Google Drive\n\nAcesse o Google Drive e faça login com sua conta do Google.\n\nNo canto superior esquerdo, clique em + Novo &gt; Pasta.\n\nNomeie a pasta com o nome da Unidade Curricular.\n\nAbra a pasta que você acabou de criar para armazenar o notebook do Colab.",
+    "crumbs": [
+      "Listas de Exercícios",
+      "Instruções"
+    ]
+  },
+  {
+    "objectID": "listas_exercicios/instrucoes-listas.html#criar-um-notebook-no-google-colab",
+    "href": "listas_exercicios/instrucoes-listas.html#criar-um-notebook-no-google-colab",
+    "title": "Instruções para Utilizar o Google Colab",
+    "section": "2 Criar um Notebook no Google Colab",
+    "text": "2 Criar um Notebook no Google Colab\n\nDentro da pasta, clique em + Novo novamente.\n\nSelecione Mais &gt; Google Colaboratory (caso não apareça, vá em “Conectar mais aplicativos” e procure por Colaboratory).\n\nSerá aberto um notebook em branco em uma nova aba do navegador.\n\nClique no nome do notebook (geralmente Sem título.ipynb) e renomeie para “Lista 1.ipynb”.",
+    "crumbs": [
+      "Listas de Exercícios",
+      "Instruções"
+    ]
+  },
+  {
+    "objectID": "listas_exercicios/instrucoes-listas.html#estrutura-do-notebook",
+    "href": "listas_exercicios/instrucoes-listas.html#estrutura-do-notebook",
+    "title": "Instruções para Utilizar o Google Colab",
+    "section": "3 Estrutura do Notebook",
+    "text": "3 Estrutura do Notebook\n\nUm notebook pode conter:\n\nCélulas de texto (Markdown): utilizadas para inserir texto como descrições, anotações ou referências importantes.\n\nCélulas de código: onde você escreverá seu código em Python. Nestas células, comentários para explicar o que cada trecho faz devem ser precedidas por #.\n\nExemplo de organização:\n\nInicie com uma célula de texto contendo o título da atividade (ex. Lista 1), seu nome, turno e RA.\nCódigo: separe seu código em etapas e subetapas lógicas. Cada uma deve ser organizada como:\n\nUma célula de texto descrevendo o objetivo do código da estapa em questão.\n\nUma célula de código com a implementação em Python da etapa.\n\nRepeta esta sequência conforme necessário para cada nova etapa ou subetapa do seu exercício.",
+    "crumbs": [
+      "Listas de Exercícios",
+      "Instruções"
+    ]
+  },
+  {
+    "objectID": "listas_exercicios/instrucoes-listas.html#salvando-seu-trabalho",
+    "href": "listas_exercicios/instrucoes-listas.html#salvando-seu-trabalho",
+    "title": "Instruções para Utilizar o Google Colab",
+    "section": "4 Salvando seu Trabalho",
+    "text": "4 Salvando seu Trabalho\n\nO Colab salva automaticamente o notebook no Google Drive sempre que você faz alterações, mas caso queira salvar alterações imediatamente pode fazê-lo em Arquivo &gt; Salvar (Crtl + s).\n\nPara garantir uma cópia local ou backup, vá em Arquivo &gt; Fazer download &gt; Download .ipynb.\n\nVocê também pode exportar diretamente em Download .py, caso queira enviar um script puro para ser anexado ao Moodle ou em outro local.",
+    "crumbs": [
+      "Listas de Exercícios",
+      "Instruções"
+    ]
+  },
+  {
+    "objectID": "listas_exercicios/instrucoes-listas.html#fechamento-e-entrega",
+    "href": "listas_exercicios/instrucoes-listas.html#fechamento-e-entrega",
+    "title": "Instruções para Utilizar o Google Colab",
+    "section": "5 Fechamento e Entrega",
+    "text": "5 Fechamento e Entrega\n\nFinalizada a atividade, faça o download do seu arquivo .py ou .ipynb para arquivamento pessoal ou submissão ao Moodle.\n\nVerifique se o nome do notebook está correto (Lista 1) antes de enviar.\n\n\nBoa prática!",
+    "crumbs": [
+      "Listas de Exercícios",
+      "Instruções"
     ]
   }
 ]

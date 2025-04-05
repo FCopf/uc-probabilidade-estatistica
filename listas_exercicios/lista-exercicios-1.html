@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>lista-exercicios-4 – 5290 - PROBABILIDADE E ESTATÍSTICA</title>
+<title>Roteiro de Atividades em Python — Atualização Bayesiana – 5290 - PROBABILIDADE E ESTATÍSTICA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../listas_exercicios/instrucoes-listas.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,7 +71,8 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="5290 - PROBABILIDADE E ESTATÍSTICA">
+<meta property="og:title" content="Roteiro de Atividades em Python — Atualização Bayesiana – 5290 - PROBABILIDADE E ESTATÍSTICA">
+<meta property="og:description" content="Lista de Exercícios 1">
 <meta property="og:site_name" content="5290 - PROBABILIDADE E ESTATÍSTICA">
 </head>
 
@@ -83,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../listas_exercicios/instrucoes-listas.html">Listas de Exercícios</a></li><li class="breadcrumb-item"><a href="../listas_exercicios/lista-exercicios-1.html">Lista 1</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -159,24 +161,30 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../slides/Introdução_inferencia_modelagem_probabilistica.pdf" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Aula 1</span></a>
+ <span class="menu-text">Semana 1</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Práticas Lab. Info.</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar seção">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Listas de Exercícios</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../praticas_lab_informatica/Lista-Exercicios-1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lista de Exercícios 1</span></a>
+  <a href="../listas_exercicios/instrucoes-listas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instruções</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listas_exercicios/lista-exercicios-1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lista 1</span></a>
   </div>
 </li>
       </ul>
@@ -190,17 +198,101 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Nesta página</h2>
+   
+  <ul>
+  <li><a href="#instruções" id="toc-instruções" class="nav-link active" data-scroll-target="#instruções"><span class="header-section-number">1</span> Instruções</a></li>
+  <li><a href="#descrição-da-atividade" id="toc-descrição-da-atividade" class="nav-link" data-scroll-target="#descrição-da-atividade"><span class="header-section-number">2</span> Descrição da Atividade</a></li>
+  <li><a href="#etapas-do-processo" id="toc-etapas-do-processo" class="nav-link" data-scroll-target="#etapas-do-processo"><span class="header-section-number">3</span> Etapas do Processo</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../listas_exercicios/instrucoes-listas.html">Listas de Exercícios</a></li><li class="breadcrumb-item"><a href="../listas_exercicios/lista-exercicios-1.html">Lista 1</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Roteiro de Atividades em Python — Atualização Bayesiana</h1>
+<p class="subtitle lead">Lista de Exercícios 1</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<hr>
+<p><mark><strong>ENTREGA</strong>: <em>até 17/04/2025 às 23:59, via Moodle</em></mark></p>
+<hr>
+<section id="instruções" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="instruções"><span class="header-section-number">1</span> Instruções</h2>
+<ol type="1">
+<li><p>Antes de iniciar, leia atentamente a <strong>Leitura Obrigatória</strong> da Semana 1: <a href="https://fcopf.github.io/MEAD/conteudo/probabilidade_inferencia/intro-bayes.html" target="_blank"><em>“Introdução à Inferência Bayesiana”</em></a>.</p></li>
+<li><p>Ao concluir o exercício, teste seu código e faça o download do arquivo em formato <code>.py</code> (caso esteja usando Google Colab ou ferramenta similar). Em seguida, <strong>envie</strong> o arquivo <code>.py</code> para o Moodle antes da data de entrega.</p></li>
+<li><p>💡 <em>DICA IMPORTANTE:</em> comente cada etapa do seu código para que você ou outra pessoa possa entendê-lo futuramente.</p></li>
+</ol>
+<hr>
+</section>
+<section id="descrição-da-atividade" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="descrição-da-atividade"><span class="header-section-number">2</span> Descrição da Atividade</h2>
+<p>Nesta atividade, você deverá gerar um código em Python para representar virtualmente a seguinte situação: existe uma caixa com cinco bolas de gude, distribuídas entre as cores azul e preta (sendo possível que todas sejam pretas ou todas sejam azuis).</p>
+<p><strong>Objetivo</strong>: Descobrir quantas bolas pretas existem na caixa.</p>
+<p><strong>Metodologia</strong>:</p>
+<ul>
+<li>A estratégia consiste em amostrar <strong>uma bola por vez</strong>.</li>
+<li>Ao observar a bola retirada, devolvemos a mesma para a caixa, o que caracteriza uma <strong>amostragem com reposição</strong>.</li>
+<li>Inicialmente, não sabemos quantas bolas pretas estão presentes e só podemos inferir isso após observar as amostras sucessivas.</li>
+</ul>
+<p><strong>Resultados Esperados</strong>:</p>
+<ol type="1">
+<li>Compreender como utilizar um ambiente de programação para simular virtualmente as condições de um experimento aleatório.</li>
+<li>Entender a natureza das respostas obtidas e como avaliar seus resultados para garantir uma conclusão adequada.</li>
+<li>Reconhecer a simulação computacional como uma forma de antecipar condições e pressupostos usados na construção de experimentos e modelos estatísticos.</li>
+</ol>
+<hr>
+</section>
+<section id="etapas-do-processo" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="etapas-do-processo"><span class="header-section-number">3</span> Etapas do Processo</h2>
+<p>A seguir, são sugeridas etapas para ajudá-lo(a) a cumprir os objetivos propostos:</p>
+<ol type="1">
+<li><p><strong>Representação da caixa</strong><br>
+Crie um objeto em Python que represente a caixa contendo as 5 bolas de gude. Defina quantas bolas de cada cor (preta e azul) estarão presentes.</p></li>
+<li><p><strong>Distribuição <em>a priori</em></strong><br>
+Defina os resultados possíveis (quantidade de bolas pretas) e atribua uma distribuição <em>a priori</em> a cada resultado.</p></li>
+<li><p><strong>Primeira observação</strong><br>
+Extraia aleatoriamente uma bola da caixa e observe sua cor.</p></li>
+<li><p><strong>Atualização <em>a posteriori</em></strong><br>
+Com base na cor observada, atualize a distribuição de probabilidade — ou seja, calcule a nova distribuição <em>a posteriori</em> para cada valor possível de bolas pretas na caixa.</p></li>
+<li><p><strong>Visualização e decisão</strong><br>
+Plote um gráfico comparando a distribuição <em>a priori</em> com a distribuição <em>a posteriori</em>. Use esse gráfico para embasar sua decisão sobre quantas bolas pretas a caixa contém.</p></li>
+<li><p><strong>Amostragem sequencial</strong><br>
+Repita os passos 3 a 5 por <em>n</em> vezes. A cada nova extração, utilize a última distribuição <em>a posteriori</em> obtida como a nova distribuição <em>a priori</em>, de modo que seu conhecimento sobre a composição da caixa seja constantemente atualizado.</p></li>
+<li><p><strong>Critério de parada</strong><br>
+Interrompa as repetições quando julgar que o número de observações é suficiente para tomar uma decisão confiável. Pense em qual seria o número mínimo de extrações para alcançar essa confiança.</p></li>
+<li><p><strong>Ampliação do problema</strong></p>
+<ul>
+<li>Aumente o total de bolas na caixa para 50. Varie o número de bolas pretas em três cenários: i) relativamente poucas bolas pretas, ii) quantidades iguais de bolas pretas e azuis, iii) maioria de bolas pretas.<br>
+</li>
+<li>Responda: Qual o efeito de aumentar a quantidade total de bolas sobre o número de repetições (<em>n</em>) necessário para tomar uma decisão confiável?<br>
+</li>
+<li>Diante desse aumento, como a variação na proporção de bolas pretas influencia a quantidade de repetições necessárias para uma decisão acertada?</li>
+</ul></li>
+</ol>
+<hr>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -764,6 +856,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../listas_exercicios/instrucoes-listas.html" class="pagination-link" aria-label="Instruções">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Instruções</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
