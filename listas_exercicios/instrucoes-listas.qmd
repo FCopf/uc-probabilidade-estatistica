@@ -1,0 +1,60 @@
+---
+title: "Instruções para Utilizar o Google Colab"
+subtutle: "Atividades da Semana 2"
+---
+
+---
+
+**Objetivo:** iniciar a [Lista de Exercícios 1](/listas_exercicios/lista-exercicios-1.html){target="_blank"}
+
+---
+
+## Criar uma Pasta no Google Drive
+
+1. Acesse o [Google Drive](https://drive.google.com){target="_blank"} e faça login com sua conta do Google.  
+2. No canto superior esquerdo, clique em **+ Novo** > **Pasta**.  
+3. **Nomeie** a pasta com o nome da Unidade Curricular.  
+4. Abra a pasta que você acabou de criar para armazenar o notebook do Colab.
+
+---
+
+## Criar um Notebook no Google Colab
+
+1. Dentro da pasta, clique em **+ Novo** novamente.  
+2. Selecione **Mais** > **Google Colaboratory** (caso não apareça, vá em “Conectar mais aplicativos” e procure por *Colaboratory*).  
+3. Será aberto um notebook em branco em uma nova aba do navegador.  
+4. Clique no nome do notebook (geralmente `Sem título.ipynb`) e renomeie para **“Lista 1.ipynb”**.
+
+---
+
+## Estrutura do Notebook
+
+- Um notebook pode conter:
+    - **Células de texto (Markdown)**: utilizadas para inserir texto como descrições, anotações ou referências importantes.  
+    - **Células de código**: onde você escreverá seu código em Python. Nestas células, comentários para explicar o que cada trecho faz devem ser precedidas por `#`.
+
+- **Exemplo de organização**:
+    1. Inicie com uma célula de texto contendo o título da atividade (ex. `Lista 1`), seu nome, turno e RA.
+    2. Código: separe seu código em etapas e subetapas lógicas. Cada uma deve ser organizada como:
+        - Uma célula de texto descrevendo o objetivo do código da estapa em questão.  
+        - Uma célula de código com a implementação em Python da etapa.  
+        - Repeta esta sequência conforme necessário para cada nova etapa ou subetapa do seu exercício.
+
+---
+
+## Salvando seu Trabalho
+
+- O Colab salva automaticamente o notebook no Google Drive sempre que você faz alterações, mas caso queira salvar alterações imediatamente pode fazê-lo em  **Arquivo** > **Salvar** (`Crtl + s`).  
+- Para garantir uma cópia local ou backup, vá em **Arquivo** > **Fazer download** > **Download .ipynb**.  
+- Você também pode exportar diretamente em **Download .py**, caso queira enviar um script puro para ser anexado ao Moodle ou em outro local.
+
+---
+
+## Fechamento e Entrega
+
+- Finalizada a atividade, faça o download do seu arquivo `.py` ou `.ipynb` para arquivamento pessoal ou submissão ao Moodle.  
+- Verifique se o nome do notebook está correto (**Lista 1**) antes de enviar.  
+
+---
+
+Boa prática!

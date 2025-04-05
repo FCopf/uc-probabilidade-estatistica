@@ -56,19 +56,21 @@ website:
       - section: Slides
         contents: 
           - href: /slides/Introdução_inferencia_modelagem_probabilistica.pdf
-            text: Aula 1
-      - section: "Práticas Lab. Info."
+            text: Semana 1
+      - section: "Listas de Exercícios"
         contents:
-          - href: praticas_lab_informatica/Lista-Exercicios-1.qmd
-            text: "Lista de Exercícios 1"
-          # - href: praticas_lab_informatica/Lista-Exercicios-2.qmd
-          #   text: "Lista de Exercícios 2"
-          # - href: praticas_lab_informatica/Lista-Exercicios-3.qmd
-          #   text: "Lista de Exercícios 3"
-          # - href: praticas_lab_informatica/Lista-Exercicios-4.qmd
-          #   text: "Lista de Exercícios 4"
-          # - href: praticas_lab_informatica/Lista-Exercicios-5.qmd
-          #   text: "Lista de Exercícios 5"
+          - href: listas_exercicios/instrucoes-listas.qmd
+            text: "Instruções"
+          - href: listas_exercicios/lista-exercicios-1.qmd
+            text: "Lista 1"
+          # - href: listas_exercicios/lista-exercicios-2.qmd
+          #   text: "Lista 2"
+          # - href: listas_exercicios/lista-exercicios-3.qmd
+          #   text: "Lista 3"
+          # - href: listas_exercicios/lista-exercicios-4.qmd
+          #   text: "Lista 4"
+          # - href: listas_exercicios/lista-exercicios-5.qmd
+          #   text: "Lista 5"
           
       - section: "Avaliações"
         contents:

@@ -3,6 +3,12 @@ title: "Roteiro de Atividades em Python — Atualização Bayesiana"
 subtitle: "Lista de Exercícios 1"
 ---
 
+---
+
+<mark>**ENTREGA**: *até 17/04/2025 às 23:59, via Moodle*</mark>
+
+---
+
 ## Instruções
 
 1. Antes de iniciar, leia atentamente a **Leitura Obrigatória** da Semana 1: [*"Introdução à Inferência Bayesiana"*](https://fcopf.github.io/MEAD/conteudo/probabilidade_inferencia/intro-bayes.html){target="_blank"}.
@@ -10,8 +16,6 @@ subtitle: "Lista de Exercícios 1"
 2. Ao concluir o exercício, teste seu código e faça o download do arquivo em formato `.py` (caso esteja usando Google Colab ou ferramenta similar). Em seguida, **envie** o arquivo `.py` para o Moodle antes da data de entrega.
 
 3. 💡 *DICA IMPORTANTE:* comente cada etapa do seu código para que você ou outra pessoa possa entendê-lo futuramente.
-
-**ENTREGA**: *10/04/2025, 23:59, via Moodle*
 
 ---
 
