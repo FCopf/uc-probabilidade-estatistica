@@ -1,0 +1,96 @@
+---
+title: "Introdução à Inferência Bayesiana"
+subtitle: "Implementação em Python"
+description: Contando possibilidades
+format: html
+---
+
+```{python}
+import random
+import matplotlib.pyplot as plt
+```
+
+## Definição da Caixa
+
+Definição da composição da caixa de bolinhas: suponha que a caixa contém 3 bolinhas pretas e 2 bolinhas azuis.
+
+```{python}
+caixa = ['preta', 'preta', 'preta', 'azul', 'azul']
+```
+
+## Hipóteses Possíveis
+
+Definição das hipóteses sobre o número de bolinhas pretas na caixa. As hipóteses variam de 0 a 5 bolinhas pretas.
+
+```{python}
+hipoteses = [0, 1, 2, 3, 4, 5]
+```
+
+## Primeira Observação
+
+Realiza uma observação aleatória (com reposição).
+
+```{python}
+observacao = random.choice(caixa)
+print(observacao)
+```
+
+Atualiza a plausibilidade das hipóteses com base na cor observada.
+
+```{python}
+contagem_posterior = []
+for h in hipoteses:
+    if observacao == 'preta':
+        ni = h
+    else:
+        ni = (5 - h)
+    contagem_posterior.append(ni)
+```
+
+### Gráfico - Posterior Após a Primeira Observação
+
+```{python}
+plt.bar(x=hipoteses, height=contagem_posterior)
+plt.xlabel('Número de bolinhas pretas (hipóteses)')
+plt.ylabel('Plausibilidade')
+plt.title('Plausibilidade das hipóteses após a primeira observação')
+plt.grid(axis='y', linestyle='--', alpha=0.5)
+plt.show()
+plt.close()
+```
+
+## Segunda Observação
+
+Realiza uma nova observação.
+
+```{python}
+observacao = random.choice(caixa)
+print(observacao)
+```
+
+Atualiza a posterior com base na observação anterior.
+
+```{python}
+contagem_anterior = contagem_posterior.copy()
+contagem_posterior = []
+
+for h in hipoteses:
+    if observacao == 'preta':
+        ni = h * contagem_anterior[h]
+    else:
+        ni = (5 - h) * contagem_anterior[h]
+    contagem_posterior.append(ni)
+```
+
+### Gráfico - Posterior Após a Segunda Observação
+
+```{python}
+plt.bar(x=hipoteses, height=contagem_posterior)
+plt.xlabel('Número de bolinhas pretas (hipóteses)')
+plt.ylabel('Plausibilidade')
+plt.title('Plausibilidade das hipóteses após a segunda observação')
+plt.grid(axis='y', linestyle='--', alpha=0.5)
+plt.show()
+plt.close()
+```
+

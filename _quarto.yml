@@ -53,6 +53,18 @@ website:
         contents: 
           # - href: material_apoio/ideias_projeto.qmd
           #   text: "Ideias para o projeto final"
+      - section: Leitura Obrigatória
+        contents: 
+          - href: https://fcopf.github.io/MEAD/conteudo/probabilidade_inferencia/intro-bayes.html
+            text: Semana 1
+      - section: Leitura Complementar
+        contents: 
+          - href: https://fcopf.github.io/MEAD/fundamentos_probabilidade.html
+            text: Semana 1
+      - section: Lab. Informática
+        contents: 
+          - href: lab-info/implementacao-aula-2.qmd
+            text: Semana 2
       - section: Slides
         contents: 
           - href: /slides/Introdução_inferencia_modelagem_probabilistica.pdf
