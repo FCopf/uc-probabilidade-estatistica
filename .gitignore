@@ -69,3 +69,8 @@ venv/
 
 
 /.quarto/
+
+# =========================================
+# Resolução Listas de Exercícios
+# =========================================
+resolucao_listas/
