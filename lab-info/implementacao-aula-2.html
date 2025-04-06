@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Contando possibilidades">
 
-<title>avaliacao-1 – 5290 - PROBABILIDADE E ESTATÍSTICA</title>
+<title>Introdução à Inferência Bayesiana – 5290 - PROBABILIDADE E ESTATÍSTICA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,6 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../slides/Introdução_inferencia_modelagem_probabilistica.pdf" rel="next">
+<link href="../informacoes_curso/links_uteis.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,8 +107,12 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="5290 - PROBABILIDADE E ESTATÍSTICA">
+<meta property="og:title" content="Introdução à Inferência Bayesiana – 5290 - PROBABILIDADE E ESTATÍSTICA">
+<meta property="og:description" content="Contando possibilidades">
+<meta property="og:image" content="https://fcopf.github.io/uc-probabilidade-estatistica/lab-info/implementacao-aula-2_files/figure-html/cell-7-output-1.png">
 <meta property="og:site_name" content="5290 - PROBABILIDADE E ESTATÍSTICA">
+<meta property="og:image:height" content="902">
+<meta property="og:image:width" content="1152">
 </head>
 
 <body class="nav-sidebar docked">
@@ -83,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab-info/implementacao-aula-2.html">Lab. Informática</a></li><li class="breadcrumb-item"><a href="../lab-info/implementacao-aula-2.html">Semana 2</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -183,16 +224,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Lab. Informática</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar seção">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab-info/implementacao-aula-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../lab-info/implementacao-aula-2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Semana 2</span></a>
   </div>
 </li>
@@ -247,17 +288,154 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Nesta página</h2>
+   
+  <ul>
+  <li><a href="#definição-da-caixa" id="toc-definição-da-caixa" class="nav-link active" data-scroll-target="#definição-da-caixa"><span class="header-section-number">1</span> Definição da Caixa</a></li>
+  <li><a href="#hipóteses-possíveis" id="toc-hipóteses-possíveis" class="nav-link" data-scroll-target="#hipóteses-possíveis"><span class="header-section-number">2</span> Hipóteses Possíveis</a></li>
+  <li><a href="#primeira-observação" id="toc-primeira-observação" class="nav-link" data-scroll-target="#primeira-observação"><span class="header-section-number">3</span> Primeira Observação</a>
+  <ul class="collapse">
+  <li><a href="#gráfico---posterior-após-a-primeira-observação" id="toc-gráfico---posterior-após-a-primeira-observação" class="nav-link" data-scroll-target="#gráfico---posterior-após-a-primeira-observação"><span class="header-section-number">3.1</span> Gráfico - Posterior Após a Primeira Observação</a></li>
+  </ul></li>
+  <li><a href="#segunda-observação" id="toc-segunda-observação" class="nav-link" data-scroll-target="#segunda-observação"><span class="header-section-number">4</span> Segunda Observação</a>
+  <ul class="collapse">
+  <li><a href="#gráfico---posterior-após-a-segunda-observação" id="toc-gráfico---posterior-após-a-segunda-observação" class="nav-link" data-scroll-target="#gráfico---posterior-após-a-segunda-observação"><span class="header-section-number">4.1</span> Gráfico - Posterior Após a Segunda Observação</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab-info/implementacao-aula-2.html">Lab. Informática</a></li><li class="breadcrumb-item"><a href="../lab-info/implementacao-aula-2.html">Semana 2</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Introdução à Inferência Bayesiana</h1>
+<p class="subtitle lead">Implementação em Python</p>
+</div>
+
+<div>
+  <div class="description">
+    Contando possibilidades
+  </div>
+</div>
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
 
+<div id="de774f7b" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="definição-da-caixa" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="definição-da-caixa"><span class="header-section-number">1</span> Definição da Caixa</h2>
+<p>Definição da composição da caixa de bolinhas: suponha que a caixa contém 3 bolinhas pretas e 2 bolinhas azuis.</p>
+<div id="1ed260c1" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>caixa <span class="op">=</span> [<span class="st">'preta'</span>, <span class="st">'preta'</span>, <span class="st">'preta'</span>, <span class="st">'azul'</span>, <span class="st">'azul'</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="hipóteses-possíveis" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="hipóteses-possíveis"><span class="header-section-number">2</span> Hipóteses Possíveis</h2>
+<p>Definição das hipóteses sobre o número de bolinhas pretas na caixa. As hipóteses variam de 0 a 5 bolinhas pretas.</p>
+<div id="6ee7cc55" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>hipoteses <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="primeira-observação" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="primeira-observação"><span class="header-section-number">3</span> Primeira Observação</h2>
+<p>Realiza uma observação aleatória (com reposição).</p>
+<div id="83c92646" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>observacao <span class="op">=</span> random.choice(caixa)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(observacao)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>azul</code></pre>
+</div>
+</div>
+<p>Atualiza a plausibilidade das hipóteses com base na cor observada.</p>
+<div id="e53fb9de" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>contagem_posterior <span class="op">=</span> []</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> h <span class="kw">in</span> hipoteses:</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> observacao <span class="op">==</span> <span class="st">'preta'</span>:</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        ni <span class="op">=</span> h</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        ni <span class="op">=</span> (<span class="dv">5</span> <span class="op">-</span> h)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    contagem_posterior.append(ni)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="gráfico---posterior-após-a-primeira-observação" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="gráfico---posterior-após-a-primeira-observação"><span class="header-section-number">3.1</span> Gráfico - Posterior Após a Primeira Observação</h3>
+<div id="76e9e6f1" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.bar(x<span class="op">=</span>hipoteses, height<span class="op">=</span>contagem_posterior)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Número de bolinhas pretas (hipóteses)'</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Plausibilidade'</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Plausibilidade das hipóteses após a primeira observação'</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.grid(axis<span class="op">=</span><span class="st">'y'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="implementacao-aula-2_files/figure-html/cell-7-output-1.png" width="576" height="451" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="segunda-observação" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="segunda-observação"><span class="header-section-number">4</span> Segunda Observação</h2>
+<p>Realiza uma nova observação.</p>
+<div id="a73ba0da" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>observacao <span class="op">=</span> random.choice(caixa)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(observacao)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>azul</code></pre>
+</div>
+</div>
+<p>Atualiza a posterior com base na observação anterior.</p>
+<div id="0722d813" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>contagem_anterior <span class="op">=</span> contagem_posterior.copy()</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>contagem_posterior <span class="op">=</span> []</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> h <span class="kw">in</span> hipoteses:</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> observacao <span class="op">==</span> <span class="st">'preta'</span>:</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        ni <span class="op">=</span> h <span class="op">*</span> contagem_anterior[h]</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        ni <span class="op">=</span> (<span class="dv">5</span> <span class="op">-</span> h) <span class="op">*</span> contagem_anterior[h]</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    contagem_posterior.append(ni)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="gráfico---posterior-após-a-segunda-observação" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="gráfico---posterior-após-a-segunda-observação"><span class="header-section-number">4.1</span> Gráfico - Posterior Após a Segunda Observação</h3>
+<div id="58d5d76d" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plt.bar(x<span class="op">=</span>hipoteses, height<span class="op">=</span>contagem_posterior)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Número de bolinhas pretas (hipóteses)'</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Plausibilidade'</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Plausibilidade das hipóteses após a segunda observação'</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.grid(axis<span class="op">=</span><span class="st">'y'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="implementacao-aula-2_files/figure-html/cell-10-output-1.png" width="585" height="451" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -821,6 +999,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../informacoes_curso/links_uteis.html" class="pagination-link" aria-label="Links úteis e Bibliografia">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Links úteis e Bibliografia</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../slides/Introdução_inferencia_modelagem_probabilistica.pdf" class="pagination-link" aria-label="Semana 1">
+        <span class="nav-page-text">Semana 1</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
