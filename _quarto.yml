@@ -55,12 +55,16 @@ website:
           #   text: "Ideias para o projeto final"
       - section: Leitura Obrigatória
         contents: 
-          - href: https://fcopf.github.io/MEAD/conteudo/probabilidade_inferencia/intro-bayes.html
+          - href: https://fcopf.github.io/MEAD/conteudo/probabilidade_inferencia/intro-bayes-counting.html
             text: Semana 1
+          - href: https://fcopf.github.io/MEAD/conteudo/probabilidade_inferencia/intro-bayes-distr-prob.html
+            text: Semana 2  
       - section: Leitura Complementar
         contents: 
           - href: https://fcopf.github.io/MEAD/fundamentos_probabilidade.html
             text: Semana 1
+          - href: https://fcopf.github.io/MEAD/conteudo/fundamentos_probabilidade/teorema_bayes.html
+            text: Semana 2
       - section: Lab. Informática
         contents: 
           - href: lab-info/implementacao-aula-2.qmd
