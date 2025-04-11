@@ -15,7 +15,7 @@
     "href": "listas_exercicios/lista-exercicios-1.html#instruções",
     "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
     "section": "1 Instruções",
-    "text": "1 Instruções\n\nAntes de iniciar, leia atentamente a Leitura Obrigatória da Semana 1: “Introdução à Inferência Bayesiana”.\nAo concluir o exercício, teste seu código e faça o download do arquivo em formato .py (caso esteja usando Google Colab ou ferramenta similar). Em seguida, envie o arquivo .py para o Moodle antes da data de entrega.\n💡 DICA IMPORTANTE: comente cada etapa do seu código para que você ou outra pessoa possa entendê-lo futuramente.",
+    "text": "1 Instruções\n\nAntes de iniciar, leia atentamente a Leitura Obrigatória da Semana 1 (“Contando possibilidades: evidências sobre uma hipótese”) e Semana 2 (“De contagens a probabilidades: a distribuição a posteriori”).\nAo concluir o exercício, teste seu código e faça o download do arquivo em formato .py (caso esteja usando Google Colab ou ferramenta similar). Em seguida, envie o arquivo .py para o Moodle antes da data de entrega.\n💡 DICA IMPORTANTE: comente cada etapa do seu código para que você ou outra pessoa possa entendê-lo futuramente.",
     "crumbs": [
       "Listas de Exercícios",
       "Lista 1"
