@@ -11,7 +11,7 @@ subtitle: "Lista de Exercícios 1"
 
 ## Instruções
 
-1. Antes de iniciar, leia atentamente a **Leitura Obrigatória** da Semana 1: [*"Introdução à Inferência Bayesiana"*](https://fcopf.github.io/MEAD/conteudo/probabilidade_inferencia/intro-bayes.html){target="_blank"}.
+1. Antes de iniciar, leia atentamente a **Leitura Obrigatória** da Semana 1 ([*"Contando possibilidades: evidências sobre uma hipótese"*](https://fcopf.github.io/MEAD/conteudo/probabilidade_inferencia/intro-bayes-counting.html){target="_blank"}) e Semana 2 ([*"De contagens a probabilidades: a distribuição a posteriori"*](https://fcopf.github.io/MEAD/conteudo/probabilidade_inferencia/intro-bayes-distr-prob.html){target="_blank"}).
 
 2. Ao concluir o exercício, teste seu código e faça o download do arquivo em formato `.py` (caso esteja usando Google Colab ou ferramenta similar). Em seguida, **envie** o arquivo `.py` para o Moodle antes da data de entrega.
 
