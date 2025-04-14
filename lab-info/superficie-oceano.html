@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>links_uteis – 5290 - PROBABILIDADE E ESTATÍSTICA</title>
+<title>Estimando a Proporção da Superfície Oceânica – 5290 - PROBABILIDADE E ESTATÍSTICA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../lab-info/implementacao-aula-2.html" rel="next">
-<link href="../index.html" rel="prev">
+<link href="../slides/Introdução_inferencia_modelagem_probabilistica.pdf" rel="next">
+<link href="../lab-info/implementacao-aula-2.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -71,8 +71,38 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="5290 - PROBABILIDADE E ESTATÍSTICA">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Estimando a Proporção da Superfície Oceânica – 5290 - PROBABILIDADE E ESTATÍSTICA">
+<meta property="og:description" content="Introdução à inferência bayesiana">
 <meta property="og:site_name" content="5290 - PROBABILIDADE E ESTATÍSTICA">
 </head>
 
@@ -85,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../informacoes_curso/plano_ensino.html">Informações do curso</a></li><li class="breadcrumb-item"><a href="../informacoes_curso/links_uteis.html">Links úteis e Bibliografia</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab-info/implementacao-aula-2.html">Lab. Informática</a></li><li class="breadcrumb-item"><a href="../lab-info/superficie-oceano.html">Semana 3a</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -118,13 +148,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Informações do curso</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../informacoes_curso/plano_ensino.html" class="sidebar-item-text sidebar-link">
@@ -139,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../informacoes_curso/links_uteis.html" class="sidebar-item-text sidebar-link active">
+  <a href="../informacoes_curso/links_uteis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Links úteis e Bibliografia</span></a>
   </div>
 </li>
@@ -197,13 +227,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Lab. Informática</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Alternar seção">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab-info/implementacao-aula-2.html" class="sidebar-item-text sidebar-link">
@@ -212,7 +242,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab-info/superficie-oceano.html" class="sidebar-item-text sidebar-link">
+  <a href="../lab-info/superficie-oceano.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Semana 3a</span></a>
   </div>
 </li>
@@ -291,17 +321,120 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Nesta página</h2>
+   
+  <ul>
+  <li><a href="#instruções" id="toc-instruções" class="nav-link active" data-scroll-target="#instruções"><span class="header-section-number">1</span> Instruções</a></li>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos"><span class="header-section-number">2</span> Objetivos</a></li>
+  <li><a href="#roteiro-de-atividades" id="toc-roteiro-de-atividades" class="nav-link" data-scroll-target="#roteiro-de-atividades"><span class="header-section-number">3</span> Roteiro de atividades</a></li>
+  <li><a href="#exercícios-para-consolidar" id="toc-exercícios-para-consolidar" class="nav-link" data-scroll-target="#exercícios-para-consolidar"><span class="header-section-number">4</span> Exercícios para Consolidar</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../informacoes_curso/plano_ensino.html">Informações do curso</a></li><li class="breadcrumb-item"><a href="../informacoes_curso/links_uteis.html">Links úteis e Bibliografia</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab-info/implementacao-aula-2.html">Lab. Informática</a></li><li class="breadcrumb-item"><a href="../lab-info/superficie-oceano.html">Semana 3a</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Estimando a Proporção da Superfície Oceânica</h1>
+<p class="subtitle lead">Introdução à inferência bayesiana</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<section id="instruções" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Instruções</h1>
+<p>Antes de iniciar, leia atentamente a <strong>Leitura Obrigatória</strong> da Semana 3 (<a href="https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-modelo-bayesiano.html">Construindo um modelo bayesiano</a>). Se tiver dúvidas, relembre os conteúdos da <a href="https://fcopf.github.io/MEAD/conteudo/probabilidade_inferencia/intro-bayes-counting.html" target="_blank"><em>Semana 1</em></a> e <a href="https://fcopf.github.io/MEAD/conteudo/probabilidade_inferencia/intro-bayes-distr-prob.html" target="_blank"><em>Semana 2</em></a>.</p>
+</section>
+<section id="objetivos" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Objetivos</h1>
+<ul>
+<li><strong>Gerar</strong> observações (terra ou água) ao “lançar” um globo virtual.<br>
+</li>
+<li><strong>Combinar</strong> essas observações com uma crença <em>a priori</em> e <strong>aplicar</strong> os dados para atualizar a distribuição a posteriori de <span class="math inline">\(p\)</span>.<br>
+</li>
+<li><strong>Comparar</strong> estimativas via <strong>máxima verossimilhança</strong> (MLE) e via <strong>Bayes</strong> (posteriori).</li>
+</ul>
+<hr>
+</section>
+<section id="roteiro-de-atividades" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Roteiro de atividades</h1>
+<ol type="1">
+<li><strong>Procedimento de Amostragem</strong>
+<ol type="1">
+<li>Acesse o app <a href="https://fcopf-dash-ocean-surface.share.connect.posit.cloud/" target="_blank">Estimando a Proporção da Superfície Oceânica</a> e gere <span class="math inline">\(N\)</span> pontos aleatórios, que representam seus “lançamentos” do globo.<br>
+</li>
+<li>Discuta em grupo: que pressupostos estamos assumindo ao usar essa ferramenta? Será que ela é útil para gerar estimativas confiáveis de <span class="math inline">\(p\)</span>?</li>
+</ol></li>
+<li><strong>Coleta de Dados</strong>
+<ol type="1">
+<li>Observe no app quantos pontos ficaram em água (<span class="math inline">\(k\)</span>) e quantos ficaram em terra (<span class="math inline">\(N - k\)</span>).<br>
+</li>
+<li>Calcule a estimativa pontual de <span class="math inline">\(\hat{p} = \frac{k}{N}\)</span>.<br>
+</li>
+<li>Troque informações com seus colegas e verifique se, ao gerar mais pontos, o valor de <span class="math inline">\(\hat{p}\)</span> tende a se aproximar de um valor “esperado”. Por quê?</li>
+</ol></li>
+<li><strong>Inferência Bayesiana</strong>
+<ol type="1">
+<li>Abra o app <a href="https://fcopf-binomial-bayesiana.share.connect.posit.cloud/" target="_blank">Inferência Bayesiana Binomial</a> e, no painel lateral, <strong>insira</strong> o mesmo valor de <span class="math inline">\(N\)</span> (observações) e <span class="math inline">\(k\)</span> (sucessos) obtidos no passo anterior.<br>
+</li>
+<li><strong>Ajuste</strong> os parâmetros da distribuição <em>a priori</em> (<span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>) para representar diferentes visões iniciais sobre <span class="math inline">\(p\)</span>.<br>
+</li>
+<li><strong>Observe</strong> como a distribuição <em>a posteriori</em> (curva azul) se desloca ou se concentra de acordo com suas escolhas de <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span> e com os dados (<span class="math inline">\(N, k\)</span>).<br>
+</li>
+<li>Compare a <strong>curva de verossimilhança</strong> (verde) e a distribuição <em>a posteriori</em> para <strong>discutir</strong> o quanto a priori e as evidências observadas influenciam a estimativa final de <span class="math inline">\(p\)</span>.</li>
+</ol></li>
+<li><strong>Atividade Prática</strong>
+<ol type="1">
+<li><strong>Variem o tamanho da amostra</strong>: escolham valores diferentes de <span class="math inline">\(N\)</span> (um pequeno e outro grande) e anotem <span class="math inline">\(\hat{p}\)</span> e o MDP (moda da distribuição posterior).<br>
+</li>
+<li>Discutam se essas estimativas se tornam mais próximas conforme <span class="math inline">\(N\)</span> aumenta.<br>
+</li>
+<li><strong>Ajustem <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span></strong>: como uma opinião prévia sobre <span class="math inline">\(p\)</span> (por exemplo, achar que o planeta é 70% água) afetaria a <em>a posteriori</em> se vocês coletarem poucos dados ou se coletarem muitos dados?</li>
+</ol></li>
+</ol>
+<hr>
+</section>
+<section id="exercícios-para-consolidar" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Exercícios para Consolidar</h1>
+<ol type="1">
+<li><strong>Comparação Gráfica</strong>
+<ul>
+<li><strong>Tarefa</strong>: Plote a densidade <em>a posteriori</em> Beta para, pelo menos, 3 valores diferentes de <span class="math inline">\(\alpha, \beta\)</span>.<br>
+</li>
+<li><strong>Pergunta de Discussão</strong>: Em cada caso, qual o intervalo de credibilidade de 95%? Como ele se compara com a estimativa frequentista <span class="math inline">\(\hat{p}\)</span>?</li>
+</ul></li>
+<li><strong>Reflexão</strong>
+<ul>
+<li><strong>Tarefa</strong>: Formem grupos e gerem amostras pequenas (<span class="math inline">\(N\)</span> pequeno) e grandes (<span class="math inline">\(N\)</span> grande).<br>
+</li>
+<li><strong>Pergunta de Discussão</strong>: Por que, com poucos dados, a distribuição <em>a priori</em> influencia mais o resultado? Como o aumento de <span class="math inline">\(N\)</span> faz a verossimilhança prevalecer?</li>
+</ul></li>
+<li><strong>Desafio</strong>
+<ul>
+<li><strong>Tarefa</strong>: Investiguem quantos pontos seriam necessários para que o <strong>intervalo de credibilidade</strong> a 90% para <span class="math inline">\(p\)</span>, centrado no MDP, tenha largura de <span class="math inline">\(\pm 0.02\)</span>.<br>
+</li>
+<li><strong>Pergunta de Discussão</strong>: O que esse tamanho amostral significa em termos práticos? Se fossem realmente “lançar o globo”, quantas vezes precisariam repetir o processo?</li>
+</ul></li>
+</ol>
+<hr>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -867,13 +1000,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="Cronograma">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Cronograma</span>
+      <a href="../lab-info/implementacao-aula-2.html" class="pagination-link" aria-label="Semana 2">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Semana 2</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../lab-info/implementacao-aula-2.html" class="pagination-link" aria-label="Semana 2">
-        <span class="nav-page-text">Semana 2</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../slides/Introdução_inferencia_modelagem_probabilistica.pdf" class="pagination-link" aria-label="Semana 1">
+        <span class="nav-page-text">Semana 1</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

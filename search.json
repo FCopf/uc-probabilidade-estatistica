@@ -44,6 +44,72 @@
     ]
   },
   {
+    "objectID": "lab-info/implementacao-aula-2.html",
+    "href": "lab-info/implementacao-aula-2.html",
+    "title": "Introdução à Inferência Bayesiana",
+    "section": "",
+    "text": "import random\nimport matplotlib.pyplot as plt",
+    "crumbs": [
+      "Lab. Informática",
+      "Semana 2"
+    ]
+  },
+  {
+    "objectID": "lab-info/implementacao-aula-2.html#definição-da-caixa",
+    "href": "lab-info/implementacao-aula-2.html#definição-da-caixa",
+    "title": "Introdução à Inferência Bayesiana",
+    "section": "1 Definição da Caixa",
+    "text": "1 Definição da Caixa\nDefinição da composição da caixa de bolinhas: suponha que a caixa contém 3 bolinhas pretas e 2 bolinhas azuis.\n\ncaixa = ['preta', 'preta', 'preta', 'azul', 'azul']",
+    "crumbs": [
+      "Lab. Informática",
+      "Semana 2"
+    ]
+  },
+  {
+    "objectID": "lab-info/implementacao-aula-2.html#hipóteses-possíveis",
+    "href": "lab-info/implementacao-aula-2.html#hipóteses-possíveis",
+    "title": "Introdução à Inferência Bayesiana",
+    "section": "2 Hipóteses Possíveis",
+    "text": "2 Hipóteses Possíveis\nDefinição das hipóteses sobre o número de bolinhas pretas na caixa. As hipóteses variam de 0 a 5 bolinhas pretas.\n\nhipoteses = [0, 1, 2, 3, 4, 5]",
+    "crumbs": [
+      "Lab. Informática",
+      "Semana 2"
+    ]
+  },
+  {
+    "objectID": "lab-info/implementacao-aula-2.html#primeira-observação",
+    "href": "lab-info/implementacao-aula-2.html#primeira-observação",
+    "title": "Introdução à Inferência Bayesiana",
+    "section": "3 Primeira Observação",
+    "text": "3 Primeira Observação\nRealiza uma observação aleatória (com reposição).\n\nobservacao = random.choice(caixa)\nprint(observacao)\n\nazul\n\n\nAtualiza a plausibilidade das hipóteses com base na cor observada.\n\ncontagem_posterior = []\nfor h in hipoteses:\n    if observacao == 'preta':\n        ni = h\n    else:\n        ni = (5 - h)\n    contagem_posterior.append(ni)\n\n\n3.1 Gráfico - Posterior Após a Primeira Observação\n\nplt.bar(x=hipoteses, height=contagem_posterior)\nplt.xlabel('Número de bolinhas pretas (hipóteses)')\nplt.ylabel('Plausibilidade')\nplt.title('Plausibilidade das hipóteses após a primeira observação')\nplt.grid(axis='y', linestyle='--', alpha=0.5)\nplt.show()\nplt.close()",
+    "crumbs": [
+      "Lab. Informática",
+      "Semana 2"
+    ]
+  },
+  {
+    "objectID": "lab-info/implementacao-aula-2.html#segunda-observação",
+    "href": "lab-info/implementacao-aula-2.html#segunda-observação",
+    "title": "Introdução à Inferência Bayesiana",
+    "section": "4 Segunda Observação",
+    "text": "4 Segunda Observação\nRealiza uma nova observação.\n\nobservacao = random.choice(caixa)\nprint(observacao)\n\nazul\n\n\nAtualiza a posterior com base na observação anterior.\n\ncontagem_anterior = contagem_posterior.copy()\ncontagem_posterior = []\n\nfor h in hipoteses:\n    if observacao == 'preta':\n        ni = h * contagem_anterior[h]\n    else:\n        ni = (5 - h) * contagem_anterior[h]\n    contagem_posterior.append(ni)\n\n\n4.1 Gráfico - Posterior Após a Segunda Observação\n\nplt.bar(x=hipoteses, height=contagem_posterior)\nplt.xlabel('Número de bolinhas pretas (hipóteses)')\nplt.ylabel('Plausibilidade')\nplt.title('Plausibilidade das hipóteses após a segunda observação')\nplt.grid(axis='y', linestyle='--', alpha=0.5)\nplt.show()\nplt.close()",
+    "crumbs": [
+      "Lab. Informática",
+      "Semana 2"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "",
+    "text": "Consulte aqui o cronograma de atividades do semestre, com a descrição dos temas, links para materiais de apoio e atividades. Quaisquer alterações serão atualizadas e registradas neste espaço.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSEMANA\nDATA\nTEMA\nOBJETIVOS\nLEITURAOBRIGATÓRIA\nLEITURACOMPLEMENTAR\nLAB.INFORMÁTICA\nSLIDES\nLISTAS\nAVALIAÇÃO\nPROJETO\n\n\n\n\n1\n03/04\n🔹 Apresentação da Unidade Curricular (UC).  🔹 Introdução à inferência e à modelagem probabilística.\n🔹 Apresentação do plano de ensino.  🔹 Modelos probabilísticos como ferramenta para lidar com incertezas na tomada de decisão.  🔹 Inferência probabilística a partir do princípio da contagem.\n📖\n📚\n\n📽️\n📝\n\n\n\n\n2\n10/04\n🔹 Introdução à inferência bayesiana: distribuições a priori e a posteriori.\n🔹 Tomada de decisão a partir da distribuição a posteriori.\n📖\n📚\n💻\n\n\n\n\n\n\n3\n17/04\n🔹 Inferência sobre o parâmetro de uma distribuição de probabilidades.\n🔹 Apresentar a distribuição binomial.  🔹 Estimar seu parâmetro via aproximação por grid.  🔹 Introduzir o uso do módulo PyMC para estimação de parâmetros em modelos probabilísticos.\n📖\n\n💻  💻  💻\n📽️  📽️\n\n\n\n\n\n4\n24/04\n🔹 Distribuição Normal e Simulação a Priori para Alturas de adultos\n🔹 Apresentar a Distribuição Normal como modelo para alturas de adultos.  🔹 Simular a distribuição a priori preditiva de alturas com base em conhecimento subjetivo.  🔹 Utilizar o PyMC para estimar parâmetros do modelo Normal.\n📖\n📚\n\n📽️\n📝\n\n\n\n\n\n01/05\nFERIADO - Dia do Trabalho\n⛱️ 🌞 🏕️\n\n\n\n\n\n\n\n\n\n5\n08/05\n1ª Avaliação\n🔹 Avaliar a compreensão dos principais conceitos da inferência bayesiana, incluindo distribuições a priori e a posteriori, construção e ajuste de modelos probabilísticos simples.\n\n\n\n\n\n📈\n\n\n\n6\n15/05\n🔹 Modelo Linear\n🔹 Ajuste Bayesiano do modelo linear.  🔹 Distribuição a priori e distribuição a posteriori de \\(\\beta_0\\), \\(\\beta_1\\) e \\(\\sigma\\) usando PyMC.\n📖\n📚\n\n📽️\n\n\n\n\n\n7\n22/05\nHipóteses científicas, estruturas de dependência e relações causais\n🔹 Discutir o papel das hipóteses científicas na construção de modelos probabilísticos.  🔹 Riqueza de Espécies em Ilhas: teoria e possíveis modelos estatísticos.  🔹 Interpretação, predição e comparação de modelos probabilísticos.\n📖\n\n\n📽️\n📝\n\n🧭 💡\n\n\n8\n29/05\nMulticolinearidade e relações espúrias\n🔹 Apresentar os conceitos de multicolinearidade e causalidade em modelos de regressão.  🔹 Discutir a identificação de correlações espúrias e a avaliação da multicolinearidade em modelos bayesianos.\n📖\n📚\n\n📽️\n\n\n\n\n\n9\n05/06\n2ª Avaliação\n🔹 Avaliar a compreensão sobre a formulação e o papel das hipóteses científicas em modelos probabilísticos.  🔹 Avaliar a capacidade de identificar e interpretar estruturas de dependência, como causalidade, correlações espúrias e multicolinearidade.\n\n\n\n\n\n📈\n\n\n\n10\n12/06\nEstruturas de dependência: dados aninhados\n🔹 Apresentar o conceito de unidade experimental e a importância da independência das observações.  🔹 Discutir delineamentos experimentais com dados aninhados.\n📖\n📚\n\n📽️\n📝\n\n\n\n\n11\n19/06\nEstruturas de dependência: dados estruturados no espaço\n🔹 Discutir como a dependência espacial influencia a análise e interpretação dos resultados.  🔹 Abordar o ajuste de modelos de regressão para dados com estrutura espacial.\n📖\n📚\n\n📽️\n\n\n\n\n\n\n26/06\nFERIADO – Corpus Christi\n☀️ 🏞️ 🧘\n\n\n\n\n\n\n\n\n\n12\n03/07\nEstruturas de dependência: dados estruturados no tempo\n🔹 Discutir estratégias para lidar com dependência temporal em dados.  🔹 Introduzir modelos de regressão voltados para séries temporais.\n📖\n📚\n\n📽️\n\n\n\n\n\n13\n10/07\nModelos binomiais\n🔹 Apresentar a formulação do modelo binomial e suas aplicações em dados de contagem e proporção.  🔹 Discutir a função de probabilidade, pressupostos e interpretação dos resultados.\n📖\n📚\n\n📽️\n📝\n\n\n\n\n14\n17/07\nModelo de Poisson\n🔹 Explorar o modelo de Poisson aplicado a dados de contagem.  🔹 Apresentar sua função de probabilidade, pressupostos e principais usos.\n📖\n\n\n📽️\n\n\n\n\n\n15\n24/07\nConclusão da Unidade Curricular.\n🔹 Revisar e integrar os principais conceitos abordados ao longo do curso.  🔹 Avaliar a evolução da aprendizagem e discutir possíveis aplicações e extensões dos métodos estudados.\n\n\n\n\n\n\n📑",
+    "crumbs": [
+      "Informações do curso",
+      "Cronograma"
+    ]
+  },
+  {
     "objectID": "informacoes_curso/plano_ensino.html",
     "href": "informacoes_curso/plano_ensino.html",
     "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
@@ -99,69 +165,14 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "objectID": "lab-info/superficie-oceano.html",
+    "href": "lab-info/superficie-oceano.html",
+    "title": "Estimando a Proporção da Superfície Oceânica",
     "section": "",
-    "text": "Consulte aqui o cronograma de atividades do semestre, com a descrição dos temas, links para materiais de apoio e atividades. Quaisquer alterações serão atualizadas e registradas neste espaço.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSEMANA\nDATA\nTEMA\nOBJETIVOS\nLEITURAOBRIGATÓRIA\nLEITURACOMPLEMENTAR\nLAB.INFORMÁTICA\nSLIDES\nLISTAS\nAVALIAÇÃO\nPROJETO\n\n\n\n\n1\n03/04\n🔹 Apresentação da Unidade Curricular (UC).  🔹 Introdução à inferência e à modelagem probabilística.\n🔹 Apresentação do plano de ensino.  🔹 Modelos probabilísticos como ferramenta para lidar com incertezas na tomada de decisão.  🔹 Inferência probabilística a partir do princípio da contagem.\n📖\n📚\n\n📽️\n📝\n\n\n\n\n2\n10/04\n🔹 Introdução à inferência bayesiana: distribuições a priori e a posteriori.\n🔹 Tomada de decisão a partir da distribuição a posteriori.\n📖\n📚\n💻\n\n\n\n\n\n\n3\n17/04\n🔹 Inferência sobre o parâmetro de uma distribuição de probabilidades.\n🔹 Apresentar a distribuição binomial.  🔹 Estimar seu parâmetro via aproximação por grid.  🔹 Introduzir o uso do módulo PyMC para estimação de parâmetros em modelos probabilísticos.\n📖\n📚\n\n📽️\n\n\n\n\n\n4\n24/04\n🔹 Distribuição Normal e Simulação a Priori para Alturas de adultos\n🔹 Apresentar a Distribuição Normal como modelo para alturas de adultos.  🔹 Simular a distribuição a priori preditiva de alturas com base em conhecimento subjetivo.  🔹 Utilizar o PyMC para estimar parâmetros do modelo Normal.\n📖\n📚\n\n📽️\n📝\n\n\n\n\n\n01/05\nFERIADO - Dia do Trabalho\n⛱️ 🌞 🏕️\n\n\n\n\n\n\n\n\n\n5\n08/05\n1ª Avaliação\n🔹 Avaliar a compreensão dos principais conceitos da inferência bayesiana, incluindo distribuições a priori e a posteriori, construção e ajuste de modelos probabilísticos simples.\n\n\n\n\n\n📈\n\n\n\n6\n15/05\n🔹 Modelo Linear\n🔹 Ajuste Bayesiano do modelo linear.  🔹 Distribuição a priori e distribuição a posteriori de \\(\\beta_0\\), \\(\\beta_1\\) e \\(\\sigma\\) usando PyMC.\n📖\n📚\n\n📽️\n\n\n\n\n\n7\n22/05\nHipóteses científicas, estruturas de dependência e relações causais\n🔹 Discutir o papel das hipóteses científicas na construção de modelos probabilísticos.  🔹 Riqueza de Espécies em Ilhas: teoria e possíveis modelos estatísticos.  🔹 Interpretação, predição e comparação de modelos probabilísticos.\n📖\n\n\n📽️\n📝\n\n🧭 💡\n\n\n8\n29/05\nMulticolinearidade e relações espúrias\n🔹 Apresentar os conceitos de multicolinearidade e causalidade em modelos de regressão.  🔹 Discutir a identificação de correlações espúrias e a avaliação da multicolinearidade em modelos bayesianos.\n📖\n📚\n\n📽️\n\n\n\n\n\n9\n05/06\n2ª Avaliação\n🔹 Avaliar a compreensão sobre a formulação e o papel das hipóteses científicas em modelos probabilísticos.  🔹 Avaliar a capacidade de identificar e interpretar estruturas de dependência, como causalidade, correlações espúrias e multicolinearidade.\n\n\n\n\n\n📈\n\n\n\n10\n12/06\nEstruturas de dependência: dados aninhados\n🔹 Apresentar o conceito de unidade experimental e a importância da independência das observações.  🔹 Discutir delineamentos experimentais com dados aninhados.\n📖\n📚\n\n📽️\n📝\n\n\n\n\n11\n19/06\nEstruturas de dependência: dados estruturados no espaço\n🔹 Discutir como a dependência espacial influencia a análise e interpretação dos resultados.  🔹 Abordar o ajuste de modelos de regressão para dados com estrutura espacial.\n📖\n📚\n\n📽️\n\n\n\n\n\n\n26/06\nFERIADO – Corpus Christi\n☀️ 🏞️ 🧘\n\n\n\n\n\n\n\n\n\n12\n03/07\nEstruturas de dependência: dados estruturados no tempo\n🔹 Discutir estratégias para lidar com dependência temporal em dados.  🔹 Introduzir modelos de regressão voltados para séries temporais.\n📖\n📚\n\n📽️\n\n\n\n\n\n13\n10/07\nModelos binomiais\n🔹 Apresentar a formulação do modelo binomial e suas aplicações em dados de contagem e proporção.  🔹 Discutir a função de probabilidade, pressupostos e interpretação dos resultados.\n📖\n📚\n\n📽️\n📝\n\n\n\n\n14\n17/07\nModelo de Poisson\n🔹 Explorar o modelo de Poisson aplicado a dados de contagem.  🔹 Apresentar sua função de probabilidade, pressupostos e principais usos.\n📖\n\n\n📽️\n\n\n\n\n\n15\n24/07\nConclusão da Unidade Curricular.\n🔹 Revisar e integrar os principais conceitos abordados ao longo do curso.  🔹 Avaliar a evolução da aprendizagem e discutir possíveis aplicações e extensões dos métodos estudados.\n\n\n\n\n\n\n📑",
-    "crumbs": [
-      "Informações do curso",
-      "Cronograma"
-    ]
-  },
-  {
-    "objectID": "lab-info/implementacao-aula-2.html",
-    "href": "lab-info/implementacao-aula-2.html",
-    "title": "Introdução à Inferência Bayesiana",
-    "section": "",
-    "text": "import random\nimport matplotlib.pyplot as plt",
+    "text": "1 Instruções\nAntes de iniciar, leia atentamente a Leitura Obrigatória da Semana 3 (Construindo um modelo bayesiano). Se tiver dúvidas, relembre os conteúdos da Semana 1 e Semana 2.\n\n\n2 Objetivos\n\nGerar observações (terra ou água) ao “lançar” um globo virtual.\n\nCombinar essas observações com uma crença a priori e aplicar os dados para atualizar a distribuição a posteriori de \\(p\\).\n\nComparar estimativas via máxima verossimilhança (MLE) e via Bayes (posteriori).\n\n\n\n\n3 Roteiro de atividades\n\nProcedimento de Amostragem\n\nAcesse o app Estimando a Proporção da Superfície Oceânica e gere \\(N\\) pontos aleatórios, que representam seus “lançamentos” do globo.\n\nDiscuta em grupo: que pressupostos estamos assumindo ao usar essa ferramenta? Será que ela é útil para gerar estimativas confiáveis de \\(p\\)?\n\nColeta de Dados\n\nObserve no app quantos pontos ficaram em água (\\(k\\)) e quantos ficaram em terra (\\(N - k\\)).\n\nCalcule a estimativa pontual de \\(\\hat{p} = \\frac{k}{N}\\).\n\nTroque informações com seus colegas e verifique se, ao gerar mais pontos, o valor de \\(\\hat{p}\\) tende a se aproximar de um valor “esperado”. Por quê?\n\nInferência Bayesiana\n\nAbra o app Inferência Bayesiana Binomial e, no painel lateral, insira o mesmo valor de \\(N\\) (observações) e \\(k\\) (sucessos) obtidos no passo anterior.\n\nAjuste os parâmetros da distribuição a priori (\\(\\alpha\\) e \\(\\beta\\)) para representar diferentes visões iniciais sobre \\(p\\).\n\nObserve como a distribuição a posteriori (curva azul) se desloca ou se concentra de acordo com suas escolhas de \\(\\alpha\\) e \\(\\beta\\) e com os dados (\\(N, k\\)).\n\nCompare a curva de verossimilhança (verde) e a distribuição a posteriori para discutir o quanto a priori e as evidências observadas influenciam a estimativa final de \\(p\\).\n\nAtividade Prática\n\nVariem o tamanho da amostra: escolham valores diferentes de \\(N\\) (um pequeno e outro grande) e anotem \\(\\hat{p}\\) e o MDP (moda da distribuição posterior).\n\nDiscutam se essas estimativas se tornam mais próximas conforme \\(N\\) aumenta.\n\nAjustem \\(\\alpha\\) e \\(\\beta\\): como uma opinião prévia sobre \\(p\\) (por exemplo, achar que o planeta é 70% água) afetaria a a posteriori se vocês coletarem poucos dados ou se coletarem muitos dados?\n\n\n\n\n\n4 Exercícios para Consolidar\n\nComparação Gráfica\n\nTarefa: Plote a densidade a posteriori Beta para, pelo menos, 3 valores diferentes de \\(\\alpha, \\beta\\).\n\nPergunta de Discussão: Em cada caso, qual o intervalo de credibilidade de 95%? Como ele se compara com a estimativa frequentista \\(\\hat{p}\\)?\n\nReflexão\n\nTarefa: Formem grupos e gerem amostras pequenas (\\(N\\) pequeno) e grandes (\\(N\\) grande).\n\nPergunta de Discussão: Por que, com poucos dados, a distribuição a priori influencia mais o resultado? Como o aumento de \\(N\\) faz a verossimilhança prevalecer?\n\nDesafio\n\nTarefa: Investiguem quantos pontos seriam necessários para que o intervalo de credibilidade a 90% para \\(p\\), centrado no MDP, tenha largura de \\(\\pm 0.02\\).\n\nPergunta de Discussão: O que esse tamanho amostral significa em termos práticos? Se fossem realmente “lançar o globo”, quantas vezes precisariam repetir o processo?",
     "crumbs": [
       "Lab. Informática",
-      "Semana 2"
-    ]
-  },
-  {
-    "objectID": "lab-info/implementacao-aula-2.html#definição-da-caixa",
-    "href": "lab-info/implementacao-aula-2.html#definição-da-caixa",
-    "title": "Introdução à Inferência Bayesiana",
-    "section": "1 Definição da Caixa",
-    "text": "1 Definição da Caixa\nDefinição da composição da caixa de bolinhas: suponha que a caixa contém 3 bolinhas pretas e 2 bolinhas azuis.\n\ncaixa = ['preta', 'preta', 'preta', 'azul', 'azul']",
-    "crumbs": [
-      "Lab. Informática",
-      "Semana 2"
-    ]
-  },
-  {
-    "objectID": "lab-info/implementacao-aula-2.html#hipóteses-possíveis",
-    "href": "lab-info/implementacao-aula-2.html#hipóteses-possíveis",
-    "title": "Introdução à Inferência Bayesiana",
-    "section": "2 Hipóteses Possíveis",
-    "text": "2 Hipóteses Possíveis\nDefinição das hipóteses sobre o número de bolinhas pretas na caixa. As hipóteses variam de 0 a 5 bolinhas pretas.\n\nhipoteses = [0, 1, 2, 3, 4, 5]",
-    "crumbs": [
-      "Lab. Informática",
-      "Semana 2"
-    ]
-  },
-  {
-    "objectID": "lab-info/implementacao-aula-2.html#primeira-observação",
-    "href": "lab-info/implementacao-aula-2.html#primeira-observação",
-    "title": "Introdução à Inferência Bayesiana",
-    "section": "3 Primeira Observação",
-    "text": "3 Primeira Observação\nRealiza uma observação aleatória (com reposição).\n\nobservacao = random.choice(caixa)\nprint(observacao)\n\nazul\n\n\nAtualiza a plausibilidade das hipóteses com base na cor observada.\n\ncontagem_posterior = []\nfor h in hipoteses:\n    if observacao == 'preta':\n        ni = h\n    else:\n        ni = (5 - h)\n    contagem_posterior.append(ni)\n\n\n3.1 Gráfico - Posterior Após a Primeira Observação\n\nplt.bar(x=hipoteses, height=contagem_posterior)\nplt.xlabel('Número de bolinhas pretas (hipóteses)')\nplt.ylabel('Plausibilidade')\nplt.title('Plausibilidade das hipóteses após a primeira observação')\nplt.grid(axis='y', linestyle='--', alpha=0.5)\nplt.show()\nplt.close()",
-    "crumbs": [
-      "Lab. Informática",
-      "Semana 2"
-    ]
-  },
-  {
-    "objectID": "lab-info/implementacao-aula-2.html#segunda-observação",
-    "href": "lab-info/implementacao-aula-2.html#segunda-observação",
-    "title": "Introdução à Inferência Bayesiana",
-    "section": "4 Segunda Observação",
-    "text": "4 Segunda Observação\nRealiza uma nova observação.\n\nobservacao = random.choice(caixa)\nprint(observacao)\n\nazul\n\n\nAtualiza a posterior com base na observação anterior.\n\ncontagem_anterior = contagem_posterior.copy()\ncontagem_posterior = []\n\nfor h in hipoteses:\n    if observacao == 'preta':\n        ni = h * contagem_anterior[h]\n    else:\n        ni = (5 - h) * contagem_anterior[h]\n    contagem_posterior.append(ni)\n\n\n4.1 Gráfico - Posterior Após a Segunda Observação\n\nplt.bar(x=hipoteses, height=contagem_posterior)\nplt.xlabel('Número de bolinhas pretas (hipóteses)')\nplt.ylabel('Plausibilidade')\nplt.title('Plausibilidade das hipóteses após a segunda observação')\nplt.grid(axis='y', linestyle='--', alpha=0.5)\nplt.show()\nplt.close()",
-    "crumbs": [
-      "Lab. Informática",
-      "Semana 2"
+      "Semana 3a"
     ]
   },
   {
