@@ -69,12 +69,10 @@ website:
         contents: 
           - href: lab-info/implementacao-aula-2.qmd
             text: Semana 2
-          - href: lab-info/superficie-oceano.qmd
-            text: Semana 3a
           - href: https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-binomial-grid.html
-            text: Semana 3b
+            text: Semana 3
           - href: https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-binomial-pymc.html
-            text: Semana 3c                    
+            text: Semana 4
       - section: Slides
         contents: 
           - href: /slides/Introdução_inferencia_modelagem_probabilistica.pdf
@@ -89,8 +87,8 @@ website:
             text: "Instruções"
           - href: listas_exercicios/lista-exercicios-1.qmd
             text: "Lista 1"
-          # - href: listas_exercicios/lista-exercicios-2.qmd
-          #   text: "Lista 2"
+          - href: listas_exercicios/lista-exercicios-2.qmd
+            text: "Lista 2"
           # - href: listas_exercicios/lista-exercicios-3.qmd
           #   text: "Lista 3"
           # - href: listas_exercicios/lista-exercicios-4.qmd

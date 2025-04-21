@@ -1,0 +1,81 @@
+---
+title: "Roteiro de Atividades em Python — Atualização Bayesiana"
+subtitle: "Lista de Exercícios 2"
+execute:
+  echo: true
+  warning: false
+  include: true
+  message: false
+---
+
+---
+
+<mark>**ENTREGA**: *até 25/05/2025 às 23:59, via Moodle*</mark>
+
+---
+
+# Instruções
+
+Antes de iniciar, releia atentamente os conteúdos abaixo:
+
+- [*Semana 1: Contando possibilidades*](https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-counting.html){target="_blank"}  
+- [*Semana 2: De contagens a probabilidades*](https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-distr-prob.html){target="_blank"}  
+- [*Semana 3: Construindo um modelo bayesiano*](https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-modelo-bayesiano.html){target="_blank"}
+
+# Objetivos
+
+- **Gerar** observações (terra ou água) ao “lançar” um globo virtual.  
+- **Combinar** essas observações com uma crença *a priori* e **aplicar** os dados para atualizar a distribuição *a posteriori* de $p$.  
+- **Comparar** estimativas via **máxima verossimilhança** (MLE) e via **Bayes** (*a posteriori*).  
+- **Utilizar** o módulo PyMC para gerar estimativas do parâmetro $p$ do modelo binomial.
+
+---
+
+# Roteiro de Atividades
+
+1. **Procedimento de Amostragem**  
+   1. Acesse o app [Estimando a Proporção da Superfície Oceânica](https://fcopf-dash-ocean-surface.share.connect.posit.cloud/){target="_blank"} e gere $N$ pontos aleatórios, que representam seus “lançamentos” do globo. <u>Repita o procedimento para $N = 4, 20, 100$.</u>  
+   2. Discuta em grupo e responda: <span style="color: red;">que pressupostos estamos assumindo ao usar essa ferramenta? Quais as limitações deste "modelo" para estimar a superfície oceânica?</span>
+
+2. **Coleta de Dados**  
+   1. <span style="color: red;">Para cada valor de $N$, observe no app quantos pontos ficaram em água ($k$) e quantos ficaram em terra ($N - k$).</span>  
+   2. <span style="color: red;">Calcule as estimativas pontuais de $\hat{p} = \frac{k}{N}$ para cada valor de $N$.</span>  
+   3. <span style="color: red;">Troque informações com seus colegas e verifique se, ao gerar mais pontos, o valor de $\hat{p}$ tende a se aproximar de um valor “esperado”. Por quê?</span>
+
+3. **Inferência Bayesiana**  
+   1. Abra o app [Inferência Bayesiana Binomial](https://fcopf-binomial-bayesiana.share.connect.posit.cloud/){target="_blank"} e, no painel lateral, **insira** os mesmos valores de $N$ (observações) e $k$ (sucessos) obtidos no passo anterior.  
+   2. **Ajuste** os parâmetros da distribuição beta *a priori* ($\alpha$ e $\beta$) para representar diferentes visões iniciais sobre $p$.  
+      - Inicialmente, utilize uma *a priori* uniforme ajustando $\alpha = 1$ e $\beta = 1$.  
+      - Em seguida, teste diferentes combinações de $\alpha$ e $\beta$ para ajustar a *a priori* com base no que sabemos sobre a proporção da cobertura oceânica no globo.  
+   3. **Observe** como a distribuição *a posteriori* (curva azul) se desloca ou se concentra de acordo com suas escolhas de $\alpha$ e $\beta$, e com os dados ($N, k$).  
+   4. Compare a **curva de verossimilhança** (verde) e a distribuição *a posteriori* para **discutir** o quanto a *a priori* e as evidências observadas influenciam a estimativa final de $p$.
+   5. <span style="color: red;">**Discuta** o que concluiu após observar os itens #3 e #4.</span>
+
+4. **Questões**  
+   1. <span style="color: red;">**Tamanho da amostra**: o que ocorre com a estimativa pontual de $p$ para amostras pequenas e grandes?</span>
+   2. <span style="color: red;">**Distribuição a priori**: como uma opinião prévia sobre $p$ (por exemplo, achar que o planeta é 70% água) afeta a distribuição *a posteriori*? Discuta para as diferentes escolhas de $N$.</span>
+
+---
+
+# Exercícios para Consolidar
+
+1. **Comparação Gráfica**  
+   - A cada simulação do experimento, salve as figuras das densidades *a priori* e *a posteriori* Beta a fim de facilitar a comparação.  
+   - Em cada caso, ajuste um intervalo simétrico ao redor da distribuição *a posteriori* que inclua 95% da curva. Este seria o *intervalo de credibilidade* para $p$. <span style="color: red;">Quais foram estes intervalos?</span>
+
+2. **Reflexão**  
+   - **Compare** seus resultados com os de outros(as) colegas.  
+   - <span style="color: red;">Por que, com poucos dados, a distribuição *a priori* influencia mais o resultado? Como o aumento de $N$ faz a verossimilhança prevalecer?</span>
+
+3. **Desafio**  
+   - **Tarefa**: Investigue quantos pontos seriam necessários para que o **intervalo de credibilidade** a 95% para $p$ tenha largura de $\pm 0{,}02$.  
+   - <span style="color: red;">O que esse tamanho amostral significa em termos práticos? Se fossem realmente “lançar o globo”, quantas vezes precisariam repetir o processo? Faça essa verificação para diferentes valores de $N$ e para as distribuições *a priori* escolhidas anteriormente.</span>
+
+---
+
+# Exercícios em Python
+
+1. Utilizando o PyMC, replique as atividades do item **#3. Roteiro de Atividades**.  
+2. Para cada valor de $N$ e para cada distribuição *a priori*, plote os histogramas das distribuições *a posteriori*.  
+3. O relatório da lista de exercícios deve ser entregue através de um arquivo Jupyter Notebook enviado via Moodle, contendo os códigos e suas conclusões sobre as questões levantadas acima.
+4. Todos os itens destacados em <span style="color: red;">vermelho</span> devem ser respondidos ou apresentados na lista.
