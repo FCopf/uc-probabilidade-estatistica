@@ -242,20 +242,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-info/superficie-oceano.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Semana 3a</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-binomial-grid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Semana 3b</span></a>
+ <span class="menu-text">Semana 3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-binomial-pymc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Semana 3c</span></a>
+ <span class="menu-text">Semana 4</span></a>
   </div>
 </li>
       </ul>
@@ -308,6 +302,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./listas_exercicios/lista-exercicios-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lista 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./listas_exercicios/lista-exercicios-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lista 2</span></a>
   </div>
 </li>
       </ul>
@@ -409,10 +409,10 @@ window.Quarto = {
 <td style="text-align: center;">3</td>
 <td style="text-align: center;">17/04</td>
 <td style="text-align: left;">🔹 Inferência sobre o parâmetro de uma distribuição de probabilidades.</td>
-<td style="text-align: left;">🔹 Apresentar a distribuição binomial. <br> 🔹 Estimar seu parâmetro via aproximação por <em>grid</em>. <br> 🔹 Introduzir o uso do módulo <a href="https://www.pymc.io/projects/examples/en/latest/gallery.html" target="_blank">PyMC</a> para estimação de parâmetros em modelos probabilísticos.</td>
+<td style="text-align: left;">🔹 Apresentar a distribuição binomial. <br> 🔹 Estimar seu parâmetro via aproximação por <em>grid</em>.</td>
 <td style="text-align: center;"><a href="https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-modelo-bayesiano.html" target="_blank" title="Construindo um modelo bayesiano">📖</a></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"><a href="lab-info/superficie-oceano.html" target="_blank" title="Estimando a proporção da superfície oceânica">💻</a> <br> <a href="https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-binomial-grid.html" target="_blank" title="Aproximação por grid">💻</a> <br> <a href="https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-binomial-pymc.html" target="_blank" title="Programação probabilística">💻</a></td>
+<td style="text-align: center;"><a href="https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-binomial-grid.html" target="_blank" title="Aproximação por grid">💻</a></td>
 <td style="text-align: center;"><a href="https://fcopf-dash-ocean-surface.share.connect.posit.cloud/" target="_blank" title="App: estimando a superfície oceânica">📽️</a> <br> <a href="https://fcopf-binomial-bayesiana.share.connect.posit.cloud/" target="_blank" title="App: inferência bayesiana binomial">📽️</a></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -421,12 +421,12 @@ window.Quarto = {
 <tr class="even">
 <td style="text-align: center;">4</td>
 <td style="text-align: center;">24/04</td>
-<td style="text-align: left;">🔹 Distribuição Normal e Simulação <em>a Priori</em> para Alturas de adultos</td>
-<td style="text-align: left;">🔹 Apresentar a Distribuição Normal como modelo para alturas de adultos. <br> 🔹 Simular a distribuição <em>a priori</em> preditiva de alturas com base em conhecimento subjetivo. <br> 🔹 Utilizar o <a href="https://www.pymc.io/projects/examples/en/latest/gallery.html" target="_blank">PyMC</a> para estimar parâmetros do modelo Normal.</td>
-<td style="text-align: center;">📖</td>
-<td style="text-align: center;">📚</td>
+<td style="text-align: left;">🔹 O módulo <a href="https://www.pymc.io/projects/examples/en/latest/gallery.html" target="_blank">PyMC</a> para estimar parâmetros de um modelo bayesiano.</td>
+<td style="text-align: left;">🔹 Introduzir o uso do módulo <a href="https://www.pymc.io/projects/examples/en/latest/gallery.html" target="_blank">PyMC</a> para estimar o parâmetro do modelo binomial.</td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;">📽️</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-binomial-pymc.html" target="_blank" title="Programação probabilística">💻</a></td>
+<td style="text-align: center;"></td>
 <td style="text-align: center;"><a href="listas_exercicios/lista-exercicios-2.html" target="_blank" title="Lista 2">📝</a></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -460,11 +460,11 @@ window.Quarto = {
 <tr class="odd">
 <td style="text-align: center;">6</td>
 <td style="text-align: center;">15/05</td>
-<td style="text-align: left;">🔹 Modelo Linear</td>
-<td style="text-align: left;">🔹 Ajuste Bayesiano do modelo linear. <br> 🔹 Distribuição <em>a priori</em> e distribuição <em>a posteriori</em> de <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> e <span class="math inline">\(\sigma\)</span> usando PyMC.</td>
-<td style="text-align: center;">📖</td>
+<td style="text-align: left;">🔹 Distribuição Normal</td>
+<td style="text-align: left;">🔹 Apresentar a Distribuição Normal. <br> 🔹 Simular a distribuição <em>a priori</em> preditiva de alturas com base no conhecimento subjetivo. <br> 🔹 Utilizar o <a href="https://www.pymc.io/projects/examples/en/latest/gallery.html" target="_blank">PyMC</a> para estimar parâmetros do modelo Normal.</td>
+<td style="text-align: center;"><a href="https://fcopf.github.io/MEAD/conteudo/distribuicao_normal/distr_norm.html" target="_blank" title="O modelo Normal">📖</a></td>
 <td style="text-align: center;">📚</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><a href="https://fcopf.github.io/MEAD/conteudo/distribuicao_normal/distribuicao_normal-modelo.html" target="_blank" title="Um modelo para a distribuição de alturas">💻</a> <br> <a href="https://fcopf.github.io/MEAD/conteudo/distribuicao_normal/distribuicao_normal-probabilidade.html" target="_blank" title="Função de densidade e função de probabilidade acumulada">💻</a></td>
 <td style="text-align: center;">📽️</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -473,8 +473,8 @@ window.Quarto = {
 <tr class="even">
 <td style="text-align: center;">7</td>
 <td style="text-align: center;">22/05</td>
-<td style="text-align: left;">Hipóteses científicas, estruturas de dependência e relações causais</td>
-<td style="text-align: left;">🔹 Discutir o papel das hipóteses científicas na construção de modelos probabilísticos. <br> 🔹 <em>Riqueza de Espécies em Ilhas</em>: teoria e possíveis modelos estatísticos. <br> 🔹 Interpretação, predição e comparação de modelos probabilísticos.</td>
+<td style="text-align: left;">🔹 Modelo Linear</td>
+<td style="text-align: left;">🔹 Apresentar o modelo linear Bayesiano. <br> 🔹 Gerar uma distribuição <em>a priori</em> preditiva para <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\beta_1\)</span> e <span class="math inline">\(\sigma\)</span> utilizando o <a href="https://www.pymc.io/projects/examples/en/latest/gallery.html" target="_blank">PyMC</a>. <br> 🔹 Estimar a distribuição <em>a posteriori</em> a partir de um conjunto de dados.</td>
 <td style="text-align: center;">📖</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -500,7 +500,7 @@ window.Quarto = {
 <td style="text-align: center;">9</td>
 <td style="text-align: center;">05/06</td>
 <td style="text-align: left;"><strong>2ª Avaliação</strong></td>
-<td style="text-align: left;">🔹 Avaliar a compreensão sobre a formulação e o papel das hipóteses científicas em modelos probabilísticos. <br> 🔹 Avaliar a capacidade de identificar e interpretar estruturas de dependência, como causalidade, correlações espúrias e multicolinearidade.</td>
+<td style="text-align: left;">🔹 Avaliar a compreensão sobre o modelo de distribuição normal. <br> 🔹 Interpretar os coeficientes da regressão linear. <br> 🔹 Avaliar a capacidade de identificar e interpretar estruturas de dependência, como causalidade, correlações espúrias e multicolinearidade.</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -512,8 +512,8 @@ window.Quarto = {
 <tr class="odd">
 <td style="text-align: center;">10</td>
 <td style="text-align: center;">12/06</td>
-<td style="text-align: left;">Estruturas de dependência: dados aninhados</td>
-<td style="text-align: left;">🔹 Apresentar o conceito de unidade experimental e a importância da independência das observações. <br> 🔹 Discutir delineamentos experimentais com dados aninhados.</td>
+<td style="text-align: left;">Hipóteses científicas, estruturas de dependência e relações causais</td>
+<td style="text-align: left;">🔹 Discutir o papel das hipóteses científicas na construção de modelos probabilísticos. <br> 🔹 <em>Riqueza de Espécies em Ilhas</em>: teoria e possíveis modelos estatísticos. <br> 🔹 Interpretação, predição e comparação de modelos probabilísticos.</td>
 <td style="text-align: center;">📖</td>
 <td style="text-align: center;">📚</td>
 <td style="text-align: center;"></td>

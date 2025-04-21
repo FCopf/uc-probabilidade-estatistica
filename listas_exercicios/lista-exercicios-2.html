@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>lista-exercicios-2 – 5290 - PROBABILIDADE E ESTATÍSTICA</title>
+<title>Roteiro de Atividades em Python — Atualização Bayesiana – 5290 - PROBABILIDADE E ESTATÍSTICA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../listas_exercicios/lista-exercicios-1.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,8 +70,38 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="5290 - PROBABILIDADE E ESTATÍSTICA">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Roteiro de Atividades em Python — Atualização Bayesiana – 5290 - PROBABILIDADE E ESTATÍSTICA">
+<meta property="og:description" content="Lista de Exercícios 2">
 <meta property="og:site_name" content="5290 - PROBABILIDADE E ESTATÍSTICA">
 </head>
 
@@ -83,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../listas_exercicios/instrucoes-listas.html">Listas de Exercícios</a></li><li class="breadcrumb-item"><a href="../listas_exercicios/lista-exercicios-2.html">Lista 2</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -210,20 +241,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab-info/superficie-oceano.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Semana 3a</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-binomial-grid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Semana 3b</span></a>
+ <span class="menu-text">Semana 3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-binomial-pymc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Semana 3c</span></a>
+ <span class="menu-text">Semana 4</span></a>
   </div>
 </li>
       </ul>
@@ -259,13 +284,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Listas de Exercícios</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar seção">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../listas_exercicios/instrucoes-listas.html" class="sidebar-item-text sidebar-link">
@@ -276,6 +301,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../listas_exercicios/lista-exercicios-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lista 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../listas_exercicios/lista-exercicios-2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lista 2</span></a>
   </div>
 </li>
       </ul>
@@ -289,17 +320,147 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Nesta página</h2>
+   
+  <ul>
+  <li><a href="#instruções" id="toc-instruções" class="nav-link active" data-scroll-target="#instruções"><span class="header-section-number">1</span> Instruções</a></li>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos"><span class="header-section-number">2</span> Objetivos</a></li>
+  <li><a href="#roteiro-de-atividades" id="toc-roteiro-de-atividades" class="nav-link" data-scroll-target="#roteiro-de-atividades"><span class="header-section-number">3</span> Roteiro de Atividades</a></li>
+  <li><a href="#exercícios-para-consolidar" id="toc-exercícios-para-consolidar" class="nav-link" data-scroll-target="#exercícios-para-consolidar"><span class="header-section-number">4</span> Exercícios para Consolidar</a></li>
+  <li><a href="#exercícios-em-python" id="toc-exercícios-em-python" class="nav-link" data-scroll-target="#exercícios-em-python"><span class="header-section-number">5</span> Exercícios em Python</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../listas_exercicios/instrucoes-listas.html">Listas de Exercícios</a></li><li class="breadcrumb-item"><a href="../listas_exercicios/lista-exercicios-2.html">Lista 2</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Roteiro de Atividades em Python — Atualização Bayesiana</h1>
+<p class="subtitle lead">Lista de Exercícios 2</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<hr>
+<p><mark><strong>ENTREGA</strong>: <em>até 25/05/2025 às 23:59, via Moodle</em></mark></p>
+<hr>
+<section id="instruções" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Instruções</h1>
+<p>Antes de iniciar, releia atentamente os conteúdos abaixo:</p>
+<ul>
+<li><a href="https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-counting.html" target="_blank"><em>Semana 1: Contando possibilidades</em></a><br>
+</li>
+<li><a href="https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-distr-prob.html" target="_blank"><em>Semana 2: De contagens a probabilidades</em></a><br>
+</li>
+<li><a href="https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-modelo-bayesiano.html" target="_blank"><em>Semana 3: Construindo um modelo bayesiano</em></a></li>
+</ul>
+</section>
+<section id="objetivos" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Objetivos</h1>
+<ul>
+<li><strong>Gerar</strong> observações (terra ou água) ao “lançar” um globo virtual.<br>
+</li>
+<li><strong>Combinar</strong> essas observações com uma crença <em>a priori</em> e <strong>aplicar</strong> os dados para atualizar a distribuição <em>a posteriori</em> de <span class="math inline">\(p\)</span>.<br>
+</li>
+<li><strong>Comparar</strong> estimativas via <strong>máxima verossimilhança</strong> (MLE) e via <strong>Bayes</strong> (<em>a posteriori</em>).<br>
+</li>
+<li><strong>Utilizar</strong> o módulo PyMC para gerar estimativas do parâmetro <span class="math inline">\(p\)</span> do modelo binomial.</li>
+</ul>
+<hr>
+</section>
+<section id="roteiro-de-atividades" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Roteiro de Atividades</h1>
+<ol type="1">
+<li><strong>Procedimento de Amostragem</strong>
+<ol type="1">
+<li>Acesse o app <a href="https://fcopf-dash-ocean-surface.share.connect.posit.cloud/" target="_blank">Estimando a Proporção da Superfície Oceânica</a> e gere <span class="math inline">\(N\)</span> pontos aleatórios, que representam seus “lançamentos” do globo. <u>Repita o procedimento para <span class="math inline">\(N = 4, 20, 100\)</span>.</u><br>
+</li>
+<li>Discuta em grupo e responda: <span style="color: red;">que pressupostos estamos assumindo ao usar essa ferramenta? Quais as limitações deste “modelo” para estimar a superfície oceânica?</span></li>
+</ol></li>
+<li><strong>Coleta de Dados</strong>
+<ol type="1">
+<li><span style="color: red;">Para cada valor de <span class="math inline">\(N\)</span>, observe no app quantos pontos ficaram em água (<span class="math inline">\(k\)</span>) e quantos ficaram em terra (<span class="math inline">\(N - k\)</span>).</span><br>
+</li>
+<li><span style="color: red;">Calcule as estimativas pontuais de <span class="math inline">\(\hat{p} = \frac{k}{N}\)</span> para cada valor de <span class="math inline">\(N\)</span>.</span><br>
+</li>
+<li><span style="color: red;">Troque informações com seus colegas e verifique se, ao gerar mais pontos, o valor de <span class="math inline">\(\hat{p}\)</span> tende a se aproximar de um valor “esperado”. Por quê?</span></li>
+</ol></li>
+<li><strong>Inferência Bayesiana</strong>
+<ol type="1">
+<li>Abra o app <a href="https://fcopf-binomial-bayesiana.share.connect.posit.cloud/" target="_blank">Inferência Bayesiana Binomial</a> e, no painel lateral, <strong>insira</strong> os mesmos valores de <span class="math inline">\(N\)</span> (observações) e <span class="math inline">\(k\)</span> (sucessos) obtidos no passo anterior.<br>
+</li>
+<li><strong>Ajuste</strong> os parâmetros da distribuição beta <em>a priori</em> (<span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>) para representar diferentes visões iniciais sobre <span class="math inline">\(p\)</span>.
+<ul>
+<li>Inicialmente, utilize uma <em>a priori</em> uniforme ajustando <span class="math inline">\(\alpha = 1\)</span> e <span class="math inline">\(\beta = 1\)</span>.<br>
+</li>
+<li>Em seguida, teste diferentes combinações de <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span> para ajustar a <em>a priori</em> com base no que sabemos sobre a proporção da cobertura oceânica no globo.<br>
+</li>
+</ul></li>
+<li><strong>Observe</strong> como a distribuição <em>a posteriori</em> (curva azul) se desloca ou se concentra de acordo com suas escolhas de <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>, e com os dados (<span class="math inline">\(N, k\)</span>).<br>
+</li>
+<li>Compare a <strong>curva de verossimilhança</strong> (verde) e a distribuição <em>a posteriori</em> para <strong>discutir</strong> o quanto a <em>a priori</em> e as evidências observadas influenciam a estimativa final de <span class="math inline">\(p\)</span>.</li>
+<li><span style="color: red;"><strong>Discuta</strong> o que concluiu após observar os itens #3 e #4.</span></li>
+</ol></li>
+<li><strong>Questões</strong>
+<ol type="1">
+<li><span style="color: red;"><strong>Tamanho da amostra</strong>: o que ocorre com a estimativa pontual de <span class="math inline">\(p\)</span> para amostras pequenas e grandes?</span></li>
+<li><span style="color: red;"><strong>Distribuição a priori</strong>: como uma opinião prévia sobre <span class="math inline">\(p\)</span> (por exemplo, achar que o planeta é 70% água) afeta a distribuição <em>a posteriori</em>? Discuta para as diferentes escolhas de <span class="math inline">\(N\)</span>.</span></li>
+</ol></li>
+</ol>
+<hr>
+</section>
+<section id="exercícios-para-consolidar" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Exercícios para Consolidar</h1>
+<ol type="1">
+<li><strong>Comparação Gráfica</strong>
+<ul>
+<li>A cada simulação do experimento, salve as figuras das densidades <em>a priori</em> e <em>a posteriori</em> Beta a fim de facilitar a comparação.<br>
+</li>
+<li>Em cada caso, ajuste um intervalo simétrico ao redor da distribuição <em>a posteriori</em> que inclua 95% da curva. Este seria o <em>intervalo de credibilidade</em> para <span class="math inline">\(p\)</span>. <span style="color: red;">Quais foram estes intervalos?</span></li>
+</ul></li>
+<li><strong>Reflexão</strong>
+<ul>
+<li><strong>Compare</strong> seus resultados com os de outros(as) colegas.<br>
+</li>
+<li><span style="color: red;">Por que, com poucos dados, a distribuição <em>a priori</em> influencia mais o resultado? Como o aumento de <span class="math inline">\(N\)</span> faz a verossimilhança prevalecer?</span></li>
+</ul></li>
+<li><strong>Desafio</strong>
+<ul>
+<li><strong>Tarefa</strong>: Investigue quantos pontos seriam necessários para que o <strong>intervalo de credibilidade</strong> a 95% para <span class="math inline">\(p\)</span> tenha largura de <span class="math inline">\(\pm 0{,}02\)</span>.<br>
+</li>
+<li><span style="color: red;">O que esse tamanho amostral significa em termos práticos? Se fossem realmente “lançar o globo”, quantas vezes precisariam repetir o processo? Faça essa verificação para diferentes valores de <span class="math inline">\(N\)</span> e para as distribuições <em>a priori</em> escolhidas anteriormente.</span></li>
+</ul></li>
+</ol>
+<hr>
+</section>
+<section id="exercícios-em-python" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Exercícios em Python</h1>
+<ol type="1">
+<li>Utilizando o PyMC, replique as atividades do item <strong>#3. Roteiro de Atividades</strong>.<br>
+</li>
+<li>Para cada valor de <span class="math inline">\(N\)</span> e para cada distribuição <em>a priori</em>, plote os histogramas das distribuições <em>a posteriori</em>.<br>
+</li>
+<li>O relatório da lista de exercícios deve ser entregue através de um arquivo Jupyter Notebook enviado via Moodle, contendo os códigos e suas conclusões sobre as questões levantadas acima.</li>
+<li>Todos os itens destacados em <span style="color: red;">vermelho</span> devem ser respondidos ou apresentados na lista.</li>
+</ol>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -863,6 +1024,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../listas_exercicios/lista-exercicios-1.html" class="pagination-link" aria-label="Lista 1">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lista 1</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
