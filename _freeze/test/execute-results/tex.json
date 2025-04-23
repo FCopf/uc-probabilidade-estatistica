@@ -1,0 +1,17 @@
+{
+  "hash": "a51240ff1ce048ebb8b7f6d82b509c87",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Bolas Unicode Monocromáticas\"\nformat:\n  pdf:\n    pdf-engine: xelatex\n    mainfont: \"Symbola\"\nknitr:\n  opts_chunk:\n    dev: \"cairo_pdf\"\n---\n\n\n\n## Bolas (monocromáticas)\n\n🔴🟠🟡🟢🔵🟣⚫⚪🟤\n\n## Código R\n\n\nwriteLines(\"🔴🟠🟡🟢🔵🟣⚫⚪🟤\")\n",
+    "supporting": [
+      "test_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}
