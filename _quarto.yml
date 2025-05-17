@@ -73,7 +73,7 @@ website:
             text: Semana 3
           - href: https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-binomial-pymc.html
             text: Semana 4
-          - href: lab-info/modelo_normal_bayesiano_priori.qmd
+          - href: https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-modelo-normal-bayesiano-priori.html
             text: Semana 6
       - section: Slides
         contents: 
