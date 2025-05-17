@@ -1,115 +1,5 @@
 [
   {
-    "objectID": "informacoes_curso/plano_ensino.html",
-    "href": "informacoes_curso/plano_ensino.html",
-    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
-    "section": "",
-    "text": "Acessar versão em pdf",
-    "crumbs": [
-      "Informações do curso",
-      "Plano de ensino"
-    ]
-  },
-  {
-    "objectID": "informacoes_curso/plano_ensino.html#ementa",
-    "href": "informacoes_curso/plano_ensino.html#ementa",
-    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
-    "section": "Ementa",
-    "text": "Ementa\nA Unidade Curricular (UC) explora os fundamentos da inferência estatística, com ênfase em modelos probabilísticos e suas aplicações na análise de dados e interpretação de fenômenos complexos relacionados às Ciências do Mar. A UC enfatiza a investigação de hipóteses sobre processos ambientais por meio da construção e análise de modelos probabilísticos, integrando conhecimentos prévios com evidências baseadas em dados. O curso promove uma abordagem prática, com foco na elaboração de modelos e na simulação computacional, integrando teoria e prática como suporte à tomada de decisão, de forma a oferecer uma compreensão ampla e aplicada dos conceitos teóricos e computacionais envolvidos.",
-    "crumbs": [
-      "Informações do curso",
-      "Plano de ensino"
-    ]
-  },
-  {
-    "objectID": "informacoes_curso/plano_ensino.html#conteúdo-programático",
-    "href": "informacoes_curso/plano_ensino.html#conteúdo-programático",
-    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
-    "section": "Conteúdo Programático",
-    "text": "Conteúdo Programático\n\nFundamentos da Inferência Estatística e Modelagem Probabilística\n\nProbabilidade como lógica e ferramenta para lidar com incertezas.\n\nConceitos fundamentais: distribuição a priori e distribuição posteriori.\n\nAplicações Computacionais e Ferramentas Analíticas\n\nImplementação de modelos utilizando R, Python e linguagens de programação probabilística.\n\nConstrução de Modelos Probabilísticos\n\nHipóteses científicas, estruturas de dependência e relações causais.\n\nDesenvolvimento de modelos conceituais integrando conhecimento prévio.\n\nSimulação inicial para explorar predições com base no modelo.\n\nAjuste de Dados ao Modelo\n\nIncorporação de observações empíricas ao modelo conceitual.\n\nAtualização de predições.\n\nTécnicas de ajuste e calibração de modelos baseadas em dados observados.\n\nAvaliação e Refinamento de Modelos\n\nPredições e extrapolações baseadas no modelo ajustado.\n\nComparação de modelos utilizando critérios de validação.\n\nAnálise de sensibilidade a diferentes distribuições a priori.\n\nDesenhos Experimentais e Relações Causais Complexas\n\nEstruturas hierárquicas e suas aplicações.\nModelagem de dependências espaciais e temporais.\n\nModelos para classificação e contagem.",
-    "crumbs": [
-      "Informações do curso",
-      "Plano de ensino"
-    ]
-  },
-  {
-    "objectID": "informacoes_curso/plano_ensino.html#objetivos",
-    "href": "informacoes_curso/plano_ensino.html#objetivos",
-    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
-    "section": "Objetivos",
-    "text": "Objetivos\nObjetivo Geral:\nCapacitar os alunos a compreender e aplicar conceitos de inferência estatística e modelagem probabilística, utilizando ferramentas computacionais para análise de dados e interpretação de fenômenos complexos nas Ciências do Mar, promovendo a integração entre teoria, prática de análise de dados e suporte à tomada de decisão.\n\nObjetivos Específicos:\n- Compreender os fundamentos da probabilidade como lógica, aplicando-os à comparação entre diferentes hipóteses científicas.\n- Implementar modelos probabilísticos em contextos ambientais utilizando linguagens de programação e ferramentas computacionais.\n- Desenvolver e explorar modelos conceituais integrando conhecimentos prévios, representações causais e simulações iniciais.\n- Incorporar dados empíricos a modelos probabilísticos, ajustando e calibrando predições com base em observações reais.\n- Comparar e refinar modelos utilizando critérios de validação e análise de sensibilidade.\n- Aplicar modelos probabilísticos para descrever relações não lineares, dependências espaciais e temporais, e processos ambientais complexos.",
-    "crumbs": [
-      "Informações do curso",
-      "Plano de ensino"
-    ]
-  },
-  {
-    "objectID": "informacoes_curso/plano_ensino.html#avaliação",
-    "href": "informacoes_curso/plano_ensino.html#avaliação",
-    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
-    "section": "Avaliação",
-    "text": "Avaliação\nSerão atribuídas 5 Listas de Exercícios (peso 40%) e 3 Avaliações (peso 60%). A 3ª avaliação consistirá em um trabalho final desenvolvido ao longo do semestre e apresentado ao final do curso. A nota final do período letivo (NL) será calculada pela média ponderada das listas e avaliações. Para alunos com NL maior ou igual a 6,0, a nota final (NF) será NF = NL. O EXAME será aplicado apenas aos alunos não reprovados por falta e que finalizaram o período letivo regular com NL entre 3,0 e 5,9. Para esses alunos, a nota final (NF) será NF = (NL + NE)/2, em que NE é a nota obtida no EXAME. Caso o EXAME não seja realizado, será atribuído NE = 0.",
-    "crumbs": [
-      "Informações do curso",
-      "Plano de ensino"
-    ]
-  },
-  {
-    "objectID": "listas_exercicios/lista-exercicios-1.html",
-    "href": "listas_exercicios/lista-exercicios-1.html",
-    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
-    "section": "",
-    "text": "ENTREGA: ADIADA PARA 25/04/2025 às 23:59, via Moodle",
-    "crumbs": [
-      "Listas de Exercícios",
-      "Lista 1"
-    ]
-  },
-  {
-    "objectID": "listas_exercicios/lista-exercicios-1.html#instruções",
-    "href": "listas_exercicios/lista-exercicios-1.html#instruções",
-    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
-    "section": "1 Instruções",
-    "text": "1 Instruções\n\nAntes de iniciar, leia atentamente a Leitura Obrigatória da Semana 1 (“Contando possibilidades: evidências sobre uma hipótese”) e Semana 2 (“De contagens a probabilidades: a distribuição a posteriori”).\nAo concluir o exercício, teste seu código e faça o download do arquivo em formato .py (caso esteja usando Google Colab ou ferramenta similar). Em seguida, envie o arquivo .py para o Moodle antes da data de entrega.\n💡 DICA IMPORTANTE: comente cada etapa do seu código para que você ou outra pessoa possa entendê-lo futuramente.",
-    "crumbs": [
-      "Listas de Exercícios",
-      "Lista 1"
-    ]
-  },
-  {
-    "objectID": "listas_exercicios/lista-exercicios-1.html#descrição-da-atividade",
-    "href": "listas_exercicios/lista-exercicios-1.html#descrição-da-atividade",
-    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
-    "section": "2 Descrição da Atividade",
-    "text": "2 Descrição da Atividade\nNesta atividade, você deverá gerar um código em Python para representar virtualmente a seguinte situação: existe uma caixa com cinco bolas de gude, distribuídas entre as cores azul e preta (sendo possível que todas sejam pretas ou todas sejam azuis).\nObjetivo: Descobrir quantas bolas pretas existem na caixa.\nMetodologia:\n\nA estratégia consiste em amostrar uma bola por vez.\nAo observar a bola retirada, devolvemos a mesma para a caixa, o que caracteriza uma amostragem com reposição.\nInicialmente, não sabemos quantas bolas pretas estão presentes e só podemos inferir isso após observar as amostras sucessivas.\n\nResultados Esperados:\n\nCompreender como utilizar um ambiente de programação para simular virtualmente as condições de um experimento aleatório.\nEntender a natureza das respostas obtidas e como avaliar seus resultados para garantir uma conclusão adequada.\nReconhecer a simulação computacional como uma forma de antecipar condições e pressupostos usados na construção de experimentos e modelos estatísticos.",
-    "crumbs": [
-      "Listas de Exercícios",
-      "Lista 1"
-    ]
-  },
-  {
-    "objectID": "listas_exercicios/lista-exercicios-1.html#etapas-do-processo",
-    "href": "listas_exercicios/lista-exercicios-1.html#etapas-do-processo",
-    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
-    "section": "3 Etapas do Processo",
-    "text": "3 Etapas do Processo\nA seguir, são sugeridas etapas para ajudá-lo(a) a cumprir os objetivos propostos:\n\nRepresentação da caixa\nCrie um objeto em Python que represente a caixa contendo as 5 bolas de gude. Defina quantas bolas de cada cor (preta e azul) estarão presentes.\nDistribuição a priori\nDefina os resultados possíveis (quantidade de bolas pretas) e atribua uma distribuição a priori a cada resultado.\nPrimeira observação\nExtraia aleatoriamente uma bola da caixa e observe sua cor.\nAtualização a posteriori\nCom base na cor observada, atualize a distribuição de probabilidade — ou seja, calcule a nova distribuição a posteriori para cada valor possível de bolas pretas na caixa.\nVisualização e decisão\nPlote um gráfico comparando a distribuição a priori com a distribuição a posteriori. Use esse gráfico para embasar sua decisão sobre quantas bolas pretas a caixa contém.\nAmostragem sequencial\nRepita os passos 3 a 5 por n vezes. A cada nova extração, utilize a última distribuição a posteriori obtida como a nova distribuição a priori, de modo que seu conhecimento sobre a composição da caixa seja constantemente atualizado.\nCritério de parada\nInterrompa as repetições quando julgar que o número de observações é suficiente para tomar uma decisão confiável. Pense em qual seria o número mínimo de extrações para alcançar essa confiança.\nAmpliação do problema\n\nAumente o total de bolas na caixa para 50. Varie o número de bolas pretas em três cenários: i) relativamente poucas bolas pretas, ii) quantidades iguais de bolas pretas e azuis, iii) maioria de bolas pretas.\n\nResponda: Qual o efeito de aumentar a quantidade total de bolas sobre o número de repetições (n) necessário para tomar uma decisão confiável?\n\nDiante desse aumento, como a variação na proporção de bolas pretas influencia a quantidade de repetições necessárias para uma decisão acertada?",
-    "crumbs": [
-      "Listas de Exercícios",
-      "Lista 1"
-    ]
-  },
-  {
-    "objectID": "listas_exercicios/lista-exercicios-2.html",
-    "href": "listas_exercicios/lista-exercicios-2.html",
-    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
-    "section": "",
-    "text": "ENTREGA: até 25/05/2025 às 23:59, via Moodle\n\n\n1 Instruções\nAntes de iniciar, releia atentamente os conteúdos abaixo:\n\nSemana 1: Contando possibilidades\n\nSemana 2: De contagens a probabilidades\n\nSemana 3: Construindo um modelo bayesiano\n\n\n\n2 Objetivos\n\nGerar observações (terra ou água) ao “lançar” um globo virtual.\n\nCombinar essas observações com uma crença a priori e aplicar os dados para atualizar a distribuição a posteriori de \\(p\\).\n\nComparar estimativas via máxima verossimilhança (MLE) e via Bayes (a posteriori).\n\nUtilizar o módulo PyMC para gerar estimativas do parâmetro \\(p\\) do modelo binomial.\n\n\n\n\n3 Roteiro de Atividades\n\nProcedimento de Amostragem\n\nAcesse o app Estimando a Proporção da Superfície Oceânica e gere \\(N\\) pontos aleatórios, que representam seus “lançamentos” do globo. Repita o procedimento para \\(N = 4, 20, 100\\).\n\nDiscuta em grupo e responda: que pressupostos estamos assumindo ao usar essa ferramenta? Quais as limitações deste “modelo” para estimar a superfície oceânica?\n\nColeta de Dados\n\nPara cada valor de \\(N\\), observe no app quantos pontos ficaram em água (\\(k\\)) e quantos ficaram em terra (\\(N - k\\)).\n\nCalcule as estimativas pontuais de \\(\\hat{p} = \\frac{k}{N}\\) para cada valor de \\(N\\).\n\nTroque informações com seus colegas e verifique se, ao gerar mais pontos, o valor de \\(\\hat{p}\\) tende a se aproximar de um valor “esperado”. Por quê?\n\nInferência Bayesiana\n\nAbra o app Inferência Bayesiana Binomial e, no painel lateral, insira os mesmos valores de \\(N\\) (observações) e \\(k\\) (sucessos) obtidos no passo anterior.\n\nAjuste os parâmetros da distribuição beta a priori (\\(\\alpha\\) e \\(\\beta\\)) para representar diferentes visões iniciais sobre \\(p\\).\n\nInicialmente, utilize uma a priori uniforme ajustando \\(\\alpha = 1\\) e \\(\\beta = 1\\).\n\nEm seguida, teste diferentes combinações de \\(\\alpha\\) e \\(\\beta\\) para ajustar a a priori com base no que sabemos sobre a proporção da cobertura oceânica no globo.\n\n\nObserve como a distribuição a posteriori (curva azul) se desloca ou se concentra de acordo com suas escolhas de \\(\\alpha\\) e \\(\\beta\\), e com os dados (\\(N, k\\)).\n\nCompare a curva de verossimilhança (verde) e a distribuição a posteriori para discutir o quanto a a priori e as evidências observadas influenciam a estimativa final de \\(p\\).\nDiscuta o que concluiu após observar os itens #3 e #4.\n\nQuestões\n\nTamanho da amostra: o que ocorre com a estimativa pontual de \\(p\\) para amostras pequenas e grandes?\nDistribuição a priori: como uma opinião prévia sobre \\(p\\) (por exemplo, achar que o planeta é 70% água) afeta a distribuição a posteriori? Discuta para as diferentes escolhas de \\(N\\).\n\n\n\n\n\n4 Exercícios para Consolidar\n\nComparação Gráfica\n\nA cada simulação do experimento, salve as figuras das densidades a priori e a posteriori Beta a fim de facilitar a comparação.\n\nEm cada caso, ajuste um intervalo simétrico ao redor da distribuição a posteriori que inclua 95% da curva. Este seria o intervalo de credibilidade para \\(p\\). Quais foram estes intervalos?\n\nReflexão\n\nCompare seus resultados com os de outros(as) colegas.\n\nPor que, com poucos dados, a distribuição a priori influencia mais o resultado? Como o aumento de \\(N\\) faz a verossimilhança prevalecer?\n\nDesafio\n\nTarefa: Investigue quantos pontos seriam necessários para que o intervalo de credibilidade a 95% para \\(p\\) tenha largura de \\(\\pm 0{,}02\\).\n\nO que esse tamanho amostral significa em termos práticos? Se fossem realmente “lançar o globo”, quantas vezes precisariam repetir o processo? Faça essa verificação para diferentes valores de \\(N\\) e para as distribuições a priori escolhidas anteriormente.\n\n\n\n\n\n5 Exercícios em Python\n\nUtilizando o PyMC, replique as atividades do item #3. Roteiro de Atividades.\n\nPara cada valor de \\(N\\) e para cada distribuição a priori, plote os histogramas das distribuições a posteriori.\n\nO relatório da lista de exercícios deve ser entregue através de um arquivo Jupyter Notebook enviado via Moodle, contendo os códigos e suas conclusões sobre as questões levantadas acima.\nTodos os itens destacados em vermelho devem ser respondidos ou apresentados na lista.",
-    "crumbs": [
-      "Listas de Exercícios",
-      "Lista 2"
-    ]
-  },
-  {
     "objectID": "listas_exercicios/instrucoes-listas.html",
     "href": "listas_exercicios/instrucoes-listas.html",
     "title": "Instruções para Utilizar o Google Colab",
@@ -173,6 +63,61 @@
     "crumbs": [
       "Listas de Exercícios",
       "Instruções"
+    ]
+  },
+  {
+    "objectID": "informacoes_curso/plano_ensino.html",
+    "href": "informacoes_curso/plano_ensino.html",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "",
+    "text": "Acessar versão em pdf",
+    "crumbs": [
+      "Informações do curso",
+      "Plano de ensino"
+    ]
+  },
+  {
+    "objectID": "informacoes_curso/plano_ensino.html#ementa",
+    "href": "informacoes_curso/plano_ensino.html#ementa",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "Ementa",
+    "text": "Ementa\nA Unidade Curricular (UC) explora os fundamentos da inferência estatística, com ênfase em modelos probabilísticos e suas aplicações na análise de dados e interpretação de fenômenos complexos relacionados às Ciências do Mar. A UC enfatiza a investigação de hipóteses sobre processos ambientais por meio da construção e análise de modelos probabilísticos, integrando conhecimentos prévios com evidências baseadas em dados. O curso promove uma abordagem prática, com foco na elaboração de modelos e na simulação computacional, integrando teoria e prática como suporte à tomada de decisão, de forma a oferecer uma compreensão ampla e aplicada dos conceitos teóricos e computacionais envolvidos.",
+    "crumbs": [
+      "Informações do curso",
+      "Plano de ensino"
+    ]
+  },
+  {
+    "objectID": "informacoes_curso/plano_ensino.html#conteúdo-programático",
+    "href": "informacoes_curso/plano_ensino.html#conteúdo-programático",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "Conteúdo Programático",
+    "text": "Conteúdo Programático\n\nFundamentos da Inferência Estatística e Modelagem Probabilística\n\nProbabilidade como lógica e ferramenta para lidar com incertezas.\n\nConceitos fundamentais: distribuição a priori e distribuição posteriori.\n\nAplicações Computacionais e Ferramentas Analíticas\n\nImplementação de modelos utilizando R, Python e linguagens de programação probabilística.\n\nConstrução de Modelos Probabilísticos\n\nHipóteses científicas, estruturas de dependência e relações causais.\n\nDesenvolvimento de modelos conceituais integrando conhecimento prévio.\n\nSimulação inicial para explorar predições com base no modelo.\n\nAjuste de Dados ao Modelo\n\nIncorporação de observações empíricas ao modelo conceitual.\n\nAtualização de predições.\n\nTécnicas de ajuste e calibração de modelos baseadas em dados observados.\n\nAvaliação e Refinamento de Modelos\n\nPredições e extrapolações baseadas no modelo ajustado.\n\nComparação de modelos utilizando critérios de validação.\n\nAnálise de sensibilidade a diferentes distribuições a priori.\n\nDesenhos Experimentais e Relações Causais Complexas\n\nEstruturas hierárquicas e suas aplicações.\nModelagem de dependências espaciais e temporais.\n\nModelos para classificação e contagem.",
+    "crumbs": [
+      "Informações do curso",
+      "Plano de ensino"
+    ]
+  },
+  {
+    "objectID": "informacoes_curso/plano_ensino.html#objetivos",
+    "href": "informacoes_curso/plano_ensino.html#objetivos",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "Objetivos",
+    "text": "Objetivos\nObjetivo Geral:\nCapacitar os alunos a compreender e aplicar conceitos de inferência estatística e modelagem probabilística, utilizando ferramentas computacionais para análise de dados e interpretação de fenômenos complexos nas Ciências do Mar, promovendo a integração entre teoria, prática de análise de dados e suporte à tomada de decisão.\n\nObjetivos Específicos:\n- Compreender os fundamentos da probabilidade como lógica, aplicando-os à comparação entre diferentes hipóteses científicas.\n- Implementar modelos probabilísticos em contextos ambientais utilizando linguagens de programação e ferramentas computacionais.\n- Desenvolver e explorar modelos conceituais integrando conhecimentos prévios, representações causais e simulações iniciais.\n- Incorporar dados empíricos a modelos probabilísticos, ajustando e calibrando predições com base em observações reais.\n- Comparar e refinar modelos utilizando critérios de validação e análise de sensibilidade.\n- Aplicar modelos probabilísticos para descrever relações não lineares, dependências espaciais e temporais, e processos ambientais complexos.",
+    "crumbs": [
+      "Informações do curso",
+      "Plano de ensino"
+    ]
+  },
+  {
+    "objectID": "informacoes_curso/plano_ensino.html#avaliação",
+    "href": "informacoes_curso/plano_ensino.html#avaliação",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "Avaliação",
+    "text": "Avaliação\nSerão atribuídas 5 Listas de Exercícios (peso 40%) e 3 Avaliações (peso 60%). A 3ª avaliação consistirá em um trabalho final desenvolvido ao longo do semestre e apresentado ao final do curso. A nota final do período letivo (NL) será calculada pela média ponderada das listas e avaliações. Para alunos com NL maior ou igual a 6,0, a nota final (NF) será NF = NL. O EXAME será aplicado apenas aos alunos não reprovados por falta e que finalizaram o período letivo regular com NL entre 3,0 e 5,9. Para esses alunos, a nota final (NF) será NF = (NL + NE)/2, em que NE é a nota obtida no EXAME. Caso o EXAME não seja realizado, será atribuído NE = 0.",
+    "crumbs": [
+      "Informações do curso",
+      "Plano de ensino"
     ]
   },
   {
@@ -242,57 +187,58 @@
     ]
   },
   {
-    "objectID": "lab-info/modelo_normal_bayesiano_posteriori.html",
-    "href": "lab-info/modelo_normal_bayesiano_posteriori.html",
-    "title": "Distribuição Normal e Inferência Bayesiana",
+    "objectID": "listas_exercicios/lista-exercicios-1.html",
+    "href": "listas_exercicios/lista-exercicios-1.html",
+    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
     "section": "",
-    "text": "Nesta semana, iremos a explorar a inferência Bayesiana, focando na modelagem de dados contínuos usando a Distribuição Normal. Nosso foco será desenvolver a intuição sobre como escolher distribuições a priori e como o PyMC nos ajuda a combinar essas crenças com dados observados para obter distribuições a posteriori. Para isdso usaremos um exemplo sobre a distribuição de altura em adultos.\n# Importando bibliotecas necessárias\nimport pymc as pm\nimport arviz as az\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy import stats\n\n# Configurações para plots\nplt.style.use('seaborn-v0_8-darkgrid')\nplt.rcParams['figure.figsize'] = (9, 6)\naz.style.use(\"arviz-darkgrid\")"
-  },
-  {
-    "objectID": "lab-info/modelo_normal_bayesiano_posteriori.html#inferência-posterior-e-posterior-predictive-checks",
-    "href": "lab-info/modelo_normal_bayesiano_posteriori.html#inferência-posterior-e-posterior-predictive-checks",
-    "title": "Distribuição Normal e Inferência Bayesiana",
-    "section": "1 Inferência Posterior e Posterior Predictive Checks",
-    "text": "1 Inferência Posterior e Posterior Predictive Checks\nAgora é hora de incorporar dados reais. Vamos usar um conjunto de dados de exemplo (simulado para este notebook, mas pode ser substituído por dados reais da sua turma ou de outra fonte) e realizar a inferência Bayesiana completa.\n\n# Gerando um conjunto de dados de exemplo (substituir por dados reais se disponíveis)\nnp.random.seed(123) # Para reprodutibilidade\nmedia_real_simulada = 172\ndp_real_simulado = 8\nn_observacoes = 100\nalturas_observadas = stats.norm.rvs(loc=media_real_simulada, scale=dp_real_simulado, size=n_observacoes)\n\nprint(f\"Dados observados (primeiros 10): {alturas_observadas[:10]}\")\nprint(f\"\\nMédia amostral: {np.mean(alturas_observadas):.2f} cm\")\nprint(f\"Desvio padrão amostral: {np.std(alturas_observadas):.2f} cm\")\n\nplt.figure(figsize=(10, 6))\nplt.hist(alturas_observadas, bins=15, density=True, alpha=0.8, color='gray', label='Dados Observados')\nplt.title(f'Histograma das {n_observacoes} Alturas Observadas', fontsize=14)\nplt.xlabel('Altura (cm)', fontsize=12)\nplt.ylabel('Densidade', fontsize=12)\nplt.grid(True, linestyle='--', alpha=0.7)\nplt.legend()\nplt.show()\n\nDados observados (primeiros 10): [163.31495517 179.97876357 174.26382798 159.94964229 167.37119798\n 185.2114923  152.58656605 168.56869897 182.12749007 165.06607678]\n\nMédia amostral: 172.22 cm\nDesvio padrão amostral: 9.03 cm\n\n\n\n\n\n\n\n\n\nAgora, definimos o modelo Bayesiano COMPLETO no PyMC. Isso inclui as distribuições a priori (compartilhadas) e o likelihood, que conecta os parâmetros aos dados observados.\n\n# Definindo o modelo Bayesiano COMPLETO no PyMC\nwith pm.Model() as normal_model:\n    # Priores (usamos as priores compartilhadas da parte anterior)\n    mu = pm.Normal(\"mu\", mu=175, sigma=10)       # Priori para a média\n    sigma = pm.HalfCauchy(\"sigma\", beta=0.1)    # Priori para o desvio padrão\n\n    # Likelihood: Distribuição dos dados OBSERVADOS, condicionada pelos parâmetros\n    # Aqui, informamos ao modelo quais dados foram observados usando o argumento 'observed'\n    likelihood = pm.Normal(\"likelihood\", mu=mu, sigma=sigma, observed=alturas_observadas)\n\n    # Inferência: Amostragem da distribuição a posteriori usando MCMC\n    # O PyMC usa o sampler NUTS (No-U-Turn Sampler) por padrão\n    # Ele explora o espaço de parâmetros para encontrar as regiões de alta probabilidade a posteriori\n    # draws: número de amostras a guardar por cadeia\n    # tune: número de passos de aquecimento (tuning) para o sampler convergir (descartados)\n    # cores: número de núcleos da CPU para rodar cadeias em paralelo (acelera)\n    # return_inferencedata=True: retorna um objeto ArviZ InferenceData, que é conveniente\n    trace = pm.sample(draws=2000, tune=1000, cores=4, return_inferencedata=True, random_seed=42)\n\nInitializing NUTS using jitter+adapt_diag...\nMultiprocess sampling (4 chains in 4 jobs)\nNUTS: [mu, sigma]\n\n\n\n\n\n\n\n\nSampling 4 chains for 1_000 tune and 2_000 draw iterations (4_000 + 8_000 draws total) took 1 seconds.\n\n\nO pm.sample() executa o algoritmo MCMC. Ele gera amostras da distribuição a posteriori conjunta de \\(\\mu\\) e \\(\\sigma\\). O resultado trace (um objeto InferenceData do ArviZ) contém essas amostras.\nInspeção e Interpretação da Posteriori:\nAs amostras na trace representam nosso conhecimento atualizado sobre \\(\\mu\\) e \\(\\sigma\\) APÓS vermos os dados. Podemos resumir e visualizar essas amostras para entender a distribuição a posteriori.\n\n# Resumo da distribuição a posteriori usando ArviZ\n# 'var_names' especifica quais variáveis queremos sumarizar\n# hdi_prob: probabilidade coberta pelo Intervalo de Maior Densidade (HDI - Highest Density Interval)\nsummary_stats = az.summary(trace, var_names=[\"mu\", \"sigma\"], hdi_prob=0.94, kind='stats')\n\nprint(\"Resumo das Estatísticas Posteriores:\")\nprint(summary_stats)\n\n# r_hat: Deve ser próximo de 1 (&lt; 1.01 é bom), indica convergência entre as cadeias MCMC\n# ess_bulk / ess_tail: Effective Sample Size (tamanho efetivo da amostra), indica eficiência da amostragem\n\nResumo das Estatísticas Posteriores:\n          mean     sd   hdi_3%  hdi_97%\nmu     172.242  0.888  170.545  173.887\nsigma    9.094  0.656    7.872   10.313\n\n\nO resumo mostra a média posterior, desvio padrão posterior e um Intervalo de Alta Densidade (HDI) de 94% para cada parâmetro. O HDI é um intervalo de credibilidade Bayesiano que contém 94% da massa de probabilidade posterior, incluindo os valores mais prováveis.\nVisualizações são essenciais para entender a posteriori:\n\n# Visualização da amostragem MCMC (Trace Plot) e da densidade a posteriori marginal\n# O trace plot (gráfico da esquerda) mostra a trajetória do sampler ao longo das iterações para cada cadeia.\n#   Idealmente, parece um \"ruído branco estacionário\", sem tendências ou padrões óbvios.\n# O histograma ou KDE (gráfico da direita) mostra a distribuição marginal a posteriori estimada de cada parâmetro.\naz.plot_trace(trace, var_names=[\"mu\", \"sigma\"])\nplt.tight_layout()\nplt.show()\n\n/tmp/ipykernel_148184/2558706149.py:6: UserWarning: The figure layout has changed to tight\n  plt.tight_layout()\n\n\n\n\n\n\n\n\n\n\n# Visualização das densidades a posteriori marginais com média, mediana e HDI\n# Este plot foca na distribuição de probabilidade de cada parâmetro INDIVIDUALMENTE,\n# após levarmos em conta os dados e as priores.\naz.plot_posterior(trace, var_names=[\"mu\", \"sigma\"], hdi_prob=0.94)\nplt.show()\n\n\n\n\n\n\n\n\n\nDiscussão: * Compare as distribuições a posteriori (visualizadas acima) com suas distribuições a priori iniciais (que você visualizou na Parte 2). Como os dados atualizaram suas crenças? Os centros das distribuições mudaram? Elas ficaram mais “estreitas” (menor incerteza)? * Qual é a média posterior estimada para \\(\\mu\\)? E para \\(\\sigma\\)? Como esses valores se comparam com a média (171.66) e o desvio padrão (7.90) calculados diretamente a partir dos dados observados (estimativas frequentistas)? Geralmente são próximos, mas não idênticos devido à influência (mesmo que pequena) das priores. * Interprete o intervalo HDI de 94% para \\(\\mu\\) e \\(\\sigma\\). Por exemplo, para \\(\\mu\\), o intervalo é [170.09, 173.23]. Isso significa que, após observar os dados e considerando nossas priores, temos 94% de certeza (probabilidade Bayesiana) de que a verdadeira média populacional \\(\\mu\\) da altura está entre 170.09 cm e 173.23 cm. Faça uma interpretação similar para \\(\\sigma\\).\n\nChecagem Posterior Preditiva:\nAssim como fizemos a checagem priori preditiva, podemos fazer uma checagem posterior preditiva. Desta vez, geramos dados simulados a partir do modelo USANDO as amostras da distribuição a posteriori dos parâmetros (\\(\\mu\\) e \\(\\sigma\\)). Cada conjunto de dados simulado usa um par \\((\\mu, \\sigma)\\) sorteado da posteriori. Isso nos diz que tipos de dados o modelo espera gerar agora que ele aprendeu com os dados observados. É uma ótima maneira de avaliar o ajuste do modelo (model fit). Se os dados simulados a posteriori forem muito diferentes dos dados observados, o modelo pode não estar capturando bem as características dos dados reais.\n\n# Gerando amostras da POSTERIOR preditiva\n# Usamos o 'normal_model' (que contém o likelihood e as priores)\n# e o 'trace' (que contém as amostras da posteriori dos parâmetros)\nwith normal_model:\n    posterior_predictive_samples = pm.sample_posterior_predictive(trace, var_names=[\"likelihood\", \"mu\", \"sigma\"], random_seed=42)\n\nSampling: [likelihood, mu, sigma]\n\n\n\n\n\n\n\n\n\n# Visualizando a checagem posterior preditiva com ArviZ\n# Comparamos a distribuição dos dados observados (y) com as distribuições\n# de múltiplos conjuntos de dados simulados a partir da posteriori (y_pred).\n# 'kind='hist'' plota o histograma dos dados observados (azul escuro) e sobrepõe\n# histogramas de vários conjuntos de dados simulados da posteriori (azul claro).\n# Idealmente, o histograma observado deve se parecer com os simulados.\naz.plot_ppc(posterior_predictive_samples, num_pp_samples=100) # num_pp_samples controla quantos datasets simulados mostrar\nplt.title('Checagem Posterior Preditiva (PPC)', fontsize=14)\nplt.xlabel('Altura (cm)', fontsize=12)\nplt.ylabel('Contagem (ou Densidade)', fontsize=12)\nplt.legend(fontsize=10)\nplt.show()\n\n\n\n\n\n\n\n\n\nDiscussão: * Observe a figura plot_ppc acima. Quão bem o histograma dos dados observados (geralmente em azul mais escuro ou preto) se alinha com os histogramas dos dados simulados a posteriori (linhas ou área em azul claro)? Eles cobrem o mesmo intervalo? Têm formas semelhantes? * O modelo Normal parece adequado para descrever a distribuição das alturas neste conjunto de dados? Se o histograma observado fosse muito diferente (ex: bimodal, muito assimétrico) dos simulados, isso indicaria que o modelo Normal talvez não seja a melhor escolha para estes dados específicos. Neste caso, o ajuste parece razoável."
-  },
-  {
-    "objectID": "lab-info/modelo_normal_bayesiano_posteriori.html#conclusão",
-    "href": "lab-info/modelo_normal_bayesiano_posteriori.html#conclusão",
-    "title": "Distribuição Normal e Inferência Bayesiana",
-    "section": "2 Conclusão",
-    "text": "2 Conclusão\nNesta semana, exploramos a Distribuição Normal e aprendemos como aplicá-la em um fluxo de trabalho de inferência Bayesiana usando o PyMC. Vimos como começar com intuições (priores), checar essas intuições (cheque priori preditivo), combinar priores com dados (inferência posterior via MCMC no PyMC) e avaliar o ajuste do modelo resultante (cheque posterior preditivo). Você agora tem as ferramentas básicas para modelar dados contínuos com incerteza usando a abordagem Bayesiana no Python!"
-  },
-  {
-    "objectID": "lab-info/modelo_normal_bayesiano_priori.html",
-    "href": "lab-info/modelo_normal_bayesiano_priori.html",
-    "title": "Distribuição Normal e Inferência Bayesiana",
-    "section": "",
-    "text": "Nesta semana, exploraremos a inferência bayesiana, com foco na modelagem de dados contínuos por meio da distribuição normal. Nosso objetivo será desenvolver a intuição sobre como escolher distribuições a priori e como o PyMC nos auxilia a visualizar as consequências dessas escolhas sobre a distribuição preditiva a priori da variável de interesse. Para isso, utilizaremos um exemplo baseado na distribuição de altura em adultos.\n# Importando bibliotecas necessárias\nimport pymc as pm\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy import stats\n\n# Configurações para plots\nplt.style.use('seaborn-v0_8-darkgrid')\nplt.rcParams['figure.figsize'] = (9, 6)",
+    "text": "ENTREGA: ADIADA PARA 25/04/2025 às 23:59, via Moodle",
     "crumbs": [
-      "Lab. Informática",
-      "Semana 6"
+      "Listas de Exercícios",
+      "Lista 1"
     ]
   },
   {
-    "objectID": "lab-info/modelo_normal_bayesiano_priori.html#explorando-a-distribuição-normal",
-    "href": "lab-info/modelo_normal_bayesiano_priori.html#explorando-a-distribuição-normal",
-    "title": "Distribuição Normal e Inferência Bayesiana",
-    "section": "1 Explorando a Distribuição Normal",
-    "text": "1 Explorando a Distribuição Normal\nA Distribuição Normal, frequentemente chamada de curva de sino ou curva Gaussiana, é central em estatística. Ela é caracterizada por dois parâmetros: a média (\\(\\mu\\)) e o desvio padrão (\\(\\sigma\\)). A média determina o centro da distribuição, enquanto o desvio padrão determina sua dispersão ou largura. Muitos fenômenos naturais podem ser adequadamente descritos por essa distribuição.\nA ideia intuitiva: Pense na altura de adultos. Há um valor central (a média) em torno do qual a maioria das alturas se agrupa. Há também uma variação: algumas pessoas são mais altas, outras mais baixas. O desvio padrão nos diz o quão espalhadas essas alturas tendem a ser em relação à média.\n\n1.1 Curva de densidade de probabilidade\nGerando a Distribuição de Densidade Normal para diferentes valores de \\(\\mu\\) e \\(\\sigma\\).\n\n# Parâmetros da distribuição\nmu_1 = 20\nsigma_1 = 3\n\nmu_2 = 20\nsigma_2 = 6\n\nmu_3 = 30\nsigma_3 = 5\n\n# Limites gráficos\nx_min = np.min(np.array([mu_1, mu_2, mu_3]) - 4*np.array([sigma_1, sigma_2, sigma_3]))\nx_max = np.max(np.array([mu_1, mu_2, mu_3]) + 4*np.array([sigma_1, sigma_2, sigma_3]))\nx = np.linspace(x_min, x_max, 1000) # Faixa de alturas para plotar\n\npdf_1 = stats.norm.pdf(x, loc=mu_1, scale=sigma_1)\npdf_2 = stats.norm.pdf(x, loc=mu_2, scale=sigma_2)\npdf_3 = stats.norm.pdf(x, loc=mu_3, scale=sigma_3)\n\nVisualizando as distribuições de densidade de probabilidade\n\nplt.plot(x, pdf_1, label=f'$\\mu={mu_1}, \\sigma={sigma_1}$', color='b', lw=2)\nplt.plot(x, pdf_2, label=f'$\\mu={mu_2}, \\sigma={sigma_2}$', color='r', lw=2)\nplt.plot(x, pdf_3, label=f'$\\mu={mu_3}, \\sigma={sigma_3}$', color='g', lw=2)\nplt.xlabel('X', fontsize=12)\nplt.ylabel('Densidade de Probabilidade', fontsize=12)\nplt.legend()\nplt.grid(True, linestyle='-', alpha=0.7)\nplt.show()\n\n\n\n\n\n\n\nFigura 1: Desidades da distribuição normal para diferentes valores de μ e σ.\n\n\n\n\n\n\n\n1.2 Amostrando valores de distribuição normal\nNa Figura 1 vemos as curvas teóricas de densidade da distribuiçao normal. Podemos também gerar amostras valores ao acaso destas distribuições para verificar como estas amostras se parecem. Isso simula o processo de sortear alturas de uma população que segue essa distribuição.\n\nmu = 20\nsigma = 4\nnum_amostras = 60\n\nVerificando o histograma dos valores sorteados.\n\namostras_y = stats.norm.rvs(loc=mu, scale=sigma, size=num_amostras)\nx_dens = np.linspace(mu-4*sigma, mu+4*sigma, 500)\n\nplt.hist(amostras_y, bins=30, density=True, alpha=0.8, color='lightblue', label='Amostras Geradas')\nsns.kdeplot(amostras_y, color='blue', linewidth=2, label='Densidade Empírica')\nplt.plot(x_dens, stats.norm.pdf(x_dens, loc=mu, scale=sigma), color='red', linewidth=2.5, label='Densidade Teórica')\nplt.xlabel('X', fontsize=12)\nplt.ylabel('Densidade / Frequência Normalizada', fontsize=12)\nplt.legend()\nplt.grid(True, linestyle='--', alpha=0.7)\nplt.show()\n\n\n\n\n\n\n\nFigura 2: Histograma de amostras geradas a partir de uma distribuição normal com média \\(\\mu\\) e desvio padrão \\(\\sigma\\), acompanhado da densidade empírica estimada por kernel e da densidade teórica correspondente.\n\n\n\n\n\n\n\n\n\n\n\nAtividade em laboratório\n\n\n\n\nRode este o trecho de código acima algumas vezes e observe como se dá a variação amostral.\nAumente e diminua o tamanho da amostras e verifique a variação entre as curvas enpíricas e a curva teórica.",
+    "objectID": "listas_exercicios/lista-exercicios-1.html#instruções",
+    "href": "listas_exercicios/lista-exercicios-1.html#instruções",
+    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
+    "section": "1 Instruções",
+    "text": "1 Instruções\n\nAntes de iniciar, leia atentamente a Leitura Obrigatória da Semana 1 (“Contando possibilidades: evidências sobre uma hipótese”) e Semana 2 (“De contagens a probabilidades: a distribuição a posteriori”).\nAo concluir o exercício, teste seu código e faça o download do arquivo em formato .py (caso esteja usando Google Colab ou ferramenta similar). Em seguida, envie o arquivo .py para o Moodle antes da data de entrega.\n💡 DICA IMPORTANTE: comente cada etapa do seu código para que você ou outra pessoa possa entendê-lo futuramente.",
     "crumbs": [
-      "Lab. Informática",
-      "Semana 6"
+      "Listas de Exercícios",
+      "Lista 1"
     ]
   },
   {
-    "objectID": "lab-info/modelo_normal_bayesiano_priori.html#intuição-bayesiana",
-    "href": "lab-info/modelo_normal_bayesiano_priori.html#intuição-bayesiana",
-    "title": "Distribuição Normal e Inferência Bayesiana",
-    "section": "2 Intuição Bayesiana",
-    "text": "2 Intuição Bayesiana\nEm inferência Bayesiana, começamos com crenças sobre os parâmetros (a priori) e as atualizamos com dados (a posteriori). Para a altura humana (\\(y\\)), podemos assumir que a distribuição normal é um bom modelo preditivo.\nDeste modo, escrevemos que:\n\\[y \\sim \\mathcal{N}(\\mu, \\sigma)\n\\tag{1}\\]\nEm seguida, precisamos sugerir uma dristribuição a priori para a média \\(\\mu\\) e o desvio padrão \\(\\sigma\\) que traduzam de forma adequada o que esperamos sobre a distribuição de altura em adultos. Sabemos por exemplo que a média da altura de adultos não é 50 cm nem 300 cm. Qual sua intuição sobre o desvio padrão?\n\n\n\n\n\n\nAtividade em laboratório\n\n\n\n\nAssumindo que a distribuição de alturas em adultos segue uma dsitribuição normal proponha valores razoáveis para a média (\\(\\mu\\)) e o desvio padrão (\\(\\sigma\\)).\nPara ajudar a decidir sobre o que seriam valores valores razoáveis, plote as curvas de densidade de probabilidade resultante de sua escolha e faça algumas simulações para verificar quais valores estremos sua escolha é capaz de gerar, utilizando os códigos da Seção 1.2.\n\n\n\n\n2.1 Checagem Priori Preditiva\nAssumindo que a altura de adultos segue uma distribuição (Equação 1), vamos assumir que o parâmetro \\(\\mu\\) segue também uma distribuição normal e que \\(\\sigma\\) segue uma distribuição log-normal\nComo utilizamos estes pressupostos para escolher distribuição razoiáveis para \\(\\mu\\) e \\(\\sigma\\)?\nPriori para \\(\\mu\\)\n\nmean_prior_mu =  # INSIRA SUA ESCOLHA PARA A MÉDIA DA PRIORI DE mu\nsd_prior_mu =  # INSIRA SUA ESCOLHA PARA O DESVIO PADRÃO DA PRIORI DE mu\n\n# Gere sequancia de x e calcule a PDF\nxmean_prior = np.linspace(mean_prior_mu - 4*sd_prior_mu, mean_prior_mu + 4*sd_prior_mu, 1000)\npdf_mean_prior = stats.norm.pdf(x = xmean_prior, loc = mean_prior_mu, scale = sd_prior_mu)\n\n# Plote os resultados\nplt.plot(xmean_prior, pdf_mean_prior)\nplt.title(f'Priori para $\\mu$')\nplt.show()\n\nPriori para \\(\\sigma\\)\n\nlmean_prior_sigma =  # INSIRA SUA ESCOLHA PARA A MÉDIA DA PRIORI DE sigma\nlsd_prior_sigma =  # INSIRA SUA ESCOLHA PARA O DESVIO PADRÃO DA PRIORI DE sigma\n\nxsd_prior = np.linspace(0.01, 20, 1000)\npdf_sd_prior = stats.lognorm.pdf(xsd_prior, s=lsd_prior_sigma, scale=lmean_prior_sigma)\n\nplt.plot(xsd_prior, pdf_sd_prior)\nplt.title(f'Priori para $\\sigma$')\nplt.show()\n\nExtraindo distribuição a priori preditiva de \\(y\\) no PyMC\n\n# Definindo o modelo APENAS com as priores compartilhadas\nwith pm.Model() as prior_predictive_model:\n    \n    # Priori para a média\n    mu = pm.Normal(\"mu\", mu = mean_prior_mu, sigma = sd_prior_mu)\n\n    # Priori lognormal para o desvio padrão\n    sigma = pm.Lognormal(\"sigma\", mu = np.log(lmean_prior_sigma), sigma = lsd_prior_sigma)\n\n    # Distribuição preditiva de y\n    y_pred = pm.Normal(\"y_pred\", mu = mu, sigma = sigma)\n\n    # Amostras da priori preditiva\n    prior_predictive_samples = pm.sample_prior_predictive(samples=1000)\n\nAgora, vamos visualizar a distribuição dessas amostras preditivas a priori:\n\n\n\ny_pred_prior = prior_predictive_samples.prior[\"y_pred\"].values.flatten()\n\nplt.figure(figsize=(10, 6))\nplt.hist(y_pred_prior, color='skyblue', edgecolor='black')\nplt.xlabel('Alturas priori simulada (cm)', fontsize=12)\nplt.ylabel('Densidade', fontsize=12)\nplt.grid(True, linestyle='--', alpha=0.7)\nplt.show()\n\n\nFigura 3\n\n\n\n\n\n\n\n\n\nDiscussão\n\n\n\nOlhe para o histograma. As alturas simuladas parecem razoáveis para alturas de adultos? A distribuição faz sentido dada a sua intuição? Se sim, suas priores iniciais eram sensatas. Se não, é importante considerar um ajuste de suas priores (ex: tornar a priori de \\(\\sigma\\) mais restrita se a dispersão for muito grande, ou ajustar a localização/escala da priori de \\(\\mu\\)).\n\n\nChecagem priori preditiva com PyMC\nPodemos chegar não somente a distribuição preditiva de \\(y\\), mas também dos parâmetros \\(\\mu\\) e \\(\\sigma\\) usando o PyMC. Além disso, poderíamos testar outras distribuições a priori para algum dos parâmetros, por exemplo sigma. Teste cada uma destas e verifique os efeitos sobre as distribuições preditivas.\n\n# Definindo o modelo APENAS com as priores compartilhadas\nwith pm.Model() as prior_predictive_model:\n    \n    # Priori para a média\n    mu = pm.Normal(\"mu\", mu=175, sigma=10)\n\n    # Escolha uma das prioris para sigma:\n    sigma = pm.Lognormal(\"sigma\", mu=np.log(0.08), sigma=0.5)\n    # sigma = pm.InverseGamma(\"sigma\", alpha=8, beta=0.9)\n    # sigma = pm.HalfNormal(\"sigma\", sigma=0.1)\n    # sigma = pm.HalfCauchy(\"sigma\", beta=0.1)\n    # sigma = pm.Exponential(\"sigma\", lam=20)\n    # sigma = pm.TruncatedNormal(\"sigma\", mu=0.08, sigma=0.02, lower=0)\n    # sigma = pm.Uniform(\"sigma\", lower=0, upper=1)\n\n    # Distribuição preditiva de y\n    y_pred = pm.Normal(\"y_pred\", mu=mu, sigma=sigma)\n\n    # Amostras da priori preditiva\n    prior_predictive_samples = pm.sample_prior_predictive(samples=1000)\n\n\n\n\nmu_pred_prior = prior_predictive_samples.prior[\"mu\"].values.flatten()\nsigma_pred_prior = prior_predictive_samples.prior[\"sigma\"].values.flatten()\ny_pred_prior = prior_predictive_samples.prior[\"y_pred\"].values.flatten()\n\nfig, axes = plt.subplots(1, 3, figsize=(9, 3))\n\naxes[0].hist(mu_pred_prior, bins=30, color='skyblue', edgecolor='black')\naxes[0].set_xlabel(\"μ\")\naxes[0].set_ylabel(\"Frequência\")\n\naxes[1].hist(sigma_pred_prior, bins=30, color='lightgreen', edgecolor='black')\naxes[1].set_xlabel(\"σ\")\naxes[1].set_ylabel(\"Frequência\")\n\naxes[2].hist(y_pred_prior, bins=30, color='salmon', edgecolor='black')\naxes[2].set_xlabel(\"alturas (y)\")\naxes[2].set_ylabel(\"Frequência\")\n\nplt.tight_layout()\nplt.show()\n\n\nFigura 4",
+    "objectID": "listas_exercicios/lista-exercicios-1.html#descrição-da-atividade",
+    "href": "listas_exercicios/lista-exercicios-1.html#descrição-da-atividade",
+    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
+    "section": "2 Descrição da Atividade",
+    "text": "2 Descrição da Atividade\nNesta atividade, você deverá gerar um código em Python para representar virtualmente a seguinte situação: existe uma caixa com cinco bolas de gude, distribuídas entre as cores azul e preta (sendo possível que todas sejam pretas ou todas sejam azuis).\nObjetivo: Descobrir quantas bolas pretas existem na caixa.\nMetodologia:\n\nA estratégia consiste em amostrar uma bola por vez.\nAo observar a bola retirada, devolvemos a mesma para a caixa, o que caracteriza uma amostragem com reposição.\nInicialmente, não sabemos quantas bolas pretas estão presentes e só podemos inferir isso após observar as amostras sucessivas.\n\nResultados Esperados:\n\nCompreender como utilizar um ambiente de programação para simular virtualmente as condições de um experimento aleatório.\nEntender a natureza das respostas obtidas e como avaliar seus resultados para garantir uma conclusão adequada.\nReconhecer a simulação computacional como uma forma de antecipar condições e pressupostos usados na construção de experimentos e modelos estatísticos.",
     "crumbs": [
-      "Lab. Informática",
-      "Semana 6"
+      "Listas de Exercícios",
+      "Lista 1"
+    ]
+  },
+  {
+    "objectID": "listas_exercicios/lista-exercicios-1.html#etapas-do-processo",
+    "href": "listas_exercicios/lista-exercicios-1.html#etapas-do-processo",
+    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
+    "section": "3 Etapas do Processo",
+    "text": "3 Etapas do Processo\nA seguir, são sugeridas etapas para ajudá-lo(a) a cumprir os objetivos propostos:\n\nRepresentação da caixa\nCrie um objeto em Python que represente a caixa contendo as 5 bolas de gude. Defina quantas bolas de cada cor (preta e azul) estarão presentes.\nDistribuição a priori\nDefina os resultados possíveis (quantidade de bolas pretas) e atribua uma distribuição a priori a cada resultado.\nPrimeira observação\nExtraia aleatoriamente uma bola da caixa e observe sua cor.\nAtualização a posteriori\nCom base na cor observada, atualize a distribuição de probabilidade — ou seja, calcule a nova distribuição a posteriori para cada valor possível de bolas pretas na caixa.\nVisualização e decisão\nPlote um gráfico comparando a distribuição a priori com a distribuição a posteriori. Use esse gráfico para embasar sua decisão sobre quantas bolas pretas a caixa contém.\nAmostragem sequencial\nRepita os passos 3 a 5 por n vezes. A cada nova extração, utilize a última distribuição a posteriori obtida como a nova distribuição a priori, de modo que seu conhecimento sobre a composição da caixa seja constantemente atualizado.\nCritério de parada\nInterrompa as repetições quando julgar que o número de observações é suficiente para tomar uma decisão confiável. Pense em qual seria o número mínimo de extrações para alcançar essa confiança.\nAmpliação do problema\n\nAumente o total de bolas na caixa para 50. Varie o número de bolas pretas em três cenários: i) relativamente poucas bolas pretas, ii) quantidades iguais de bolas pretas e azuis, iii) maioria de bolas pretas.\n\nResponda: Qual o efeito de aumentar a quantidade total de bolas sobre o número de repetições (n) necessário para tomar uma decisão confiável?\n\nDiante desse aumento, como a variação na proporção de bolas pretas influencia a quantidade de repetições necessárias para uma decisão acertada?",
+    "crumbs": [
+      "Listas de Exercícios",
+      "Lista 1"
+    ]
+  },
+  {
+    "objectID": "listas_exercicios/lista-exercicios-2.html",
+    "href": "listas_exercicios/lista-exercicios-2.html",
+    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
+    "section": "",
+    "text": "ENTREGA: até 25/05/2025 às 23:59, via Moodle\n\n\n1 Instruções\nAntes de iniciar, releia atentamente os conteúdos abaixo:\n\nSemana 1: Contando possibilidades\n\nSemana 2: De contagens a probabilidades\n\nSemana 3: Construindo um modelo bayesiano\n\n\n\n2 Objetivos\n\nGerar observações (terra ou água) ao “lançar” um globo virtual.\n\nCombinar essas observações com uma crença a priori e aplicar os dados para atualizar a distribuição a posteriori de \\(p\\).\n\nComparar estimativas via máxima verossimilhança (MLE) e via Bayes (a posteriori).\n\nUtilizar o módulo PyMC para gerar estimativas do parâmetro \\(p\\) do modelo binomial.\n\n\n\n\n3 Roteiro de Atividades\n\nProcedimento de Amostragem\n\nAcesse o app Estimando a Proporção da Superfície Oceânica e gere \\(N\\) pontos aleatórios, que representam seus “lançamentos” do globo. Repita o procedimento para \\(N = 4, 20, 100\\).\n\nDiscuta em grupo e responda: que pressupostos estamos assumindo ao usar essa ferramenta? Quais as limitações deste “modelo” para estimar a superfície oceânica?\n\nColeta de Dados\n\nPara cada valor de \\(N\\), observe no app quantos pontos ficaram em água (\\(k\\)) e quantos ficaram em terra (\\(N - k\\)).\n\nCalcule as estimativas pontuais de \\(\\hat{p} = \\frac{k}{N}\\) para cada valor de \\(N\\).\n\nTroque informações com seus colegas e verifique se, ao gerar mais pontos, o valor de \\(\\hat{p}\\) tende a se aproximar de um valor “esperado”. Por quê?\n\nInferência Bayesiana\n\nAbra o app Inferência Bayesiana Binomial e, no painel lateral, insira os mesmos valores de \\(N\\) (observações) e \\(k\\) (sucessos) obtidos no passo anterior.\n\nAjuste os parâmetros da distribuição beta a priori (\\(\\alpha\\) e \\(\\beta\\)) para representar diferentes visões iniciais sobre \\(p\\).\n\nInicialmente, utilize uma a priori uniforme ajustando \\(\\alpha = 1\\) e \\(\\beta = 1\\).\n\nEm seguida, teste diferentes combinações de \\(\\alpha\\) e \\(\\beta\\) para ajustar a a priori com base no que sabemos sobre a proporção da cobertura oceânica no globo.\n\n\nObserve como a distribuição a posteriori (curva azul) se desloca ou se concentra de acordo com suas escolhas de \\(\\alpha\\) e \\(\\beta\\), e com os dados (\\(N, k\\)).\n\nCompare a curva de verossimilhança (verde) e a distribuição a posteriori para discutir o quanto a a priori e as evidências observadas influenciam a estimativa final de \\(p\\).\nDiscuta o que concluiu após observar os itens #3 e #4.\n\nQuestões\n\nTamanho da amostra: o que ocorre com a estimativa pontual de \\(p\\) para amostras pequenas e grandes?\nDistribuição a priori: como uma opinião prévia sobre \\(p\\) (por exemplo, achar que o planeta é 70% água) afeta a distribuição a posteriori? Discuta para as diferentes escolhas de \\(N\\).\n\n\n\n\n\n4 Exercícios para Consolidar\n\nComparação Gráfica\n\nA cada simulação do experimento, salve as figuras das densidades a priori e a posteriori Beta a fim de facilitar a comparação.\n\nEm cada caso, ajuste um intervalo simétrico ao redor da distribuição a posteriori que inclua 95% da curva. Este seria o intervalo de credibilidade para \\(p\\). Quais foram estes intervalos?\n\nReflexão\n\nCompare seus resultados com os de outros(as) colegas.\n\nPor que, com poucos dados, a distribuição a priori influencia mais o resultado? Como o aumento de \\(N\\) faz a verossimilhança prevalecer?\n\nDesafio\n\nTarefa: Investigue quantos pontos seriam necessários para que o intervalo de credibilidade a 95% para \\(p\\) tenha largura de \\(\\pm 0{,}02\\).\n\nO que esse tamanho amostral significa em termos práticos? Se fossem realmente “lançar o globo”, quantas vezes precisariam repetir o processo? Faça essa verificação para diferentes valores de \\(N\\) e para as distribuições a priori escolhidas anteriormente.\n\n\n\n\n\n5 Exercícios em Python\n\nUtilizando o PyMC, replique as atividades do item #3. Roteiro de Atividades.\n\nPara cada valor de \\(N\\) e para cada distribuição a priori, plote os histogramas das distribuições a posteriori.\n\nO relatório da lista de exercícios deve ser entregue através de um arquivo Jupyter Notebook enviado via Moodle, contendo os códigos e suas conclusões sobre as questões levantadas acima.\nTodos os itens destacados em vermelho devem ser respondidos ou apresentados na lista.",
+    "crumbs": [
+      "Listas de Exercícios",
+      "Lista 2"
     ]
   }
 ]
