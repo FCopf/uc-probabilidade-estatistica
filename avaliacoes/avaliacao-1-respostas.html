@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Contando possibilidades">
+<meta name="author" content="Fabio Cop Ferreira">
+<meta name="description" content="Curso de Bacharelado Interdisciplinar em Ciência e Tecnologia do Mar - BICT Mar">
 
-<title>Introdução à Inferência Bayesiana – 5290 - PROBABILIDADE E ESTATÍSTICA</title>
+<title>Avaliação 1 – Introdução à Inferência Bayesiana – 5290 - PROBABILIDADE E ESTATÍSTICA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,8 +67,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../slides/Introdução_inferencia_modelagem_probabilistica.pdf" rel="next">
-<link href="../informacoes_curso/links_uteis.html" rel="prev">
+<link href="../avaliacoes/avaliacao-1.pdf" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -109,14 +109,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Procurar"
   }
 }</script>
+<style>
+h2 {
+  font-size: 1.1rem !important; /* h2 menor */
+}
+h3 {
+  font-size: 1rem !important; /* h3 menor */
+}
+</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Introdução à Inferência Bayesiana – 5290 - PROBABILIDADE E ESTATÍSTICA">
-<meta property="og:description" content="Contando possibilidades">
-<meta property="og:image" content="https://fcopf.github.io/uc-probabilidade-estatistica/lab-info/implementacao-aula-2_files/figure-html/cell-7-output-1.png">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Avaliação 1 – Introdução à Inferência Bayesiana – 5290 - PROBABILIDADE E ESTATÍSTICA">
+<meta property="og:description" content="Curso de Bacharelado Interdisciplinar em Ciência e Tecnologia do Mar - BICT Mar">
 <meta property="og:site_name" content="5290 - PROBABILIDADE E ESTATÍSTICA">
-<meta property="og:image:height" content="902">
-<meta property="og:image:width" content="1152">
 </head>
 
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -290,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab-info/implementacao-aula-2.html">Lab. Informática</a></li><li class="breadcrumb-item"><a href="../lab-info/implementacao-aula-2.html">Semana 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../avaliacoes/avaliacao-1.pdf">Avaliações</a></li><li class="breadcrumb-item"><a href="../avaliacoes/avaliacao-1-respostas.html">Avaliação 1 - Respostas</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -422,16 +456,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Lab. Informática</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab-info/implementacao-aula-2.html" class="sidebar-item-text sidebar-link active">
+  <a href="../lab-info/implementacao-aula-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Semana 2</span></a>
   </div>
 </li>
@@ -515,13 +549,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Avaliações</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Alternar seção">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../avaliacoes/avaliacao-1.pdf" class="sidebar-item-text sidebar-link">
@@ -530,7 +564,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../avaliacoes/avaliacao-1-respostas.html" class="sidebar-item-text sidebar-link">
+  <a href="../avaliacoes/avaliacao-1-respostas.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Avaliação 1 - Respostas</span></a>
   </div>
 </li>
@@ -546,15 +580,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#definição-da-caixa" id="toc-definição-da-caixa" class="nav-link active" data-scroll-target="#definição-da-caixa"><span class="header-section-number">1</span> Definição da Caixa</a></li>
-  <li><a href="#hipóteses-possíveis" id="toc-hipóteses-possíveis" class="nav-link" data-scroll-target="#hipóteses-possíveis"><span class="header-section-number">2</span> Hipóteses Possíveis</a></li>
-  <li><a href="#primeira-observação" id="toc-primeira-observação" class="nav-link" data-scroll-target="#primeira-observação"><span class="header-section-number">3</span> Primeira Observação</a>
+  <li><a href="#parte-a-questões-conceituais-20-pontos" id="toc-parte-a-questões-conceituais-20-pontos" class="nav-link active" data-scroll-target="#parte-a-questões-conceituais-20-pontos"><span class="header-section-number">1</span> Parte A – Questões conceituais (2,0 pontos)</a>
   <ul class="collapse">
-  <li><a href="#gráfico---posterior-após-a-primeira-observação" id="toc-gráfico---posterior-após-a-primeira-observação" class="nav-link" data-scroll-target="#gráfico---posterior-após-a-primeira-observação"><span class="header-section-number">3.1</span> Gráfico - Posterior Após a Primeira Observação</a></li>
+  <li><a href="#ponto-em-uma-análise-bayesiana-a-verossimilhança-de-uma-hipótese" id="toc-ponto-em-uma-análise-bayesiana-a-verossimilhança-de-uma-hipótese" class="nav-link" data-scroll-target="#ponto-em-uma-análise-bayesiana-a-verossimilhança-de-uma-hipótese"><span class="header-section-number">1.1</span> (0,5 ponto) Em uma análise bayesiana, a <em>verossimilhança</em> de uma hipótese:</a></li>
+  <li><a href="#ponto-ao-assumir-uma-distribuição-a-priori-uniforme-sobre-cinco-hipóteses-discretas-o-peso-inicial-atribuído-a-cada-hipótese-é" id="toc-ponto-ao-assumir-uma-distribuição-a-priori-uniforme-sobre-cinco-hipóteses-discretas-o-peso-inicial-atribuído-a-cada-hipótese-é" class="nav-link" data-scroll-target="#ponto-ao-assumir-uma-distribuição-a-priori-uniforme-sobre-cinco-hipóteses-discretas-o-peso-inicial-atribuído-a-cada-hipótese-é"><span class="header-section-number">1.2</span> (0,5 ponto) Ao assumir uma distribuição <em>a priori</em> uniforme sobre cinco hipóteses discretas, o peso inicial atribuído a cada hipótese é:</a></li>
+  <li><a href="#ponto-indique-a-alternativa-que-não-altera-a-distribuição-a-posteriori" id="toc-ponto-indique-a-alternativa-que-não-altera-a-distribuição-a-posteriori" class="nav-link" data-scroll-target="#ponto-indique-a-alternativa-que-não-altera-a-distribuição-a-posteriori"><span class="header-section-number">1.3</span> (0,5 ponto) Indique a alternativa que <strong>não</strong> altera a distribuição <em>a posteriori</em>:</a></li>
+  <li><a href="#ponto-quando-a-distribuição-a-priori-é-informativa-e-favorece-valores-altos-de-um-parâmetro-o-impacto-esperado-sobre-a-distribuição-a-posteriori-é" id="toc-ponto-quando-a-distribuição-a-priori-é-informativa-e-favorece-valores-altos-de-um-parâmetro-o-impacto-esperado-sobre-a-distribuição-a-posteriori-é" class="nav-link" data-scroll-target="#ponto-quando-a-distribuição-a-priori-é-informativa-e-favorece-valores-altos-de-um-parâmetro-o-impacto-esperado-sobre-a-distribuição-a-posteriori-é"><span class="header-section-number">1.4</span> (0,5 ponto) Quando a distribuição <em>a priori</em> é <strong>informativa</strong> e favorece valores altos de um parâmetro, o impacto esperado sobre a distribuição <em>a posteriori</em> é:</a></li>
   </ul></li>
-  <li><a href="#segunda-observação" id="toc-segunda-observação" class="nav-link" data-scroll-target="#segunda-observação"><span class="header-section-number">4</span> Segunda Observação</a>
+  <li><a href="#parte-b-problemas-quantitativos-80-pontos" id="toc-parte-b-problemas-quantitativos-80-pontos" class="nav-link" data-scroll-target="#parte-b-problemas-quantitativos-80-pontos"><span class="header-section-number">2</span> Parte B – Problemas quantitativos (8,0 pontos)</a>
   <ul class="collapse">
-  <li><a href="#gráfico---posterior-após-a-segunda-observação" id="toc-gráfico---posterior-após-a-segunda-observação" class="nav-link" data-scroll-target="#gráfico---posterior-após-a-segunda-observação"><span class="header-section-number">4.1</span> Gráfico - Posterior Após a Segunda Observação</a></li>
+  <li><a href="#hipótese-mais-plausível-priori-uniforme" id="toc-hipótese-mais-plausível-priori-uniforme" class="nav-link" data-scroll-target="#hipótese-mais-plausível-priori-uniforme"><span class="header-section-number">2.1</span> Hipótese mais plausível (priori uniforme):</a></li>
+  <li><a href="#probabilidade-a-posteriori-com-a-priori-informativa" id="toc-probabilidade-a-posteriori-com-a-priori-informativa" class="nav-link" data-scroll-target="#probabilidade-a-posteriori-com-a-priori-informativa"><span class="header-section-number">2.2</span> Probabilidade <em>a posteriori</em> com <em>a priori</em> informativa:</a></li>
+  <li><a href="#hipótese-mais-plausível-priori-informativa" id="toc-hipótese-mais-plausível-priori-informativa" class="nav-link" data-scroll-target="#hipótese-mais-plausível-priori-informativa"><span class="header-section-number">2.3</span> Hipótese mais plausível (priori informativa):</a></li>
+  </ul></li>
+  <li><a href="#parte-c-problemas-de-interpretação-e-uso-20-pontos" id="toc-parte-c-problemas-de-interpretação-e-uso-20-pontos" class="nav-link" data-scroll-target="#parte-c-problemas-de-interpretação-e-uso-20-pontos"><span class="header-section-number">3</span> Parte C – Problemas de interpretação e uso (2,0 pontos)</a>
+  <ul class="collapse">
+  <li><a href="#ponto-n-4-y-3-a-priori-beta1-1" id="toc-ponto-n-4-y-3-a-priori-beta1-1" class="nav-link" data-scroll-target="#ponto-n-4-y-3-a-priori-beta1-1"><span class="header-section-number">3.1</span> (0,5 ponto) <span class="math inline">\(n = 4\)</span>, <span class="math inline">\(y = 3\)</span>, <em>a priori</em> <span class="math inline">\(Beta(1, 1)\)</span></a></li>
+  <li><a href="#ponto-n-4-y-3-a-priori-beta9-4" id="toc-ponto-n-4-y-3-a-priori-beta9-4" class="nav-link" data-scroll-target="#ponto-n-4-y-3-a-priori-beta9-4"><span class="header-section-number">3.2</span> (0,5 ponto) <span class="math inline">\(n = 4\)</span>, <span class="math inline">\(y = 3\)</span>, <em>a priori</em> <span class="math inline">\(Beta(9, 4)\)</span></a></li>
+  <li><a href="#ponto-n-40-y-30-a-priori-beta1-1" id="toc-ponto-n-40-y-30-a-priori-beta1-1" class="nav-link" data-scroll-target="#ponto-n-40-y-30-a-priori-beta1-1"><span class="header-section-number">3.3</span> (0,5 ponto) <span class="math inline">\(n = 40\)</span>, <span class="math inline">\(y = 30\)</span>, <em>a priori</em> <span class="math inline">\(Beta(1, 1)\)</span></a></li>
+  <li><a href="#ponto-n-40-y-30-a-priori-beta9-4" id="toc-ponto-n-40-y-30-a-priori-beta9-4" class="nav-link" data-scroll-target="#ponto-n-40-y-30-a-priori-beta9-4"><span class="header-section-number">3.4</span> (0,5 ponto) <span class="math inline">\(n = 40\)</span>, <span class="math inline">\(y = 30\)</span>, <em>a priori</em> <span class="math inline">\(Beta(9, 4)\)</span></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -563,21 +607,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab-info/implementacao-aula-2.html">Lab. Informática</a></li><li class="breadcrumb-item"><a href="../lab-info/implementacao-aula-2.html">Semana 2</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../avaliacoes/avaliacao-1.pdf">Avaliações</a></li><li class="breadcrumb-item"><a href="../avaliacoes/avaliacao-1-respostas.html">Avaliação 1 - Respostas</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Introdução à Inferência Bayesiana</h1>
-<p class="subtitle lead">Implementação em Python</p>
+<h1 class="title">Avaliação 1 – Introdução à Inferência Bayesiana</h1>
+<p class="subtitle lead">5290 - PROBABILIDADE E ESTATÍSTICA</p>
 </div>
 
 <div>
   <div class="description">
-    Contando possibilidades
+    Curso de Bacharelado Interdisciplinar em Ciência e Tecnologia do Mar - BICT Mar
   </div>
 </div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Autor</div>
+    <div class="quarto-title-meta-contents">
+             <p>Fabio Cop Ferreira </p>
+          </div>
+  </div>
     
   
     
@@ -588,104 +638,224 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="de774f7b" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<div style="text-align: center; font-weight: bold; color: red">
+<p>RESPOSTAS DAS QUESTÕES</p>
 </div>
-<section id="definição-da-caixa" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="definição-da-caixa"><span class="header-section-number">1</span> Definição da Caixa</h2>
-<p>Definição da composição da caixa de bolinhas: suponha que a caixa contém 3 bolinhas pretas e 2 bolinhas azuis.</p>
-<div id="1ed260c1" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>caixa <span class="op">=</span> [<span class="st">'preta'</span>, <span class="st">'preta'</span>, <span class="st">'preta'</span>, <span class="st">'azul'</span>, <span class="st">'azul'</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<hr>
+<section id="parte-a-questões-conceituais-20-pontos" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="parte-a-questões-conceituais-20-pontos"><span class="header-section-number">1</span> Parte A – Questões conceituais (2,0 pontos)</h2>
+<section id="ponto-em-uma-análise-bayesiana-a-verossimilhança-de-uma-hipótese" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="ponto-em-uma-análise-bayesiana-a-verossimilhança-de-uma-hipótese"><span class="header-section-number">1.1</span> (0,5 ponto) Em uma análise bayesiana, a <em>verossimilhança</em> de uma hipótese:</h3>
+<p><strong>Resposta:</strong> <span style="color: red">B) Mede a proporção relativa de modos pelos quais a hipótese pode produzir os dados observados.</span></p>
 </section>
-<section id="hipóteses-possíveis" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="hipóteses-possíveis"><span class="header-section-number">2</span> Hipóteses Possíveis</h2>
-<p>Definição das hipóteses sobre o número de bolinhas pretas na caixa. As hipóteses variam de 0 a 5 bolinhas pretas.</p>
-<div id="6ee7cc55" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>hipoteses <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="ponto-ao-assumir-uma-distribuição-a-priori-uniforme-sobre-cinco-hipóteses-discretas-o-peso-inicial-atribuído-a-cada-hipótese-é" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="ponto-ao-assumir-uma-distribuição-a-priori-uniforme-sobre-cinco-hipóteses-discretas-o-peso-inicial-atribuído-a-cada-hipótese-é"><span class="header-section-number">1.2</span> (0,5 ponto) Ao assumir uma distribuição <em>a priori</em> uniforme sobre cinco hipóteses discretas, o peso inicial atribuído a cada hipótese é:</h3>
+<p><strong>Resposta:</strong> <span style="color: red">B) 0,20</span></p>
 </section>
-<section id="primeira-observação" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="primeira-observação"><span class="header-section-number">3</span> Primeira Observação</h2>
-<p>Realiza uma observação aleatória (com reposição).</p>
-<div id="83c92646" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>observacao <span class="op">=</span> random.choice(caixa)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(observacao)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>azul</code></pre>
-</div>
-</div>
-<p>Atualiza a plausibilidade das hipóteses com base na cor observada.</p>
-<div id="e53fb9de" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>contagem_posterior <span class="op">=</span> []</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> h <span class="kw">in</span> hipoteses:</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> observacao <span class="op">==</span> <span class="st">'preta'</span>:</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        ni <span class="op">=</span> h</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        ni <span class="op">=</span> (<span class="dv">5</span> <span class="op">-</span> h)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    contagem_posterior.append(ni)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="gráfico---posterior-após-a-primeira-observação" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="gráfico---posterior-após-a-primeira-observação"><span class="header-section-number">3.1</span> Gráfico - Posterior Após a Primeira Observação</h3>
-<div id="76e9e6f1" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>plt.bar(x<span class="op">=</span>hipoteses, height<span class="op">=</span>contagem_posterior)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Número de bolinhas pretas (hipóteses)'</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Plausibilidade'</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Plausibilidade das hipóteses após a primeira observação'</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.grid(axis<span class="op">=</span><span class="st">'y'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="implementacao-aula-2_files/figure-html/cell-7-output-1.png" width="576" height="451" class="figure-img"></p>
-</figure>
-</div>
-</div>
+<section id="ponto-indique-a-alternativa-que-não-altera-a-distribuição-a-posteriori" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="ponto-indique-a-alternativa-que-não-altera-a-distribuição-a-posteriori"><span class="header-section-number">1.3</span> (0,5 ponto) Indique a alternativa que <strong>não</strong> altera a distribuição <em>a posteriori</em>:</h3>
+<p><strong>Resposta:</strong> <span style="color: red">D) Multiplicar todas as probabilidades posteriores por uma constante comum.</span></p>
+</section>
+<section id="ponto-quando-a-distribuição-a-priori-é-informativa-e-favorece-valores-altos-de-um-parâmetro-o-impacto-esperado-sobre-a-distribuição-a-posteriori-é" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="ponto-quando-a-distribuição-a-priori-é-informativa-e-favorece-valores-altos-de-um-parâmetro-o-impacto-esperado-sobre-a-distribuição-a-posteriori-é"><span class="header-section-number">1.4</span> (0,5 ponto) Quando a distribuição <em>a priori</em> é <strong>informativa</strong> e favorece valores altos de um parâmetro, o impacto esperado sobre a distribuição <em>a posteriori</em> é:</h3>
+<p><strong>Resposta:</strong> <span style="color: red">B) Deslocá‑la na direção dos valores altos, a depender dos dados.</span></p>
+<hr>
+<div id="6c9ddf3f" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> binom</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.arange(<span class="dv">0</span>,<span class="dv">5</span>)<span class="op">/</span><span class="dv">4</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>priori <span class="op">=</span> <span class="dv">1</span><span class="op">/</span><span class="bu">len</span>(p)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> binom.pmf(y, n, p)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Post <span class="op">=</span> L <span class="op">*</span> priori <span class="op">/</span> np.<span class="bu">sum</span>(L <span class="op">*</span> priori)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>L_round <span class="op">=</span> np.<span class="bu">round</span>(L,<span class="dv">3</span>).tolist()</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Post_round <span class="op">=</span> np.<span class="bu">round</span>(Post,<span class="dv">3</span>).tolist()</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>H_selecionado <span class="op">=</span> <span class="bu">int</span>(np.argmax(Post) <span class="op">+</span> <span class="dv">1</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="segunda-observação" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="segunda-observação"><span class="header-section-number">4</span> Segunda Observação</h2>
-<p>Realiza uma nova observação.</p>
-<div id="a73ba0da" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>observacao <span class="op">=</span> random.choice(caixa)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(observacao)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>azul</code></pre>
+<section id="parte-b-problemas-quantitativos-80-pontos" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="parte-b-problemas-quantitativos-80-pontos"><span class="header-section-number">2</span> Parte B – Problemas quantitativos (8,0 pontos)</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 16%">
+<col style="width: 6%">
+<col style="width: 20%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Hipótese</th>
+<th style="text-align: center;">Composição</th>
+<th style="text-align: center;"><span class="math inline">\(n\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\mathcal{L}\)</span></th>
+<th style="text-align: center;">Probabilidade <em>a posteriori</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(H_1\)</span></td>
+<td style="text-align: center;">⚪⚪⚪⚪</td>
+<td style="text-align: center;"><span style="color: red"><span class="math inline">\(0 \times 4 \times 0 = 0\)</span></span></td>
+<td style="text-align: center;"><span style="color: red">0.0</span></td>
+<td style="text-align: center;"><span style="color: red">0.0</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(H_2\)</span></td>
+<td style="text-align: center;">⚪⚪⚪🔵</td>
+<td style="text-align: center;"><span style="color: red"><span class="math inline">\(1 \times 3 \times 1 = 3\)</span></span></td>
+<td style="text-align: center;"><span style="color: red">0.141</span></td>
+<td style="text-align: center;"><span style="color: red">0.15</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(H_3\)</span></td>
+<td style="text-align: center;">⚪⚪🔵🔵</td>
+<td style="text-align: center;"><span style="color: red"><span class="math inline">\(2 \times 2 \times 2 = 8\)</span></span></td>
+<td style="text-align: center;"><span style="color: red">0.375</span></td>
+<td style="text-align: center;"><span style="color: red">0.4</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(H_4\)</span></td>
+<td style="text-align: center;">⚪🔵🔵🔵</td>
+<td style="text-align: center;"><span style="color: red"><span class="math inline">\(3 \times 1 \times 3 = 9\)</span></span></td>
+<td style="text-align: center;"><span style="color: red">0.422</span></td>
+<td style="text-align: center;"><span style="color: red">0.45</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(H_5\)</span></td>
+<td style="text-align: center;">🔵🔵🔵🔵</td>
+<td style="text-align: center;"><span style="color: red"><span class="math inline">\(4 \times 0 \times 4 = 0\)</span></span></td>
+<td style="text-align: center;"><span style="color: red">0.0</span></td>
+<td style="text-align: center;"><span style="color: red">0.0</span></td>
+</tr>
+</tbody>
+</table>
+<section id="hipótese-mais-plausível-priori-uniforme" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="hipótese-mais-plausível-priori-uniforme"><span class="header-section-number">2.1</span> Hipótese mais plausível (priori uniforme):</h3>
+<p><strong>Resposta:</strong> <span style="color: red">E) <span class="math inline">\(H_{4}\)</span></span></p>
+<hr>
+</section>
+<section id="probabilidade-a-posteriori-com-a-priori-informativa" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="probabilidade-a-posteriori-com-a-priori-informativa"><span class="header-section-number">2.2</span> Probabilidade <em>a posteriori</em> com <em>a priori</em> informativa:</h3>
+<div id="fbc97f3e" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> binom</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.arange(<span class="dv">0</span>,<span class="dv">5</span>)<span class="op">/</span><span class="dv">4</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>priori_info <span class="op">=</span> np.array([<span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="fl">0.6</span>, <span class="fl">0.15</span>, <span class="fl">0.1</span>])</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>L_info <span class="op">=</span> binom.pmf(y, n, p)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>Post_info <span class="op">=</span> L_info <span class="op">*</span> priori_info <span class="op">/</span> np.<span class="bu">sum</span>(L_info <span class="op">*</span> priori_info)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>L_info_round <span class="op">=</span> np.<span class="bu">round</span>(L_info,<span class="dv">3</span>).tolist()</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>Post_info_round <span class="op">=</span> np.<span class="bu">round</span>(Post_info,<span class="dv">3</span>).tolist()</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>H_info_selecionado <span class="op">=</span> <span class="bu">int</span>(np.argmax(Post_info) <span class="op">+</span> <span class="dv">1</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 15%">
+<col style="width: 33%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Hipótese</th>
+<th style="text-align: center;">Composição</th>
+<th style="text-align: center;">Probabilidade <em>a priori</em></th>
+<th style="text-align: center;">Probabilidade <em>a posteriori</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(H_1\)</span></td>
+<td style="text-align: center;">⚪⚪⚪⚪</td>
+<td style="text-align: center;">0.05</td>
+<td style="text-align: center;"><span style="color: red">0.0</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(H_2\)</span></td>
+<td style="text-align: center;">⚪⚪⚪🔵</td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;"><span style="color: red">0.047</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(H_3\)</span></td>
+<td style="text-align: center;">⚪⚪🔵🔵</td>
+<td style="text-align: center;">0.60</td>
+<td style="text-align: center;"><span style="color: red">0.744</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(H_4\)</span></td>
+<td style="text-align: center;">⚪🔵🔵🔵</td>
+<td style="text-align: center;">0.15</td>
+<td style="text-align: center;"><span style="color: red">0.209</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(H_5\)</span></td>
+<td style="text-align: center;">🔵🔵🔵🔵</td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;"><span style="color: red">0.0</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="hipótese-mais-plausível-priori-informativa" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="hipótese-mais-plausível-priori-informativa"><span class="header-section-number">2.3</span> Hipótese mais plausível (priori informativa):</h3>
+<p><strong>Resposta:</strong> <span style="color: red">E) <span class="math inline">\(H_{3}\)</span></span></p>
+<hr>
+</section>
+</section>
+<section id="parte-c-problemas-de-interpretação-e-uso-20-pontos" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="parte-c-problemas-de-interpretação-e-uso-20-pontos"><span class="header-section-number">3</span> Parte C – Problemas de interpretação e uso (2,0 pontos)</h2>
+<div id="cb9e15d9" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> beta</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Definições dos parâmetros dos cenários</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>alpha_prior <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">1</span>, <span class="dv">9</span>])</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>beta_prior <span class="op">=</span>  np.array([<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">4</span>])</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span>           np.array([<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">30</span>, <span class="dv">30</span>])</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span>           np.array([<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">40</span>, <span class="dv">40</span>])</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Parâmetros da posteriori</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>alpha_post <span class="op">=</span> alpha_prior <span class="op">+</span> y</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>beta_post <span class="op">=</span> beta_prior <span class="op">+</span> (n <span class="op">-</span> y)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalo desejado</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>lower, upper <span class="op">=</span> <span class="fl">0.65</span>, <span class="fl">0.75</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Probabilidade acumulada entre os limites</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>cdf_upper <span class="op">=</span> beta.cdf(upper, alpha_post, beta_post)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>cdf_lower <span class="op">=</span> beta.cdf(lower, alpha_post, beta_post)</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>posterior_probs <span class="op">=</span> cdf_upper <span class="op">-</span> cdf_lower</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>posterior_probs_round <span class="op">=</span> np.<span class="bu">round</span>(posterior_probs,<span class="dv">3</span>).tolist()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Atualiza a posterior com base na observação anterior.</p>
-<div id="0722d813" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>contagem_anterior <span class="op">=</span> contagem_posterior.copy()</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>contagem_posterior <span class="op">=</span> []</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> h <span class="kw">in</span> hipoteses:</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> observacao <span class="op">==</span> <span class="st">'preta'</span>:</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        ni <span class="op">=</span> h <span class="op">*</span> contagem_anterior[h]</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        ni <span class="op">=</span> (<span class="dv">5</span> <span class="op">-</span> h) <span class="op">*</span> contagem_anterior[h]</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    contagem_posterior.append(ni)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="gráfico---posterior-após-a-segunda-observação" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="gráfico---posterior-após-a-segunda-observação"><span class="header-section-number">4.1</span> Gráfico - Posterior Após a Segunda Observação</h3>
-<div id="58d5d76d" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plt.bar(x<span class="op">=</span>hipoteses, height<span class="op">=</span>contagem_posterior)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Número de bolinhas pretas (hipóteses)'</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Plausibilidade'</span>)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Plausibilidade das hipóteses após a segunda observação'</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.grid(axis<span class="op">=</span><span class="st">'y'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="implementacao-aula-2_files/figure-html/cell-10-output-1.png" width="585" height="451" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="ponto-n-4-y-3-a-priori-beta1-1" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="ponto-n-4-y-3-a-priori-beta1-1"><span class="header-section-number">3.1</span> (0,5 ponto) <span class="math inline">\(n = 4\)</span>, <span class="math inline">\(y = 3\)</span>, <em>a priori</em> <span class="math inline">\(Beta(1, 1)\)</span></h3>
+<p><strong>Resposta:</strong> <span style="color: red">0.204</span></p>
+</section>
+<section id="ponto-n-4-y-3-a-priori-beta9-4" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="ponto-n-4-y-3-a-priori-beta9-4"><span class="header-section-number">3.2</span> (0,5 ponto) <span class="math inline">\(n = 4\)</span>, <span class="math inline">\(y = 3\)</span>, <em>a priori</em> <span class="math inline">\(Beta(9, 4)\)</span></h3>
+<p><strong>Resposta:</strong> <span style="color: red">0.341</span></p>
+</section>
+<section id="ponto-n-40-y-30-a-priori-beta1-1" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="ponto-n-40-y-30-a-priori-beta1-1"><span class="header-section-number">3.3</span> (0,5 ponto) <span class="math inline">\(n = 40\)</span>, <span class="math inline">\(y = 30\)</span>, <em>a priori</em> <span class="math inline">\(Beta(1, 1)\)</span></h3>
+<p><strong>Resposta:</strong> <span style="color: red">0.446</span></p>
+</section>
+<section id="ponto-n-40-y-30-a-priori-beta9-4" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="ponto-n-40-y-30-a-priori-beta9-4"><span class="header-section-number">3.4</span> (0,5 ponto) <span class="math inline">\(n = 40\)</span>, <span class="math inline">\(y = 30\)</span>, <em>a priori</em> <span class="math inline">\(Beta(9, 4)\)</span></h3>
+<p><strong>Resposta:</strong> <span style="color: red">0.49</span></p>
+<hr>
 
 
 </section>
@@ -1106,14 +1276,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../informacoes_curso/links_uteis.html" class="pagination-link" aria-label="Links úteis e Bibliografia">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Links úteis e Bibliografia</span>
+      <a href="../avaliacoes/avaliacao-1.pdf" class="pagination-link" aria-label="Avaliação 1">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Avaliação 1</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../slides/Introdução_inferencia_modelagem_probabilistica.pdf" class="pagination-link" aria-label="Semana 1">
-        <span class="nav-page-text">Semana 1</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
