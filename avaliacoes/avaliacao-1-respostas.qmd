@@ -1,0 +1,157 @@
+---
+title: "Avaliação 1 – Introdução à Inferência Bayesiana"
+subtitle: "5290 - PROBABILIDADE E ESTATÍSTICA"
+description: "Curso de Bacharelado Interdisciplinar em Ciência e Tecnologia do Mar - BICT Mar"
+author: "Fabio Cop Ferreira"
+
+format:
+  html:
+    number-sections: true
+    number-depth: 3
+    include-in-header: 
+      text: |
+        <style>
+        h2 {
+          font-size: 1.1rem !important; /* h2 menor */
+        }
+        h3 {
+          font-size: 1rem !important; /* h3 menor */
+        }
+        </style>
+
+---
+
+---
+
+<div style="text-align: center; font-weight: bold; color: red">
+RESPOSTAS DAS QUESTÕES
+</div>
+
+---
+
+## Parte A – Questões conceituais (2,0 pontos)
+
+### (0,5 ponto) Em uma análise bayesiana, a *verossimilhança* de uma hipótese:
+
+**Resposta:** <span style="color: red">B) Mede a proporção relativa de modos pelos quais a hipótese pode produzir os dados observados.</span>
+
+### (0,5 ponto) Ao assumir uma distribuição *a priori* uniforme sobre cinco hipóteses discretas, o peso inicial atribuído a cada hipótese é:
+
+**Resposta:** <span style="color: red">B) 0,20</span>
+
+### (0,5 ponto) Indique a alternativa que **não** altera a distribuição *a posteriori*:
+
+**Resposta:** <span style="color: red">D) Multiplicar todas as probabilidades posteriores por uma constante comum.</span>
+
+### (0,5 ponto) Quando a distribuição *a priori* é **informativa** e favorece valores altos de um parâmetro, o impacto esperado sobre a distribuição *a posteriori* é:
+
+**Resposta:** <span style="color: red">B) Deslocá‑la na direção dos valores altos, a depender dos dados.</span>
+
+---
+
+```{python}
+from scipy.stats import binom
+import numpy as np
+
+y = 2
+n = 3
+p = np.arange(0,5)/4
+priori = 1/len(p)
+
+L = binom.pmf(y, n, p)
+Post = L * priori / np.sum(L * priori)
+L_round = np.round(L,3).tolist()
+Post_round = np.round(Post,3).tolist()
+
+H_selecionado = int(np.argmax(Post) + 1)
+```
+
+## Parte B – Problemas quantitativos (8,0 pontos)
+
+| Hipótese | Composição | $n$ | $\mathcal{L}$ | Probabilidade *a posteriori* |
+|:--------:|:----------:|:---:|:-------------:|:----------------------------:|
+| $H_1$    | ⚪⚪⚪⚪      | <span style="color: red">$0 \times 4 \times 0 = 0$</span>   | <span style="color: red">`{python} L_round[0]`</span>   | <span style="color: red">`{python} Post_round[0]`</span>  |
+| $H_2$    | ⚪⚪⚪🔵      | <span style="color: red">$1 \times 3 \times 1 = 3$</span>   | <span style="color: red">`{python} L_round[1]`</span>   | <span style="color: red">`{python} Post_round[1]`</span>  |
+| $H_3$    | ⚪⚪🔵🔵      | <span style="color: red">$2 \times 2 \times 2 = 8$</span>   | <span style="color: red">`{python} L_round[2]`</span>   | <span style="color: red">`{python} Post_round[2]`</span>  |
+| $H_4$    | ⚪🔵🔵🔵      | <span style="color: red">$3 \times 1 \times 3 = 9$</span>   | <span style="color: red">`{python} L_round[3]`</span>   | <span style="color: red">`{python} Post_round[3]`</span>  |
+| $H_5$    | 🔵🔵🔵🔵      | <span style="color: red">$4 \times 0 \times 4 = 0$</span>   | <span style="color: red">`{python} L_round[4]`</span>   | <span style="color: red">`{python} Post_round[4]`</span>  |
+
+### Hipótese mais plausível (priori uniforme):
+
+**Resposta:** <span style="color: red">E) $H_{`{python} H_selecionado`}$</span>
+
+---
+
+### Probabilidade *a posteriori* com *a priori* informativa:
+
+```{python}
+from scipy.stats import binom
+import numpy as np
+
+y = 2
+n = 3
+p = np.arange(0,5)/4
+priori_info = np.array([0.05, 0.1, 0.6, 0.15, 0.1])
+
+L_info = binom.pmf(y, n, p)
+Post_info = L_info * priori_info / np.sum(L_info * priori_info)
+L_info_round = np.round(L_info,3).tolist()
+Post_info_round = np.round(Post_info,3).tolist()
+
+H_info_selecionado = int(np.argmax(Post_info) + 1)
+```
+
+| Hipótese | Composição | Probabilidade *a priori* | Probabilidade *a posteriori* |
+|:--------:|:----------:|:------------------------:|:----------------------------:|
+| $H_1$    | ⚪⚪⚪⚪      | 0.05                     | <span style="color: red">`{python} Post_info_round[0]`</span>  |
+| $H_2$    | ⚪⚪⚪🔵      | 0.10                     | <span style="color: red">`{python} Post_info_round[1]`</span>  |
+| $H_3$    | ⚪⚪🔵🔵      | 0.60                     | <span style="color: red">`{python} Post_info_round[2]`</span>  |
+| $H_4$    | ⚪🔵🔵🔵      | 0.15                     | <span style="color: red">`{python} Post_info_round[3]`</span>  |
+| $H_5$    | 🔵🔵🔵🔵      | 0.10                     | <span style="color: red">`{python} Post_info_round[4]`</span>  |
+
+### Hipótese mais plausível (priori informativa):
+
+**Resposta:** <span style="color: red">E) $H_{`{python} H_info_selecionado`}$</span>
+---
+
+## Parte C – Problemas de interpretação e uso (2,0 pontos)
+
+```{python}
+import numpy as np
+from scipy.stats import beta
+
+# Definições dos parâmetros dos cenários
+alpha_prior = np.array([1, 9, 1, 9])
+beta_prior =  np.array([1, 4, 1, 4])
+y =           np.array([3, 3, 30, 30])
+n =           np.array([4, 4, 40, 40])
+
+# Parâmetros da posteriori
+alpha_post = alpha_prior + y
+beta_post = beta_prior + (n - y)
+
+# Intervalo desejado
+lower, upper = 0.65, 0.75
+
+# Probabilidade acumulada entre os limites
+cdf_upper = beta.cdf(upper, alpha_post, beta_post)
+cdf_lower = beta.cdf(lower, alpha_post, beta_post)
+posterior_probs = cdf_upper - cdf_lower
+
+posterior_probs_round = np.round(posterior_probs,3).tolist()
+
+```
+
+### (0,5 ponto) $n = 4$, $y = 3$, *a priori* $Beta(1, 1)$  
+**Resposta:** <span style="color: red">`{python} posterior_probs_round[0]`</span>
+
+### (0,5 ponto) $n = 4$, $y = 3$, *a priori* $Beta(9, 4)$  
+**Resposta:** <span style="color: red">`{python} posterior_probs_round[1]`</span>
+
+### (0,5 ponto) $n = 40$, $y = 30$, *a priori* $Beta(1, 1)$  
+**Resposta:** <span style="color: red">`{python} posterior_probs_round[2]`</span>
+
+### (0,5 ponto) $n = 40$, $y = 30$, *a priori* $Beta(9, 4)$  
+**Resposta:** <span style="color: red">`{python} posterior_probs_round[3]`</span>
+
+---

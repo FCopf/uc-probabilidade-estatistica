@@ -1,0 +1,162 @@
+---
+title: "Avaliação 1 – Introdução à Inferência Bayesiana"
+subtitle: "5290 - PROBABILIDADE E ESTATÍSTICA"
+description: "Curso de Bacharelado Interdisciplinar em Ciência e Tecnologia do Mar - BICT Mar"
+author: "Fabio Cop"
+
+format:
+  html:
+    number-sections: true
+    number-depth: 3
+    include-in-header: 
+      text: |
+        <style>
+        h2 {
+          font-size: 1.1rem !important; /* h2 menor */
+        }
+        h3 {
+          font-size: 1rem !important; /* h3 menor */
+        }
+        .big-emoji { font-size: 2.4rem; vertical-align: middle; }
+        </style>
+  
+---
+
+---
+
+- **Nome:** ____________
+- **RA:** ____________
+- **Turno:** ____________
+- **Data:** 08/05/2025
+- **Tempo máximo:** 2 horas
+
+---
+
+::: {.callout-important title="Instruções"}
+
+1. Preencha a folha de resposta com cuidado, revisando cada item para garantir que reflete **seu próprio entendimento**.  
+2. A prova é **individual**, mas você pode discutir conceitos com colegas desde que isso promova **sua compreensão crítica** do conteúdo.  
+3. Utilize a **internet** ou **outras ferramentas computacionais** de forma estratégica para aprofundar sua interpretação dos problemas, não apenas buscar respostas prontas. Cada consulta deve fortalecer **sua autonomia na resolução de desafios analíticos**.  
+
+**Lembre-se:** Uma prova bem resolvida é uma ferramenta de **autoavaliação e aprendizado ativo**. Utilize este momento para exercitar sua capacidade de análise e interpretação de problemas – competências essenciais para o domínio da Inferência Bayesiana. 🎯  
+
+:::
+
+## Parte A – Questões conceituais (2,0 pontos)
+
+### (0,5 ponto) Em uma análise bayesiana, a *verossimilhança* de uma hipótese:
+
+A) Mede a plausibilidade da hipótese antes de observarmos os dados.  
+B) Mede a proporção relativa de modos pelos quais a hipótese pode produzir os dados observados.  
+C) É a distribuição de probabilidade resultante após combinarmos os dados e a *priori*.  
+D) Corresponde à área sob a curva posterior para todos os valores possíveis do parâmetro.
+
+**Resposta:** _________
+
+### (0,5 ponto) Ao assumir uma distribuição *a priori* uniforme sobre cinco hipóteses discretas, o peso inicial atribuído a cada hipótese é:
+
+A) 0,05  
+B) 0,20  
+C) 0,50  
+D) 1,00
+
+**Resposta:** _________
+
+### (0,5 ponto) Indique a alternativa que **não** altera a distribuição *a posteriori*:
+
+A) Mudar a distribuição *a priori*.  
+B) Acrescentar novas observações de dados.  
+C) Alterar a função de verossimilhança.  
+D) Multiplicar todas as probabilidades posteriores por uma constante comum.
+
+**Resposta:** _________
+
+### (0,5 ponto) Quando a distribuição *a priori* é **informativa** e favorece valores altos de um parâmetro, o impacto esperado sobre a distribuição *a posteriori* é:
+
+A) Torná‑la uniforme.  
+B) Deslocá‑la na direção dos valores altos, a depender dos dados.  
+C) Torná‑la idêntica à verossimilhança.  
+D) Impedir a atualização pelos dados.
+
+**Resposta:** _________
+
+---
+
+## Parte B – Problemas quantitativos (8,0 pontos)
+
+Uma caixa contém **quatro** bolinhas que podem ser azuis (●) ou brancas (○). As hipóteses sobre a composição da caixa são:
+
+
+| Hipótese | Composição |
+|:--------:|:----------:|
+| $H_1$    | ○ ○ ○ ○       |
+| $H_2$    | ○ ○ ○ ●      |
+| $H_3$    | ○ ○ ● ●       |
+| $H_4$    | ○ ● ● ●       |
+| $H_5$    | ● ● ● ●      |
+
+Você faz **três** observações, com reposição, e obtém a sequência:
+
+●  ○  ●
+
+### **(1,0 ponto)** Para cada hipótese conte o número de caminhos ($n$) consistentes com a sequência observada.
+
+### **(1,0 ponto)** Calcule a *verossimilhança* para cada hipótese assumindo um **modelo binomial**. (Arredonde para 3 CASAS DECIMAIS).
+
+### **(1,0 ponto)** **Utilizando o valor da verossimilhança**, calcule a probabilidade *a posteriori* de cada hipótese, assumindo uma distribuição *a priori* **uniforme**. (Arredonde para 3 CASAS DECIMAIS).
+
+| Hipótese | Composição | $n$ | $\mathcal{L}$ | Probabilidade *a posteriori* |
+|:--------:|:----------:|:---:|:-------------:|:----------------------------:|
+| $H_1$    | ○ ○ ○ ○       |     |               |                              |
+| $H_2$    | ○ ○ ○ ●      |     |               |                              |
+| $H_3$    | ○ ○ ● ●       |     |               |                              |
+| $H_4$    | ○ ● ● ●       |     |               |                              |
+| $H_5$    | ● ● ● ●      |     |               |                              |
+
+### **(0,5 ponto)** Assinale a hipótese mais plausível com base nos resultados da questão anterior (priori uniforme).
+
+A) [ ] $H_1$  
+B) [ ] $H_2$  
+C) [ ] $H_3$  
+D) [ ] $H_4$  
+E) [ ] $H_5$
+
+### **(2,0 pontos)** **Utilizando o valor da verossimilhança**, recalcule a probabilidade *a posteriori* de cada hipótese, assumindo uma distribuição *a priori* **informativa** conforme a tabela abaixo:
+
+| Hipótese | Composição | Probabilidade *a priori* | Probabilidade *a posteriori* |
+|:--------:|:----------:|:------------------------:|:----------------------------:|
+| $H_1$    | ○ ○ ○ ○       | 0.05                     |                              |
+| $H_2$    | ○ ○ ○ ●      | 0.10                     |                              |
+| $H_3$    | ○ ○ ● ●       | 0.60                     |                              |
+| $H_4$    | ○ ● ● ●       | 0.15                     |                              |
+| $H_5$    | ● ● ● ●      | 0.10                     |                              |
+
+### **(0,5 ponto)** Assinale a hipótese mais plausível com base nos resultados da questão anterior (priori informativa).
+
+A) [ ] $H_1$  
+B) [ ] $H_2$  
+C) [ ] $H_3$  
+D) [ ] $H_4$  
+E) [ ] $H_5$
+
+---
+
+## Parte C – Problemas de interpretação e uso (2,0 pontos)
+
+Considere o experimento do globo, no qual se deseja inferir a **proporção de água** na superfície da Terra, representada pelo parâmetro $p$, a partir de observações e de uma distribuição *a priori*. Para cada item abaixo, calcule a **probabilidade *a posteriori*** de $p$ estar entre **0,65** e **0,75**. Use a distribuição Beta adequada a cada cenário.  
+
+**Obs:** *Você pode usar o app **Inferência Bayesiana Binomial** [https://fcopf-binomial-bayesiana.share.connect.posit.cloud/](https://fcopf-binomial-bayesiana.share.connect.posit.cloud/) ou outra ferramenta de sua escolha.*
+
+### **(0,5 ponto)** Suponha que, em $n = 4$ lançamentos, foram observados $y = 3$ pontos sobre a água. Use uma distribuição *a priori* $Beta(1, 1)$ (uniforme). (Arredonde para 3 CASAS DECIMAIS). 
+**Resposta:** ___
+
+### **(0,5 ponto)** Com os mesmos dados do item anterior ($n = 4$, $y = 3$), utilize uma distribuição *a priori* $Beta(9, 4)$. (Arredonde para 3 CASAS DECIMAIS).
+**Resposta:** ___
+
+### **(0,5 ponto)** Suponha um número maior de observações: $n = 40$ lançamentos, com $y = 30$ observações sobre a água. Utilize a *a priori* $Beta(1, 1)$. (Arredonde para 3 CASAS DECIMAIS).  
+**Resposta:** ___
+
+### **(0,5 ponto)** Com os mesmos dados do item anterior ($n = 40$, $y = 30$), utilize a *a priori* $Beta(9, 4)$. (Arredonde para 3 CASAS DECIMAIS).  
+**Resposta:** ___
+
+---

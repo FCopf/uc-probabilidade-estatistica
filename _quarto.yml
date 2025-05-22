@@ -49,8 +49,8 @@ website:
             text: Cronograma
           - href: informacoes_curso/links_uteis.qmd
             text: Links úteis e Bibliografia
-      - section: Material de apoio
-        contents: 
+      # - section: Material de apoio
+      #   contents: 
           # - href: material_apoio/ideias_projeto.qmd
           #   text: "Ideias para o projeto final"
       - section: Leitura Obrigatória
@@ -58,13 +58,21 @@ website:
           - href: https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-counting.html
             text: Semana 1
           - href: https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-distr-prob.html
-            text: Semana 2  
+            text: Semana 2
+          - href: https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-modelo-bayesiano.html
+            text: Semana 3
+          - href: https://fcopf.github.io/MEAD/conteudo/distribuicao_normal/distribuicao_normal-modelo.html
+            text: Semana 6A
+          - href: https://fcopf.github.io/MEAD/conteudo/distribuicao_normal/distribuicao_normal-probabilidade.html
+            text: Semana 6B    
       - section: Leitura Complementar
         contents: 
           - href: https://fcopf.github.io/MEAD/fundamentos_probabilidade.html
             text: Semana 1
           - href: https://fcopf.github.io/MEAD/conteudo/fundamentos_probabilidade/teorema_bayes.html
             text: Semana 2
+          - href: https://fcopf.github.io/MEAD/conteudo/distribuicao_normal/distr_norm.html
+            text: Semana 6
       - section: Lab. Informática
         contents: 
           - href: lab-info/implementacao-aula-2.qmd
@@ -100,11 +108,13 @@ website:
           
       - section: "Avaliações"
         contents:
-          # - href: avaliacao/avaliacao-1.qmd
-          #   text: "Avaliação 1"
-          # - href: avaliacao/avaliacao-2.qmd
+          - href: avaliacoes/avaliacao-1.pdf
+            text: "Avaliação 1"
+          - href: avaliacoes/avaliacao-1-respostas.qmd
+            text: "Avaliação 1 - Respostas"
+          # - href: avaliacoes/avaliacao-2.qmd
           #   text: "Avaliação 2"
-          # - href: avaliacao/avaliacao-3-projeto
+          # - href: avaliacoes/avaliacao-3-projeto
           #   text: "Projeto"
 
 # Global format configuration
