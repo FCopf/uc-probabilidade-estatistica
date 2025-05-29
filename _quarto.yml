@@ -83,6 +83,8 @@ website:
             text: Semana 4
           - href: https://fcopf.github.io/MEAD/conteudo/intro_bayes/intro-bayes-modelo-normal-bayesiano-priori.html
             text: Semana 6
+          - href: https://fcopf.github.io/MEAD/conteudo/modelos_regressao_bayes/regressao-linear-bayesiana-bambi.html
+            text: Semana 8
       - section: Slides
         contents: 
           - href: /slides/Introdução_inferencia_modelagem_probabilistica.pdf
@@ -99,8 +101,8 @@ website:
             text: "Lista 1"
           - href: listas_exercicios/lista-exercicios-2.qmd
             text: "Lista 2"
-          # - href: listas_exercicios/lista-exercicios-3.qmd
-          #   text: "Lista 3"
+          - href: listas_exercicios/lista-exercicios-3.qmd
+            text: "Lista 3"
           # - href: listas_exercicios/lista-exercicios-4.qmd
           #   text: "Lista 4"
           # - href: listas_exercicios/lista-exercicios-5.qmd

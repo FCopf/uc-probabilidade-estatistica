@@ -1,0 +1,170 @@
+---
+title: "Regressão Linear Bayesiana - Implementação Prática"
+subtitle: "Lista de Exercícios 3"
+execute:
+  echo: true
+  warning: false
+  include: true
+  message: false
+---
+
+---
+
+**ENTREGA**: *até 26/06/2025 às 23:59, via Moodle*
+
+---
+
+## Objetivos
+
+Esta lista de exercícios visa desenvolver suas habilidades práticas na implementação de modelos de regressão linear bayesiana utilizando a biblioteca `bambi` em Python. Você irá aprender a:
+
+- Especificar e ajustar modelos bayesianos do zero
+- Definir distribuições a priori apropriadas
+- Realizar diagnósticos de convergência MCMC
+- Interpretar resultados bayesianos no contexto de incerteza paramétrica
+- Visualizar e comunicar resultados de análises bayesianas
+
+## Contexto
+
+Em estudos ecológicos, investigamos como variáveis ambientais influenciam a biodiversidade. Nesta lista, analisaremos dados de praias na costa holandesa, examinando a relação entre:
+
+- **Riqueza de espécies** (`Richness`): número de espécies diferentes por local (variável resposta)
+- **NAP** (*Normaal Amsterdams Peil*): altura do local em relação ao nível médio do mar (variável preditora)
+
+Os dados provêm do estudo descrito no Capítulo 5 de Zuur et al. (2009) e estão disponíveis no arquivo `RIKZ.csv`.
+
+---
+
+## EXERCÍCIOS{-}
+
+**1.  Preparação e Exploração Inicial dos Dados**
+
+**1.1** Carregue as bibliotecas necessárias e importe o conjunto de dados `RIKZ.csv` do link:
+[https://raw.githubusercontent.com/FCopf/datasets/refs/heads/main/RIKZ.csv](https://raw.githubusercontent.com/FCopf/datasets/refs/heads/main/RIKZ.csv){target="_blank"}
+
+*Bibliotecas sugeridas: pandas, bambi, arviz, numpy, matplotlib.pyplot, seaborn*
+
+**1.2** Crie um gráfico de dispersão entre `NAP` (eixo x) e `Richness` (eixo y):
+
+- Verifique visualmente se um modelo linear é adequado para analisar a relação entre estas variáveis.
+
+**Questão 1**: Com base na exploração inicial, a relação entre riqueza de espécies e NAP parece ser aproximadamente linear?
+
+---
+
+**2. Especificação do Modelo Bayesiano**
+
+**2.1** Especifique um modelo de regressão linear bayesiano usando a bilbioteca `bambi` do Python:
+
+- Utilize a sintaxe de fórmula: `Richness ~ NAP`
+- Defina explicitamente a família de distribuição como Gaussiana
+- Examine a estrutura do modelo criado
+
+**2.2** Utilize as distribuições a priori padrão:
+
+- Identifique quais priors foram atribuídas para o intercepto, coeficiente de NAP e sigma
+- Avalie as curvas de densidade das distribuições apriori
+
+**Questão 2a**: Qual família de distribuição e função de ligação foram utilizadas?
+
+**Questão 2b**: Descreva as distribuições a priori atribuídas automaticamente. Considerando as priori como "crenças iniciais" do modelo antes de observar os dados, os limites escolhidos automaticamente parecem muito ou pouco informativos?
+
+---
+
+**3. Ajuste do Modelo via MCMC**
+
+**3.1** Realize a amostragem MCMC para obter a distribuição a posteriori:
+
+- Descreva o número de cadeias (chains), iterações (draws), período de aquecimento (tune) utilizados
+
+**3.2** Examine o objeto de resultados retornado:
+
+- Identifique que tipo de objeto foi criado
+- Liste quais informações estão disponíveis neste objeto
+
+**Questão 3**: Explique brevemente o que acontece durante o processo MCMC e por que precisamos de múltiplas cadeias e um período de aquecimento.
+
+---
+
+**4. Diagnóstico de Convergência**
+
+**4.1** Crie trace plots para todos os parâmetros do modelo:
+
+- Visualize as trajetórias das cadeias MCMC
+- Analise se há boa mistura entre as cadeias
+
+**4.2** Gere uma tabela de resumo estatístico:
+
+- Observe a estatística de convergência (`R_hat`)
+- Foque nos parâmetros principais: intercepto, coeficiente de NAP e sigma
+
+**4.3** Interprete os diagnósticos de convergência:
+
+**Questão 4a**: Com base nos trace plots, as cadeias MCMC convergiram adequadamente? Justifique sua avaliação apontando características específicas dos gráficos.
+
+**Questão 4b**: Analise os valores de `R_hat` da tabela de resumo. Estes valores indicam convergência satisfatória? Quais são os critérios típicos para considerar a convergência adequada?
+
+---
+
+**5. Interpretação dos Resultados Bayesianos**
+
+**5.1** Com base na tabela de resumo, interprete os resultados:
+
+**Questão 5a**: Qual é a estimativa pontual (média a posteriori) do efeito de NAP sobre a riqueza? Qual é o intervalo de credibilidade HDI de 94% para este parâmetro?
+
+**Questão 5b**: O intervalo de credibilidade do coeficiente de NAP inclui zero? O que isso indica sobre a evidência de um efeito linear entre NAP e riqueza de espécies?
+
+---
+
+**6. Comparação Priors vs Posteriors**
+
+**6.1** Crie um gráfico comparativo mostrando as distribuições a priori e a posteriori para cada parâmetro.
+
+**Questão 6a**: Para quais parâmetros os dados foram mais informativos (maior diferença entre prior e posterior)? E menos informativos?
+
+**Questão 6b**: O que essa comparação revela sobre como seus "conhecimentos prévios" (priors) foram atualizados pela evidência dos dados?
+
+---
+
+**7. Visualização da Incerteza Preditiva**
+
+**7.1** Visualize a incerteza na reta de regressão:
+
+- Plote múltiplas retas possíveis amostradas da distribuição a posteriori
+- Inclua os dados observados no gráfico
+- Adicione a reta média da posteriori
+
+**7.2** Calcule e visualize o intervalo de credibilidade da reta média:
+
+- Calcule intervalos de credibilidade de 95% para a reta média
+- Crie um gráfico com a banda de credibilidade
+
+**Questão 7a**: Onde a variabilidade das retas da posteriori é maior - no centro dos dados ou nos extremos? Por que isso é esperado estatisticamente?
+
+**Questão 7b**: Como você interpretaria o intervalo de credibilidade da reta média para um colega que não tem formação em estatística bayesiana?
+
+---
+
+**8. Predições para Novos Dados**
+
+**8.1** Faça predições bayesianas para novos valores de NAP:
+
+- Escolha 3-4 valores de NAP dentro do range dos dados
+- Obtenha distribuições preditivas para estes valores (não apenas a média)
+- Visualize essas distribuições
+
+**Questão 8**: Explique a diferença entre incerteza na reta média (exercício 7) e incerteza nas predições individuais. Por que a incerteza preditiva é maior?
+
+---
+
+::: {.callout-important title="Dicas Importantes"}
+
+
+- Entregue seu código em um arquivo do **google Colab** `. ipynb`
+- Documente seu código com comentários claros
+- Justifique suas escolhas metodológicas
+- Responda cada questão e mantenha os código utilizados para gerar os gráficos
+
+:::
+
+---
