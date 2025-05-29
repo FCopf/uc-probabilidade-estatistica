@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -551,115 +586,6 @@ ul.task-list li input[type="checkbox"] {
 
 <hr>
 <p><strong>ENTREGA</strong>: <em>até 26/06/2025 às 23:59, via Moodle</em></p>
-<hr>
-<section id="objetivos" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">1</span> Objetivos</h2>
-<p>Esta lista de exercícios visa desenvolver suas habilidades práticas na implementação de modelos de regressão linear bayesiana utilizando a biblioteca <code>bambi</code> em Python. Você irá aprender a:</p>
-<ul>
-<li>Especificar e ajustar modelos bayesianos do zero</li>
-<li>Definir distribuições a priori apropriadas</li>
-<li>Realizar diagnósticos de convergência MCMC</li>
-<li>Interpretar resultados bayesianos no contexto de incerteza paramétrica</li>
-<li>Visualizar e comunicar resultados de análises bayesianas</li>
-</ul>
-</section>
-<section id="contexto" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="contexto"><span class="header-section-number">2</span> Contexto</h2>
-<p>Em estudos ecológicos, investigamos como variáveis ambientais influenciam a biodiversidade. Nesta lista, analisaremos dados de praias na costa holandesa, examinando a relação entre:</p>
-<ul>
-<li><strong>Riqueza de espécies</strong> (<code>Richness</code>): número de espécies diferentes por local (variável resposta)</li>
-<li><strong>NAP</strong> (<em>Normaal Amsterdams Peil</em>): altura do local em relação ao nível médio do mar (variável preditora)</li>
-</ul>
-<p>Os dados provêm do estudo descrito no Capítulo 5 de Zuur et al.&nbsp;(2009) e estão disponíveis no arquivo <code>RIKZ.csv</code>.</p>
-<hr>
-</section>
-<section id="exercícios" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="exercícios">EXERCÍCIOS</h2>
-<p><strong>1. Preparação e Exploração Inicial dos Dados</strong></p>
-<p><strong>1.1</strong> Carregue as bibliotecas necessárias e importe o conjunto de dados <code>RIKZ.csv</code> do link: <a href="https://raw.githubusercontent.com/FCopf/datasets/refs/heads/main/RIKZ.csv" target="_blank">https://raw.githubusercontent.com/FCopf/datasets/refs/heads/main/RIKZ.csv</a></p>
-<p><em>Bibliotecas sugeridas: pandas, bambi, arviz, numpy, matplotlib.pyplot, seaborn</em></p>
-<p><strong>1.2</strong> Crie um gráfico de dispersão entre <code>NAP</code> (eixo x) e <code>Richness</code> (eixo y):</p>
-<ul>
-<li>Verifique visualmente se um modelo linear é adequado para analisar a relação entre estas variáveis.</li>
-</ul>
-<p><strong>Questão 1</strong>: Com base na exploração inicial, a relação entre riqueza de espécies e NAP parece ser aproximadamente linear?</p>
-<hr>
-<p><strong>2. Especificação do Modelo Bayesiano</strong></p>
-<p><strong>2.1</strong> Especifique um modelo de regressão linear bayesiano usando a bilbioteca <code>bambi</code> do Python:</p>
-<ul>
-<li>Utilize a sintaxe de fórmula: <code>Richness ~ NAP</code></li>
-<li>Defina explicitamente a família de distribuição como Gaussiana</li>
-<li>Examine a estrutura do modelo criado</li>
-</ul>
-<p><strong>2.2</strong> Utilize as distribuições a priori padrão:</p>
-<ul>
-<li>Identifique quais priors foram atribuídas para o intercepto, coeficiente de NAP e sigma</li>
-<li>Avalie as curvas de densidade das distribuições apriori</li>
-</ul>
-<p><strong>Questão 2a</strong>: Qual família de distribuição e função de ligação foram utilizadas?</p>
-<p><strong>Questão 2b</strong>: Descreva as distribuições a priori atribuídas automaticamente. Considerando as priori como “crenças iniciais” do modelo antes de observar os dados, os limites escolhidos automaticamente parecem muito ou pouco informativos?</p>
-<hr>
-<p><strong>3. Ajuste do Modelo via MCMC</strong></p>
-<p><strong>3.1</strong> Realize a amostragem MCMC para obter a distribuição a posteriori:</p>
-<ul>
-<li>Descreva o número de cadeias (chains), iterações (draws), período de aquecimento (tune) utilizados</li>
-</ul>
-<p><strong>3.2</strong> Examine o objeto de resultados retornado:</p>
-<ul>
-<li>Identifique que tipo de objeto foi criado</li>
-<li>Liste quais informações estão disponíveis neste objeto</li>
-</ul>
-<p><strong>Questão 3</strong>: Explique brevemente o que acontece durante o processo MCMC e por que precisamos de múltiplas cadeias e um período de aquecimento.</p>
-<hr>
-<p><strong>4. Diagnóstico de Convergência</strong></p>
-<p><strong>4.1</strong> Crie trace plots para todos os parâmetros do modelo:</p>
-<ul>
-<li>Visualize as trajetórias das cadeias MCMC</li>
-<li>Analise se há boa mistura entre as cadeias</li>
-</ul>
-<p><strong>4.2</strong> Gere uma tabela de resumo estatístico:</p>
-<ul>
-<li>Observe a estatística de convergência (<code>R_hat</code>)</li>
-<li>Foque nos parâmetros principais: intercepto, coeficiente de NAP e sigma</li>
-</ul>
-<p><strong>4.3</strong> Interprete os diagnósticos de convergência:</p>
-<p><strong>Questão 4a</strong>: Com base nos trace plots, as cadeias MCMC convergiram adequadamente? Justifique sua avaliação apontando características específicas dos gráficos.</p>
-<p><strong>Questão 4b</strong>: Analise os valores de <code>R_hat</code> da tabela de resumo. Estes valores indicam convergência satisfatória? Quais são os critérios típicos para considerar a convergência adequada?</p>
-<hr>
-<p><strong>5. Interpretação dos Resultados Bayesianos</strong></p>
-<p><strong>5.1</strong> Com base na tabela de resumo, interprete os resultados:</p>
-<p><strong>Questão 5a</strong>: Qual é a estimativa pontual (média a posteriori) do efeito de NAP sobre a riqueza? Qual é o intervalo de credibilidade HDI de 94% para este parâmetro?</p>
-<p><strong>Questão 5b</strong>: O intervalo de credibilidade do coeficiente de NAP inclui zero? O que isso indica sobre a evidência de um efeito linear entre NAP e riqueza de espécies?</p>
-<hr>
-<p><strong>6. Comparação Priors vs Posteriors</strong></p>
-<p><strong>6.1</strong> Crie um gráfico comparativo mostrando as distribuições a priori e a posteriori para cada parâmetro.</p>
-<p><strong>Questão 6a</strong>: Para quais parâmetros os dados foram mais informativos (maior diferença entre prior e posterior)? E menos informativos?</p>
-<p><strong>Questão 6b</strong>: O que essa comparação revela sobre como seus “conhecimentos prévios” (priors) foram atualizados pela evidência dos dados?</p>
-<hr>
-<p><strong>7. Visualização da Incerteza Preditiva</strong></p>
-<p><strong>7.1</strong> Visualize a incerteza na reta de regressão:</p>
-<ul>
-<li>Plote múltiplas retas possíveis amostradas da distribuição a posteriori</li>
-<li>Inclua os dados observados no gráfico</li>
-<li>Adicione a reta média da posteriori</li>
-</ul>
-<p><strong>7.2</strong> Calcule e visualize o intervalo de credibilidade da reta média:</p>
-<ul>
-<li>Calcule intervalos de credibilidade de 95% para a reta média</li>
-<li>Crie um gráfico com a banda de credibilidade</li>
-</ul>
-<p><strong>Questão 7a</strong>: Onde a variabilidade das retas da posteriori é maior - no centro dos dados ou nos extremos? Por que isso é esperado estatisticamente?</p>
-<p><strong>Questão 7b</strong>: Como você interpretaria o intervalo de credibilidade da reta média para um colega que não tem formação em estatística bayesiana?</p>
-<hr>
-<p><strong>8. Predições para Novos Dados</strong></p>
-<p><strong>8.1</strong> Faça predições bayesianas para novos valores de NAP:</p>
-<ul>
-<li>Escolha 3-4 valores de NAP dentro do range dos dados</li>
-<li>Obtenha distribuições preditivas para estes valores (não apenas a média)</li>
-<li>Visualize essas distribuições</li>
-</ul>
-<p><strong>Questão 8</strong>: Explique a diferença entre incerteza na reta média (exercício 7) e incerteza nas predições individuais. Por que a incerteza preditiva é maior?</p>
-<hr>
 <div class="callout callout-style-default callout-important callout-titled" title="Dicas Importantes">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -678,6 +604,121 @@ Dicas Importantes
 </ul>
 </div>
 </div>
+<hr>
+<section id="objetivos" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">1</span> Objetivos</h2>
+<p>Esta lista visa desenvolver suas habilidades práticas na implementação de modelos de regressão linear bayesiana utilizando a biblioteca <code>bambi</code> em Python. Você irá aprender a:</p>
+<ul>
+<li>Especificar e ajustar modelos bayesianos do zero</li>
+<li>Definir distribuições a priori apropriadas</li>
+<li>Realizar diagnósticos de convergência MCMC</li>
+<li>Interpretar resultados bayesianos no contexto de incerteza paramétrica</li>
+<li>Visualizar e comunicar resultados de análises bayesianas</li>
+</ul>
+</section>
+<section id="contexto" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="contexto"><span class="header-section-number">2</span> Contexto</h2>
+<p>Em estudos ecológicos, investigamos como variáveis ambientais influenciam a biodiversidade. Nesta lista, analisaremos dados de praias na costa holandesa, examinando a relação entre:</p>
+<ul>
+<li><strong>Riqueza de espécies</strong> (<code>Richness</code>): número de espécies diferentes por local (variável resposta)</li>
+<li><strong>NAP</strong> (<em>Normaal Amsterdams Peil</em>): altura do local em relação ao nível médio do mar (variável preditora)</li>
+</ul>
+<p>Os dados provêm do estudo descrito no Capítulo 5 de Zuur et al.&nbsp;(2009) e estão disponíveis no arquivo <a href="https://raw.githubusercontent.com/FCopf/datasets/refs/heads/main/RIKZ.csv" target="_blank">RIKZ.csv</a>.</p>
+<hr>
+</section>
+<section id="exercícios" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercícios">EXERCÍCIOS</h2>
+<p><strong>1. Preparação e Exploração Inicial dos Dados</strong></p>
+<p><strong>1.1</strong> Abra um novo arquivo no <strong>Google Colab</strong></p>
+<p><strong>1.2</strong> Carregue as bibliotecas necessárias e importe o conjunto de dados <code>RIKZ.csv</code> do link: <a href="https://raw.githubusercontent.com/FCopf/datasets/refs/heads/main/RIKZ.csv" target="_blank">https://raw.githubusercontent.com/FCopf/datasets/refs/heads/main/RIKZ.csv</a></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>Bibliotecas sugeridas: pandas, bambi, arviz, numpy, matplotlib.pyplot, seaborn</em>.</p>
+<p>No Google Colab, as bibliotecas bambi e arviz deverão ser instaladas a cada nova seção rodando o comando abaixo, que deve ser inserido na primeira cálula do arquivo.</p>
+<div id="a97f781a" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install bambi arviz</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="88a714c5" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> bambi <span class="im">as</span> bmb</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arviz <span class="im">as</span> az</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p><strong>1. Análise Exploratória</strong></p>
+<p><strong>1.1</strong> Crie um gráfico de dispersão entre <code>Richness</code> (eixo y) e <code>NAP</code> (eixo x) para verificar visualmente se há uma relação linear entre essas variáveis.</p>
+<p><span style="color: red;"><strong>Questão 1</strong></span>: A relação entre riqueza de espécies e NAP parece ser aproximadamente linear? Caso não seja, explique.</p>
+<hr>
+<p><strong>2. Especificação do Modelo Bayesiano</strong></p>
+<p><strong>2.1</strong> Especifique um modelo de regressão linear bayesiano usando a bilbioteca <code>bambi</code> do Python:</p>
+<ul>
+<li>Utilize a sintaxe de fórmula: <code>Richness ~ NAP</code></li>
+<li>Examine a estrutura do modelo criado</li>
+</ul>
+<p><strong>2.2</strong> Distribuições a priori padrão:</p>
+<ul>
+<li>Não especifique as distribuições a priori e utilize as atribuições padrão da biblioteca.</li>
+<li>Identifique quais prioris foram atribuídas para o intercepto, coeficiente de NAP e sigma</li>
+<li>Avalie as curvas de densidade das distribuições apriori</li>
+</ul>
+<p><span style="color: red;"><strong>Questão 2a</strong></span>: Qual família de distribuição (<code>Family</code>) e função de ligação (<code>Link</code>) foram utilizadas?</p>
+<p><span style="color: red;"><strong>Questão 2b</strong></span>: Quais prioris foram, atribuídas ao intercepto, ao coeficiente de NAP e a sigma?</p>
+<p><span style="color: red;"><strong>Questão 2c</strong></span>: Considerando as priori como “crenças iniciais” do modelo antes de observar os dados, os limites escolhidos automaticamente parecem muito ou pouco informativos? Justifique.</p>
+<hr>
+<p><strong>3. Ajuste do Modelo via MCMC</strong></p>
+<p><strong>3.1</strong> Realize a amostragem MCMC para obter a distribuição a posteriori e gere a tabela resumo:</p>
+<ul>
+<li>Foque nos parâmetros principais: intercepto, coeficiente de NAP e sigma</li>
+</ul>
+<p><span style="color: red;"><strong>Questão 3a</strong></span>: Quais foram as médias, desvios padrões (<code>sd</code>) para cada parâmetro?</p>
+<p><span style="color: red;"><strong>Questão 3b</strong></span>: Quais foram os limites dos intervalos de credibilidade para cada parâmetro?</p>
+<hr>
+<p><strong>4. Interpretação dos Resultados Bayesianos</strong></p>
+<p><strong>4.1</strong> Com base na estimativa pontual (média a posteriori) do coeficiente de NAP e no intervalo de credibilidade HDI de 94%, responda:</p>
+<p><span style="color: red;"><strong>Questão 4a</strong></span>: O que você conclui sobre a existência e direção do efeito linear de NAP sobre a riqueza de espécies?</p>
+<p><span style="color: red;"><strong>Questão 4b</strong></span>: Como você interpreta o valor da estimativa pontual do coeficiente de NAP em termos práticos?</p>
+<p><span style="color: red;"><strong>Questão 4b</strong></span>: O que o intervalo de credibilidade HDI de 94% nos informa sobre a incerteza dessa estimativa?</p>
+<hr>
+<p><strong>6. Visualização da Incerteza Preditiva</strong></p>
+<p><strong>6.1</strong> Visualize a incerteza na reta de regressão:</p>
+<ul>
+<li>Plote múltiplas retas possíveis amostradas da distribuição a posteriori</li>
+<li>Inclua os dados observados no gráfico</li>
+<li>Adicione a reta média da posteriori</li>
+</ul>
+<p><strong>6.2</strong> Calcule e visualize o intervalo de credibilidade da reta média:</p>
+<ul>
+<li>Calcule intervalos de credibilidade de 95% para a reta média</li>
+<li>Crie um gráfico com a banda de credibilidade</li>
+</ul>
+<p><span style="color: red;"><strong>Questão 6a</strong></span>: Onde a variabilidade das retas da posteriori é maior - no centro dos dados ou nos extremos? Por que isso é esperado estatisticamente?</p>
+<p><span style="color: red;"><strong>Questão 6b</strong></span>: Como você interpretaria o intervalo de credibilidade da reta média para um colega que não tem formação em estatística bayesiana?</p>
+<hr>
+<p><strong>7. Predições para Novos Dados</strong></p>
+<p><strong>7.1</strong> Faça predições bayesianas para novos valores de NAP:</p>
+<ul>
+<li>Escolha novos os valores de <code>NAP</code> como <code>[-1.3, 0, 3]</code></li>
+<li>Obtenha distribuições preditivas da riqueza para estes limites de <code>NAP</code></li>
+<li>Visualize histogramas dessas distribuições</li>
+</ul>
+<p><span style="color: red;"><strong>Questão 7</strong></span>: Analise criticamente os valores preditos de riqueza de espécies:</p>
+<ol type="1">
+<li><p><strong>Plausibilidade biológica</strong>: Os valores preditos fazem sentido biologicamente? Por quê?</p></li>
+<li><p><strong>Comparação com dados observados</strong>: Como as predições se comparam com o padrão e a faixa de valores observados nos dados originais?</p></li>
+<li><p><strong>Limitações do modelo</strong>: O que essas predições revelam sobre as limitações do modelo linear ajustado? Em que situações o modelo pode fornecer predições inadequadas?</p></li>
+<li><p><strong>Extrapolação</strong>: Quais cuidados devemos ter ao usar este modelo para fazer predições, especialmente em valores extremos de <code>NAP</code>?</p></li>
+</ol>
 <hr>
 
 
