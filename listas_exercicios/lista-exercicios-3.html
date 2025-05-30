@@ -109,6 +109,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <meta property="og:title" content="Regressão Linear Bayesiana - Implementação Prática – 5290 - PROBABILIDADE E ESTATÍSTICA">
 <meta property="og:description" content="Lista de Exercícios 3">
@@ -586,7 +615,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <hr>
 <p><strong>ENTREGA</strong>: <em>até 26/06/2025 às 23:59, via Moodle</em></p>
-<div class="callout callout-style-default callout-important callout-titled" title="Dicas Importantes">
+<div class="callout callout-style-default callout-tip callout-titled" title="Dicas Importantes">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -597,10 +626,10 @@ Dicas Importantes
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Entregue seu código em um arquivo do <strong>google Colab</strong> <code>. ipynb</code></li>
-<li>Documente seu código com comentários claros</li>
-<li>Justifique suas escolhas metodológicas</li>
-<li>Responda cada questão e mantenha os código utilizados para gerar os gráficos</li>
+<li>Entregue seu código em um arquivo do <strong>google Colab</strong> <code>. ipynb</code>.</li>
+<li>Documente seu código com comentários claros.</li>
+<li>Justifique suas escolhas metodológicas.</li>
+<li>Responda cada questão e mantenha no arquivo todos os código utilizados para gerar os gráficos e ou resultados relevantes às questões.</li>
 </ul>
 </div>
 </div>
@@ -609,19 +638,19 @@ Dicas Importantes
 <h2 data-number="1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">1</span> Objetivos</h2>
 <p>Esta lista visa desenvolver suas habilidades práticas na implementação de modelos de regressão linear bayesiana utilizando a biblioteca <code>bambi</code> em Python. Você irá aprender a:</p>
 <ul>
-<li>Especificar e ajustar modelos bayesianos do zero</li>
-<li>Definir distribuições a priori apropriadas</li>
-<li>Realizar diagnósticos de convergência MCMC</li>
-<li>Interpretar resultados bayesianos no contexto de incerteza paramétrica</li>
-<li>Visualizar e comunicar resultados de análises bayesianas</li>
+<li>Especificar e ajustar modelos bayesianos do zero.</li>
+<li>Definir distribuições a priori apropriadas.</li>
+<li>Realizar diagnósticos de convergência MCMC.</li>
+<li>Interpretar resultados bayesianos no contexto de incerteza paramétrica.</li>
+<li>Visualizar e comunicar resultados de análises bayesianas.</li>
 </ul>
 </section>
 <section id="contexto" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="contexto"><span class="header-section-number">2</span> Contexto</h2>
 <p>Em estudos ecológicos, investigamos como variáveis ambientais influenciam a biodiversidade. Nesta lista, analisaremos dados de praias na costa holandesa, examinando a relação entre:</p>
 <ul>
-<li><strong>Riqueza de espécies</strong> (<code>Richness</code>): número de espécies diferentes por local (variável resposta)</li>
-<li><strong>NAP</strong> (<em>Normaal Amsterdams Peil</em>): altura do local em relação ao nível médio do mar (variável preditora)</li>
+<li><strong>Riqueza de espécies</strong> (<code>Richness</code>): número de espécies diferentes por local (variável resposta).</li>
+<li><strong>NAP</strong> (<em>Normaal Amsterdams Peil</em>): altura do local em relação ao nível médio do mar (variável preditora).</li>
 </ul>
 <p>Os dados provêm do estudo descrito no Capítulo 5 de Zuur et al.&nbsp;(2009) e estão disponíveis no arquivo <a href="https://raw.githubusercontent.com/FCopf/datasets/refs/heads/main/RIKZ.csv" target="_blank">RIKZ.csv</a>.</p>
 <hr>
@@ -643,10 +672,10 @@ Nota
 <div class="callout-body-container callout-body">
 <p><em>Bibliotecas sugeridas: pandas, bambi, arviz, numpy, matplotlib.pyplot, seaborn</em>.</p>
 <p>No Google Colab, as bibliotecas bambi e arviz deverão ser instaladas a cada nova seção rodando o comando abaixo, que deve ser inserido na primeira cálula do arquivo.</p>
-<div id="041e8fae" class="cell" data-execution_count="1">
+<div id="4efc258c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install bambi arviz</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="87ca0bd6" class="cell" data-execution_count="2">
+<div id="2f49612e" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> bambi <span class="im">as</span> bmb</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arviz <span class="im">as</span> az</span>
@@ -658,64 +687,148 @@ Nota
 </div>
 <p><strong>2. Análise Exploratória</strong></p>
 <p><strong>2.1</strong> Crie um gráfico de dispersão entre <code>Richness</code> (eixo y) e <code>NAP</code> (eixo x) para verificar visualmente se há uma relação linear entre essas variáveis.</p>
-<p><span style="color: red;"><strong>Questão 2</strong></span>: A relação entre riqueza de espécies e NAP parece ser aproximadamente linear? Caso não seja, explique.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Questões">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questões
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>A relação entre riqueza de espécies e <code>NAP</code> parece ser aproximadamente linear? Caso não seja, explique.</li>
+</ol>
+</div>
+</div>
 <hr>
 <p><strong>3. Especificação do Modelo Bayesiano</strong></p>
 <p><strong>3.1</strong> Especifique um modelo de regressão linear bayesiano usando a bilbioteca <code>bambi</code> do Python:</p>
 <ul>
-<li>Utilize a sintaxe de fórmula: <code>Richness ~ NAP</code></li>
-<li>Examine a estrutura do modelo criado</li>
+<li>Utilize a sintaxe de fórmula: <code>Richness ~ NAP</code>.</li>
+<li>Examine a estrutura do modelo criado.</li>
 </ul>
 <p><strong>3.2</strong> Distribuições a priori padrão:</p>
 <ul>
 <li>Não especifique as distribuições a priori e utilize as atribuições padrão da biblioteca.</li>
-<li>Identifique quais prioris foram atribuídas para o intercepto, coeficiente de NAP e sigma</li>
-<li>Avalie as curvas de densidade das distribuições apriori</li>
+<li>Identifique quais prioris foram atribuídas para o <code>intercepto</code> (<span class="math inline">\(\beta_0\)</span>), coeficiente de <code>NAP</code> (<span class="math inline">\(\beta_1\)</span>) e <code>sigma</code> (<span class="math inline">\(\sigma\)</span>).</li>
+<li>Avalie as curvas de densidade das distribuições apriori.</li>
 </ul>
-<p><span style="color: red;"><strong>Questão 3a</strong></span>: Qual família de distribuição (<code>Family</code>) e função de ligação (<code>Link</code>) foram utilizadas?</p>
-<p><span style="color: red;"><strong>Questão 3b</strong></span>: Quais prioris foram, atribuídas ao intercepto, ao coeficiente de NAP e a sigma?</p>
-<p><span style="color: red;"><strong>Questão 3c</strong></span>: Considerando as priori como “crenças iniciais” do modelo antes de observar os dados, os limites escolhidos automaticamente parecem muito ou pouco informativos? Justifique.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Questões">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questões
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Qual família de distribuição (<code>Family</code>) e função de ligação (<code>Link</code>) foram utilizadas?</p></li>
+<li><p>Quais distribuições a priori foram especificadas para o <code>intercepto</code>, o coeficiente de <code>NAP</code> e o parâmetro <code>sigma</code>? Quais foram os valores utilizados para parametrizar cada uma delas?</p></li>
+<li><p>Considerando as priori como “crenças iniciais” do modelo antes de observar os dados, os limites escolhidos automaticamente parecem muito ou pouco informativos? Justifique.</p></li>
+</ol>
+</div>
+</div>
 <hr>
 <p><strong>4. Ajuste do Modelo via MCMC</strong></p>
 <p><strong>4.1</strong> Realize a amostragem MCMC para obter a distribuição a posteriori e gere a tabela resumo:</p>
 <ul>
-<li>Foque nos parâmetros principais: intercepto, coeficiente de NAP e sigma</li>
+<li>Foque nos parâmetros principais: <code>intercepto</code>, coeficiente de <code>NAP</code> e <code>sigma</code>.</li>
 </ul>
-<p><span style="color: red;"><strong>Questão 4a</strong></span>: Quais foram as médias, desvios padrões (<code>sd</code>) para cada parâmetro?</p>
-<p><span style="color: red;"><strong>Questão 4b</strong></span>: Quais foram os limites dos intervalos de credibilidade para cada parâmetro?</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Questões">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questões
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Quais são as médias e os desvios padrão estimados das distribuições posteriores de cada parâmetro?</p></li>
+<li><p>Quais foram os limites dos intervalos de credibilidade a 94% para cada parâmetro?</p></li>
+</ol>
+</div>
+</div>
 <hr>
 <p><strong>5. Interpretação dos Resultados Bayesianos</strong></p>
-<p><strong>5.1</strong> Com base na estimativa pontual (média a posteriori) do coeficiente de NAP e no intervalo de credibilidade HDI de 94%, responda:</p>
-<p><span style="color: red;"><strong>Questão 5a</strong></span>: O que você conclui sobre a existência e direção do efeito linear de NAP sobre a riqueza de espécies?</p>
-<p><span style="color: red;"><strong>Questão 5b</strong></span>: Como você interpreta o valor da estimativa pontual do coeficiente de NAP em termos práticos?</p>
-<p><span style="color: red;"><strong>Questão 5c</strong></span>: O que o intervalo de credibilidade HDI de 94% nos informa sobre a incerteza dessa estimativa?</p>
+<p><strong>5.1</strong> Com base na estimativa pontual (isto é, a média) do coeficiente a posteriori de <code>NAP</code> e em seu intervalo de credibilidade de 94% (HDI), responda às questões a seguir:</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Questões">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questões
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>O que você conclui sobre a existência e direção do efeito linear de <code>NAP</code> sobre a riqueza de espécies?</p></li>
+<li><p>Como você interpreta o valor da estimativa pontual do coeficiente de <code>NAP</code> em termos práticos?</p></li>
+<li><p>O que o intervalo de credibilidade HDI de 94% nos informa sobre a incerteza dessa estimativa?</p></li>
+</ol>
+</div>
+</div>
 <hr>
 <p><strong>6. Visualização da Incerteza Preditiva</strong></p>
 <p><strong>6.1</strong> Visualize a incerteza na reta de regressão:</p>
 <ul>
-<li>Plote múltiplas retas possíveis amostradas da distribuição a posteriori</li>
-<li>Inclua os dados observados no gráfico</li>
-<li>Adicione a reta média da posteriori</li>
+<li>Plote múltiplas retas possíveis amostradas da distribuição a posteriori.</li>
+<li>Inclua os dados observados no gráfico.</li>
+<li>Adicione a reta média da posteriori.</li>
 </ul>
 <p><strong>6.2</strong> Calcule e visualize o intervalo de credibilidade da reta média:</p>
 <ul>
-<li>Calcule intervalos de credibilidade de 95% para a reta média</li>
-<li>Crie um gráfico com a banda de credibilidade</li>
+<li>Calcule intervalos de credibilidade de 95% para a reta média.</li>
+<li>Crie um gráfico com a banda de credibilidade.</li>
 </ul>
-<p><span style="color: red;"><strong>Questão 6a</strong></span>: Onde a variabilidade das retas da posteriori é maior - no centro dos dados ou nos extremos? Por que isso é esperado estatisticamente?</p>
-<p><span style="color: red;"><strong>Questão 6b</strong></span>: Como você interpretaria o intervalo de credibilidade da reta média para um colega que não tem formação em estatística bayesiana?</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Questões">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questões
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Onde a variabilidade das retas da posteriori é maior - no centro dos dados ou nos extremos? Explique o motivo.</p></li>
+<li><p>Como você explicaria o que significa o intervalo de credibilidade para a reta média a um colega sem formação em estatística bayesiana?</p></li>
+</ol>
+</div>
+</div>
 <hr>
 <p><strong>7. Predições para Novos Dados</strong></p>
 <p><strong>7.1</strong> Faça predições bayesianas para novos valores de NAP:</p>
 <ul>
-<li>Escolha novos os valores de <code>NAP</code> como <code>[-1.3, 0, 3]</code></li>
-<li>Obtenha distribuições preditivas da riqueza para estes limites de <code>NAP</code> e plote-os no mesmo gráfico com a reta média e os pontos observados</li>
-<li>Visualize histogramas dessas distribuições</li>
+<li>Escolha novos os valores de <code>NAP</code> como <code>[-1.3, 0, 3]</code>.</li>
+<li>Obtenha distribuições preditivas da riqueza para estes limites de <code>NAP</code> e plote-os no mesmo gráfico com a reta média e os pontos observados.</li>
+<li>Visualize histogramas dessas distribuições.</li>
 </ul>
-<p><span style="color: red;"><strong>Questão 7a</strong></span>: Os valores preditos fazem sentido ecologicamente? Por quê?</p>
-<p><span style="color: red;"><strong>Questão 7b</strong></span>: Como as predições se comparam com o padrão e a faixa de valores observados nos dados originais?</p>
-<p><span style="color: red;"><strong>Questão 7c</strong></span>: O que essas predições revelam sobre as limitações do modelo linear ajustado? Em que situações o modelo pode fornecer predições inadequadas?</p>
-<p><span style="color: red;"><strong>Questão 7d</strong></span>: Diante das limitações apontadas por você na resposta anterior - quais cuidados devemos ter ao usar este modelo para fazer novas predições, especialmente em valores extremos de <code>NAP</code>?</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Questões">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questões
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Os valores preditos fazem sentido ecologicamente? Explique.</p></li>
+<li><p>Como as predições se comparam com o padrão e a faixa de valores observados nos dados originais?</p></li>
+<li><p>O que essas predições revelam sobre as limitações do modelo linear ajustado? Em que situações o modelo pode fornecer predições inadequadas?</p></li>
+<li><p>Diante das limitações apontadas por você na resposta anterior - quais cuidados devemos ter ao usar este modelo para fazer novas predições, especialmente em valores extremos de <code>NAP</code>?</p></li>
+</ol>
+</div>
+</div>
 <hr>
 
 
