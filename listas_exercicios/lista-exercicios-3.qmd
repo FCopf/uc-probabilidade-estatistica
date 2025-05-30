@@ -81,7 +81,7 @@ import seaborn as sns
 
 **2.1** Crie um gráfico de dispersão entre `Richness` (eixo y) e `NAP` (eixo x) para verificar visualmente se há uma relação linear entre essas variáveis.
 
-<span style="color: red;">**Questão 1**</span>: A relação entre riqueza de espécies e NAP parece ser aproximadamente linear? Caso não seja, explique.
+<span style="color: red;">**Questão 2**</span>: A relação entre riqueza de espécies e NAP parece ser aproximadamente linear? Caso não seja, explique.
 
 ---
 
@@ -126,7 +126,7 @@ import seaborn as sns
 
 <span style="color: red;">**Questão 5b**</span>: Como você interpreta o valor da estimativa pontual do coeficiente de NAP em termos práticos?
 
-<span style="color: red;">**Questão 5b**</span>: O que o intervalo de credibilidade HDI de 94% nos informa sobre a incerteza dessa estimativa?
+<span style="color: red;">**Questão 5c**</span>: O que o intervalo de credibilidade HDI de 94% nos informa sobre a incerteza dessa estimativa?
 
 ---
 
@@ -156,8 +156,6 @@ import seaborn as sns
 - Escolha novos os valores de `NAP` como `[-1.3, 0, 3]`
 - Obtenha distribuições preditivas da riqueza para estes limites de `NAP` e plote-os no mesmo gráfico com a reta média e os pontos observados
 - Visualize histogramas dessas distribuições
-
-<span style="color: red;">**Questão 7**</span>: Analise criticamente os valores preditos de riqueza de espécies:
 
 <span style="color: red;">**Questão 7a**</span>: Os valores preditos fazem sentido ecologicamente? Por quê?
 
