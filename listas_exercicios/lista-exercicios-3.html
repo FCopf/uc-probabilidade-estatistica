@@ -643,10 +643,10 @@ Nota
 <div class="callout-body-container callout-body">
 <p><em>Bibliotecas sugeridas: pandas, bambi, arviz, numpy, matplotlib.pyplot, seaborn</em>.</p>
 <p>No Google Colab, as bibliotecas bambi e arviz deverão ser instaladas a cada nova seção rodando o comando abaixo, que deve ser inserido na primeira cálula do arquivo.</p>
-<div id="a97f781a" class="cell" data-execution_count="1">
+<div id="5b647918" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install bambi arviz</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="88a714c5" class="cell" data-execution_count="2">
+<div id="6449fd85" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> bambi <span class="im">as</span> bmb</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> arviz <span class="im">as</span> az</span>
@@ -656,39 +656,39 @@ Nota
 </div>
 </div>
 </div>
-<p><strong>1. Análise Exploratória</strong></p>
-<p><strong>1.1</strong> Crie um gráfico de dispersão entre <code>Richness</code> (eixo y) e <code>NAP</code> (eixo x) para verificar visualmente se há uma relação linear entre essas variáveis.</p>
+<p><strong>2. Análise Exploratória</strong></p>
+<p><strong>2.1</strong> Crie um gráfico de dispersão entre <code>Richness</code> (eixo y) e <code>NAP</code> (eixo x) para verificar visualmente se há uma relação linear entre essas variáveis.</p>
 <p><span style="color: red;"><strong>Questão 1</strong></span>: A relação entre riqueza de espécies e NAP parece ser aproximadamente linear? Caso não seja, explique.</p>
 <hr>
-<p><strong>2. Especificação do Modelo Bayesiano</strong></p>
-<p><strong>2.1</strong> Especifique um modelo de regressão linear bayesiano usando a bilbioteca <code>bambi</code> do Python:</p>
+<p><strong>3. Especificação do Modelo Bayesiano</strong></p>
+<p><strong>3.1</strong> Especifique um modelo de regressão linear bayesiano usando a bilbioteca <code>bambi</code> do Python:</p>
 <ul>
 <li>Utilize a sintaxe de fórmula: <code>Richness ~ NAP</code></li>
 <li>Examine a estrutura do modelo criado</li>
 </ul>
-<p><strong>2.2</strong> Distribuições a priori padrão:</p>
+<p><strong>3.2</strong> Distribuições a priori padrão:</p>
 <ul>
 <li>Não especifique as distribuições a priori e utilize as atribuições padrão da biblioteca.</li>
 <li>Identifique quais prioris foram atribuídas para o intercepto, coeficiente de NAP e sigma</li>
 <li>Avalie as curvas de densidade das distribuições apriori</li>
 </ul>
-<p><span style="color: red;"><strong>Questão 2a</strong></span>: Qual família de distribuição (<code>Family</code>) e função de ligação (<code>Link</code>) foram utilizadas?</p>
-<p><span style="color: red;"><strong>Questão 2b</strong></span>: Quais prioris foram, atribuídas ao intercepto, ao coeficiente de NAP e a sigma?</p>
-<p><span style="color: red;"><strong>Questão 2c</strong></span>: Considerando as priori como “crenças iniciais” do modelo antes de observar os dados, os limites escolhidos automaticamente parecem muito ou pouco informativos? Justifique.</p>
+<p><span style="color: red;"><strong>Questão 3a</strong></span>: Qual família de distribuição (<code>Family</code>) e função de ligação (<code>Link</code>) foram utilizadas?</p>
+<p><span style="color: red;"><strong>Questão 3b</strong></span>: Quais prioris foram, atribuídas ao intercepto, ao coeficiente de NAP e a sigma?</p>
+<p><span style="color: red;"><strong>Questão 3c</strong></span>: Considerando as priori como “crenças iniciais” do modelo antes de observar os dados, os limites escolhidos automaticamente parecem muito ou pouco informativos? Justifique.</p>
 <hr>
-<p><strong>3. Ajuste do Modelo via MCMC</strong></p>
-<p><strong>3.1</strong> Realize a amostragem MCMC para obter a distribuição a posteriori e gere a tabela resumo:</p>
+<p><strong>4. Ajuste do Modelo via MCMC</strong></p>
+<p><strong>4.1</strong> Realize a amostragem MCMC para obter a distribuição a posteriori e gere a tabela resumo:</p>
 <ul>
 <li>Foque nos parâmetros principais: intercepto, coeficiente de NAP e sigma</li>
 </ul>
-<p><span style="color: red;"><strong>Questão 3a</strong></span>: Quais foram as médias, desvios padrões (<code>sd</code>) para cada parâmetro?</p>
-<p><span style="color: red;"><strong>Questão 3b</strong></span>: Quais foram os limites dos intervalos de credibilidade para cada parâmetro?</p>
+<p><span style="color: red;"><strong>Questão 4a</strong></span>: Quais foram as médias, desvios padrões (<code>sd</code>) para cada parâmetro?</p>
+<p><span style="color: red;"><strong>Questão 4b</strong></span>: Quais foram os limites dos intervalos de credibilidade para cada parâmetro?</p>
 <hr>
-<p><strong>4. Interpretação dos Resultados Bayesianos</strong></p>
-<p><strong>4.1</strong> Com base na estimativa pontual (média a posteriori) do coeficiente de NAP e no intervalo de credibilidade HDI de 94%, responda:</p>
-<p><span style="color: red;"><strong>Questão 4a</strong></span>: O que você conclui sobre a existência e direção do efeito linear de NAP sobre a riqueza de espécies?</p>
-<p><span style="color: red;"><strong>Questão 4b</strong></span>: Como você interpreta o valor da estimativa pontual do coeficiente de NAP em termos práticos?</p>
-<p><span style="color: red;"><strong>Questão 4b</strong></span>: O que o intervalo de credibilidade HDI de 94% nos informa sobre a incerteza dessa estimativa?</p>
+<p><strong>5. Interpretação dos Resultados Bayesianos</strong></p>
+<p><strong>5.1</strong> Com base na estimativa pontual (média a posteriori) do coeficiente de NAP e no intervalo de credibilidade HDI de 94%, responda:</p>
+<p><span style="color: red;"><strong>Questão 5a</strong></span>: O que você conclui sobre a existência e direção do efeito linear de NAP sobre a riqueza de espécies?</p>
+<p><span style="color: red;"><strong>Questão 5b</strong></span>: Como você interpreta o valor da estimativa pontual do coeficiente de NAP em termos práticos?</p>
+<p><span style="color: red;"><strong>Questão 5b</strong></span>: O que o intervalo de credibilidade HDI de 94% nos informa sobre a incerteza dessa estimativa?</p>
 <hr>
 <p><strong>6. Visualização da Incerteza Preditiva</strong></p>
 <p><strong>6.1</strong> Visualize a incerteza na reta de regressão:</p>
@@ -709,16 +709,14 @@ Nota
 <p><strong>7.1</strong> Faça predições bayesianas para novos valores de NAP:</p>
 <ul>
 <li>Escolha novos os valores de <code>NAP</code> como <code>[-1.3, 0, 3]</code></li>
-<li>Obtenha distribuições preditivas da riqueza para estes limites de <code>NAP</code></li>
+<li>Obtenha distribuições preditivas da riqueza para estes limites de <code>NAP</code> e plote-os no mesmo gráfico com a reta média e os pontos observados</li>
 <li>Visualize histogramas dessas distribuições</li>
 </ul>
 <p><span style="color: red;"><strong>Questão 7</strong></span>: Analise criticamente os valores preditos de riqueza de espécies:</p>
-<ol type="1">
-<li><p><strong>Plausibilidade biológica</strong>: Os valores preditos fazem sentido biologicamente? Por quê?</p></li>
-<li><p><strong>Comparação com dados observados</strong>: Como as predições se comparam com o padrão e a faixa de valores observados nos dados originais?</p></li>
-<li><p><strong>Limitações do modelo</strong>: O que essas predições revelam sobre as limitações do modelo linear ajustado? Em que situações o modelo pode fornecer predições inadequadas?</p></li>
-<li><p><strong>Extrapolação</strong>: Quais cuidados devemos ter ao usar este modelo para fazer predições, especialmente em valores extremos de <code>NAP</code>?</p></li>
-</ol>
+<p><span style="color: red;"><strong>Questão 7a</strong></span>: Os valores preditos fazem sentido ecologicamente? Por quê?</p>
+<p><span style="color: red;"><strong>Questão 7b</strong></span>: Como as predições se comparam com o padrão e a faixa de valores observados nos dados originais?</p>
+<p><span style="color: red;"><strong>Questão 7c</strong></span>: O que essas predições revelam sobre as limitações do modelo linear ajustado? Em que situações o modelo pode fornecer predições inadequadas?</p>
+<p><span style="color: red;"><strong>Questão 7d</strong></span>: Diante das limitações apontadas por você na resposta anterior - quais cuidados devemos ter ao usar este modelo para fazer novas predições, especialmente em valores extremos de <code>NAP</code>?</p>
 <hr>
 
 
