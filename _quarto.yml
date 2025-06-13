@@ -88,11 +88,13 @@ website:
       - section: Slides
         contents: 
           - href: /slides/Introdução_inferencia_modelagem_probabilistica.pdf
-            text: Semana 1
+            text: Introdução à modelagem probabilística 
           - href: https://fcopf-dash-ocean-surface.share.connect.posit.cloud/
-            text: Semana 3a
+            text: Superfície Oceânica
           - href: https://fcopf-binomial-bayesiana.share.connect.posit.cloud/
-            text: Semana 3b
+            text: Binomial Bayesiana
+          - href: https://fcopf.github.io/MEAD/conteudo/modelos_regressao_bayes/regressao-glm-hierarquico-apresentacao.html
+            text: Explorando Modelos de Regressão
       - section: "Listas de Exercícios"
         contents:
           - href: listas_exercicios/instrucoes-listas.qmd
