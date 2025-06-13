@@ -1,5 +1,247 @@
 [
   {
+    "objectID": "avaliacoes/avaliacao-1-respostas.html#parte-a-questões-conceituais-20-pontos",
+    "href": "avaliacoes/avaliacao-1-respostas.html#parte-a-questões-conceituais-20-pontos",
+    "title": "Avaliação 1 – Introdução à Inferência Bayesiana",
+    "section": "1 Parte A – Questões conceituais (2,0 pontos)",
+    "text": "1 Parte A – Questões conceituais (2,0 pontos)\n\n1.1 (0,5 ponto) Em uma análise bayesiana, a verossimilhança de uma hipótese:\nResposta: B) Mede a proporção relativa de modos pelos quais a hipótese pode produzir os dados observados.\n\n\n1.2 (0,5 ponto) Ao assumir uma distribuição a priori uniforme sobre cinco hipóteses discretas, o peso inicial atribuído a cada hipótese é:\nResposta: B) 0,20\n\n\n1.3 (0,5 ponto) Indique a alternativa que não altera a distribuição a posteriori:\nResposta: D) Multiplicar todas as probabilidades posteriores por uma constante comum.\n\n\n1.4 (0,5 ponto) Quando a distribuição a priori é informativa e favorece valores altos de um parâmetro, o impacto esperado sobre a distribuição a posteriori é:\nResposta: B) Deslocá‑la na direção dos valores altos, a depender dos dados.\n\n\nfrom scipy.stats import binom\nimport numpy as np\n\ny = 2\nn = 3\np = np.arange(0,5)/4\npriori = 1/len(p)\n\nL = binom.pmf(y, n, p)\nPost = L * priori / np.sum(L * priori)\nL_round = np.round(L,3).tolist()\nPost_round = np.round(Post,3).tolist()\n\nH_selecionado = int(np.argmax(Post) + 1)",
+    "crumbs": [
+      "Avaliações",
+      "Avaliação 1 - Respostas"
+    ]
+  },
+  {
+    "objectID": "avaliacoes/avaliacao-1-respostas.html#parte-b-problemas-quantitativos-80-pontos",
+    "href": "avaliacoes/avaliacao-1-respostas.html#parte-b-problemas-quantitativos-80-pontos",
+    "title": "Avaliação 1 – Introdução à Inferência Bayesiana",
+    "section": "2 Parte B – Problemas quantitativos (8,0 pontos)",
+    "text": "2 Parte B – Problemas quantitativos (8,0 pontos)\n\n\n\n\n\n\n\n\n\n\nHipótese\nComposição\n\\(n\\)\n\\(\\mathcal{L}\\)\nProbabilidade a posteriori\n\n\n\n\n\\(H_1\\)\n⚪⚪⚪⚪\n\\(0 \\times 4 \\times 0 = 0\\)\n0.0\n0.0\n\n\n\\(H_2\\)\n⚪⚪⚪🔵\n\\(1 \\times 3 \\times 1 = 3\\)\n0.141\n0.15\n\n\n\\(H_3\\)\n⚪⚪🔵🔵\n\\(2 \\times 2 \\times 2 = 8\\)\n0.375\n0.4\n\n\n\\(H_4\\)\n⚪🔵🔵🔵\n\\(3 \\times 1 \\times 3 = 9\\)\n0.422\n0.45\n\n\n\\(H_5\\)\n🔵🔵🔵🔵\n\\(4 \\times 0 \\times 4 = 0\\)\n0.0\n0.0\n\n\n\n\n2.1 Hipótese mais plausível (priori uniforme):\nResposta: E) \\(H_{4}\\)\n\n\n\n2.2 Probabilidade a posteriori com a priori informativa:\n\nfrom scipy.stats import binom\nimport numpy as np\n\ny = 2\nn = 3\np = np.arange(0,5)/4\npriori_info = np.array([0.05, 0.1, 0.6, 0.15, 0.1])\n\nL_info = binom.pmf(y, n, p)\nPost_info = L_info * priori_info / np.sum(L_info * priori_info)\nL_info_round = np.round(L_info,3).tolist()\nPost_info_round = np.round(Post_info,3).tolist()\n\nH_info_selecionado = int(np.argmax(Post_info) + 1)\n\n\n\n\n\n\n\n\n\n\nHipótese\nComposição\nProbabilidade a priori\nProbabilidade a posteriori\n\n\n\n\n\\(H_1\\)\n⚪⚪⚪⚪\n0.05\n0.0\n\n\n\\(H_2\\)\n⚪⚪⚪🔵\n0.10\n0.047\n\n\n\\(H_3\\)\n⚪⚪🔵🔵\n0.60\n0.744\n\n\n\\(H_4\\)\n⚪🔵🔵🔵\n0.15\n0.209\n\n\n\\(H_5\\)\n🔵🔵🔵🔵\n0.10\n0.0\n\n\n\n\n\n2.3 Hipótese mais plausível (priori informativa):\nResposta: E) \\(H_{3}\\)",
+    "crumbs": [
+      "Avaliações",
+      "Avaliação 1 - Respostas"
+    ]
+  },
+  {
+    "objectID": "avaliacoes/avaliacao-1-respostas.html#parte-c-problemas-de-interpretação-e-uso-20-pontos",
+    "href": "avaliacoes/avaliacao-1-respostas.html#parte-c-problemas-de-interpretação-e-uso-20-pontos",
+    "title": "Avaliação 1 – Introdução à Inferência Bayesiana",
+    "section": "3 Parte C – Problemas de interpretação e uso (2,0 pontos)",
+    "text": "3 Parte C – Problemas de interpretação e uso (2,0 pontos)\n\nimport numpy as np\nfrom scipy.stats import beta\n\n# Definições dos parâmetros dos cenários\nalpha_prior = np.array([1, 9, 1, 9])\nbeta_prior =  np.array([1, 4, 1, 4])\ny =           np.array([3, 3, 30, 30])\nn =           np.array([4, 4, 40, 40])\n\n# Parâmetros da posteriori\nalpha_post = alpha_prior + y\nbeta_post = beta_prior + (n - y)\n\n# Intervalo desejado\nlower, upper = 0.65, 0.75\n\n# Probabilidade acumulada entre os limites\ncdf_upper = beta.cdf(upper, alpha_post, beta_post)\ncdf_lower = beta.cdf(lower, alpha_post, beta_post)\nposterior_probs = cdf_upper - cdf_lower\n\nposterior_probs_round = np.round(posterior_probs,3).tolist()\n\n\n3.1 (0,5 ponto) \\(n = 4\\), \\(y = 3\\), a priori \\(Beta(1, 1)\\)\nResposta: 0.204\n\n\n3.2 (0,5 ponto) \\(n = 4\\), \\(y = 3\\), a priori \\(Beta(9, 4)\\)\nResposta: 0.341\n\n\n3.3 (0,5 ponto) \\(n = 40\\), \\(y = 30\\), a priori \\(Beta(1, 1)\\)\nResposta: 0.446\n\n\n3.4 (0,5 ponto) \\(n = 40\\), \\(y = 30\\), a priori \\(Beta(9, 4)\\)\nResposta: 0.49",
+    "crumbs": [
+      "Avaliações",
+      "Avaliação 1 - Respostas"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "",
+    "text": "Consulte aqui o cronograma de atividades do semestre, com a descrição dos temas, links para materiais de apoio e atividades. Quaisquer alterações serão atualizadas e registradas neste espaço.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSEMANA\nDATA\nTEMA\nOBJETIVOS\nLEITURAOBRIGATÓRIA\nLEITURACOMPLEMENTAR\nLAB.INFORMÁTICA\nSLIDES\nLISTAS\nAVALIAÇÃO\nPROJETO\n\n\n\n\n1\n03/04\n🔹 Apresentação da Unidade Curricular (UC).  🔹 Introdução à inferência e à modelagem probabilística.\n🔹 Apresentação do plano de ensino.  🔹 Modelos probabilísticos como ferramenta para lidar com incertezas na tomada de decisão.  🔹 Inferência probabilística a partir do princípio da contagem.\n📖\n📚\n\n📽️\n📝\n\n\n\n\n2\n10/04\n🔹 Introdução à inferência bayesiana: distribuições a priori e a posteriori.\n🔹 Tomada de decisão a partir da distribuição a posteriori.\n📖\n📚\n💻\n\n\n\n\n\n\n3\n17/04\n🔹 Inferência sobre o parâmetro de uma distribuição de probabilidades.\n🔹 Apresentar a distribuição binomial.  🔹 Estimar seu parâmetro via aproximação por grid.\n📖\n\n💻\n📽️  📽️\n\n\n\n\n\n4\n24/04\n🔹 O módulo PyMC para estimar parâmetros de um modelo bayesiano.\n🔹 Introduzir o uso do módulo PyMC para estimar o parâmetro do modelo binomial.\n\n\n💻\n\n📝\n\n\n\n\n\n01/05\nFERIADO - Dia do Trabalho\n⛱️ 🌞 🏕️\n\n\n\n\n\n\n\n\n\n5\n08/05\n1ª Avaliação\n🔹 Avaliar a compreensão dos principais conceitos da inferência bayesiana, incluindo distribuições a priori e a posteriori, construção e ajuste de modelos probabilísticos simples.\n\n\n\n\n\n📈  ✅\n\n\n\n6\n15/05\n🔹 Distribuição Normal\n🔹 Apresentar a Distribuição Normal.  🔹 Simular a distribuição a priori preditiva de alturas com base no conhecimento subjetivo.  🔹 Utilizar o PyMC para estimar parâmetros do modelo Normal.\n📖  📖\n📚\n💻\n\n\n\n\n\n\n7\n22/05\n🔹 Regressão Linear Bayesiana\n🔹 Apresentar o modelo de regressão linear bayesiano.  🔹 Gerar uma distribuição a priori preditiva para \\(\\beta_0\\), \\(\\beta_1\\) e \\(\\sigma\\) utilizando o PyMC.  🔹 Estimar a distribuição a posteriori a partir de um conjunto de dados.\n\n\n💻\n\n\n\n\n\n\n8\n29/05\n🔹 Regressão Linear Bayesiana  🔹 Introdução ao uso da biblioteca Bambi para modelos bayesianos\n🔹 Consolidar a estrutura de blocos para modelagem bayesiana com PyMC  🔹 Apresentar a biblioteca Bambi como interface de alto nível para o PyMC.\n\n\n💻\n\n📝\n\n\n\n\n9\n05/06\nExplorando Modelos de Regressão Bayesiana\n🔹 Retoma of fundamentos da inferência bayesiana e modelos lineares.  🔹 Compara a estrutura de Bibliotecas de Programação Probabilística.  🔹 Discute Modelos Lineares Generalizados (modelos Gaussiano, de Poisson e Logístico).  🔹 Apresenta a ideia dos Modelos Hierárquicos (Multinível).\n\n\n\n📽️\n\n\n\n\n\n10\n12/06\nModelos Probabilísticos, Hipóteses Científicas e Comparação Bayesiana de Modelos\n🔹 Compreender o papel das hipóteses científicas e estatísticas na formulação de modelos probabilísticos.  🔹 Construir, ajustar e interpretar diferentes modelos bayesianos (lineares, quadráticos e não lineares).  🔹 Analisar a adequação e complexidade de modelos com e sem interação entre variáveis preditoras.  🔹 Comparar modelos a partir de suas predições, incertezas e suposições, discutindo suas implicações científicas.\n\n\n💻\n\n\n\n\n\n\n\n19/06\nFERIADO – Corpus Christi\n☀️ 🏞️ 🧘\n\n\n\n\n\n\n\n\n\n11\n26/06\nModelos binomiais\n🔹 Apresentar a formulação do modelo binomial e suas aplicações em dados de contagem e proporção.  🔹 Discutir a função de probabilidade, pressupostos e interpretação dos resultados.\n\n\n💻\n\n\n\n📑\n\n\n12\n03/07\nModelo de Poisson\n🔹 Explorar o modelo de Poisson aplicado a dados de contagem.  🔹 Apresentar sua função de probabilidade, pressupostos e principais usos.\n\n\n💻\n\n\n\n\n\n\n13\n10/07\nModelos com excesso de zeros\n🔹 Discutir situações em que ocorre excesso de zeros em dados de contagem.  🔹 Apresentar modelos que acomodam esse excesso, como o modelo Zero-Inflated Poisson (ZIP).  🔹 Implementar e interpretar modelos com excesso de zeros em contextos aplicados.\n\n\n💻\n\n\n\n\n\n\n14\n17/07\nModelos Multiníveis\n🔹 Apresentar o conceito de estrutura hierárquica em dados.  🔹 Discutir vantagens e pressupostos dos modelos multiníveis.  🔹 Implementar modelos hierárquicos com o PyMC e interpretar os resultados no contexto da inferência bayesiana.\n\n\n💻\n\n\n\n\n\n\n15\n24/07\nConclusão da Unidade Curricular.\n🔹 Revisar e integrar os principais conceitos abordados ao longo do curso.  🔹 Avaliar a evolução da aprendizagem e discutir possíveis aplicações e extensões dos métodos estudados.",
+    "crumbs": [
+      "Informações do curso",
+      "Cronograma"
+    ]
+  },
+  {
+    "objectID": "listas_exercicios/lista-exercicios-3.html",
+    "href": "listas_exercicios/lista-exercicios-3.html",
+    "title": "Regressão Linear Bayesiana - Implementação Prática",
+    "section": "",
+    "text": "ENTREGA: até 26/06/2025 às 23:59, via Moodle",
+    "crumbs": [
+      "Listas de Exercícios",
+      "Lista 3"
+    ]
+  },
+  {
+    "objectID": "listas_exercicios/lista-exercicios-3.html#objetivos",
+    "href": "listas_exercicios/lista-exercicios-3.html#objetivos",
+    "title": "Regressão Linear Bayesiana - Implementação Prática",
+    "section": "1 Objetivos",
+    "text": "1 Objetivos\nEsta lista visa desenvolver suas habilidades práticas na implementação de modelos de regressão linear bayesiana utilizando a biblioteca bambi em Python. Você irá aprender a:\n\nEspecificar e ajustar modelos bayesianos do zero.\nDefinir distribuições a priori apropriadas.\nRealizar diagnósticos de convergência MCMC.\nInterpretar resultados bayesianos no contexto de incerteza paramétrica.\nVisualizar e comunicar resultados de análises bayesianas.",
+    "crumbs": [
+      "Listas de Exercícios",
+      "Lista 3"
+    ]
+  },
+  {
+    "objectID": "listas_exercicios/lista-exercicios-3.html#contexto",
+    "href": "listas_exercicios/lista-exercicios-3.html#contexto",
+    "title": "Regressão Linear Bayesiana - Implementação Prática",
+    "section": "2 Contexto",
+    "text": "2 Contexto\nEm estudos ecológicos, investigamos como variáveis ambientais influenciam a biodiversidade. Nesta lista, analisaremos dados de praias na costa holandesa, examinando a relação entre:\n\nRiqueza de espécies (Richness): número de espécies diferentes por local (variável resposta).\nNAP (Normaal Amsterdams Peil): altura do local em relação ao nível médio do mar (variável preditora).\n\nOs dados provêm do estudo descrito no Capítulo 5 de Zuur et al. (2009) e estão disponíveis no arquivo RIKZ.csv.",
+    "crumbs": [
+      "Listas de Exercícios",
+      "Lista 3"
+    ]
+  },
+  {
+    "objectID": "listas_exercicios/lista-exercicios-3.html#exercícios",
+    "href": "listas_exercicios/lista-exercicios-3.html#exercícios",
+    "title": "Regressão Linear Bayesiana - Implementação Prática",
+    "section": "EXERCÍCIOS",
+    "text": "EXERCÍCIOS\n1. Preparação e Exploração Inicial dos Dados\n1.1 Abra um novo arquivo no Google Colab\n1.2 Carregue as bibliotecas necessárias e importe o conjunto de dados RIKZ.csv do link: https://raw.githubusercontent.com/FCopf/datasets/refs/heads/main/RIKZ.csv\n\n\n\n\n\n\nNota\n\n\n\nBibliotecas sugeridas: pandas, bambi, arviz, numpy, matplotlib.pyplot, seaborn.\nNo Google Colab, as bibliotecas bambi e arviz deverão ser instaladas a cada nova seção rodando o comando abaixo, que deve ser inserido na primeira cálula do arquivo.\n\n!pip install bambi arviz\n\n\nimport pandas as pd\nimport bambi as bmb\nimport arviz as az\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n\n\n2. Análise Exploratória\n2.1 Crie um gráfico de dispersão entre Richness (eixo y) e NAP (eixo x) para verificar visualmente se há uma relação linear entre essas variáveis.\n\n\n\n\n\n\nQuestões\n\n\n\n\nA relação entre riqueza de espécies e NAP parece ser aproximadamente linear? Caso não seja, explique.\n\n\n\n\n3. Especificação do Modelo Bayesiano\n3.1 Especifique um modelo de regressão linear bayesiano usando a bilbioteca bambi do Python:\n\nUtilize a sintaxe de fórmula: Richness ~ NAP.\nExamine a estrutura do modelo criado.\n\n3.2 Distribuições a priori padrão:\n\nNão especifique as distribuições a priori e utilize as atribuições padrão da biblioteca.\nIdentifique quais prioris foram atribuídas para o intercepto (\\(\\beta_0\\)), coeficiente de NAP (\\(\\beta_1\\)) e sigma (\\(\\sigma\\)).\nAvalie as curvas de densidade das distribuições apriori.\n\n\n\n\n\n\n\nQuestões\n\n\n\n\nQual família de distribuição (Family) e função de ligação (Link) foram utilizadas?\nQuais distribuições a priori foram especificadas para o intercepto, o coeficiente de NAP e o parâmetro sigma? Quais foram os valores utilizados para parametrizar cada uma delas?\nConsiderando as priori como “crenças iniciais” do modelo antes de observar os dados, os limites escolhidos automaticamente parecem muito ou pouco informativos? Justifique.\n\n\n\n\n4. Ajuste do Modelo via MCMC\n4.1 Realize a amostragem MCMC para obter a distribuição a posteriori e gere a tabela resumo:\n\nFoque nos parâmetros principais: intercepto, coeficiente de NAP e sigma.\n\n\n\n\n\n\n\nQuestões\n\n\n\n\nQuais são as médias e os desvios padrão estimados das distribuições posteriores de cada parâmetro?\nQuais foram os limites dos intervalos de credibilidade a 94% para cada parâmetro?\n\n\n\n\n5. Interpretação dos Resultados Bayesianos\n5.1 Com base na estimativa pontual (isto é, a média) do coeficiente a posteriori de NAP e em seu intervalo de credibilidade de 94% (HDI), responda às questões a seguir:\n\n\n\n\n\n\nQuestões\n\n\n\n\nO que você conclui sobre a existência e direção do efeito linear de NAP sobre a riqueza de espécies?\nComo você interpreta o valor da estimativa pontual do coeficiente de NAP em termos práticos?\nO que o intervalo de credibilidade HDI de 94% nos informa sobre a incerteza dessa estimativa?\n\n\n\n\n6. Visualização da Incerteza Preditiva\n6.1 Visualize a incerteza na reta de regressão:\n\nPlote múltiplas retas possíveis amostradas da distribuição a posteriori.\nInclua os dados observados no gráfico.\nAdicione a reta média da posteriori.\n\n6.2 Calcule e visualize o intervalo de credibilidade da reta média:\n\nCalcule intervalos de credibilidade de 95% para a reta média.\nCrie um gráfico com a banda de credibilidade.\n\n\n\n\n\n\n\nQuestões\n\n\n\n\nOnde a variabilidade das retas da posteriori é maior - no centro dos dados ou nos extremos? Explique o motivo.\nComo você explicaria o que significa o intervalo de credibilidade para a reta média a um colega sem formação em estatística bayesiana?\n\n\n\n\n7. Predições para Novos Dados\n7.1 Faça predições bayesianas para novos valores de NAP:\n\nEscolha novos os valores de NAP como [-1.3, 0, 3].\nObtenha distribuições preditivas da riqueza para estes limites de NAP e plote-os no mesmo gráfico com a reta média e os pontos observados.\nVisualize histogramas dessas distribuições.\n\n\n\n\n\n\n\nQuestões\n\n\n\n\nOs valores preditos fazem sentido ecologicamente? Explique.\nComo as predições se comparam com o padrão e a faixa de valores observados nos dados originais?\nO que essas predições revelam sobre as limitações do modelo linear ajustado? Em que situações o modelo pode fornecer predições inadequadas?\nDiante das limitações apontadas por você na resposta anterior - quais cuidados devemos ter ao usar este modelo para fazer novas predições, especialmente em valores extremos de NAP?",
+    "crumbs": [
+      "Listas de Exercícios",
+      "Lista 3"
+    ]
+  },
+  {
+    "objectID": "listas_exercicios/lista-exercicios-1.html",
+    "href": "listas_exercicios/lista-exercicios-1.html",
+    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
+    "section": "",
+    "text": "ENTREGA: ADIADA PARA 25/04/2025 às 23:59, via Moodle",
+    "crumbs": [
+      "Listas de Exercícios",
+      "Lista 1"
+    ]
+  },
+  {
+    "objectID": "listas_exercicios/lista-exercicios-1.html#instruções",
+    "href": "listas_exercicios/lista-exercicios-1.html#instruções",
+    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
+    "section": "1 Instruções",
+    "text": "1 Instruções\n\nAntes de iniciar, leia atentamente a Leitura Obrigatória da Semana 1 (“Contando possibilidades: evidências sobre uma hipótese”) e Semana 2 (“De contagens a probabilidades: a distribuição a posteriori”).\nAo concluir o exercício, teste seu código e faça o download do arquivo em formato .py (caso esteja usando Google Colab ou ferramenta similar). Em seguida, envie o arquivo .py para o Moodle antes da data de entrega.\n💡 DICA IMPORTANTE: comente cada etapa do seu código para que você ou outra pessoa possa entendê-lo futuramente.",
+    "crumbs": [
+      "Listas de Exercícios",
+      "Lista 1"
+    ]
+  },
+  {
+    "objectID": "listas_exercicios/lista-exercicios-1.html#descrição-da-atividade",
+    "href": "listas_exercicios/lista-exercicios-1.html#descrição-da-atividade",
+    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
+    "section": "2 Descrição da Atividade",
+    "text": "2 Descrição da Atividade\nNesta atividade, você deverá gerar um código em Python para representar virtualmente a seguinte situação: existe uma caixa com cinco bolas de gude, distribuídas entre as cores azul e preta (sendo possível que todas sejam pretas ou todas sejam azuis).\nObjetivo: Descobrir quantas bolas pretas existem na caixa.\nMetodologia:\n\nA estratégia consiste em amostrar uma bola por vez.\nAo observar a bola retirada, devolvemos a mesma para a caixa, o que caracteriza uma amostragem com reposição.\nInicialmente, não sabemos quantas bolas pretas estão presentes e só podemos inferir isso após observar as amostras sucessivas.\n\nResultados Esperados:\n\nCompreender como utilizar um ambiente de programação para simular virtualmente as condições de um experimento aleatório.\nEntender a natureza das respostas obtidas e como avaliar seus resultados para garantir uma conclusão adequada.\nReconhecer a simulação computacional como uma forma de antecipar condições e pressupostos usados na construção de experimentos e modelos estatísticos.",
+    "crumbs": [
+      "Listas de Exercícios",
+      "Lista 1"
+    ]
+  },
+  {
+    "objectID": "listas_exercicios/lista-exercicios-1.html#etapas-do-processo",
+    "href": "listas_exercicios/lista-exercicios-1.html#etapas-do-processo",
+    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
+    "section": "3 Etapas do Processo",
+    "text": "3 Etapas do Processo\nA seguir, são sugeridas etapas para ajudá-lo(a) a cumprir os objetivos propostos:\n\nRepresentação da caixa\nCrie um objeto em Python que represente a caixa contendo as 5 bolas de gude. Defina quantas bolas de cada cor (preta e azul) estarão presentes.\nDistribuição a priori\nDefina os resultados possíveis (quantidade de bolas pretas) e atribua uma distribuição a priori a cada resultado.\nPrimeira observação\nExtraia aleatoriamente uma bola da caixa e observe sua cor.\nAtualização a posteriori\nCom base na cor observada, atualize a distribuição de probabilidade — ou seja, calcule a nova distribuição a posteriori para cada valor possível de bolas pretas na caixa.\nVisualização e decisão\nPlote um gráfico comparando a distribuição a priori com a distribuição a posteriori. Use esse gráfico para embasar sua decisão sobre quantas bolas pretas a caixa contém.\nAmostragem sequencial\nRepita os passos 3 a 5 por n vezes. A cada nova extração, utilize a última distribuição a posteriori obtida como a nova distribuição a priori, de modo que seu conhecimento sobre a composição da caixa seja constantemente atualizado.\nCritério de parada\nInterrompa as repetições quando julgar que o número de observações é suficiente para tomar uma decisão confiável. Pense em qual seria o número mínimo de extrações para alcançar essa confiança.\nAmpliação do problema\n\nAumente o total de bolas na caixa para 50. Varie o número de bolas pretas em três cenários: i) relativamente poucas bolas pretas, ii) quantidades iguais de bolas pretas e azuis, iii) maioria de bolas pretas.\n\nResponda: Qual o efeito de aumentar a quantidade total de bolas sobre o número de repetições (n) necessário para tomar uma decisão confiável?\n\nDiante desse aumento, como a variação na proporção de bolas pretas influencia a quantidade de repetições necessárias para uma decisão acertada?",
+    "crumbs": [
+      "Listas de Exercícios",
+      "Lista 1"
+    ]
+  },
+  {
+    "objectID": "informacoes_curso/plano_ensino.html",
+    "href": "informacoes_curso/plano_ensino.html",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "",
+    "text": "Acessar versão em pdf",
+    "crumbs": [
+      "Informações do curso",
+      "Plano de ensino"
+    ]
+  },
+  {
+    "objectID": "informacoes_curso/plano_ensino.html#ementa",
+    "href": "informacoes_curso/plano_ensino.html#ementa",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "Ementa",
+    "text": "Ementa\nA Unidade Curricular (UC) explora os fundamentos da inferência estatística, com ênfase em modelos probabilísticos e suas aplicações na análise de dados e interpretação de fenômenos complexos relacionados às Ciências do Mar. A UC enfatiza a investigação de hipóteses sobre processos ambientais por meio da construção e análise de modelos probabilísticos, integrando conhecimentos prévios com evidências baseadas em dados. O curso promove uma abordagem prática, com foco na elaboração de modelos e na simulação computacional, integrando teoria e prática como suporte à tomada de decisão, de forma a oferecer uma compreensão ampla e aplicada dos conceitos teóricos e computacionais envolvidos.",
+    "crumbs": [
+      "Informações do curso",
+      "Plano de ensino"
+    ]
+  },
+  {
+    "objectID": "informacoes_curso/plano_ensino.html#conteúdo-programático",
+    "href": "informacoes_curso/plano_ensino.html#conteúdo-programático",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "Conteúdo Programático",
+    "text": "Conteúdo Programático\n\nFundamentos da Inferência Estatística e Modelagem Probabilística\n\nProbabilidade como lógica e ferramenta para lidar com incertezas.\n\nConceitos fundamentais: distribuição a priori e distribuição posteriori.\n\nAplicações Computacionais e Ferramentas Analíticas\n\nImplementação de modelos utilizando R, Python e linguagens de programação probabilística.\n\nConstrução de Modelos Probabilísticos\n\nHipóteses científicas, estruturas de dependência e relações causais.\n\nDesenvolvimento de modelos conceituais integrando conhecimento prévio.\n\nSimulação inicial para explorar predições com base no modelo.\n\nAjuste de Dados ao Modelo\n\nIncorporação de observações empíricas ao modelo conceitual.\n\nAtualização de predições.\n\nTécnicas de ajuste e calibração de modelos baseadas em dados observados.\n\nAvaliação e Refinamento de Modelos\n\nPredições e extrapolações baseadas no modelo ajustado.\n\nComparação de modelos utilizando critérios de validação.\n\nAnálise de sensibilidade a diferentes distribuições a priori.\n\nDesenhos Experimentais e Relações Causais Complexas\n\nEstruturas hierárquicas e suas aplicações.\nModelagem de dependências espaciais e temporais.\n\nModelos para classificação e contagem.",
+    "crumbs": [
+      "Informações do curso",
+      "Plano de ensino"
+    ]
+  },
+  {
+    "objectID": "informacoes_curso/plano_ensino.html#objetivos",
+    "href": "informacoes_curso/plano_ensino.html#objetivos",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "Objetivos",
+    "text": "Objetivos\nObjetivo Geral:\nCapacitar os alunos a compreender e aplicar conceitos de inferência estatística e modelagem probabilística, utilizando ferramentas computacionais para análise de dados e interpretação de fenômenos complexos nas Ciências do Mar, promovendo a integração entre teoria, prática de análise de dados e suporte à tomada de decisão.\n\nObjetivos Específicos:\n- Compreender os fundamentos da probabilidade como lógica, aplicando-os à comparação entre diferentes hipóteses científicas.\n- Implementar modelos probabilísticos em contextos ambientais utilizando linguagens de programação e ferramentas computacionais.\n- Desenvolver e explorar modelos conceituais integrando conhecimentos prévios, representações causais e simulações iniciais.\n- Incorporar dados empíricos a modelos probabilísticos, ajustando e calibrando predições com base em observações reais.\n- Comparar e refinar modelos utilizando critérios de validação e análise de sensibilidade.\n- Aplicar modelos probabilísticos para descrever relações não lineares, dependências espaciais e temporais, e processos ambientais complexos.",
+    "crumbs": [
+      "Informações do curso",
+      "Plano de ensino"
+    ]
+  },
+  {
+    "objectID": "informacoes_curso/plano_ensino.html#avaliação",
+    "href": "informacoes_curso/plano_ensino.html#avaliação",
+    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
+    "section": "Avaliação",
+    "text": "Avaliação\nSerão atribuídas 5 Listas de Exercícios (peso 40%) e 3 Avaliações (peso 60%). A 3ª avaliação consistirá em um trabalho final desenvolvido ao longo do semestre e apresentado ao final do curso. A nota final do período letivo (NL) será calculada pela média ponderada das listas e avaliações. Para alunos com NL maior ou igual a 6,0, a nota final (NF) será NF = NL. O EXAME será aplicado apenas aos alunos não reprovados por falta e que finalizaram o período letivo regular com NL entre 3,0 e 5,9. Para esses alunos, a nota final (NF) será NF = (NL + NE)/2, em que NE é a nota obtida no EXAME. Caso o EXAME não seja realizado, será atribuído NE = 0.",
+    "crumbs": [
+      "Informações do curso",
+      "Plano de ensino"
+    ]
+  },
+  {
+    "objectID": "lab-info/implementacao-aula-2.html",
+    "href": "lab-info/implementacao-aula-2.html",
+    "title": "Introdução à Inferência Bayesiana",
+    "section": "",
+    "text": "import random\nimport matplotlib.pyplot as plt",
+    "crumbs": [
+      "Lab. Informática",
+      "Semana 2"
+    ]
+  },
+  {
+    "objectID": "lab-info/implementacao-aula-2.html#definição-da-caixa",
+    "href": "lab-info/implementacao-aula-2.html#definição-da-caixa",
+    "title": "Introdução à Inferência Bayesiana",
+    "section": "1 Definição da Caixa",
+    "text": "1 Definição da Caixa\nDefinição da composição da caixa de bolinhas: suponha que a caixa contém 3 bolinhas pretas e 2 bolinhas azuis.\n\ncaixa = ['preta', 'preta', 'preta', 'azul', 'azul']",
+    "crumbs": [
+      "Lab. Informática",
+      "Semana 2"
+    ]
+  },
+  {
+    "objectID": "lab-info/implementacao-aula-2.html#hipóteses-possíveis",
+    "href": "lab-info/implementacao-aula-2.html#hipóteses-possíveis",
+    "title": "Introdução à Inferência Bayesiana",
+    "section": "2 Hipóteses Possíveis",
+    "text": "2 Hipóteses Possíveis\nDefinição das hipóteses sobre o número de bolinhas pretas na caixa. As hipóteses variam de 0 a 5 bolinhas pretas.\n\nhipoteses = [0, 1, 2, 3, 4, 5]",
+    "crumbs": [
+      "Lab. Informática",
+      "Semana 2"
+    ]
+  },
+  {
+    "objectID": "lab-info/implementacao-aula-2.html#primeira-observação",
+    "href": "lab-info/implementacao-aula-2.html#primeira-observação",
+    "title": "Introdução à Inferência Bayesiana",
+    "section": "3 Primeira Observação",
+    "text": "3 Primeira Observação\nRealiza uma observação aleatória (com reposição).\n\nobservacao = random.choice(caixa)\nprint(observacao)\n\nazul\n\n\nAtualiza a plausibilidade das hipóteses com base na cor observada.\n\ncontagem_posterior = []\nfor h in hipoteses:\n    if observacao == 'preta':\n        ni = h\n    else:\n        ni = (5 - h)\n    contagem_posterior.append(ni)\n\n\n3.1 Gráfico - Posterior Após a Primeira Observação\n\nplt.bar(x=hipoteses, height=contagem_posterior)\nplt.xlabel('Número de bolinhas pretas (hipóteses)')\nplt.ylabel('Plausibilidade')\nplt.title('Plausibilidade das hipóteses após a primeira observação')\nplt.grid(axis='y', linestyle='--', alpha=0.5)\nplt.show()\nplt.close()",
+    "crumbs": [
+      "Lab. Informática",
+      "Semana 2"
+    ]
+  },
+  {
+    "objectID": "lab-info/implementacao-aula-2.html#segunda-observação",
+    "href": "lab-info/implementacao-aula-2.html#segunda-observação",
+    "title": "Introdução à Inferência Bayesiana",
+    "section": "4 Segunda Observação",
+    "text": "4 Segunda Observação\nRealiza uma nova observação.\n\nobservacao = random.choice(caixa)\nprint(observacao)\n\nazul\n\n\nAtualiza a posterior com base na observação anterior.\n\ncontagem_anterior = contagem_posterior.copy()\ncontagem_posterior = []\n\nfor h in hipoteses:\n    if observacao == 'preta':\n        ni = h * contagem_anterior[h]\n    else:\n        ni = (5 - h) * contagem_anterior[h]\n    contagem_posterior.append(ni)\n\n\n4.1 Gráfico - Posterior Após a Segunda Observação\n\nplt.bar(x=hipoteses, height=contagem_posterior)\nplt.xlabel('Número de bolinhas pretas (hipóteses)')\nplt.ylabel('Plausibilidade')\nplt.title('Plausibilidade das hipóteses após a segunda observação')\nplt.grid(axis='y', linestyle='--', alpha=0.5)\nplt.show()\nplt.close()",
+    "crumbs": [
+      "Lab. Informática",
+      "Semana 2"
+    ]
+  },
+  {
     "objectID": "listas_exercicios/instrucoes-listas.html",
     "href": "listas_exercicios/instrucoes-listas.html",
     "title": "Instruções para Utilizar o Google Colab",
@@ -66,113 +308,14 @@
     ]
   },
   {
-    "objectID": "listas_exercicios/lista-exercicios-3.html",
-    "href": "listas_exercicios/lista-exercicios-3.html",
-    "title": "Regressão Linear Bayesiana - Implementação Prática",
+    "objectID": "listas_exercicios/lista-exercicios-2.html",
+    "href": "listas_exercicios/lista-exercicios-2.html",
+    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
     "section": "",
-    "text": "ENTREGA: até 26/06/2025 às 23:59, via Moodle",
+    "text": "ENTREGA: até 25/05/2025 às 23:59, via Moodle\n\n\n1 Instruções\nAntes de iniciar, releia atentamente os conteúdos abaixo:\n\nSemana 1: Contando possibilidades\n\nSemana 2: De contagens a probabilidades\n\nSemana 3: Construindo um modelo bayesiano\n\n\n\n2 Objetivos\n\nGerar observações (terra ou água) ao “lançar” um globo virtual.\n\nCombinar essas observações com uma crença a priori e aplicar os dados para atualizar a distribuição a posteriori de \\(p\\).\n\nComparar estimativas via máxima verossimilhança (MLE) e via Bayes (a posteriori).\n\nUtilizar o módulo PyMC para gerar estimativas do parâmetro \\(p\\) do modelo binomial.\n\n\n\n\n3 Roteiro de Atividades\n\nProcedimento de Amostragem\n\nAcesse o app Estimando a Proporção da Superfície Oceânica e gere \\(N\\) pontos aleatórios, que representam seus “lançamentos” do globo. Repita o procedimento para \\(N = 4, 20, 100\\).\n\nDiscuta em grupo e responda: que pressupostos estamos assumindo ao usar essa ferramenta? Quais as limitações deste “modelo” para estimar a superfície oceânica?\n\nColeta de Dados\n\nPara cada valor de \\(N\\), observe no app quantos pontos ficaram em água (\\(k\\)) e quantos ficaram em terra (\\(N - k\\)).\n\nCalcule as estimativas pontuais de \\(\\hat{p} = \\frac{k}{N}\\) para cada valor de \\(N\\).\n\nTroque informações com seus colegas e verifique se, ao gerar mais pontos, o valor de \\(\\hat{p}\\) tende a se aproximar de um valor “esperado”. Por quê?\n\nInferência Bayesiana\n\nAbra o app Inferência Bayesiana Binomial e, no painel lateral, insira os mesmos valores de \\(N\\) (observações) e \\(k\\) (sucessos) obtidos no passo anterior.\n\nAjuste os parâmetros da distribuição beta a priori (\\(\\alpha\\) e \\(\\beta\\)) para representar diferentes visões iniciais sobre \\(p\\).\n\nInicialmente, utilize uma a priori uniforme ajustando \\(\\alpha = 1\\) e \\(\\beta = 1\\).\n\nEm seguida, teste diferentes combinações de \\(\\alpha\\) e \\(\\beta\\) para ajustar a a priori com base no que sabemos sobre a proporção da cobertura oceânica no globo.\n\n\nObserve como a distribuição a posteriori (curva azul) se desloca ou se concentra de acordo com suas escolhas de \\(\\alpha\\) e \\(\\beta\\), e com os dados (\\(N, k\\)).\n\nCompare a curva de verossimilhança (verde) e a distribuição a posteriori para discutir o quanto a a priori e as evidências observadas influenciam a estimativa final de \\(p\\).\nDiscuta o que concluiu após observar os itens #3 e #4.\n\nQuestões\n\nTamanho da amostra: o que ocorre com a estimativa pontual de \\(p\\) para amostras pequenas e grandes?\nDistribuição a priori: como uma opinião prévia sobre \\(p\\) (por exemplo, achar que o planeta é 70% água) afeta a distribuição a posteriori? Discuta para as diferentes escolhas de \\(N\\).\n\n\n\n\n\n4 Exercícios para Consolidar\n\nComparação Gráfica\n\nA cada simulação do experimento, salve as figuras das densidades a priori e a posteriori Beta a fim de facilitar a comparação.\n\nEm cada caso, ajuste um intervalo simétrico ao redor da distribuição a posteriori que inclua 95% da curva. Este seria o intervalo de credibilidade para \\(p\\). Quais foram estes intervalos?\n\nReflexão\n\nCompare seus resultados com os de outros(as) colegas.\n\nPor que, com poucos dados, a distribuição a priori influencia mais o resultado? Como o aumento de \\(N\\) faz a verossimilhança prevalecer?\n\nDesafio\n\nTarefa: Investigue quantos pontos seriam necessários para que o intervalo de credibilidade a 95% para \\(p\\) tenha largura de \\(\\pm 0{,}02\\).\n\nO que esse tamanho amostral significa em termos práticos? Se fossem realmente “lançar o globo”, quantas vezes precisariam repetir o processo? Faça essa verificação para diferentes valores de \\(N\\) e para as distribuições a priori escolhidas anteriormente.\n\n\n\n\n\n5 Exercícios em Python\n\nUtilizando o PyMC, replique as atividades do item #3. Roteiro de Atividades.\n\nPara cada valor de \\(N\\) e para cada distribuição a priori, plote os histogramas das distribuições a posteriori.\n\nO relatório da lista de exercícios deve ser entregue através de um arquivo Jupyter Notebook enviado via Moodle, contendo os códigos e suas conclusões sobre as questões levantadas acima.\nTodos os itens destacados em vermelho devem ser respondidos ou apresentados na lista.",
     "crumbs": [
       "Listas de Exercícios",
-      "Lista 3"
-    ]
-  },
-  {
-    "objectID": "listas_exercicios/lista-exercicios-3.html#objetivos",
-    "href": "listas_exercicios/lista-exercicios-3.html#objetivos",
-    "title": "Regressão Linear Bayesiana - Implementação Prática",
-    "section": "1 Objetivos",
-    "text": "1 Objetivos\nEsta lista visa desenvolver suas habilidades práticas na implementação de modelos de regressão linear bayesiana utilizando a biblioteca bambi em Python. Você irá aprender a:\n\nEspecificar e ajustar modelos bayesianos do zero.\nDefinir distribuições a priori apropriadas.\nRealizar diagnósticos de convergência MCMC.\nInterpretar resultados bayesianos no contexto de incerteza paramétrica.\nVisualizar e comunicar resultados de análises bayesianas.",
-    "crumbs": [
-      "Listas de Exercícios",
-      "Lista 3"
-    ]
-  },
-  {
-    "objectID": "listas_exercicios/lista-exercicios-3.html#contexto",
-    "href": "listas_exercicios/lista-exercicios-3.html#contexto",
-    "title": "Regressão Linear Bayesiana - Implementação Prática",
-    "section": "2 Contexto",
-    "text": "2 Contexto\nEm estudos ecológicos, investigamos como variáveis ambientais influenciam a biodiversidade. Nesta lista, analisaremos dados de praias na costa holandesa, examinando a relação entre:\n\nRiqueza de espécies (Richness): número de espécies diferentes por local (variável resposta).\nNAP (Normaal Amsterdams Peil): altura do local em relação ao nível médio do mar (variável preditora).\n\nOs dados provêm do estudo descrito no Capítulo 5 de Zuur et al. (2009) e estão disponíveis no arquivo RIKZ.csv.",
-    "crumbs": [
-      "Listas de Exercícios",
-      "Lista 3"
-    ]
-  },
-  {
-    "objectID": "listas_exercicios/lista-exercicios-3.html#exercícios",
-    "href": "listas_exercicios/lista-exercicios-3.html#exercícios",
-    "title": "Regressão Linear Bayesiana - Implementação Prática",
-    "section": "EXERCÍCIOS",
-    "text": "EXERCÍCIOS\n1. Preparação e Exploração Inicial dos Dados\n1.1 Abra um novo arquivo no Google Colab\n1.2 Carregue as bibliotecas necessárias e importe o conjunto de dados RIKZ.csv do link: https://raw.githubusercontent.com/FCopf/datasets/refs/heads/main/RIKZ.csv\n\n\n\n\n\n\nNota\n\n\n\nBibliotecas sugeridas: pandas, bambi, arviz, numpy, matplotlib.pyplot, seaborn.\nNo Google Colab, as bibliotecas bambi e arviz deverão ser instaladas a cada nova seção rodando o comando abaixo, que deve ser inserido na primeira cálula do arquivo.\n\n!pip install bambi arviz\n\n\nimport pandas as pd\nimport bambi as bmb\nimport arviz as az\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n\n\n2. Análise Exploratória\n2.1 Crie um gráfico de dispersão entre Richness (eixo y) e NAP (eixo x) para verificar visualmente se há uma relação linear entre essas variáveis.\n\n\n\n\n\n\nQuestões\n\n\n\n\nA relação entre riqueza de espécies e NAP parece ser aproximadamente linear? Caso não seja, explique.\n\n\n\n\n3. Especificação do Modelo Bayesiano\n3.1 Especifique um modelo de regressão linear bayesiano usando a bilbioteca bambi do Python:\n\nUtilize a sintaxe de fórmula: Richness ~ NAP.\nExamine a estrutura do modelo criado.\n\n3.2 Distribuições a priori padrão:\n\nNão especifique as distribuições a priori e utilize as atribuições padrão da biblioteca.\nIdentifique quais prioris foram atribuídas para o intercepto (\\(\\beta_0\\)), coeficiente de NAP (\\(\\beta_1\\)) e sigma (\\(\\sigma\\)).\nAvalie as curvas de densidade das distribuições apriori.\n\n\n\n\n\n\n\nQuestões\n\n\n\n\nQual família de distribuição (Family) e função de ligação (Link) foram utilizadas?\nQuais distribuições a priori foram especificadas para o intercepto, o coeficiente de NAP e o parâmetro sigma? Quais foram os valores utilizados para parametrizar cada uma delas?\nConsiderando as priori como “crenças iniciais” do modelo antes de observar os dados, os limites escolhidos automaticamente parecem muito ou pouco informativos? Justifique.\n\n\n\n\n4. Ajuste do Modelo via MCMC\n4.1 Realize a amostragem MCMC para obter a distribuição a posteriori e gere a tabela resumo:\n\nFoque nos parâmetros principais: intercepto, coeficiente de NAP e sigma.\n\n\n\n\n\n\n\nQuestões\n\n\n\n\nQuais são as médias e os desvios padrão estimados das distribuições posteriores de cada parâmetro?\nQuais foram os limites dos intervalos de credibilidade a 94% para cada parâmetro?\n\n\n\n\n5. Interpretação dos Resultados Bayesianos\n5.1 Com base na estimativa pontual (isto é, a média) do coeficiente a posteriori de NAP e em seu intervalo de credibilidade de 94% (HDI), responda às questões a seguir:\n\n\n\n\n\n\nQuestões\n\n\n\n\nO que você conclui sobre a existência e direção do efeito linear de NAP sobre a riqueza de espécies?\nComo você interpreta o valor da estimativa pontual do coeficiente de NAP em termos práticos?\nO que o intervalo de credibilidade HDI de 94% nos informa sobre a incerteza dessa estimativa?\n\n\n\n\n6. Visualização da Incerteza Preditiva\n6.1 Visualize a incerteza na reta de regressão:\n\nPlote múltiplas retas possíveis amostradas da distribuição a posteriori.\nInclua os dados observados no gráfico.\nAdicione a reta média da posteriori.\n\n6.2 Calcule e visualize o intervalo de credibilidade da reta média:\n\nCalcule intervalos de credibilidade de 95% para a reta média.\nCrie um gráfico com a banda de credibilidade.\n\n\n\n\n\n\n\nQuestões\n\n\n\n\nOnde a variabilidade das retas da posteriori é maior - no centro dos dados ou nos extremos? Explique o motivo.\nComo você explicaria o que significa o intervalo de credibilidade para a reta média a um colega sem formação em estatística bayesiana?\n\n\n\n\n7. Predições para Novos Dados\n7.1 Faça predições bayesianas para novos valores de NAP:\n\nEscolha novos os valores de NAP como [-1.3, 0, 3].\nObtenha distribuições preditivas da riqueza para estes limites de NAP e plote-os no mesmo gráfico com a reta média e os pontos observados.\nVisualize histogramas dessas distribuições.\n\n\n\n\n\n\n\nQuestões\n\n\n\n\nOs valores preditos fazem sentido ecologicamente? Explique.\nComo as predições se comparam com o padrão e a faixa de valores observados nos dados originais?\nO que essas predições revelam sobre as limitações do modelo linear ajustado? Em que situações o modelo pode fornecer predições inadequadas?\nDiante das limitações apontadas por você na resposta anterior - quais cuidados devemos ter ao usar este modelo para fazer novas predições, especialmente em valores extremos de NAP?",
-    "crumbs": [
-      "Listas de Exercícios",
-      "Lista 3"
-    ]
-  },
-  {
-    "objectID": "informacoes_curso/plano_ensino.html",
-    "href": "informacoes_curso/plano_ensino.html",
-    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
-    "section": "",
-    "text": "Acessar versão em pdf",
-    "crumbs": [
-      "Informações do curso",
-      "Plano de ensino"
-    ]
-  },
-  {
-    "objectID": "informacoes_curso/plano_ensino.html#ementa",
-    "href": "informacoes_curso/plano_ensino.html#ementa",
-    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
-    "section": "Ementa",
-    "text": "Ementa\nA Unidade Curricular (UC) explora os fundamentos da inferência estatística, com ênfase em modelos probabilísticos e suas aplicações na análise de dados e interpretação de fenômenos complexos relacionados às Ciências do Mar. A UC enfatiza a investigação de hipóteses sobre processos ambientais por meio da construção e análise de modelos probabilísticos, integrando conhecimentos prévios com evidências baseadas em dados. O curso promove uma abordagem prática, com foco na elaboração de modelos e na simulação computacional, integrando teoria e prática como suporte à tomada de decisão, de forma a oferecer uma compreensão ampla e aplicada dos conceitos teóricos e computacionais envolvidos.",
-    "crumbs": [
-      "Informações do curso",
-      "Plano de ensino"
-    ]
-  },
-  {
-    "objectID": "informacoes_curso/plano_ensino.html#conteúdo-programático",
-    "href": "informacoes_curso/plano_ensino.html#conteúdo-programático",
-    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
-    "section": "Conteúdo Programático",
-    "text": "Conteúdo Programático\n\nFundamentos da Inferência Estatística e Modelagem Probabilística\n\nProbabilidade como lógica e ferramenta para lidar com incertezas.\n\nConceitos fundamentais: distribuição a priori e distribuição posteriori.\n\nAplicações Computacionais e Ferramentas Analíticas\n\nImplementação de modelos utilizando R, Python e linguagens de programação probabilística.\n\nConstrução de Modelos Probabilísticos\n\nHipóteses científicas, estruturas de dependência e relações causais.\n\nDesenvolvimento de modelos conceituais integrando conhecimento prévio.\n\nSimulação inicial para explorar predições com base no modelo.\n\nAjuste de Dados ao Modelo\n\nIncorporação de observações empíricas ao modelo conceitual.\n\nAtualização de predições.\n\nTécnicas de ajuste e calibração de modelos baseadas em dados observados.\n\nAvaliação e Refinamento de Modelos\n\nPredições e extrapolações baseadas no modelo ajustado.\n\nComparação de modelos utilizando critérios de validação.\n\nAnálise de sensibilidade a diferentes distribuições a priori.\n\nDesenhos Experimentais e Relações Causais Complexas\n\nEstruturas hierárquicas e suas aplicações.\nModelagem de dependências espaciais e temporais.\n\nModelos para classificação e contagem.",
-    "crumbs": [
-      "Informações do curso",
-      "Plano de ensino"
-    ]
-  },
-  {
-    "objectID": "informacoes_curso/plano_ensino.html#objetivos",
-    "href": "informacoes_curso/plano_ensino.html#objetivos",
-    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
-    "section": "Objetivos",
-    "text": "Objetivos\nObjetivo Geral:\nCapacitar os alunos a compreender e aplicar conceitos de inferência estatística e modelagem probabilística, utilizando ferramentas computacionais para análise de dados e interpretação de fenômenos complexos nas Ciências do Mar, promovendo a integração entre teoria, prática de análise de dados e suporte à tomada de decisão.\n\nObjetivos Específicos:\n- Compreender os fundamentos da probabilidade como lógica, aplicando-os à comparação entre diferentes hipóteses científicas.\n- Implementar modelos probabilísticos em contextos ambientais utilizando linguagens de programação e ferramentas computacionais.\n- Desenvolver e explorar modelos conceituais integrando conhecimentos prévios, representações causais e simulações iniciais.\n- Incorporar dados empíricos a modelos probabilísticos, ajustando e calibrando predições com base em observações reais.\n- Comparar e refinar modelos utilizando critérios de validação e análise de sensibilidade.\n- Aplicar modelos probabilísticos para descrever relações não lineares, dependências espaciais e temporais, e processos ambientais complexos.",
-    "crumbs": [
-      "Informações do curso",
-      "Plano de ensino"
-    ]
-  },
-  {
-    "objectID": "informacoes_curso/plano_ensino.html#avaliação",
-    "href": "informacoes_curso/plano_ensino.html#avaliação",
-    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
-    "section": "Avaliação",
-    "text": "Avaliação\nSerão atribuídas 5 Listas de Exercícios (peso 40%) e 3 Avaliações (peso 60%). A 3ª avaliação consistirá em um trabalho final desenvolvido ao longo do semestre e apresentado ao final do curso. A nota final do período letivo (NL) será calculada pela média ponderada das listas e avaliações. Para alunos com NL maior ou igual a 6,0, a nota final (NF) será NF = NL. O EXAME será aplicado apenas aos alunos não reprovados por falta e que finalizaram o período letivo regular com NL entre 3,0 e 5,9. Para esses alunos, a nota final (NF) será NF = (NL + NE)/2, em que NE é a nota obtida no EXAME. Caso o EXAME não seja realizado, será atribuído NE = 0.",
-    "crumbs": [
-      "Informações do curso",
-      "Plano de ensino"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "5290 - PROBABILIDADE E ESTATÍSTICA",
-    "section": "",
-    "text": "Consulte aqui o cronograma de atividades do semestre, com a descrição dos temas, links para materiais de apoio e atividades. Quaisquer alterações serão atualizadas e registradas neste espaço.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSEMANA\nDATA\nTEMA\nOBJETIVOS\nLEITURAOBRIGATÓRIA\nLEITURACOMPLEMENTAR\nLAB.INFORMÁTICA\nSLIDES\nLISTAS\nAVALIAÇÃO\nPROJETO\n\n\n\n\n1\n03/04\n🔹 Apresentação da Unidade Curricular (UC).  🔹 Introdução à inferência e à modelagem probabilística.\n🔹 Apresentação do plano de ensino.  🔹 Modelos probabilísticos como ferramenta para lidar com incertezas na tomada de decisão.  🔹 Inferência probabilística a partir do princípio da contagem.\n📖\n📚\n\n📽️\n📝\n\n\n\n\n2\n10/04\n🔹 Introdução à inferência bayesiana: distribuições a priori e a posteriori.\n🔹 Tomada de decisão a partir da distribuição a posteriori.\n📖\n📚\n💻\n\n\n\n\n\n\n3\n17/04\n🔹 Inferência sobre o parâmetro de uma distribuição de probabilidades.\n🔹 Apresentar a distribuição binomial.  🔹 Estimar seu parâmetro via aproximação por grid.\n📖\n\n💻\n📽️  📽️\n\n\n\n\n\n4\n24/04\n🔹 O módulo PyMC para estimar parâmetros de um modelo bayesiano.\n🔹 Introduzir o uso do módulo PyMC para estimar o parâmetro do modelo binomial.\n\n\n💻\n\n📝\n\n\n\n\n\n01/05\nFERIADO - Dia do Trabalho\n⛱️ 🌞 🏕️\n\n\n\n\n\n\n\n\n\n5\n08/05\n1ª Avaliação\n🔹 Avaliar a compreensão dos principais conceitos da inferência bayesiana, incluindo distribuições a priori e a posteriori, construção e ajuste de modelos probabilísticos simples.\n\n\n\n\n\n📈  ✅\n\n\n\n6\n15/05\n🔹 Distribuição Normal\n🔹 Apresentar a Distribuição Normal.  🔹 Simular a distribuição a priori preditiva de alturas com base no conhecimento subjetivo.  🔹 Utilizar o PyMC para estimar parâmetros do modelo Normal.\n📖  📖\n📚\n💻\n\n\n\n\n\n\n7\n22/05\n🔹 Regressão Linear Bayesiana\n🔹 Apresentar o modelo de regressão linear bayesiano.  🔹 Gerar uma distribuição a priori preditiva para \\(\\beta_0\\), \\(\\beta_1\\) e \\(\\sigma\\) utilizando o PyMC.  🔹 Estimar a distribuição a posteriori a partir de um conjunto de dados.\n\n\n💻\n\n\n\n\n\n\n8\n29/05\n🔹 Regressão Linear Bayesiana  🔹 Introdução ao uso da biblioteca Bambi para modelos bayesianos\n🔹 Consolidar a estrutura de blocos para modelagem bayesiana com PyMC  🔹 Apresentar a biblioteca Bambi como interface de alto nível para o PyMC.\n\n\n💻\n\n📝\n\n\n\n\n9\n05/06\nHipóteses científicas, estruturas de dependência e relações causais\n🔹 Discutir o papel das hipóteses científicas na construção de modelos probabilísticos.  🔹 Riqueza de Espécies em Ilhas: teoria e possíveis modelos estatísticos.  🔹 Interpretação, predição e comparação de modelos probabilísticos.\n📖\n📚\n\n📽️\n\n\n🧭 💡\n\n\n10\n12/06\n2ª Avaliação\n🔹 Avaliar a compreensão sobre o modelo de distribuição normal.  🔹 Interpretar os coeficientes da regressão linear.  🔹 Avaliar a capacidade de implementação , validação e comparação de modelos de regressão\n📖\n📚\n\n📽️\n\n📈\n\n\n\n11\n19/06\nFERIADO – Corpus Christi\n☀️ 🏞️ 🧘\n\n\n\n\n\n\n\n\n\n\n26/06\nEstruturas de dependência: dados estruturados no espaço\n🔹 Discutir como a dependência espacial influencia a análise e interpretação dos resultados.  🔹 Abordar o ajuste de modelos de regressão para dados com estrutura espacial.\n\n\n\n\n📝\n\n\n\n\n12\n03/07\nEstruturas de dependência: dados estruturados no tempo\n🔹 Discutir estratégias para lidar com dependência temporal em dados.  🔹 Introduzir modelos de regressão voltados para séries temporais.\n📖\n📚\n\n📽️\n\n\n\n\n\n13\n10/07\nModelos binomiais\n🔹 Apresentar a formulação do modelo binomial e suas aplicações em dados de contagem e proporção.  🔹 Discutir a função de probabilidade, pressupostos e interpretação dos resultados.\n📖\n📚\n\n📽️\n📝\n\n\n\n\n14\n17/07\nModelo de Poisson\n🔹 Explorar o modelo de Poisson aplicado a dados de contagem.  🔹 Apresentar sua função de probabilidade, pressupostos e principais usos.\n📖\n\n\n📽️\n\n\n\n\n\n15\n24/07\nConclusão da Unidade Curricular.\n🔹 Revisar e integrar os principais conceitos abordados ao longo do curso.  🔹 Avaliar a evolução da aprendizagem e discutir possíveis aplicações e extensões dos métodos estudados.\n\n\n\n\n\n\n📑",
-    "crumbs": [
-      "Informações do curso",
-      "Cronograma"
+      "Lista 2"
     ]
   },
   {
@@ -195,148 +338,5 @@
     "title": "Avaliação 1 – Introdução à Inferência Bayesiana",
     "section": "3 Parte C – Problemas de interpretação e uso (2,0 pontos)",
     "text": "3 Parte C – Problemas de interpretação e uso (2,0 pontos)\nConsidere o experimento do globo, no qual se deseja inferir a proporção de água na superfície da Terra, representada pelo parâmetro \\(p\\), a partir de observações e de uma distribuição a priori. Para cada item abaixo, calcule a probabilidade a posteriori de \\(p\\) estar entre 0,65 e 0,75. Use a distribuição Beta adequada a cada cenário.\nObs: Você pode usar o app Inferência Bayesiana Binomial https://fcopf-binomial-bayesiana.share.connect.posit.cloud/ ou outra ferramenta de sua escolha.\n\n3.1 (0,5 ponto) Suponha que, em \\(n = 4\\) lançamentos, foram observados \\(y = 3\\) pontos sobre a água. Use uma distribuição a priori \\(Beta(1, 1)\\) (uniforme). (Arredonde para 3 CASAS DECIMAIS).\nResposta: ___\n\n\n3.2 (0,5 ponto) Com os mesmos dados do item anterior (\\(n = 4\\), \\(y = 3\\)), utilize uma distribuição a priori \\(Beta(9, 4)\\). (Arredonde para 3 CASAS DECIMAIS).\nResposta: ___\n\n\n3.3 (0,5 ponto) Suponha um número maior de observações: \\(n = 40\\) lançamentos, com \\(y = 30\\) observações sobre a água. Utilize a a priori \\(Beta(1, 1)\\). (Arredonde para 3 CASAS DECIMAIS).\nResposta: ___\n\n\n3.4 (0,5 ponto) Com os mesmos dados do item anterior (\\(n = 40\\), \\(y = 30\\)), utilize a a priori \\(Beta(9, 4)\\). (Arredonde para 3 CASAS DECIMAIS).\nResposta: ___"
-  },
-  {
-    "objectID": "avaliacoes/avaliacao-1-respostas.html#parte-a-questões-conceituais-20-pontos",
-    "href": "avaliacoes/avaliacao-1-respostas.html#parte-a-questões-conceituais-20-pontos",
-    "title": "Avaliação 1 – Introdução à Inferência Bayesiana",
-    "section": "1 Parte A – Questões conceituais (2,0 pontos)",
-    "text": "1 Parte A – Questões conceituais (2,0 pontos)\n\n1.1 (0,5 ponto) Em uma análise bayesiana, a verossimilhança de uma hipótese:\nResposta: B) Mede a proporção relativa de modos pelos quais a hipótese pode produzir os dados observados.\n\n\n1.2 (0,5 ponto) Ao assumir uma distribuição a priori uniforme sobre cinco hipóteses discretas, o peso inicial atribuído a cada hipótese é:\nResposta: B) 0,20\n\n\n1.3 (0,5 ponto) Indique a alternativa que não altera a distribuição a posteriori:\nResposta: D) Multiplicar todas as probabilidades posteriores por uma constante comum.\n\n\n1.4 (0,5 ponto) Quando a distribuição a priori é informativa e favorece valores altos de um parâmetro, o impacto esperado sobre a distribuição a posteriori é:\nResposta: B) Deslocá‑la na direção dos valores altos, a depender dos dados.\n\n\nfrom scipy.stats import binom\nimport numpy as np\n\ny = 2\nn = 3\np = np.arange(0,5)/4\npriori = 1/len(p)\n\nL = binom.pmf(y, n, p)\nPost = L * priori / np.sum(L * priori)\nL_round = np.round(L,3).tolist()\nPost_round = np.round(Post,3).tolist()\n\nH_selecionado = int(np.argmax(Post) + 1)",
-    "crumbs": [
-      "Avaliações",
-      "Avaliação 1 - Respostas"
-    ]
-  },
-  {
-    "objectID": "avaliacoes/avaliacao-1-respostas.html#parte-b-problemas-quantitativos-80-pontos",
-    "href": "avaliacoes/avaliacao-1-respostas.html#parte-b-problemas-quantitativos-80-pontos",
-    "title": "Avaliação 1 – Introdução à Inferência Bayesiana",
-    "section": "2 Parte B – Problemas quantitativos (8,0 pontos)",
-    "text": "2 Parte B – Problemas quantitativos (8,0 pontos)\n\n\n\n\n\n\n\n\n\n\nHipótese\nComposição\n\\(n\\)\n\\(\\mathcal{L}\\)\nProbabilidade a posteriori\n\n\n\n\n\\(H_1\\)\n⚪⚪⚪⚪\n\\(0 \\times 4 \\times 0 = 0\\)\n0.0\n0.0\n\n\n\\(H_2\\)\n⚪⚪⚪🔵\n\\(1 \\times 3 \\times 1 = 3\\)\n0.141\n0.15\n\n\n\\(H_3\\)\n⚪⚪🔵🔵\n\\(2 \\times 2 \\times 2 = 8\\)\n0.375\n0.4\n\n\n\\(H_4\\)\n⚪🔵🔵🔵\n\\(3 \\times 1 \\times 3 = 9\\)\n0.422\n0.45\n\n\n\\(H_5\\)\n🔵🔵🔵🔵\n\\(4 \\times 0 \\times 4 = 0\\)\n0.0\n0.0\n\n\n\n\n2.1 Hipótese mais plausível (priori uniforme):\nResposta: E) \\(H_{4}\\)\n\n\n\n2.2 Probabilidade a posteriori com a priori informativa:\n\nfrom scipy.stats import binom\nimport numpy as np\n\ny = 2\nn = 3\np = np.arange(0,5)/4\npriori_info = np.array([0.05, 0.1, 0.6, 0.15, 0.1])\n\nL_info = binom.pmf(y, n, p)\nPost_info = L_info * priori_info / np.sum(L_info * priori_info)\nL_info_round = np.round(L_info,3).tolist()\nPost_info_round = np.round(Post_info,3).tolist()\n\nH_info_selecionado = int(np.argmax(Post_info) + 1)\n\n\n\n\n\n\n\n\n\n\nHipótese\nComposição\nProbabilidade a priori\nProbabilidade a posteriori\n\n\n\n\n\\(H_1\\)\n⚪⚪⚪⚪\n0.05\n0.0\n\n\n\\(H_2\\)\n⚪⚪⚪🔵\n0.10\n0.047\n\n\n\\(H_3\\)\n⚪⚪🔵🔵\n0.60\n0.744\n\n\n\\(H_4\\)\n⚪🔵🔵🔵\n0.15\n0.209\n\n\n\\(H_5\\)\n🔵🔵🔵🔵\n0.10\n0.0\n\n\n\n\n\n2.3 Hipótese mais plausível (priori informativa):\nResposta: E) \\(H_{3}\\)",
-    "crumbs": [
-      "Avaliações",
-      "Avaliação 1 - Respostas"
-    ]
-  },
-  {
-    "objectID": "avaliacoes/avaliacao-1-respostas.html#parte-c-problemas-de-interpretação-e-uso-20-pontos",
-    "href": "avaliacoes/avaliacao-1-respostas.html#parte-c-problemas-de-interpretação-e-uso-20-pontos",
-    "title": "Avaliação 1 – Introdução à Inferência Bayesiana",
-    "section": "3 Parte C – Problemas de interpretação e uso (2,0 pontos)",
-    "text": "3 Parte C – Problemas de interpretação e uso (2,0 pontos)\n\nimport numpy as np\nfrom scipy.stats import beta\n\n# Definições dos parâmetros dos cenários\nalpha_prior = np.array([1, 9, 1, 9])\nbeta_prior =  np.array([1, 4, 1, 4])\ny =           np.array([3, 3, 30, 30])\nn =           np.array([4, 4, 40, 40])\n\n# Parâmetros da posteriori\nalpha_post = alpha_prior + y\nbeta_post = beta_prior + (n - y)\n\n# Intervalo desejado\nlower, upper = 0.65, 0.75\n\n# Probabilidade acumulada entre os limites\ncdf_upper = beta.cdf(upper, alpha_post, beta_post)\ncdf_lower = beta.cdf(lower, alpha_post, beta_post)\nposterior_probs = cdf_upper - cdf_lower\n\nposterior_probs_round = np.round(posterior_probs,3).tolist()\n\n\n3.1 (0,5 ponto) \\(n = 4\\), \\(y = 3\\), a priori \\(Beta(1, 1)\\)\nResposta: 0.204\n\n\n3.2 (0,5 ponto) \\(n = 4\\), \\(y = 3\\), a priori \\(Beta(9, 4)\\)\nResposta: 0.341\n\n\n3.3 (0,5 ponto) \\(n = 40\\), \\(y = 30\\), a priori \\(Beta(1, 1)\\)\nResposta: 0.446\n\n\n3.4 (0,5 ponto) \\(n = 40\\), \\(y = 30\\), a priori \\(Beta(9, 4)\\)\nResposta: 0.49",
-    "crumbs": [
-      "Avaliações",
-      "Avaliação 1 - Respostas"
-    ]
-  },
-  {
-    "objectID": "lab-info/implementacao-aula-2.html",
-    "href": "lab-info/implementacao-aula-2.html",
-    "title": "Introdução à Inferência Bayesiana",
-    "section": "",
-    "text": "import random\nimport matplotlib.pyplot as plt",
-    "crumbs": [
-      "Lab. Informática",
-      "Semana 2"
-    ]
-  },
-  {
-    "objectID": "lab-info/implementacao-aula-2.html#definição-da-caixa",
-    "href": "lab-info/implementacao-aula-2.html#definição-da-caixa",
-    "title": "Introdução à Inferência Bayesiana",
-    "section": "1 Definição da Caixa",
-    "text": "1 Definição da Caixa\nDefinição da composição da caixa de bolinhas: suponha que a caixa contém 3 bolinhas pretas e 2 bolinhas azuis.\n\ncaixa = ['preta', 'preta', 'preta', 'azul', 'azul']",
-    "crumbs": [
-      "Lab. Informática",
-      "Semana 2"
-    ]
-  },
-  {
-    "objectID": "lab-info/implementacao-aula-2.html#hipóteses-possíveis",
-    "href": "lab-info/implementacao-aula-2.html#hipóteses-possíveis",
-    "title": "Introdução à Inferência Bayesiana",
-    "section": "2 Hipóteses Possíveis",
-    "text": "2 Hipóteses Possíveis\nDefinição das hipóteses sobre o número de bolinhas pretas na caixa. As hipóteses variam de 0 a 5 bolinhas pretas.\n\nhipoteses = [0, 1, 2, 3, 4, 5]",
-    "crumbs": [
-      "Lab. Informática",
-      "Semana 2"
-    ]
-  },
-  {
-    "objectID": "lab-info/implementacao-aula-2.html#primeira-observação",
-    "href": "lab-info/implementacao-aula-2.html#primeira-observação",
-    "title": "Introdução à Inferência Bayesiana",
-    "section": "3 Primeira Observação",
-    "text": "3 Primeira Observação\nRealiza uma observação aleatória (com reposição).\n\nobservacao = random.choice(caixa)\nprint(observacao)\n\nazul\n\n\nAtualiza a plausibilidade das hipóteses com base na cor observada.\n\ncontagem_posterior = []\nfor h in hipoteses:\n    if observacao == 'preta':\n        ni = h\n    else:\n        ni = (5 - h)\n    contagem_posterior.append(ni)\n\n\n3.1 Gráfico - Posterior Após a Primeira Observação\n\nplt.bar(x=hipoteses, height=contagem_posterior)\nplt.xlabel('Número de bolinhas pretas (hipóteses)')\nplt.ylabel('Plausibilidade')\nplt.title('Plausibilidade das hipóteses após a primeira observação')\nplt.grid(axis='y', linestyle='--', alpha=0.5)\nplt.show()\nplt.close()",
-    "crumbs": [
-      "Lab. Informática",
-      "Semana 2"
-    ]
-  },
-  {
-    "objectID": "lab-info/implementacao-aula-2.html#segunda-observação",
-    "href": "lab-info/implementacao-aula-2.html#segunda-observação",
-    "title": "Introdução à Inferência Bayesiana",
-    "section": "4 Segunda Observação",
-    "text": "4 Segunda Observação\nRealiza uma nova observação.\n\nobservacao = random.choice(caixa)\nprint(observacao)\n\nazul\n\n\nAtualiza a posterior com base na observação anterior.\n\ncontagem_anterior = contagem_posterior.copy()\ncontagem_posterior = []\n\nfor h in hipoteses:\n    if observacao == 'preta':\n        ni = h * contagem_anterior[h]\n    else:\n        ni = (5 - h) * contagem_anterior[h]\n    contagem_posterior.append(ni)\n\n\n4.1 Gráfico - Posterior Após a Segunda Observação\n\nplt.bar(x=hipoteses, height=contagem_posterior)\nplt.xlabel('Número de bolinhas pretas (hipóteses)')\nplt.ylabel('Plausibilidade')\nplt.title('Plausibilidade das hipóteses após a segunda observação')\nplt.grid(axis='y', linestyle='--', alpha=0.5)\nplt.show()\nplt.close()",
-    "crumbs": [
-      "Lab. Informática",
-      "Semana 2"
-    ]
-  },
-  {
-    "objectID": "listas_exercicios/lista-exercicios-1.html",
-    "href": "listas_exercicios/lista-exercicios-1.html",
-    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
-    "section": "",
-    "text": "ENTREGA: ADIADA PARA 25/04/2025 às 23:59, via Moodle",
-    "crumbs": [
-      "Listas de Exercícios",
-      "Lista 1"
-    ]
-  },
-  {
-    "objectID": "listas_exercicios/lista-exercicios-1.html#instruções",
-    "href": "listas_exercicios/lista-exercicios-1.html#instruções",
-    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
-    "section": "1 Instruções",
-    "text": "1 Instruções\n\nAntes de iniciar, leia atentamente a Leitura Obrigatória da Semana 1 (“Contando possibilidades: evidências sobre uma hipótese”) e Semana 2 (“De contagens a probabilidades: a distribuição a posteriori”).\nAo concluir o exercício, teste seu código e faça o download do arquivo em formato .py (caso esteja usando Google Colab ou ferramenta similar). Em seguida, envie o arquivo .py para o Moodle antes da data de entrega.\n💡 DICA IMPORTANTE: comente cada etapa do seu código para que você ou outra pessoa possa entendê-lo futuramente.",
-    "crumbs": [
-      "Listas de Exercícios",
-      "Lista 1"
-    ]
-  },
-  {
-    "objectID": "listas_exercicios/lista-exercicios-1.html#descrição-da-atividade",
-    "href": "listas_exercicios/lista-exercicios-1.html#descrição-da-atividade",
-    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
-    "section": "2 Descrição da Atividade",
-    "text": "2 Descrição da Atividade\nNesta atividade, você deverá gerar um código em Python para representar virtualmente a seguinte situação: existe uma caixa com cinco bolas de gude, distribuídas entre as cores azul e preta (sendo possível que todas sejam pretas ou todas sejam azuis).\nObjetivo: Descobrir quantas bolas pretas existem na caixa.\nMetodologia:\n\nA estratégia consiste em amostrar uma bola por vez.\nAo observar a bola retirada, devolvemos a mesma para a caixa, o que caracteriza uma amostragem com reposição.\nInicialmente, não sabemos quantas bolas pretas estão presentes e só podemos inferir isso após observar as amostras sucessivas.\n\nResultados Esperados:\n\nCompreender como utilizar um ambiente de programação para simular virtualmente as condições de um experimento aleatório.\nEntender a natureza das respostas obtidas e como avaliar seus resultados para garantir uma conclusão adequada.\nReconhecer a simulação computacional como uma forma de antecipar condições e pressupostos usados na construção de experimentos e modelos estatísticos.",
-    "crumbs": [
-      "Listas de Exercícios",
-      "Lista 1"
-    ]
-  },
-  {
-    "objectID": "listas_exercicios/lista-exercicios-1.html#etapas-do-processo",
-    "href": "listas_exercicios/lista-exercicios-1.html#etapas-do-processo",
-    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
-    "section": "3 Etapas do Processo",
-    "text": "3 Etapas do Processo\nA seguir, são sugeridas etapas para ajudá-lo(a) a cumprir os objetivos propostos:\n\nRepresentação da caixa\nCrie um objeto em Python que represente a caixa contendo as 5 bolas de gude. Defina quantas bolas de cada cor (preta e azul) estarão presentes.\nDistribuição a priori\nDefina os resultados possíveis (quantidade de bolas pretas) e atribua uma distribuição a priori a cada resultado.\nPrimeira observação\nExtraia aleatoriamente uma bola da caixa e observe sua cor.\nAtualização a posteriori\nCom base na cor observada, atualize a distribuição de probabilidade — ou seja, calcule a nova distribuição a posteriori para cada valor possível de bolas pretas na caixa.\nVisualização e decisão\nPlote um gráfico comparando a distribuição a priori com a distribuição a posteriori. Use esse gráfico para embasar sua decisão sobre quantas bolas pretas a caixa contém.\nAmostragem sequencial\nRepita os passos 3 a 5 por n vezes. A cada nova extração, utilize a última distribuição a posteriori obtida como a nova distribuição a priori, de modo que seu conhecimento sobre a composição da caixa seja constantemente atualizado.\nCritério de parada\nInterrompa as repetições quando julgar que o número de observações é suficiente para tomar uma decisão confiável. Pense em qual seria o número mínimo de extrações para alcançar essa confiança.\nAmpliação do problema\n\nAumente o total de bolas na caixa para 50. Varie o número de bolas pretas em três cenários: i) relativamente poucas bolas pretas, ii) quantidades iguais de bolas pretas e azuis, iii) maioria de bolas pretas.\n\nResponda: Qual o efeito de aumentar a quantidade total de bolas sobre o número de repetições (n) necessário para tomar uma decisão confiável?\n\nDiante desse aumento, como a variação na proporção de bolas pretas influencia a quantidade de repetições necessárias para uma decisão acertada?",
-    "crumbs": [
-      "Listas de Exercícios",
-      "Lista 1"
-    ]
-  },
-  {
-    "objectID": "listas_exercicios/lista-exercicios-2.html",
-    "href": "listas_exercicios/lista-exercicios-2.html",
-    "title": "Roteiro de Atividades em Python — Atualização Bayesiana",
-    "section": "",
-    "text": "ENTREGA: até 25/05/2025 às 23:59, via Moodle\n\n\n1 Instruções\nAntes de iniciar, releia atentamente os conteúdos abaixo:\n\nSemana 1: Contando possibilidades\n\nSemana 2: De contagens a probabilidades\n\nSemana 3: Construindo um modelo bayesiano\n\n\n\n2 Objetivos\n\nGerar observações (terra ou água) ao “lançar” um globo virtual.\n\nCombinar essas observações com uma crença a priori e aplicar os dados para atualizar a distribuição a posteriori de \\(p\\).\n\nComparar estimativas via máxima verossimilhança (MLE) e via Bayes (a posteriori).\n\nUtilizar o módulo PyMC para gerar estimativas do parâmetro \\(p\\) do modelo binomial.\n\n\n\n\n3 Roteiro de Atividades\n\nProcedimento de Amostragem\n\nAcesse o app Estimando a Proporção da Superfície Oceânica e gere \\(N\\) pontos aleatórios, que representam seus “lançamentos” do globo. Repita o procedimento para \\(N = 4, 20, 100\\).\n\nDiscuta em grupo e responda: que pressupostos estamos assumindo ao usar essa ferramenta? Quais as limitações deste “modelo” para estimar a superfície oceânica?\n\nColeta de Dados\n\nPara cada valor de \\(N\\), observe no app quantos pontos ficaram em água (\\(k\\)) e quantos ficaram em terra (\\(N - k\\)).\n\nCalcule as estimativas pontuais de \\(\\hat{p} = \\frac{k}{N}\\) para cada valor de \\(N\\).\n\nTroque informações com seus colegas e verifique se, ao gerar mais pontos, o valor de \\(\\hat{p}\\) tende a se aproximar de um valor “esperado”. Por quê?\n\nInferência Bayesiana\n\nAbra o app Inferência Bayesiana Binomial e, no painel lateral, insira os mesmos valores de \\(N\\) (observações) e \\(k\\) (sucessos) obtidos no passo anterior.\n\nAjuste os parâmetros da distribuição beta a priori (\\(\\alpha\\) e \\(\\beta\\)) para representar diferentes visões iniciais sobre \\(p\\).\n\nInicialmente, utilize uma a priori uniforme ajustando \\(\\alpha = 1\\) e \\(\\beta = 1\\).\n\nEm seguida, teste diferentes combinações de \\(\\alpha\\) e \\(\\beta\\) para ajustar a a priori com base no que sabemos sobre a proporção da cobertura oceânica no globo.\n\n\nObserve como a distribuição a posteriori (curva azul) se desloca ou se concentra de acordo com suas escolhas de \\(\\alpha\\) e \\(\\beta\\), e com os dados (\\(N, k\\)).\n\nCompare a curva de verossimilhança (verde) e a distribuição a posteriori para discutir o quanto a a priori e as evidências observadas influenciam a estimativa final de \\(p\\).\nDiscuta o que concluiu após observar os itens #3 e #4.\n\nQuestões\n\nTamanho da amostra: o que ocorre com a estimativa pontual de \\(p\\) para amostras pequenas e grandes?\nDistribuição a priori: como uma opinião prévia sobre \\(p\\) (por exemplo, achar que o planeta é 70% água) afeta a distribuição a posteriori? Discuta para as diferentes escolhas de \\(N\\).\n\n\n\n\n\n4 Exercícios para Consolidar\n\nComparação Gráfica\n\nA cada simulação do experimento, salve as figuras das densidades a priori e a posteriori Beta a fim de facilitar a comparação.\n\nEm cada caso, ajuste um intervalo simétrico ao redor da distribuição a posteriori que inclua 95% da curva. Este seria o intervalo de credibilidade para \\(p\\). Quais foram estes intervalos?\n\nReflexão\n\nCompare seus resultados com os de outros(as) colegas.\n\nPor que, com poucos dados, a distribuição a priori influencia mais o resultado? Como o aumento de \\(N\\) faz a verossimilhança prevalecer?\n\nDesafio\n\nTarefa: Investigue quantos pontos seriam necessários para que o intervalo de credibilidade a 95% para \\(p\\) tenha largura de \\(\\pm 0{,}02\\).\n\nO que esse tamanho amostral significa em termos práticos? Se fossem realmente “lançar o globo”, quantas vezes precisariam repetir o processo? Faça essa verificação para diferentes valores de \\(N\\) e para as distribuições a priori escolhidas anteriormente.\n\n\n\n\n\n5 Exercícios em Python\n\nUtilizando o PyMC, replique as atividades do item #3. Roteiro de Atividades.\n\nPara cada valor de \\(N\\) e para cada distribuição a priori, plote os histogramas das distribuições a posteriori.\n\nO relatório da lista de exercícios deve ser entregue através de um arquivo Jupyter Notebook enviado via Moodle, contendo os códigos e suas conclusões sobre as questões levantadas acima.\nTodos os itens destacados em vermelho devem ser respondidos ou apresentados na lista.",
-    "crumbs": [
-      "Listas de Exercícios",
-      "Lista 2"
-    ]
   }
 ]
